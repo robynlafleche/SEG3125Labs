@@ -7,21 +7,25 @@
     <title>Lab 1 - Designing A Questionnaire</title>
   </head>
   <body>
+	  <div class="top que">
   <a class="header__link" href="https://www.airbnb.ca" target="_blank">
             <div class="">
                 <div class="overlay">
-                    <h1 class="header"> Reviewing the User Interface of Airbnb</h1>
+                    <h1 class="header que"> Reviewing the User Interface of Airbnb</h1>
                 </div>
             </div>
         </a>
-	<h1>Survey</h1>
+	<h1 class="que">Survey</h1>
 	<form id="myform" action="index.php">
 	<br>
-
-	<h2 class="">We would like know your opinion of the user interface for <a href="http://www.airbnb.ca" target="_blank">Airbnb's</a> website?</h2>
+	<div >
+	<h2 class="que ques" >We would like know your opinion of the user interface for <a href="http://www.airbnb.ca" target="_blank">Airbnb's</a> website?</h2>
+	</form>
+	</body>
 	<br>
-
-	<div class="airbnbImageGallery">
+	<br>
+</div>
+	<div class="airbnbImageGallery images">
 		<figure class="airbnbImageGallery_Image_1">
 			<a href="https://www.airbnb.ca/" target="_blank"> <img src="images/Airbnb_Home_Page.png" alt="Airbnb Home Page" title="Airbnb Home Page"> </a>
 		</figure>
@@ -45,7 +49,7 @@
 				target="_blank"> <img src="images/Airbnb_Search_Results_Miami.png" alt="Searching for a stay" title="Searching for a stay"> </a>
 		</figure>
 	</div>
-		
+</div>	
 	<div >
 	
 		<h2> Please answer the questions below related to the Airbnb website: </h2>
@@ -99,7 +103,7 @@
 		<h3> Which location did Airbnb highlight the most? </h3>
 		<label for="location" id="label-location">
 		</label>
-            	<input type="text"
+            	<input type="text" class="box"
                    	id="location"
                    	placeholder="Enter the name of the location" />
 		</div>
@@ -195,15 +199,18 @@
 	</div>
 	
 
-		
-	Suggestions about the user interface experience:<br>
-	<textarea rows="5" cols="30"></textarea><br>
-
+	<div class="suggestions question">
+	<div class="q">Suggestions about the user interface experience:<br></div>
+	<textarea rows="5" cols="170" width="90%" resize: none;></textarea><br>
+    </div>	
+	<div class=buttons>
 	<button type="submit" value="submit">
             Submit
-        </button>
-			
-	<p id="signature">Site created by Group 6</p>	
+    </button>
+	</div>	
+	<div class = "signature">
+	<p id="signature"> Site created by Group 6</p>	
+    </div>	
 	
 	</form>
   	</body>
