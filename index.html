@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,9 +8,9 @@
   </head>
   <body>
   <a class="header__link" href="https://www.airbnb.ca" target="_blank">
-            <div class="header">
+            <div class="">
                 <div class="overlay">
-                    <h1> Reviewing the User Interface of Airbnb</h1>
+                    <h1 class="header"> Reviewing the User Interface of Airbnb</h1>
                 </div>
             </div>
         </a>
@@ -18,17 +19,17 @@
 	<br>
 	<br>
 
-	<h2>We want to know your opinion of the UI for <a href="http://www.airbnb.ca">Airbnb's</a> site?</h2>	
+	<h2 class="">We want to know your opinion of the UI for <a href="http://www.airbnb.ca">Airbnb's</a> site?</h2>	
 	<br>
 	<br>
 	<a href="https://www.airbnb.ca/"> <img src="images/Airbnb.png" alt="Airbnb website" width="600" height="300"> </a>
 
 		
-	<div class="question">
+	<div >
 	
 		<h2> Please answer the questions below related to the Airbnb website: </h2>
 		
-	
+		<div class = "questionWithOptions">
 		<h3> Which budget range did the website advertise the most? </h3>
 		<select id="budget">         
             		<option value="50-60$ / night" selected="selected">50-60$/night</option>
@@ -38,7 +39,8 @@
             		<option value="100-110$ / night" selected="selected">100-110$/night</option>
             		<option value="110-120$ / night" selected="selected">110-120$/night</option>
 		</select>
-		
+	   </div>
+	   <div class="question">
 		<h3> What was your favourite feature of the website? </h3>
 		<small>(Check all that apply)</small><br>
             	<label for="inp-1">
@@ -71,14 +73,17 @@
             	<label for="inp-10">
                 	<input type="checkbox"
                        	name="inp">Spring</input></label><br>
-		
+		</div>
+		<div class="question">
 		<h3> Which location did Airbnb highlight the most? </h3>
 		<label for="location" id="label-location">
 		</label>
             	<input type="text"
                    	id="location"
                    	placeholder="Enter the name of the location" />
-		
+		</div>
+
+		<div class="questionWithOptions">
 		<h3> How likely are you to recommend Airbnb to a friend or colleague? </h3>
 		<select id="recommendation">         
             		<option value="Very Likely" selected="selected">Very Likely</option>
@@ -87,7 +92,8 @@
             		<option value="Somewhat Unlikely" selected="selected">Somewhat Unlikely</option>
             		<option value="Very Unlikely" selected="selected">Very Unlikely</option>            
 		</select>
-		
+	</div>
+	<div class="question">
 		<h3> How would you rate the overall appearance of the website? </h3>
 		<label for="rating-1">
                		<input type="radio"
@@ -114,7 +120,9 @@
                        	id="rating-5"
                        	name="rating">1 - Poor</input>
             	</label><br>
-		
+			</div>
+
+			<div class="questionWithOptions">
 		<h3> How easy was it for you to find a place to stay in your destination of choice? </h3>
 		<select id="easyfind">         
             		<option value="Very Easy" selected="selected">Very Easy</option>
@@ -123,7 +131,11 @@
             		<option value="Difficult" selected="selected">Difficult</option>
             		<option value="Very Difficult" selected="selected">Very Difficult</option>            
 		</select>
-		
+	</div>
+
+
+
+	<div class="question">
 		<h3> How readable are the characters displayed on the website? </h3>
 			<label for="readibility-1">
                			<input type="radio"
@@ -145,7 +157,11 @@
                        		id="readibility-4"
                        		name="readibility">Unredable</input>
             		</label><br>
-		
+				</div>
+
+
+
+				<div class="questionWithOptions">
 		<h3> How would you rank the difficulty of signing up for an account on Airbnb? </h3>
 		<select id="easyfind">         
             		<option value="Very Easy" selected="selected">Very Easy</option>
@@ -154,6 +170,7 @@
             		<option value="Difficult" selected="selected">Difficult</option>
             		<option value="Very Difficult" selected="selected">Very Difficult</option>            
 		</select>
+	</div>
 	</div>
 	
 
@@ -169,4 +186,5 @@
 	
 	</form>
   	</body>
+	  
  </html>
