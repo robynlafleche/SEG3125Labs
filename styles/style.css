@@ -84,7 +84,7 @@ figure:hover img {
 .questionWithOptions {
   border-radius: 25px;
   border: 2px solid grey;
-  padding-bottom: 165px;
+  padding-bottom: 220px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -118,6 +118,7 @@ div.questionWithOptions:hover {
   padding: 10px;
   font-size: 20px;
   font-style: bold;
+  font-family: cursive;
 }
 
 textarea {
@@ -141,9 +142,18 @@ button {
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
   color: indigo;
-  background-color: lightcyan;
+  background-color: #1a1c53;
+  color: ghostwhite;
   background-size: 10px;
   width: 12%;
+  border-radius: 25px;
+  height: 30px;
+  text-align: center;
+}
+
+#location {
+  border-radius: 20px;
+  text-align: center;
 }
 
 .box {
@@ -169,6 +179,11 @@ label {
     "Lucida Sans", Arial, sans-serif;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
+.budget {
+  width: 40px;
+}
+
+#recommendatio {
+  width: 540px;
+  text-align: center;
 }
