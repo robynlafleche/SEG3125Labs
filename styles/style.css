@@ -140,10 +140,12 @@ button {
 .signature {
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
-  color: indigo;
-  background-color: lightcyan;
+  color: whitesmoke;
+  background-color: indigo;
   background-size: 10px;
-  width: 12%;
+  width: 100%;
+  text-align: center;
+  height: 30px;
 }
 
 .box {
