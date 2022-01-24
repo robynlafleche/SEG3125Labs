@@ -6,6 +6,7 @@ body {
 
 .images {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  /*box shadow from https://getcssscan.com/css-box-shadow-examples*/
 }
 
 .que {
