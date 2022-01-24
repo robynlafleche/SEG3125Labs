@@ -2,7 +2,6 @@ body {
   background: url("../images/bg.jpg") no-repeat center center fixed;
 
   background-size: cover;
-  margin-bottom: 70px;
 }
 
 .images {
@@ -172,16 +171,4 @@ label {
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
-}
-.footer {
-  position: relative;
-  text-align: center;
-
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 30px;
-  background-color: purple;
-  color: white;
 }
