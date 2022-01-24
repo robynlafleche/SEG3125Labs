@@ -80,6 +80,7 @@ figure:hover img {
   border: 2px solid grey;
   padding-bottom: 50px;
   text-align: center;
+  vertical-align: left;
   margin-bottom: 10px;
 }
 
@@ -87,7 +88,9 @@ figure:hover img {
   border-radius: 25px;
   border: 2px solid grey;
   padding-bottom: 165px;
+  vertical-align: left;
   text-align: center;
+
   margin-bottom: 10px;
 }
 
@@ -117,7 +120,7 @@ div.questionWithOptions:hover {
 }
 
 .q {
-  padding: 10px;
+  padding: 40px;
   font-size: 20px;
   font-style: bold;
 }
@@ -175,4 +178,9 @@ label {
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio {
+  text-align: left;
+  margin-left: 45%;
 }
