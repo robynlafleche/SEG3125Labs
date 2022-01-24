@@ -16,6 +16,7 @@ body {
 .ques {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(219, 219, 223, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  /*box shadow from https://getcssscan.com/css-box-shadow-examples*/
   background-color: rgb(235, 230, 224);
 }
 .airbnbImageGallery {
