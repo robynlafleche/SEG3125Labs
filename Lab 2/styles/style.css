@@ -1,0 +1,47 @@
+.tab {
+  height: 60px;
+  width: 33.3%;
+  font-size: 20px;
+  float: left;
+}
+
+.tabs {
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.storename {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  height: 25%;
+  border-color: grey;
+  color: aliceblue;
+  text-align: center;
+  font-family: cursive;
+}
+
+.pageTab {
+  text-align: center;
+  align-content: center;
+  margin-left: 200px;
+}
+
+.nav {
+  background-color: #696561;
+  height: 60px;
+  border-radius: 25px;
+  border-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+/* position of signature from https://stackoverflow.com/a/8824859 */
+.signature {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  background-color: darkseagreen;
+  font-family: "Times New Roman", Times, serif;
+}
