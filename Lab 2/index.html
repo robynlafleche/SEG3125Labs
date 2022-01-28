@@ -10,28 +10,28 @@
     <script src="scripts/main.js"></script>
     <title>Group 6 Store</title>
     </head class="tabs">
-    
+
     <div class="nav">
         <br>
       <div class="storename">Group 6 Store   </div>
       <br>
     </div>
-   
- 
+
+
 <body class="tabs">
     <div class="tabs">
          <!-- emojis from https://unicode-table.com/en/emoji/ -->
         <button class="tab" onclick='getPage("Client","Product","Cart")'>Client 👤 </button>
         <button class="tab" onclick='getPage("Product","Client","Cart")'>Products 🥦 </button>
         <button class="tab" onclick='getPage("Cart","Client","Product")'>Cart 🛒 </button>
-     
+
 
     </div>
 
     <br>
-  
 
-  <div id = "Client" class="option" style="display:none">  
+
+  <div id = "Client" class="option" style="display:none">
       <div class="pagetab">
         Client
       </div>
@@ -39,14 +39,72 @@
 
   <div id = "Product" style="display:none">
     <div class="pagetab">
-     Products
-    
-		
+
+     <h1>
+       Items selected based off of your profile settings.
+     </h1>
+     <div class="container">
+       <div class="product-box">
+         <img src="images/banana" alt="banana">
+         <h2>
+           Organic Banana
+         </h2>
+         <p id="bananaPrice" class="price">
+           $1.00
+         </p>
+         <div class="quantity">
+           Quantity:
+           <input type="number" min="1" max="10" value="1">
+         </div>
+         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
+         </button>
+
+
+       </div>
+
+       <div class="product-box">
+         <img src="images/apple" alt="apple">
+         <h2>
+           Organic Apple
+         </h2>
+         <p id="applePrice" class="price">
+           $1.50
+         </p>
+         <div class="quantity">
+           Quantity:
+           <input type="number" min="1" max="10" value="1">
+         </div>
+         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
+         </button>
+
+
+       </div>
+
+       <div class="product-box">
+         <img src="images/strawberry" alt="strawberry">
+         <h2>
+           Organic Strawberry
+         </h2>
+         <p id="strawberryPrice" class="price">
+           $2.50
+         </p>
+         <div class="quantity">
+           Quantity:
+           <input type="number" min="1" max="10" value="1">
+         </div>
+         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
+         </button>
+
+
+       </div>
+     </div>
+
+
 
     </div>
   </div>
 
-  <div id = "Cart" style="display:none"> 
+  <div id = "Cart" style="display:none">
     <div class="pagetab">
        <h3> Cart </h3>
        <p> Here are the contents of your cart </p>
@@ -54,6 +112,6 @@
   </div>
 
 
- 
+
 </body>
 <div class="signature">Website by group 6</div>
