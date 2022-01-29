@@ -6,8 +6,8 @@
 }
 
 .tabs {
-  overflow: hidden;
   border-radius: 25px;
+  margin-bottom: 50px;
 }
 
 .storename {
@@ -22,8 +22,6 @@
 }
 
 .pageTab {
-  text-align: center;
-  align-content: center;
   margin-left: 200px;
 }
 
@@ -52,17 +50,15 @@
   flex-wrap: wrap;
   padding: 20px 20px 20px;
   text-align: center;
-
 }
 
 .product-box {
   background-color: white;
   padding: 20px 20px 20px;
-
 }
 
 .addCartBtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 30px;
@@ -93,7 +89,24 @@
   text-align: center;
 }
 
-.addCardBtn
- button: hover {
+.addCardBtn button:hover {
   opacity: 0.7;
+}
+
+.image {
+  height: 55px;
+}
+
+/* .product-box {
+  margin-left: 50%;
+} */
+
+body {
+  background-color: #f5f5dc;
+  background-color: transparent;
+}
+
+/*adding ability to scroll from https://stackoverflow.com/a/12575301 */
+html {
+  overflow-y: scroll;
 }
