@@ -1,5 +1,3 @@
-
-
 //code for getPage function inspired from https://stackoverflow.com/a/56111513/15518664 and  by professor Caroline Barriere
 //https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery  
 function getPage(elem,hide1,hide2) {
@@ -35,10 +33,94 @@ function updateCartTotal(price) {
   alert(cartTotal)
 }
 
-/*Displays only the items selected by the user*/
-function displayProducts(value) {
-    var className = document.getElementsByClassName(value)
-    for (var i = 0; i < className.length; i++) {
-        className[i].style.display = "none"
+
+const allFiltersToApply = [];
+var organicFilterChoice = "";
+
+function updateDiateryCharacteristicsFilters(filterType, filterOn) {
+
+  var elementIndex = -1
+
+  // Search to see if this filter type is already on the filter list.
+  for (var i = 0; i < allFiltersToApply.length; i++) {
+    if (allFiltersToApply[i] == filterType)
+    {
+      // The element has been found.
+      elementIndex = i;
+      break;
     }
+  }
+
+  if (elementIndex == -1 && filterOn)
+  {
+    // The filter type is not in the filter list and it should be, so add it.
+    allFiltersToApply.push(filterType);
+  }
+  else if (elementIndex != -1 && !filterOn)
+  {
+    // The filter type is in the filter list and it must be removed.
+    for (var i = elementIndex; i < allFiltersToApply.length - 1; i++) {
+      allFiltersToApply[i] = allFiltersToApply[i+1]; // shift every other element down
     }
+
+    // Delete the last element to complete the shift.
+    allFiltersToApply.pop();
+  }
+
+
+  filterProductsPage();
+}
+
+function updateOrganicFilters(choice) {
+
+  organicFilterChoice = choice
+
+  filterProductsPage();
+}
+
+function filterProductsPage() {
+
+  var allProducts = document.getElementsByClassName("product-box");
+
+  /* go through each product and determine if it should be displayed or not.*/
+  for (var i = 0; i < allProducts.length; i++) {
+
+    // Show the product by default
+    allProducts[i].style.display = "flex";
+
+    // First apply the filters for diatery characteristics.
+    for (var j = 0; j < allFiltersToApply.length; j++) {
+      var matchedProducts = allProducts[i].getElementsByClassName(allFiltersToApply[j]);
+      if (matchedProducts.length != 0)
+      {
+        // Hide the product since it contains the characteristic the user doe not want.
+        allProducts[i].style.display = "none";
+      }
+    }
+
+    // Now apply the filter for the organic choice.
+    if (organicFilterChoice == "noOrganicFilter")
+    {
+      // Do nothing since the user has indicated no preference between organic and non-organic.
+      continue;
+    }
+
+    // Determine if the product is organic or not
+    var matchedProducts = allProducts[i].getElementsByClassName('organic');
+    var isOrganic = matchedProducts.length != 0;
+
+    if (organicFilterChoice == "organicOnly" && !isOrganic)
+    {
+      // The user wants organic products only and the current product is not organic.
+      allProducts[i].style.display = "none"; // Hide the product
+    }
+
+    else if (organicFilterChoice == "nonOrganicOnly" && isOrganic)
+    {
+      // The user wants non-organic products only and the current product is organic.
+      allProducts[i].style.display = "none"; // Hide the product
+    }
+  }
+}
+
+
