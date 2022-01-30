@@ -30,24 +30,69 @@
 
     <br>
 
+<!-- Client tab begins here -->
+
 
   <div id = "Client" class="option" style="display:none">
       <div class="pagetab">
-        Client
-        <select id="selectBox" onchange="displayProducts(value);">
-          <option value="gluten">GlutenFree</option>
-          <option value="lactose">Lactose Intolerent</option>
-          <option value="meat">Vegetarian</option>
-          <option value="organic">Organic</option>
-         </select>
+        <h1 class="pageTopHeadings">Client Information</h1>
+        <h2 class="pageTopHeadings">Please indicate your preferences below</h2>
+
+        <hr>
+
+        <div class="clientInformationQuestion">
+          <h3> Which diatery characteristics apply to you? </h3>
+          <small>(Check all that apply)</small><br>
+          <div class="radioTypeQuestion diateryCharacteristicFilter">
+            <label for="inp-1">
+                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
+                       >Vegetarian</input></label><br>
+            <label for="inp-2">
+                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
+                       >Allergic to gluten</input></label><br>
+            <label for="inp-3">
+                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
+                       >Diabetic</input></label><br>
+            <label for="inp-4">
+                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
+                       >Lactose intolerant</input></label><br>
+          </div>
+        </div>
+
+
+        <div class="clientInformationQuestion">
+          <h3> Which types of products are you interested in? </h3>
+          <div class = "radioTypeQuestion">
        
+            <label for="organicChoice-1">
+              <input type="radio" id="organicChoice-1" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
+            </label><br>
+
+            <label for="organicChoice-2" id="organicChoice-2">
+              <input type="radio" id="organicChoice-2" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
+            </label><br>
+
+            <label for="organicChoice-3" id="organicChoice-3">
+              <input type="radio" id="organicChoice-3" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
+            </label><br>
+
+          </div>
+        </div>
+
+
+
       </div>
   </div>
+
+
+<!-- Client tab ends here -->
+
+
 
   <div id = "Product" style="display:none">
     <div class="pagetab">
 
-     <h1 style="text-align: center;">
+     <h1 class="pageTopHeadings">
        Items selected based off of your profile settings.
      </h1>
      <div class="container">
@@ -142,7 +187,7 @@
       </div>
 
       <div class="product-box">
-        <div class="gluten">
+        <div class="gluten diabetic">
           <img src="images/muffins.jpg" alt="muffins" class="image">
         <h2>
           Muffins
@@ -270,7 +315,7 @@
       </div>
 
       <div class="product-box">
-        <div class="meat">
+        <div class="meat diabetic">
           <img src="images/pork.jpg" alt="pork" class="image">
         <h2>
           Pork
@@ -306,7 +351,7 @@
       </div>
 
       <div class="product-box">
-        <div> class="meat"
+        <div>  <!-- We do not consider fish as meat -->
           <img src="images/fish.jpg" alt="fish" class="image">
         <h2>
           Fish
