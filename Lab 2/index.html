@@ -34,70 +34,299 @@
   <div id = "Client" class="option" style="display:none">
       <div class="pagetab">
         Client
+        <select id="selectBox" onchange="displayProducts(value);">
+          <option value="gluten">GlutenFree</option>
+          <option value="lactose">Lactose Intolerent</option>
+          <option value="meat">Vegetarian</option>
+          <option value="organic">Organic</option>
+         </select>
+       
       </div>
   </div>
 
   <div id = "Product" style="display:none">
     <div class="pagetab">
 
-     <h1 style="margin-left: 200px;">
+     <h1 style="text-align: center;">
        Items selected based off of your profile settings.
      </h1>
      <div class="container">
        <div class="product-box">
-         <img src="images/banana.jpg" alt="banana" class="image">
-         <h2>
-           Organic Banana
-         </h2>
-         <p id="bananaPrice" class="price">
-           $1.00
-         </p>
-         <div class="quantity">
-           Quantity:
-           <input type="number" min="1" max="10" value="1">
-         </div>
-         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
-         </button>
-
-
+        <div class="organic">
+          <img src="images/banana.jpg" alt="banana" class="image">
+          <h2>
+            Organic Banana
+          </h2>
+          <p id="bananaPrice" class="price">
+            $1.00
+          </p>
+          <div class="quantity">
+            Quantity:
+            <input id="bananaQuantity" type="number" min="1" max="10" value="1">
+          </div>
+          <button type="button"  id="banana" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+          </button>
+        </div>
        </div>
 
        <div class="product-box">
-         <img src="images/apple.jpg" alt="apple" class="image">
-         <h2>
-           Organic Apple
-         </h2>
-         <p id="applePrice" class="price">
-           $1.50
-         </p>
-         <div class="quantity">
-           Quantity:
-           <input type="number" min="1" max="10" value="1">
+         <div class="organic">
+          <img src="images/apple.jpg" alt="apple" class="image">
+          <h2>
+            Organic Apple
+          </h2>
+          <p id="applePrice" class="price">
+            $1.50
+          </p>
+          <div class="quantity">
+            Quantity:
+            <input id="appleQuantity" type="number" min="1" max="10" value="1">
+          </div>
+          <button type="button"  id="apple" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+          </button>
          </div>
-         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
-         </button>
-
-
        </div>
 
        <div class="product-box">
-         <img src="images/strawberry.jpg" alt="strawberry" class="image">
-         <h2>
-           Organic Strawberry
-         </h2>
-         <p id="strawberryPrice" class="price">
-           $2.50
-         </p>
-         <div class="quantity">
-           Quantity:
-           <input type="number" min="1" max="10" value="1">
+         <div class="organic">
+          <img src="images/strawberry.jpg" alt="strawberry" class="image">
+          <h2>
+            Organic Strawberry
+          </h2>
+          <p id="strawberryPrice" class="price">
+            $2.50
+          </p>
+          <div class="quantity">
+            Quantity:
+            <input id="strawberryQuantity" type="number" min="1" max="10" value="1">
+          </div>
+          <button type="button"  id="strawberry" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+          </button>
          </div>
-         <button type="button" class="addCartBtn" onclick="cartedItems()"> Add to cart
-         </button>
-
-
        </div>
+
+       <div class="product-box">
+         <div class="gluten">
+          <img src="images/bread.jpg" alt="bread" class="image">
+          <h2>
+            Bread
+          </h2>
+          <p id="breadPrice" class="price">
+            $1.50
+          </p>
+          <div class="quantity">
+            Quantity:
+            <input id="breadQuantity" type="number" min="1" max="10" value="1">
+          </div>
+          <button type="button"  id="bread" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+          </button>
+         </div>
+      </div>
+
+      <div class="product-box">
+        <div class="gluten">
+          <img src="images/tortillas.jpg" alt="tortillas" class="image">
+          <h2>
+            Tortillas
+          </h2>
+          <p id="tortillasPrice" class="price">
+            $2.75
+          </p>
+          <div class="quantity">
+            Quantity:
+            <input id="tortillasQuantity" type="number" min="1" max="10" value="1">
+          </div>
+          <button type="button"  id="tortillas" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="gluten">
+          <img src="images/muffins.jpg" alt="muffins" class="image">
+        <h2>
+          Muffins
+        </h2>
+        <p id="muffinsPrice" class="price">
+          $4.50
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="muffinsQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="muffins" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="lactose">
+          <img src="images/butter.jpg" alt="butter" class="image">
+        <h2>
+          Butter
+        </h2>
+        <p id="butterPrice" class="price">
+          $3.75
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="butterQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="butter" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+
+
+      </div>
+
+      <div class="product-box">
+        <div class="lactose">
+          <img src="images/milk.jpg" alt="milk" class="image">
+        <h2>
+          Milk
+        </h2>
+        <p id="milkPrice" class="price">
+          $4.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="milkQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="milk" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="lactose">
+          <img src="images/cheese.jpg" alt="cheese" class="image">
+        <h2>
+          Cheese
+        </h2>
+        <p id="cheesePrice" class="price">
+          $3.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="cheese" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="cheese" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="organic">
+          <img src="images/kale.jpg" alt="kale" class="image">
+        <h2>
+          Organic Kale
+        </h2>
+        <p id="kalePrice" class="price">
+          $2.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="kaleQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="kale" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="organic">
+          <img src="images/peppers.jpg" alt="peppers" class="image">
+        <h2>
+          Organic Peppers
+        </h2>
+        <p id="peppersPrice" class="price">
+          $1.75
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="peppersQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="peppers" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="organic">
+          <img src="images/tomato.jpg" alt="tomato" class="image">
+        <h2>
+          Organic Tomato
+        </h2>
+        <p id="tomatoPrice" class="price">
+          $1.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="tomatoQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="tomato" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="meat">
+          <img src="images/pork.jpg" alt="pork" class="image">
+        <h2>
+          Pork
+        </h2>
+        <p id="porkPrice" class="price">
+          $12.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input type="number" min="1" max="10" value="1">
+        </div>
+        <button id="porkQuantity" type="button" class="addCartBtn"  id="pork" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="meat">
+          <img src="images/poultry.jpg" alt="poultry" class="image">
+        <h2>
+          Poultry
+        </h2>
+        <p id="poultryPrice" class="price">
+          $10.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="poultryQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button" id="poultry" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div> class="meat"
+          <img src="images/fish.jpg" alt="fish" class="image">
+        <h2>
+          Fish
+        </h2>
+        <p id="fishPrice" class="price">
+          $15.00
+        </p>
+        <div class="quantity">
+          Quantity:
+          <input id="fishQuantity" type="number" min="1" max="10" value="1">
+        </div>
+        <button type="button"  id="fish" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
+        </button>
+        </div>
+
+
+      </div>
      </div>
+
+     
 
 
 
@@ -107,7 +336,7 @@
   <div id = "Cart" style="display:none">
     <div class="pagetab">
        <h3> Cart </h3>
-       <p> Here are the contents of your cart </p>
+       <p id="cart"> Here are the contents of your cart </p>
     </div>
   </div>
 
