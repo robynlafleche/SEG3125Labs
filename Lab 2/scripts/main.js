@@ -27,6 +27,17 @@ function cartedItems(name) {
   updateCartTotal(price);
 }
 
+
+function displayCart() {
+    var div = document.getElementById("Cart");
+    var html = "";
+    for (var i = 0; i < products.length; i++) {
+        html += "<input type='checkbox' name='" + products[i] + "' quantity='" + i + "' onClick=\"setValue(this.quantity);\">" + products[i] + "<br>";
+    }
+
+    div.innerHTML = html;
+}
+
 /*Updates the cart total with the prices of each item multipled by their quantities*/
 function updateCartTotal(price) {
   cartTotal += price
