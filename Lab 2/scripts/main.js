@@ -240,8 +240,17 @@ function zoomOuth3(el) {
 function zoomOuth2(el) {
   var fields = document.getElementsByClassName(el);
   for(let field of fields){
-    field.style.fontSize = "24px"
+    if (field.className === "zoomh4") {
+      //found the number for font size by trial and error
+      field.style.fontSize = "13.3px"
+    }
+    else {
+      field.style.fontSize = "24px"
+    }
+    
+    console.log("field",field)
     
   }
   
 }
+

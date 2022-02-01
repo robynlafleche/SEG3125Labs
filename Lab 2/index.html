@@ -26,8 +26,8 @@
         <button class="tab" onclick='getPage("Cart","Client","Product")'>Cart 🛒 </button>
         <br>
         <div class="zoomButton"> 🔎
-          <button type="button" class="zoom" onclick='zoomIn("zoomtext"); zoomInH2("zoomh2");  zoomInH2("zoomh3");'>Zoom in</button>
-          <button type="button"  class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3")'>Zoom out</button>
+          <button type="button" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4");'>Zoom in</button>
+          <button type="button"  class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4");'>Zoom out</button>
         </div>
 
     </div>
@@ -94,11 +94,13 @@
 
 
   <div id = "Product" style="display:none">
-    <div class="pagetab">
-      <select name="sort" onchange="sortPrices(this.value);">
-        <option selected="selected">Sort by price</option>
-        <option value="low">Low to high</option>
-        <option value="high">High to low</option>
+    <div class="pagetab" >
+      <select name="sort" onchange="sortPrices(this.value);"  class="zoomh4">
+        <optgroup > 
+        <option selected="selected" >Sort by price</option>
+        <option value="low"  >Low to high</option>
+        <option value="high" >High to low</option>
+      </optgroup>
       </select>
 
      <h1 class="pageTopHeadings">
