@@ -41,7 +41,6 @@ function displayCart() {
 /*Updates the cart total with the prices of each item multipled by their quantities*/
 function updateCartTotal(price) {
   cartTotal += price
-  alert(cartTotal)
 }
 
 
