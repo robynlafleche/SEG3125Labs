@@ -30,15 +30,25 @@ function cartedItems(productName) {
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice, productQuantity, productName);
-  addItemToCart(productName, productPrice, productQuantity);
+  addItemToCart(productName, additionalPrice, productQuantity);
+  addLines();
   getCartTotal();
 }
 
 
+//function to display added product with quantity in the cart
 function addItemToCart(name, price, amount) {
 		
 		document.getElementById("cart").setAttribute('style', 'white-space: pre;');
-        document.getElementById("cart").textContent += " " + name + " x " + amount + "=" + price + "\r\n";
+        document.getElementById("cart").textContent += " " + name + " x " + amount + " = " + "$" + price + "\r\n";
+}
+
+// function to add line spaces
+function addLines() {
+	document.getElementById("cartTotal").setAttribute('style', 'white-space: pre;');
+	for (var i = 0; i < 1; i++) {
+		 document.getElementById("cart").textContent += "\r\n";
+	}
 }
 
 /*Updates the cart total with the prices of each item multiplied by their quantities*/
@@ -54,7 +64,7 @@ function updateCartTotal(price, quantity, name) {
 }
 
 function getCartTotal() {
-	document.getElementById("cartTotal").textContent = "Total price: $" + cartTotal.toFixed(2);
+	document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
 }
 
 
