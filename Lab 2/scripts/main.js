@@ -15,42 +15,38 @@ function getPage(elem,hide1,hide2) {
 products is an array containing the names of the products added to the cart
 cartTotal is the total after all the items are added to the cart*/
 
-var products = []
-var cartTotal = 0
+
+{
+	var products = [];
+	var cartTotal = 0;
+}
 
 /*Adds the items selected by the user to the cart*/
-function cartedItems(productName) {
-  products.push(productName)
-  var priceName = productName + " Price"
-  var quantityName = productName + " Quantity"
-
-  var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
-  var productQuantity = document.getElementById(quantityName).value
-
-  var additionalPrice = parseFloat(productPrice) * productQuantity
-  updateCartTotal(productName, productQuantity, additionalPrice);
+function cartedItems(name) { 
+  products.push(name)
+  var priceName = name + "Price"
+  var quantityName = name + "Quantity"
+  var amount = document.getElementById(quantityName).value
+  var price = parseFloat(document.getElementById(priceName).innerHTML.replace('$', '')) * document.getElementById(quantityName).value
+  updateCartTotal(price);
+  addItemToCart(name, price, amount);
 }
 
 
-function displayCart() {
-    var div = document.getElementById("Cart");
-    var html = "";
-    for (var i = 0; i < products.length; i++) {
-        html += "<input type='checkbox' name='" + products[i] + "' quantity='" + i + "' onClick=\"setValue(this.quantity);\">" + products[i] + "<br>";
-    }
-
-    div.innerHTML = html;
+function addItemToCart(name, price, amount) {
+		
+		document.getElementById("cart").setAttribute('style', 'white-space: pre;');
+        document.getElementById("cart").textContent += " " + name + " x " + amount + "= " + price + "\r\n";
 }
 
-/*Updates the cart total with the prices of each item multipled by their quantities*/
-function updateCartTotal(productName, productQuantity, additionalPrice) {
-  cartTotal += additionalPrice
-  var itemString = "item"
-  if (productQuantity > 1)
-  {
-    itemString = "items"
-  }
-  alert("Added " + productQuantity + " " + productName + " " + itemString + " to your cart.\nYour cart total is $" + cartTotal.toFixed(2) +".")
+/*Updates the cart total with the prices of each item multiplied by their quantities*/
+function updateCartTotal(price) {
+  cartTotal += price;
+  alert(cartTotal);
+}
+
+function getCartTotal() {
+	document.getElementById("cartTotal").textContent += "\r\n" + "Total Cost: " + document.getElementById("cartTotal").cartTotal;
 }
 
 

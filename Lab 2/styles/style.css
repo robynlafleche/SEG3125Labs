@@ -10,6 +10,12 @@
   margin-bottom: 50px;
 }
 
+.cart {
+  white-space: pre-line;
+  font-size: 20px;
+
+}
+
 .storename {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
