@@ -26,19 +26,19 @@ function cartedItems(productName) {
   products.push(productName)
   var priceName = productName + "Price"
   var quantityName = productName + "Quantity"
-
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice);
   addItemToCart(productName, productPrice, productQuantity);
+  getCartTotal();
 }
 
 
 function addItemToCart(name, price, amount) {
 		
 		document.getElementById("cart").setAttribute('style', 'white-space: pre;');
-        document.getElementById("cart").textContent += " " + name + " x " + amount + "= " + price + "\r\n";
+        document.getElementById("cart").textContent += " " + name + " x " + amount + "=" + price + "\r\n";
 }
 
 /*Updates the cart total with the prices of each item multiplied by their quantities*/
@@ -47,6 +47,9 @@ function updateCartTotal(price) {
   alert(cartTotal);
 }
 
+function getCartTotal() {
+	document.getElementById("cartTotal").textContent = "Total price: " + cartTotal;
+}
 
 
 const allFiltersToApply = [];
