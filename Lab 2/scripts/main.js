@@ -29,7 +29,7 @@ function cartedItems(productName) {
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
-  updateCartTotal(additionalPrice);
+  updateCartTotal(additionalPrice, productQuantity, productName);
   addItemToCart(productName, productPrice, productQuantity);
   getCartTotal();
 }
@@ -42,13 +42,19 @@ function addItemToCart(name, price, amount) {
 }
 
 /*Updates the cart total with the prices of each item multiplied by their quantities*/
-function updateCartTotal(price) {
+function updateCartTotal(price, quantity, name) {
   cartTotal += price;
-  alert(cartTotal);
+
+  var itemString = "item"
+  if (quantity > 1)
+  {
+    itemString = "items"
+  }
+  alert("Added " + quantity + " " + name + " " + itemString + " to cart.\nYour cart total is $" + cartTotal.toFixed(2))
 }
 
 function getCartTotal() {
-	document.getElementById("cartTotal").textContent = "Total price: " + cartTotal;
+	document.getElementById("cartTotal").textContent = "Total price: $" + cartTotal.toFixed(2);
 }
 
 
