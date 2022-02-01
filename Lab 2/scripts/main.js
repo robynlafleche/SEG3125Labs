@@ -25,26 +25,42 @@ products is an array containing the names of the products added to the cart
 cartTotal is the total after all the items are added to the cart*/
 
 {
-	var products = [];
+	var products = new Map([]);
 	var cartTotal = 0;
   var zoomedIn = false;
 }
 
 /*Adds the items selected by the user to the cart*/
 function cartedItems(productName) {
-  products.push(productName)
+
   var priceName = productName + "Price"
   var quantityName = productName + "Quantity"
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice, productQuantity, productName);
+
+  if (products.has(productName))
+  {
+    // Product is already in the cart, update its quantity.
+    var currentQuantity = products.get(productName)
+    var newQuantity = parseInt(currentQuantity) + parseInt(productQuantity)
+    products.set(productName, newQuantity);
+  }
+  else
+  {
+    // New product, add an entry to the cart.
+    products.set(productName, productQuantity);
+  }
+
+
   updateCartDisplay()
   addLines();
   getCartTotal();
 }
 
 
+/* Map usage and iteration inspired from https://www.w3schools.com/js/js_object_maps.asp*/
 function updateCartDisplay()
 {
   document.getElementById("cart").setAttribute('style', 'white-space: pre;');
@@ -53,17 +69,13 @@ function updateCartDisplay()
   document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
 
   // Now display each item in the cart one by one.
-  for (var i = 0; i < products.length; i++) 
+  products.forEach (function(productQuantity, productName)
   {
-    productName = products[i]
     var priceName = productName + "Price"
-    var quantityName = productName + "Quantity"
     var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
-    var productQuantity = document.getElementById(quantityName).value
     var additionalPrice = parseFloat(productPrice) * productQuantity
-    
     document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
-  }
+  })
 }
 
 
