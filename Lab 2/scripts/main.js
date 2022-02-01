@@ -22,14 +22,16 @@ cartTotal is the total after all the items are added to the cart*/
 }
 
 /*Adds the items selected by the user to the cart*/
-function cartedItems(name) { 
-  products.push(name)
-  var priceName = name + "Price"
-  var quantityName = name + "Quantity"
-  var amount = document.getElementById(quantityName).value
-  var price = parseFloat(document.getElementById(priceName).innerHTML.replace('$', '')) * document.getElementById(quantityName).value
-  updateCartTotal(price);
-  addItemToCart(name, price, amount);
+function cartedItems(productName) {
+  products.push(productName)
+  var priceName = productName + "Price"
+  var quantityName = productName + "Quantity"
+
+  var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+  var productQuantity = document.getElementById(quantityName).value
+
+  var additionalPrice = parseFloat(productPrice) * productQuantity
+  updateCartTotal(productName, productQuantity, additionalPrice);
 }
 
 
