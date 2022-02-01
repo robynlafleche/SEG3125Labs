@@ -29,9 +29,9 @@ function cartedItems(productName) {
 
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
   var productQuantity = document.getElementById(quantityName).value
-
   var additionalPrice = parseFloat(productPrice) * productQuantity
-  updateCartTotal(productName, productQuantity, additionalPrice);
+  updateCartTotal(additionalPrice);
+  addItemToCart(productName, productQuantity, additionalPrice);
 }
 
 
@@ -47,9 +47,6 @@ function updateCartTotal(price) {
   alert(cartTotal);
 }
 
-function getCartTotal() {
-	document.getElementById("cartTotal").textContent += "\r\n" + "Total Cost: " + document.getElementById("cartTotal").cartTotal;
-}
 
 
 const allFiltersToApply = [];
