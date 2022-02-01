@@ -134,4 +134,38 @@ function filterProductsPage() {
   }
 }
 
+/*Creates an object for the id of the parent class and it's price*/
+function idPrice(id, price) {
+  this.id = id
+  this.price = price
+}
 
+var dataArray = []
+/*array of the prices for each item*/
+var prices = [1, 1.5, 2.5, 1.5, 2.75, 4.5, 3.75, 4, 3, 2, 1.75, 1, 8, 9, 9.5]
+
+/*Sorts the prices either from low-high or high-low depending on user's selection*/
+/*After the prices are sorted, parentclass for each price is referenced by id and appended to the original container in the sorted order*/
+function sortPrices(value) {
+  for (var i = 0; i < prices.length; i++) {
+    dataArray[i] = new idPrice(i+1, prices[i])
+  }
+  for (var i = 0; i < dataArray.length; i++) {
+    for (var j = 0; j < dataArray.length; j++) {
+      if (dataArray[i].price < dataArray[j].price) {
+        var temp = dataArray[i]
+        dataArray[i] = dataArray[j]
+        dataArray[j] = temp
+      }
+    }
+  }
+  if (value=="high") {
+  dataArray.reverse()
+  }
+  var container = document.getElementById("container")
+  for (var i = 0; i < prices.length; i++) {
+  var node1 = document.getElementById(dataArray[i].id)
+  console.log(dataArray[0].id)
+  container.append(node1)
+}
+}
