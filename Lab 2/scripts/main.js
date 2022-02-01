@@ -21,8 +21,8 @@ var cartTotal = 0
 /*Adds the items selected by the user to the cart*/
 function cartedItems(productName) {
   products.push(productName)
-  var priceName = productName + "Price"
-  var quantityName = productName + "Quantity"
+  var priceName = productName + " Price"
+  var quantityName = productName + " Quantity"
 
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
   var productQuantity = document.getElementById(quantityName).value
@@ -50,7 +50,7 @@ function updateCartTotal(productName, productQuantity, additionalPrice) {
   {
     itemString = "items"
   }
-  alert("Added " + productQuantity + " " + productName + " " + itemString + " to cart.\nYour cart total is $" + cartTotal.toFixed(2))
+  alert("Added " + productQuantity + " " + productName + " " + itemString + " to your cart.\nYour cart total is $" + cartTotal.toFixed(2) +".")
 }
 
 
