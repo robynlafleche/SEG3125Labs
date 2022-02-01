@@ -26,8 +26,8 @@
         <button class="tab" onclick='getPage("Cart","Client","Product")'>Cart 🛒 </button>
         <br>
         <div class="zoomButton"> 🔎
-          <button type="button" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4");'>Zoom in</button>
-          <button type="button"  class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4");'>Zoom out</button>
+          <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled>Zoom in</button>
+          <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled>Zoom out</button>
         </div>
 
     </div>

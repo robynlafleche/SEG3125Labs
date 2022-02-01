@@ -6,19 +6,28 @@ function getPage(elem,hide1,hide2) {
     document.getElementById(hide1).style.display = "none"
     document.getElementById(hide2).style.display = "none"
     if (page.style.display == "")
-        value = "none";
+    {
+      value = "none";
+      disabledZoomFeatures(true, true)
+    }
+    else
+    {
+      disabledZoomFeatures(zoomedIn, !zoomedIn)
+    }
 
     page.style.display = value;
+
+
 }
 
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
 products is an array containing the names of the products added to the cart
 cartTotal is the total after all the items are added to the cart*/
 
-
 {
 	var products = [];
 	var cartTotal = 0;
+  var zoomedIn = false;
 }
 
 /*Adds the items selected by the user to the cart*/
@@ -251,6 +260,18 @@ function zoomOuth2(el) {
     console.log("field",field)
     
   }
-  
+}
+
+function disabledZoomFeatures(zoomInDisabled, ZoomOutDisabled)
+{
+  document.getElementById("zoomInButton").disabled = zoomInDisabled;
+  document.getElementById("zoomOutButton").disabled = ZoomOutDisabled;
+}
+
+function updateZoomInButtonSensitivities(isZoomedIn)
+{
+  zoomedIn = isZoomedIn
+  document.getElementById("zoomInButton").disabled = zoomedIn; // Zoom-in button only available when zoomed-out
+  document.getElementById("zoomOutButton").disabled = !zoomedIn; // Zoom-out button only available when zoomed-in
 }
 
