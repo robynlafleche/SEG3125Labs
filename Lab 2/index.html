@@ -24,7 +24,11 @@
         <button class="tab" onclick='getPage("Client","Product","Cart")'>Client 👤 </button>
         <button class="tab" onclick='getPage("Product","Client","Cart")'>Products 🥦 </button>
         <button class="tab" onclick='getPage("Cart","Client","Product")'>Cart 🛒 </button>
-
+        <br>
+        <div class="zoomButton"> 🔎
+          <button type="button" class="zoom" onclick='zoomIn("zoomtext"); zoomInH2("zoomh2");  zoomInH2("zoomh3");'>Zoom in</button>
+          <button type="button"  class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3")'>Zoom out</button>
+        </div>
 
     </div>
 
@@ -41,19 +45,19 @@
         <hr>
 
         <div class="clientInformationQuestion">
-          <h3> Which diatery characteristics apply to you? </h3>
+          <h3 class="zoomh3"> Which diatery characteristics apply to you? </h3>
           <small>(Check all that apply)</small><br>
           <div class="radioTypeQuestion diateryCharacteristicFilter">
-            <label for="inp-1">
+            <label for="inp-1" class="zoomtext">
                 <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
                        >Vegetarian</input></label><br>
-            <label for="inp-2">
+            <label for="inp-2" class="zoomtext">
                 <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
                        >Allergic to gluten</input></label><br>
-            <label for="inp-3">
+            <label for="inp-3" class="zoomtext">
                 <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
                        >Diabetic</input></label><br>
-            <label for="inp-4">
+            <label for="inp-4" class="zoomtext">
                 <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
                        >Lactose intolerant</input></label><br>
           </div>
@@ -61,18 +65,18 @@
 
 
         <div class="clientInformationQuestion">
-          <h3> Which types of products are you interested in? </h3>
+          <h3 class="zoomh3"> Which types of products are you interested in? </h3>
           <div class = "radioTypeQuestion">
        
-            <label for="organicChoice-1">
+            <label for="organicChoice-1" class="zoomtext">
               <input type="radio" id="organicChoice-1" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
             </label><br>
 
-            <label for="organicChoice-2" id="organicChoice-2">
+            <label for="organicChoice-2" id="organicChoice-2" class="zoomtext">
               <input type="radio" id="organicChoice-2" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
             </label><br>
 
-            <label for="organicChoice-3" id="organicChoice-3">
+            <label for="organicChoice-3" id="organicChoice-3" class="zoomtext">
               <input type="radio" id="organicChoice-3" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
             </label><br>
 
@@ -104,7 +108,7 @@
        <div class="product-box" id="1">
         <div class="organic">
           <img src="images/banana.jpg" alt="banana" class="image">
-          <h2>
+          <h2 class="zoomh2">
             Organic Banana
           </h2>
           <p id="Organic bananaPrice" class="price">
@@ -122,7 +126,7 @@
        <div class="product-box" id="2">
          <div class="organic">
           <img src="images/apple.jpg" alt="apple" class="image">
-          <h2>
+          <h2 class="zoomh2">
             Organic Apple
           </h2>
           <p id="Organic applePrice" class="price">
@@ -140,7 +144,7 @@
        <div class="product-box" id="3">
          <div class="organic">
           <img src="images/strawberry.jpg" alt="strawberry" class="image">
-          <h2>
+          <h2 class="zoomh2">
             Organic Strawberry
           </h2>
           <p id="Organic strawberryPrice" class="price">
@@ -158,7 +162,7 @@
        <div class="product-box" id="4">
          <div class="gluten">
           <img src="images/bread.jpg" alt="bread" class="image">
-          <h2>
+          <h2 class="zoomh2">
             Bread
           </h2>
           <p id="BreadPrice" class="price">
@@ -176,7 +180,7 @@
       <div class="product-box" id="5">
         <div class="gluten">
           <img src="images/tortillas.jpg" alt="tortillas" class="image">
-          <h2>
+          <h2 class="zoomh2">
             Tortillas
           </h2>
           <p id="TortillasPrice" class="price">
@@ -194,7 +198,7 @@
       <div class="product-box" id="6">
         <div class="gluten diabetic">
           <img src="images/muffins.jpg" alt="muffins" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Muffins
         </h2>
         <p id="MuffinsPrice" class="price">
@@ -212,7 +216,7 @@
       <div class="product-box" id="7">
         <div class="lactose">
           <img src="images/butter.jpg" alt="butter" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Butter
         </h2>
         <p id="ButterPrice" class="price">
@@ -232,7 +236,7 @@
       <div class="product-box" id="8">
         <div class="lactose">
           <img src="images/milk.jpg" alt="milk" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Milk
         </h2>
         <p id="MilkPrice" class="price">
@@ -250,7 +254,7 @@
       <div class="product-box" id="9">
         <div class="lactose">
           <img src="images/cheese.jpg" alt="cheese" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Cheese
         </h2>
         <p id="CheesePrice" class="price">
@@ -268,7 +272,7 @@
       <div class="product-box" id="10">
         <div class="organic">
           <img src="images/kale.jpg" alt="kale" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Organic Kale
         </h2>
         <p id="Organic kalePrice" class="price">
@@ -286,7 +290,7 @@
       <div class="product-box" id="11">
         <div class="organic">
           <img src="images/peppers.jpg" alt="peppers" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Organic Peppers
         </h2>
         <p id="Organic peppersPrice" class="price">
@@ -304,7 +308,7 @@
       <div class="product-box" id="12">
         <div class="organic">
           <img src="images/tomato.jpg" alt="tomato" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Organic Tomato
         </h2>
         <p id="Organic tomatoPrice" class="price">
@@ -322,7 +326,7 @@
       <div class="product-box" id="13">
         <div class="meat diabetic">
           <img src="images/pork.jpg" alt="pork" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Pork
         </h2>
         <p id="PorkPrice" class="price">
@@ -340,7 +344,7 @@
       <div class="product-box" id="14">
         <div class="meat">
           <img src="images/poultry.jpg" alt="poultry" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Poultry
         </h2>
         <p id="PoultryPrice" class="price">
@@ -358,7 +362,7 @@
       <div class="product-box" id="15">
         <div class="meat">
           <img src="images/fish.jpg" alt="fish" class="image">
-        <h2>
+        <h2 class="zoomh2">
           Fish
         </h2>
         <p id="FishPrice" class="price">
@@ -385,11 +389,11 @@
 
   <div id = "Cart" style="display:none">
     <div class="pagetab">
-       <h2> Cart </h2>
-       <div id="cart"> Here are the contents of your cart:                  
+       <h2 class="zoomh2"> Cart </h2>
+       <div id="cart" class="zoomtext"> Here are the contents of your cart:                  
 
 </div>
-	   <div id="cartTotal">
+	   <div id="cartTotal" class="zoomtext">
 
 </div>
 

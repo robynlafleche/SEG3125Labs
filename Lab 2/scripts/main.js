@@ -192,3 +192,56 @@ function sortPrices(value) {
   container.append(node1)
 }
 }
+
+
+//  code for the zoom feature inspired from https://stackoverflow.com/a/56546498/15518664 -->
+//code for applying style to several elements inspired from https://stackoverflow.com/a/66797497/15518664
+function zoomIn(el) {
+  var fields = document.getElementsByClassName(el);
+  for(let field of fields){
+    field.style.fontSize = "22px"
+    
+  }
+  
+}
+
+function zoomInH2(el) {
+  var fields = document.getElementsByClassName(el);
+  for(let field of fields){
+    field.style.fontSize = "28px"
+    
+  }
+  
+}
+
+//  code for the zoom feature inspired from https://stackoverflow.com/a/56546498/15518664 -->
+//code for applying style to several elements inspired from https://stackoverflow.com/a/66797497/15518664
+
+function zoomOut(el) {
+  var fields = document.getElementsByClassName(el);
+  for(let field of fields){
+    field.style.fontSize = "16px"
+    
+  }
+  
+}
+
+function zoomOuth3(el) {
+  var fields = document.getElementsByClassName(el);
+  for(let field of fields){
+    // found default h3 font size from https://stackoverflow.com/a/70720104
+    field.style.fontSize = "18.72px"
+    
+  }
+  
+}
+
+
+function zoomOuth2(el) {
+  var fields = document.getElementsByClassName(el);
+  for(let field of fields){
+    field.style.fontSize = "24px"
+    
+  }
+  
+}

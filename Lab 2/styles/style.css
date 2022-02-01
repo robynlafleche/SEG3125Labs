@@ -13,7 +13,6 @@
 .cart {
   white-space: pre-line;
   font-size: 20px;
-
 }
 
 .cartTotal {
@@ -47,7 +46,8 @@
 .nav {
   background-color: #696561;
   height: 60px;
-  border-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
   border-bottom: 20px;
   padding-bottom: 20px;
 }
@@ -133,4 +133,15 @@ html {
 .radioTypeQuestion {
   text-align: left;
   margin-left: 45%;
+}
+.zoomButton {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: rgb(216, 212, 212);
+}
+
+.zoom {
+  font-size: 20px;
 }
