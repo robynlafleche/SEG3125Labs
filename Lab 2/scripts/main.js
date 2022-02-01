@@ -19,12 +19,16 @@ var products = []
 var cartTotal = 0
 
 /*Adds the items selected by the user to the cart*/
-function cartedItems(name) { 
-  products.push(name)
-  var priceName = name + "Price"
-  var quantityName = name + "Quantity"
-  var price = parseFloat(document.getElementById(priceName).innerHTML.replace('$', '')) * document.getElementById(quantityName).value
-  updateCartTotal(price);
+function cartedItems(productName) {
+  products.push(productName)
+  var priceName = productName + "Price"
+  var quantityName = productName + "Quantity"
+
+  var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+  var productQuantity = document.getElementById(quantityName).value
+
+  var additionalPrice = parseFloat(productPrice) * productQuantity
+  updateCartTotal(productName, productQuantity, additionalPrice);
 }
 
 
@@ -39,8 +43,14 @@ function displayCart() {
 }
 
 /*Updates the cart total with the prices of each item multipled by their quantities*/
-function updateCartTotal(price) {
-  cartTotal += price
+function updateCartTotal(productName, productQuantity, additionalPrice) {
+  cartTotal += additionalPrice
+  var itemString = "item"
+  if (productQuantity > 1)
+  {
+    itemString = "items"
+  }
+  alert("Added " + productQuantity + " " + productName + " " + itemString + " to cart.\nYour cart total is $" + cartTotal.toFixed(2))
 }
 
 
