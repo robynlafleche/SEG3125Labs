@@ -31,7 +31,7 @@ function cartedItems(productName) {
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice);
-  addItemToCart(productName, productQuantity, additionalPrice);
+  addItemToCart(productName, productPrice, productQuantity);
 }
 
 
