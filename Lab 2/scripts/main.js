@@ -39,18 +39,33 @@ function cartedItems(productName) {
   var productQuantity = document.getElementById(quantityName).value
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice, productQuantity, productName);
-  addItemToCart(productName, additionalPrice, productQuantity);
+  updateCartDisplay()
   addLines();
   getCartTotal();
 }
 
 
-//function to display added product with quantity in the cart
-function addItemToCart(name, price, amount) {
-		
-		document.getElementById("cart").setAttribute('style', 'white-space: pre;');
-        document.getElementById("cart").textContent += " " + name + " x " + amount + " = " + "$" + price + "\r\n";
+function updateCartDisplay()
+{
+  document.getElementById("cart").setAttribute('style', 'white-space: pre;');
+  
+  // Clear the cart display text
+  document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
+
+  // Now display each item in the cart one by one.
+  for (var i = 0; i < products.length; i++) 
+  {
+    productName = products[i]
+    var priceName = productName + "Price"
+    var quantityName = productName + "Quantity"
+    var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+    var productQuantity = document.getElementById(quantityName).value
+    var additionalPrice = parseFloat(productPrice) * productQuantity
+    
+    document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
+  }
 }
+
 
 // function to add line spaces
 function addLines() {

@@ -43,6 +43,10 @@
   text-align: center;
 }
 
+#cartTotal {
+  font-weight: bold;
+}
+
 .nav {
   background-color: #696561;
   height: 60px;
