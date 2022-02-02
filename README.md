@@ -9,3 +9,8 @@
 ## link to lab 2 website:
 
   https://robynlafleche.github.io/Lab%202/
+  
+  
+## link to lab 3 website:
+
+  https://robynlafleche.github.io/Lab%203/
