@@ -69,31 +69,19 @@ function updateCartDisplay()
   let flag = true
   // Clear the cart display text
   document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
-  var table = document.getElementById("myTable");
-  let i = 0
+
+ 
 
   // Now display each item in the cart one by one.
   products.forEach (function(productQuantity, productName)
   {
   
-    i = 0
-    //i = row
-    // j = column
+  
     var priceName = productName + "Price"
     var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
     var additionalPrice = parseFloat(productPrice) * productQuantity
    //
-    let row = table.insertRow();
-    
-    var cell1 =row.insertCell(i);
-    i++
-    var cell2 = row.insertCell(i);
-    i++
-    var cell3 = row.insertCell(i);
-    cell1.innerHTML = productName;
 
-    cell2.innerHTML = productQuantity;
-    cell3.innerHTML = productPrice;
     document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
 
   })
