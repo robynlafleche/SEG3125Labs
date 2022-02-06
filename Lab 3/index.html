@@ -27,13 +27,30 @@
     <!-- emojis from https://unicode-table.com/en/emoji/ -->
    <button class="navtab" onclick='getPage("About")'>About Us </button>
    <button class="navtab" onclick='getPage("Search")'>Search 🔎</button>
-   <button class="navtab" onclick='openPage("Login")'>Login </button>
+   <button class="navtab" onclick='openPage("Login")'>Sign In </button>
    <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
    <br>
  
 
 </div>
-<div id="Login"  style="display:none;"  > WELCOME</div>
+
+
+<!-- Login div -->
+<div id="Login"  style="display:none;"  >
+  USERNAME:
+  <input type="text" class="box"
+  placeholder="example@yahoo.com" />
+  <br>
+  <br>
+  PASSWORD:
+  <input type="text" class="box"
+  placeholder="*****************" />
+  <br>
+  
+  <button id="LoginButton" onclick="">SIGN IN</button>
+</div>
+
+
   <div class="tabs">
     <!-- emojis from https://unicode-table.com/en/emoji/ -->
    <button class="tab" onclick='getPage("Client")'>Client 👤 </button>

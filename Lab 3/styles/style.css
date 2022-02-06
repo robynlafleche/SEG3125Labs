@@ -157,3 +157,10 @@ html {
 .zoom {
   font-size: 20px;
 }
+
+#Login {
+  width: 100%;
+  height: 100px;
+  padding-top: 30px;
+  background-color: lightgray;
+}
