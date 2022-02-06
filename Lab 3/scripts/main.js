@@ -1,11 +1,22 @@
 //code for getPage function inspired from https://stackoverflow.com/a/56111513/15518664 and  by professor Caroline Barriere
 //https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery  
-function getPage(elem,hide1,hide2) {
-    let value = ""
-    let page = document.getElementById(elem);
-    document.getElementById(hide1).style.display = "none"
-    document.getElementById(hide2).style.display = "none"
-    if (page.style.display == "")
+
+//name of all the tabs
+let allTabNames = ["Client","Product","Cart","About","SignUp"]
+
+function getPage(elem) {
+  let value = ""
+  let page = document.getElementById(elem);
+  let j 
+  for (let i = 0; i < allTabNames.length; i++) {
+    j = document.getElementById(allTabNames[i])
+    console.log("i is",allTabNames[i])
+    console.log("elem is ",elem)
+    if (j != page){
+      j.style.display = "none"
+    }
+  }
+   if (page.style.display == "")
     {
       value = "none";
       disabledZoomFeatures(true, true)
@@ -16,6 +27,22 @@ function getPage(elem,hide1,hide2) {
     }
 
     page.style.display = value;
+    // let value = ""
+    // let page = document.getElementById(elem);
+    // document.getElementById(hide1).style.display = "none"
+    // document.getElementById(hide2).style.display = "none"
+    // document.getElementById(hide3).style.display = "none"
+    // if (page.style.display == "")
+    // {
+    //   value = "none";
+    //   disabledZoomFeatures(true, true)
+    // }
+    // else
+    // {
+    //   disabledZoomFeatures(zoomedIn, !zoomedIn)
+    // }
+
+    // page.style.display = value;
 
 
 }
@@ -311,3 +338,19 @@ function updateZoomInButtonSensitivities(isZoomedIn)
   document.getElementById("zoomOutButton").disabled = !zoomedIn; // Zoom-out button only available when zoomed-in
 }
 
+function openPage(elemId) {
+  let value = ""
+  let page = document.getElementById(elemId);
+  //document.getElementById(elemId).style.display = "block";
+  if (page.style.display == "")
+  {
+    value = "none";
+    disabledZoomFeatures(true, true)
+  }
+  else
+  {
+    disabledZoomFeatures(zoomedIn, !zoomedIn)
+  }
+
+  page.style.display = value;
+}
