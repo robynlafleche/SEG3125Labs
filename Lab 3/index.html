@@ -34,14 +34,13 @@
 
         <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_css_modals.asp -->
         <div class="LogIn_SignUp_Buttons">
-        <button type="button" id="LoginButtonMain" class="zoom" onclick="onLoginButton()"">Login</button>
-        <button type="button" id="SignUpButton" class="zoom">Sign Up</button>
+        <button type="button" id="LoginButtonMain" class="zoom" onclick="onLoginButton()">Login</button>
+        <button type="button" id="SignUpButton" class="zoom" onClick="onSignUpButton()">Sign Up</button>
         <button type="button" id="LogoutButton" class="zoom">Log Out</button>
         </div>
 
         <div id="LogIn_SignUp_Section">
           
-
           <div class="LogInModalForm">
             <h1 id="LogInHeader">Log In</h1>
             
@@ -60,6 +59,8 @@
               <button type="button" id="LoginButtonModal" onclick="authenticateUser()">Login</button>
               <button type="button" class="CancelButtonModal"  onclick="onLoginCancel()">Cancel</button>            
             </div>
+
+            
 
           </div>
 
@@ -83,7 +84,7 @@
           <h3 class="zoomh3"> Which diatery characteristics apply to you? </h3>
           <small>(Check all that apply)</small><br>
           <div class="radioTypeQuestion diateryCharacteristicFilter">
-            <label for="inp-1" class="zoomtext">
+            <label for="inp-1" class="zoomtext diateryCharacteristicCheckbox">
                 <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
                        >Vegetarian</input></label><br>
             <label for="inp-2" class="zoomtext">

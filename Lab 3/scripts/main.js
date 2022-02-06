@@ -20,15 +20,56 @@ function getPage(elem,hide1,hide2) {
 
 }
 
+
+class CustomerProfile {
+  constructor(firstName, lastName, emailAddress, password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+    this.password = password;
+    this.cartContent = new Map([]); // Map where keys are the product IDs and values are the quantities.
+    this.cartTotal = 0;
+    this.vegetarian = false;
+    this.allergicToGlutent = false;
+    this.lactoseIntolerant = false;
+    this.organicSelection = "organicChoice-3"; // ALl products (organicChoice-3) by default 
+    this.isZoomedIn = false;
+  }
+}
+
+
+
+
+
+
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
 products is an array containing the names of the products added to the cart
 cartTotal is the total after all the items are added to the cart*/
 
 {
-	var products = new Map([]);
+	var products = new Map([]); // keys are the product names and the values are the quantity currently in the cart.
 	var cartTotal = 0;
   var zoomedIn = false;
+  var isLoggedIn = false; // false when in guest-user mode, and true when logged in.
+  var customerProfiles = new Map([]); // The keys are the email addresses and the values are the customer profiles.
+  var currentCustomerEmail; // The email address of the customer that is currently logged in.
+
+  // Sample customer
+  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "kdahe094@hotmail.com", "password");
+  sampleCustomer.cartContent.set("Organic banana", 1);
+  sampleCustomer.cartContent.set("Milk", 2);
+  sampleCustomer.cartContent.set("Poultry", 4);
+  sampleCustomer.cartContent.set("Fish", 1);
+  sampleCustomer.vegetarian = true;
+
+  customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
 }
+
+
+
+
+
+
 
 /*Adds the items selected by the user to the cart*/
 function cartedItems(productName) {
@@ -202,6 +243,67 @@ function filterProductsPage() {
   }
 }
 
+function clearAllSettings() {
+  clearAllFilters();
+  cartTotal = 0;
+  products.clear();
+}
+
+function clearAllFilters() {
+
+  var diateryCharacteristicCheckboxes = document.getElementsByClassName("diateryCharacteristicCheckbox");
+
+  for (var i = 0; i < diateryCharacteristicCheckboxes.length; i++) {
+    diateryCharacteristicCheckboxes[i].checked = false;
+  }
+
+  resetAllProductQuantities();
+
+}
+
+function resetAllProductQuantities() {
+  // Still requires implementation.
+}
+
+
+function loadCustomerSetting(customerProfile) {
+  clearAllSettings();
+
+  cartTotal = customerProfile.cartTotal;
+
+  customerProfile.cartContent.forEach (function(productQuantity, productName) {
+    products.set(productName, productQuantity);
+  })
+
+}
+
+
+
+/*
+
+
+class CustomerProfile {
+  constructor(firstName, lastName, emailAddress, password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+    this.password = password;
+    this.cartContent = new Map([]); // Map where keys are the product IDs and values are the quantities.
+    this.cartTotal = 0;
+    this.vegetarian = false;
+    this.allergicToGlutent = false;
+    this.lactoseIntolerant = false;
+    this.organicSelection = organicChoice-3; // ALl products (organicChoice-3) by default 
+    this.isZoomedIn = false;
+  }
+}
+
+
+
+
+*/
+
+
 /*Creates an object for the id of the parent class and it's price*/
 function idPrice(id, price) {
   this.id = id
@@ -235,7 +337,7 @@ function sortPrices(value) {
   var node1 = document.getElementById(dataArray[i].id)
   console.log(dataArray[0].id)
   container.append(node1)
-}
+  }
 }
 
 
@@ -312,6 +414,7 @@ function updateZoomInButtonSensitivities(isZoomedIn)
 }
 
 
+
 function onLoginButton()
 {
   document.getElementById("LogIn_SignUp_Section").style.display = "block";
@@ -321,6 +424,29 @@ function onLoginCancel()
 {
   document.getElementById("LogIn_SignUp_Section").style.display = "none";
 }
+
+function onSignUpButton()
+{
+  let input = document.getElementById('fileAcessor');
+  input.addEventListener('change', () => {
+      let files = input.files;
+      if(files.length == 0) return;
+      const file = files[0];
+      let reader = new FileReader();
+      reader.onload = (e) => {
+          const fileContent = e.target.result;
+          //const lines = file.split(/\r\n|\n/);
+          document.write(fileContent)
+      };
+      reader.onerror = (e) => alert(e.target.error.name);
+      reader.readAsText(file); 
+      
+  });
+  
+  input.onchange
+
+}
+
 
 function authenticateUser()
 {
@@ -338,6 +464,8 @@ function authenticateUser()
     return;
   }  
 
+
+
   /*let reader = new FileReader();
   reader.onload = (e) => {console.log(e.target.result); document.write(e.target.result)}
 
@@ -348,10 +476,39 @@ function authenticateUser()
 
   /*fetch('C:/Users/Home/Desktop/SEG3125/Labs/GitHub Code Development/robynlafleche.github.io/Lab 3/scripts/Karim Dahel - kdahe094@hotmail.com.txt')
   .then(response => response.text())
-  .then(text => console.log(text))*/
+  .then(text => console.log(text))*/ 
+  
+  //document.write(customerProfiles.size);
 
+  var matchFound = false
 
+  console.log("customerProfiles.size")
+  console.log(customerProfiles.size)
+
+  customerProfiles.forEach (function(customerProfile, customerEmail)
+  {
+    console.log(emailEntered)
+    console.log(passwordEntered)
+    console.log(customerEmail)
+    console.log(passwordEntered)
+    console.log(emailEntered == customerEmail)
+    console.log(passwordEntered == customerProfile.password) 
+    if (emailEntered == customerEmail && passwordEntered == customerProfile.password)
+    {
+      // Found user
+      loadCustomerSetting(customerProfile);
+      matchFound = true;
+    }
+  })  
+
+  if (!matchFound)
+  {
+    alert("Email address and password entered do not match any records.");
+  }
 }
+
+
+
 
 
 
