@@ -33,7 +33,7 @@ td {
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
   height: 25%;
-  border-color: grey;
+
   color: aliceblue;
   text-align: center;
   font-family: cursive;
@@ -160,7 +160,53 @@ html {
 
 #Login {
   width: 100%;
-  height: 100px;
+  height: 190px;
   padding-top: 30px;
   background-color: lightgray;
+}
+
+.navtab {
+  border: none;
+  height: 40px;
+  width: 33.1%;
+  background-color: white;
+}
+
+.navButton {
+  background-color: #4caf50;
+}
+
+.navsss {
+  padding-top: 10px;
+  padding-left: 25%;
+  border: none;
+  height: 40px;
+  width: 50%;
+  display: inline-block;
+}
+
+.box {
+  height: 20px;
+  width: 400px;
+}
+
+#seachButton {
+  border: none;
+  outline: none;
+  background-color: white;
+  /* putting the search button in the input field inspired from https://qr.ae/pGEBKI */
+  margin-left: -31px;
+}
+
+.loginPageStyle {
+}
+
+.loginfo {
+  padding-left: 40%;
+  width: 50px;
+}
+
+#LoginButton {
+  margin-top: 10px;
+  margin-left: 40%;
 }
