@@ -29,9 +29,12 @@ class CustomerProfile {
     this.password = password;
     this.cartContent = new Map([]); // Map where keys are the product IDs and values are the quantities.
     this.cartTotal = 0;
-    this.vegetarian = false;
-    this.allergicToGlutent = false;
-    this.lactoseIntolerant = false;
+    this.diaterycharacteristicChoices =  new Map([
+      ["meat", false],
+      ["gluten", false],
+      ["diabetic", false],
+      ["lactose", false]
+    ]);
     this.organicSelection = "organicChoice-3"; // ALl products (organicChoice-3) by default 
     this.isZoomedIn = false;
   }
@@ -53,6 +56,7 @@ cartTotal is the total after all the items are added to the cart*/
   var isLoggedIn = false; // false when in guest-user mode, and true when logged in.
   var customerProfiles = new Map([]); // The keys are the email addresses and the values are the customer profiles.
   var currentCustomerEmail; // The email address of the customer that is currently logged in.
+  var currentCustomerProfile;
 
   // Sample customer
   var sampleCustomer = new CustomerProfile("Karim", "Dahel", "kdahe094@hotmail.com", "password");
@@ -60,7 +64,7 @@ cartTotal is the total after all the items are added to the cart*/
   sampleCustomer.cartContent.set("Milk", 2);
   sampleCustomer.cartContent.set("Poultry", 4);
   sampleCustomer.cartContent.set("Fish", 1);
-  sampleCustomer.vegetarian = true;
+  sampleCustomer.diaterycharacteristicChoices.set("meat", true);
 
   customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
 }
@@ -111,7 +115,6 @@ function updateCartDisplay()
   // Clear the cart display text
   document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
 
- 
 
   // Now display each item in the cart one by one.
   products.forEach (function(productQuantity, productName)
@@ -274,6 +277,16 @@ function loadCustomerSetting(customerProfile) {
   customerProfile.cartContent.forEach (function(productQuantity, productName) {
     products.set(productName, productQuantity);
   })
+
+
+  // Now display each item in the cart one by one.
+  sampleCustomer.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
+  {
+    console.log(characteristicID);
+    document.getElementById(characteristicID).checked = ischaracteristicFilterOn;
+    updateDiateryCharacteristicsFilters(characteristicID, ischaracteristicFilterOn)
+  })  
+
 
 }
 
@@ -497,6 +510,11 @@ function authenticateUser()
     {
       // Found user
       loadCustomerSetting(customerProfile);
+      updateCartDisplay()
+      addLines();
+      getCartTotal();
+
+      currentCustomerProfile = customerProfile;
       matchFound = true;
     }
   })  
@@ -505,8 +523,12 @@ function authenticateUser()
   {
     alert("Email address and password entered do not match any records.");
   }
+  else
+  {
+    alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
+    document.getElementById("LogIn_SignUp_Section").style.display = "none";
+  }
 }
-
 
 
 
