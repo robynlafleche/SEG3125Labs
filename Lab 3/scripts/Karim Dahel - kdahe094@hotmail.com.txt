@@ -1,0 +1,21 @@
+[Customer Info]
+First Name : Karim
+Last Name : Dahel
+Email Address : kdahe094@hotmail.com
+Password : password
+
+
+[Cart Content]
+Organic banana : 1
+Milk : 2
+Poultry : 4
+Fish : 1
+
+
+
+[User Preferences]
+Vegetarian : 1
+Allergic to gluten : 0
+Diabetic : 0
+Lactose intolerant : 1
+Organic Selection : organicChoice-3

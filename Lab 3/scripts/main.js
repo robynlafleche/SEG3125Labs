@@ -311,3 +311,65 @@ function updateZoomInButtonSensitivities(isZoomedIn)
   document.getElementById("zoomOutButton").disabled = !zoomedIn; // Zoom-out button only available when zoomed-in
 }
 
+
+function onLoginButton()
+{
+  document.getElementById("LogIn_SignUp_Section").style.display = "block";
+}
+
+function onLoginCancel()
+{
+  document.getElementById("LogIn_SignUp_Section").style.display = "none";
+}
+
+function authenticateUser()
+{
+  var emailEntered = document.getElementById("emailInput").value;
+  if (emailEntered == "")
+  {
+    alert("The email field is required");
+    return;
+  }
+
+  var passwordEntered = document.getElementById("passwordInput").value;
+  if (passwordEntered == "")
+  {
+    alert("The password field is required");
+    return;
+  }  
+
+  /*let reader = new FileReader();
+  reader.onload = (e) => {console.log(e.target.result); document.write(e.target.result)}
+
+  var file = new File([""], "C:/Users/Home/Desktop/SEG3125/Labs/GitHub Code Development/robynlafleche.github.io/Lab 3/scripts/Karim Dahel - kdahe094@hotmail.com.txt");
+  reader.readAsText(file);*/
+
+  //readTextFile("file://C:/Users/Home/Desktop/SEG3125/Labs/GitHub Code Development/robynlafleche.github.io/Lab 3/scripts/Karim Dahel - kdahe094@hotmail.com.txt")
+
+  /*fetch('C:/Users/Home/Desktop/SEG3125/Labs/GitHub Code Development/robynlafleche.github.io/Lab 3/scripts/Karim Dahel - kdahe094@hotmail.com.txt')
+  .then(response => response.text())
+  .then(text => console.log(text))*/
+
+
+}
+
+
+
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
