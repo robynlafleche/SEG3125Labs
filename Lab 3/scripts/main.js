@@ -64,7 +64,7 @@ cartTotal is the total after all the items are added to the cart*/
   sampleCustomer.cartContent.set("Poultry", 4);
   sampleCustomer.cartContent.set("Fish", 1);
   //sampleCustomer.diaterycharacteristicChoices.set("meat", true);
-  this.organicSelection = "organicOnly"; // Organic Products Only 
+  sampleCustomer.organicSelection = "organicOnly"; // Organic Products Only 
   sampleCustomer.isZoomedIn = true;
 
   customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
@@ -306,7 +306,8 @@ function loadCustomerSetting(customerProfile) {
     updateDiateryCharacteristicsFilters(characteristicID, ischaracteristicFilterOn)
   })  
 
-  updateOrganicFilters(this.organicSelection)
+  updateOrganicFilters(customerProfile.organicSelection)
+  document.getElementById(customerProfile.organicSelection).checked = true
 
 
 }
