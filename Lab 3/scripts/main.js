@@ -28,14 +28,13 @@ class CustomerProfile {
     this.emailAddress = emailAddress;
     this.password = password;
     this.cartContent = new Map([]); // Map where keys are the product IDs and values are the quantities.
-    this.cartTotal = 0;
     this.diaterycharacteristicChoices =  new Map([
       ["meat", false],
       ["gluten", false],
       ["diabetic", false],
       ["lactose", false]
     ]);
-    this.organicSelection = "organicChoice-3"; // ALl products (organicChoice-3) by default 
+    this.organicSelection = "noOrganicFilter"; // ALl products (organicChoice-3) by default 
     this.isZoomedIn = false;
   }
 }
@@ -64,7 +63,9 @@ cartTotal is the total after all the items are added to the cart*/
   sampleCustomer.cartContent.set("Milk", 2);
   sampleCustomer.cartContent.set("Poultry", 4);
   sampleCustomer.cartContent.set("Fish", 1);
-  sampleCustomer.diaterycharacteristicChoices.set("meat", true);
+  //sampleCustomer.diaterycharacteristicChoices.set("meat", true);
+  this.organicSelection = "organicOnly"; // Organic Products Only 
+  sampleCustomer.isZoomedIn = true;
 
   customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
 }
@@ -272,20 +273,40 @@ function resetAllProductQuantities() {
 function loadCustomerSetting(customerProfile) {
   clearAllSettings();
 
-  cartTotal = customerProfile.cartTotal;
-
   customerProfile.cartContent.forEach (function(productQuantity, productName) {
-    products.set(productName, productQuantity);
+
+   products.set(productName, productQuantity);
+   var priceName = productName + "Price"
+   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+   console.log(productPrice)
+   console.log(productQuantity);
+   var additionalPrice = parseFloat(productPrice) * parseFloat(productQuantity)
+   console.log(additionalPrice);
+   cartTotal += additionalPrice;
+   console.log(cartTotal);
+
+   zoomedIn = customerProfile.isZoomedIn;
+
+   if (zoomedIn)
+   {
+     zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)
+   }
+   else
+   {
+     zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)
+   }
+
+
   })
 
-
-  // Now display each item in the cart one by one.
   sampleCustomer.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
   {
     console.log(characteristicID);
     document.getElementById(characteristicID).checked = ischaracteristicFilterOn;
     updateDiateryCharacteristicsFilters(characteristicID, ischaracteristicFilterOn)
   })  
+
+  updateOrganicFilters(this.organicSelection)
 
 
 }
@@ -527,10 +548,31 @@ function authenticateUser()
   {
     alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
     document.getElementById("LogIn_SignUp_Section").style.display = "none";
+    isLoggedIn = true;
+    updateLoginWidgetStatus();
   }
 }
 
 
+function updateLoginWidgetStatus() {
+  if (isLoggedIn)
+  {
+    document.getElementById("LoginButtonMain").style.display = "none";
+    document.getElementById("SignUpButton").style.display = "none";
+    document.getElementById("LogoutButton").style.display = "block";
+  }
+  else
+  {
+    document.getElementById("LoginButtonMain").style.display = "block";
+    document.getElementById("SignUpButton").style.display = "block";
+    document.getElementById("LogoutButton").style.display = "none";
+  }
+
+  document.getElementById("Client").style.display = "none"
+  document.getElementById("Product").style.display = "none"
+  document.getElementById("Cart").style.display = "none"
+  disabledZoomFeatures(true, true)
+}
 
 
 
