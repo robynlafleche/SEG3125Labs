@@ -597,7 +597,12 @@ function registerCustomer()
   }
   
   // The inputs are valid, so the customer can now be registered into the system.
-  
+  var newCustomer = new CustomerProfile(firstNameEntered, lastNameEntered, emailEntered, passwordEntered); //"kdahe094@hotmail.com", "password");
+  customerProfiles.set(emailEntered, newCustomer);
+
+  alert("Your account has been created. Welcome " + newCustomer.firstName + " " + newCustomer.lastName + ".");
+  document.getElementById("SignUpSubSection").style.display = "none";
+
 
 }
 
