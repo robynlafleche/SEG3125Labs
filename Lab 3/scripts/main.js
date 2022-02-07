@@ -555,21 +555,81 @@ function onSignUpButton()
 
 function registerCustomer()
 {
+  var firstNameEntered = document.getElementById("firstNameInputSignUp").value;
+  if (firstNameEntered == "")
+  {
+    alert("The first name field is required");
+    return;
+  } 
+  
+  var lastNameEntered = document.getElementById("lastNameInputSignUp").value;
+  if (lastNameEntered == "")
+  {
+    alert("The last name field is required");
+    return;
+  }   
+
+  var emailEntered = document.getElementById("emailInputSignUp").value;
+  if (emailEntered == "")
+  {
+    alert("The email field is required");
+    return;
+  }
+  if (isEmailAlreadyInUse(emailEntered))
+  {
+    console.log("An account already exists with the email " + emailEntered);
+    alert("An account already exists with the email " + emailEntered);
+    return;    
+  }
+  
+  var passwordEntered = document.getElementById("passwordInputSignUp").value;
+  if (passwordEntered == "")
+  {
+    alert("The password field is required");
+    return;
+  }
+  
+  var passwordConfirmEntered = document.getElementById("confirmPasswordInputSignUp").value;
+  if (passwordConfirmEntered != passwordEntered)
+  {
+    alert("The password confirmation does not match the password entered.");
+    return;
+  }
+  
+  // The inputs are valid, so the customer can now be registered into the system.
+  
 
 }
 
-
+function isEmailAlreadyInUse(newEmailAddress)
+{
+  console.log("newEmailAddress = " + newEmailAddress)
+  var matchFound = false;
+  customerProfiles.forEach (function(customerProfile, customerEmail)
+  {
+    console.log("customerEmail = " + customerEmail)
+    console.log("newEmailAddress == customerEmail = " + newEmailAddress == customerEmail)
+    if (newEmailAddress == customerEmail)
+    {
+      console.log("same");
+      //console.log(customerProfile)
+      matchFound = true;
+      return matchFound
+    }
+  })
+  return matchFound;
+}
 
 function authenticateUser()
 {
-  var emailEntered = document.getElementById("emailInput").value;
+  var emailEntered = document.getElementById("emailInputLogIn").value;
   if (emailEntered == "")
   {
     alert("The email field is required");
     return;
   }
 
-  var passwordEntered = document.getElementById("passwordInput").value;
+  var passwordEntered = document.getElementById("passwordInputLogIn").value;
   if (passwordEntered == "")
   {
     alert("The password field is required");
