@@ -84,17 +84,17 @@
           <h3 class="zoomh3"> Which diatery characteristics apply to you? </h3>
           <small>(Check all that apply)</small><br>
           <div class="radioTypeQuestion diateryCharacteristicFilter">
-            <label for="inp-1" class="zoomtext diateryCharacteristicCheckbox">
-                <input type="checkbox" id="meat" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
+            <label for="inp-1" class="zoomtext">
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="meat" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
                        >Vegetarian</input></label><br>
             <label for="inp-2" class="zoomtext">
-                <input type="checkbox" id="gluten"  onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="gluten"  onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
                        >Allergic to gluten</input></label><br>
             <label for="inp-3" class="zoomtext">
-                <input type="checkbox" id="diabetic" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="diabetic" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
                        >Diabetic</input></label><br>
             <label for="inp-4" class="zoomtext">
-                <input type="checkbox" id="lactose" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="lactose" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
                        >Lactose intolerant</input></label><br>
           </div>
         </div>
@@ -102,18 +102,18 @@
 
         <div class="clientInformationQuestion">
           <h3 class="zoomh3"> Which types of products are you interested in? </h3>
-          <div class = "radioTypeQuestion organicChoiceFilter">
+          <div class = "radioTypeQuestion">
        
             <label for="organicChoice-1" class="zoomtext">
-              <input type="radio" id="organicOnly" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
+              <input type="radio" class="organicChoiceRadioBox" id="organicOnly" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
             </label><br>
 
             <label for="organicChoice-2" id="organicChoice-2" class="zoomtext">
-              <input type="radio" id="nonOrganicOnly" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
+              <input type="radio" class="organicChoiceRadioBox" id="nonOrganicOnly" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
             </label><br>
 
             <label for="organicChoice-3" id="organicChoice-3" class="zoomtext">
-              <input type="radio" id="noOrganicFilter" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
+              <input type="radio" class="organicChoiceRadioBox" id="noOrganicFilter" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
             </label><br>
 
           </div>

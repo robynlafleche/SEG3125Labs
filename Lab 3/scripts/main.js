@@ -294,7 +294,7 @@ function clearAllFilters()
     diateryCharacteristicCheckboxes[i].checked = false;
   }
 
-  var organicChoiceRadioboxes = document.getElementById("noOrganicFilter").checked = true;
+  document.getElementById("noOrganicFilter").checked = true;
   updateOrganicFilters("noOrganicFilter");
 
   resetAllProductQuantities();
@@ -307,7 +307,8 @@ function resetAllProductQuantities()
 }
 
 
-function loadCustomerSetting(customerProfile) {
+function loadCustomerSetting(customerProfile)
+{
   clearAllSettings();
 
   customerProfile.cartContent.forEach (function(productQuantity, productName) {
@@ -325,9 +326,8 @@ function loadCustomerSetting(customerProfile) {
 
   zoomedIn = customerProfile.isZoomedIn;    
 
-  sampleCustomer.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
+  customerProfile.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
   {
-    console.log(characteristicID);
     document.getElementById(characteristicID).checked = ischaracteristicFilterOn;
     updateDiateryCharacteristicsFilters(characteristicID, ischaracteristicFilterOn)
   })  
@@ -338,6 +338,34 @@ function loadCustomerSetting(customerProfile) {
 
 }
 
+
+function copySettingsToCustomerProfile()
+{
+
+  currentCustomerProfile.cartContent.clear();
+
+  products.forEach (function(productQuantity, productName) {
+    currentCustomerProfile.cartContent.set(productName, productQuantity);
+   })
+
+   currentCustomerProfile.isZoomedIn = zoomedIn;
+
+  var diateryCharacteristicCheckboxes = document.getElementsByClassName("diateryCharacteristicCheckbox");
+
+  for (var i = 0; i < diateryCharacteristicCheckboxes.length; i++) {
+    currentCustomerProfile.diaterycharacteristicChoices.set(diateryCharacteristicCheckboxes[i].id, diateryCharacteristicCheckboxes[i].checked);
+  }
+
+  var organicChoiceRadioboxes = document.getElementsByClassName("organicChoiceRadioBox");
+  for (var i = 0; i < organicChoiceRadioboxes.length; i++) {
+    if (organicChoiceRadioboxes[i].checked)
+    {
+      currentCustomerProfile.organicSelection = organicChoiceRadioboxes[i].id;
+      break
+    }
+  }
+
+}
 
 
 /*
@@ -489,6 +517,7 @@ function onLoginCancel()
 
 function onSignUpButton()
 {
+  /*
   let input = document.getElementById('fileAcessor');
   input.addEventListener('change', () => {
       let files = input.files;
@@ -506,6 +535,7 @@ function onSignUpButton()
   });
   
   input.onchange
+  */
 
 }
 
@@ -590,7 +620,8 @@ function onLogoutButton()
 
   if (userConfirmation)
   {
-      // Must reset all the settings
+      copySettingsToCustomerProfile();
+      // Must reset all the settings.
       clearAllSettings();
       updateCartDisplay();
       clearLoginAndSignUpInputs();
