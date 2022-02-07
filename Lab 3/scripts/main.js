@@ -4,6 +4,18 @@
 //name of all the tabs
 let allTabNames = ["Client","Product","Cart","About","SignUp"]
 
+let fruits = ["apple","kiwi"]
+function returnSearch(){
+  for(let i = 0; i < fruits.length; i++){
+    if(document.getElementById('srch').value === fruits[i]){
+      console.log(fruits[i],"found it")
+      document.getElementById('searchResults').innerHTML =fruits[i] ;
+
+    }
+  }
+  
+}
+
 function getPage(elem) {
   let value = ""
   let page = document.getElementById(elem);

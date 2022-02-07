@@ -3,10 +3,12 @@
   width: 33.3%;
   font-size: 20px;
   float: left;
+  background-color: transparent;
 }
 
 .tabs {
   border-radius: 25px;
+  background-color: #5e875e;
 }
 
 /* code inspired from https://www.w3schools.com/css/css_table.asp */
@@ -84,12 +86,12 @@ td {
 }
 
 .product-box {
-  background-color: white;
+  background-color: transparent;
   padding: 20px 20px 20px;
 }
 
 .addCartBtn {
-  background-color: #4caf50;
+  background-color: transparent;
   border: none;
   color: white;
   padding: 15px 30px;
@@ -133,7 +135,8 @@ td {
 } */
 
 body {
-  background-color: #f5f5dc;
+  background-color: #5e875e;
+
   background-color: transparent;
 }
 
@@ -151,7 +154,7 @@ html {
   padding-top: 50px;
   padding-bottom: 10px;
   width: 100%;
-  background-color: rgb(216, 212, 212);
+  background-color: transparent;
 }
 
 .zoom {
@@ -162,14 +165,14 @@ html {
   width: 100%;
   height: 190px;
   padding-top: 30px;
-  background-color: lightgray;
+  background-color: rgba(175, 207, 175, 1);
 }
 
 .navtab {
   border: none;
   height: 40px;
   width: 33.1%;
-  background-color: white;
+  background-color: transparent;
 }
 
 .navButton {
@@ -193,7 +196,7 @@ html {
 #seachButton {
   border: none;
   outline: none;
-  background-color: white;
+  background-color: transparent;
   /* putting the search button in the input field inspired from https://qr.ae/pGEBKI */
   margin-left: -31px;
 }

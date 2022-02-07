@@ -12,7 +12,8 @@
     <!-- code inspired from https://stackoverflow.com/a/11488968/15518664 -->
     <link rel="icon"  type="image/png" href="images\tablogo.png">
     </head class="tabs">
-
+   
+    
     <!-- <div class="nav">
         <br>
       <div class="storename">Group 6 Store   </div>
@@ -21,20 +22,24 @@
 
 
 <body class="tabs">
-
+ 
 
   <div class="tabs">
     <!-- emojis from https://unicode-table.com/en/emoji/ -->
+    <!-- <div>
+      <img class="logo" style="size: 20px;"
+         src="UI Idea/styles/logo.png" />
+    </div> -->
    <button class="navtab" onclick='getPage("About")'>About Us </button>
    
   
    <button class="navtab" onclick='openPage("Login")'>Sign In </button>
    <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
    <div class="">
-    <input type="text" class="box"  class="navbutton" placeholder="" />
-    <button onclick='' class="navbutton" id="seachButton"> 🔎</button>
+    <input type="text" class="box"  id = "srch" class="navbutton" placeholder="" />
+    <button onclick="returnSearch()" class="navbutton" id="seachButton"> 🔎</button>
    </div>
-   
+   <div id="searchResults"></div>
  
 
 </div>
