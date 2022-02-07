@@ -58,7 +58,7 @@ cartTotal is the total after all the items are added to the cart*/
   var currentCustomerProfile;
 
   // Sample customer
-  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "kdahe094@hotmail.com", "password");
+  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "k", "p"); //"kdahe094@hotmail.com", "password");
   sampleCustomer.cartContent.set("Organic banana", 1);
   sampleCustomer.cartContent.set("Milk", 2);
   sampleCustomer.cartContent.set("Poultry", 4);
@@ -67,7 +67,7 @@ cartTotal is the total after all the items are added to the cart*/
   sampleCustomer.organicSelection = "organicOnly"; // Organic Products Only 
   sampleCustomer.isZoomedIn = true;
 
-  customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
+  customerProfiles.set("k", sampleCustomer);
 }
 
 
@@ -154,7 +154,14 @@ function updateCartTotal(price, quantity, name) {
 }
 
 function getCartTotal() {
-	document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
+  if (cartTotal > 0)
+  {
+    document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
+  }
+  else
+  {
+    document.getElementById("cartTotal").textContent = "";
+  }
 }
 
 
@@ -247,13 +254,39 @@ function filterProductsPage() {
   }
 }
 
-function clearAllSettings() {
+function clearAllSettings() 
+{
   clearAllFilters();
   cartTotal = 0;
   products.clear();
+
+  // Must reset the zoom settiings as well
+  zoomedIn = false;
+
+  triggerZoomUpddateToWidgets();
+  
 }
 
-function clearAllFilters() {
+function triggerZoomUpddateToWidgets()
+{
+  if (zoomedIn)
+  {
+    zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)
+  }
+  else
+  {
+    zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)
+  }  
+}
+
+function clearLoginAndSignUpInputs()
+{
+  document.getElementById("emailInput").value = "";
+  document.getElementById("passwordInput").value = "";
+}
+
+function clearAllFilters() 
+{
 
   var diateryCharacteristicCheckboxes = document.getElementsByClassName("diateryCharacteristicCheckbox");
 
@@ -261,11 +294,15 @@ function clearAllFilters() {
     diateryCharacteristicCheckboxes[i].checked = false;
   }
 
+  var organicChoiceRadioboxes = document.getElementById("noOrganicFilter").checked = true;
+  updateOrganicFilters("noOrganicFilter");
+
   resetAllProductQuantities();
 
 }
 
-function resetAllProductQuantities() {
+function resetAllProductQuantities() 
+{
   // Still requires implementation.
 }
 
@@ -284,20 +321,9 @@ function loadCustomerSetting(customerProfile) {
    console.log(additionalPrice);
    cartTotal += additionalPrice;
    console.log(cartTotal);
-
-   zoomedIn = customerProfile.isZoomedIn;
-
-   if (zoomedIn)
-   {
-     zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)
-   }
-   else
-   {
-     zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)
-   }
-
-
   })
+
+  zoomedIn = customerProfile.isZoomedIn;    
 
   sampleCustomer.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
   {
@@ -460,6 +486,7 @@ function onLoginCancel()
   document.getElementById("LogIn_SignUp_Section").style.display = "none";
 }
 
+
 function onSignUpButton()
 {
   let input = document.getElementById('fileAcessor');
@@ -535,9 +562,15 @@ function authenticateUser()
       updateCartDisplay()
       addLines();
       getCartTotal();
+      triggerZoomUpddateToWidgets();
 
       currentCustomerProfile = customerProfile;
       matchFound = true;
+
+      alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
+      document.getElementById("LogIn_SignUp_Section").style.display = "none";
+      isLoggedIn = true;
+      updateLoginWidgetStatus();      
     }
   })  
 
@@ -545,13 +578,22 @@ function authenticateUser()
   {
     alert("Email address and password entered do not match any records.");
   }
-  else
-  {
-    alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
-    document.getElementById("LogIn_SignUp_Section").style.display = "none";
-    isLoggedIn = true;
-    updateLoginWidgetStatus();
-  }
+}
+
+
+function onLogoutButton() 
+{
+      // Must reset all the settings
+      clearAllSettings();
+      updateCartDisplay();
+      clearLoginAndSignUpInputs();
+      getCartTotal();
+
+      alert("Thank you for shopping with us " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ". You have now been logged out.");
+      currentCustomerProfile = null;
+
+      isLoggedIn = false;
+      updateLoginWidgetStatus();    
 }
 
 
@@ -564,8 +606,12 @@ function updateLoginWidgetStatus() {
   }
   else
   {
-    document.getElementById("LoginButtonMain").style.display = "block";
     document.getElementById("SignUpButton").style.display = "block";
+    document.getElementById("LoginButtonMain").style.display = "block";
+    document.getElementById("SignUpButton").style.float = "right";
+    document.getElementById("LoginButtonMain").style.float = "right";
+    
+
     document.getElementById("LogoutButton").style.display = "none";
   }
 

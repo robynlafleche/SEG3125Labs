@@ -36,7 +36,7 @@
         <div class="LogIn_SignUp_Buttons">
         <button type="button" id="LoginButtonMain" class="zoom" onclick="onLoginButton()">Login</button>
         <button type="button" id="SignUpButton" class="zoom" onClick="onSignUpButton()">Sign Up</button>
-        <button type="button" id="LogoutButton" class="zoom">Log Out</button>
+        <button type="button" id="LogoutButton" class="zoom" onClick="onLogoutButton()">Log Out</button>
         </div>
 
         <div id="LogIn_SignUp_Section">
@@ -102,7 +102,7 @@
 
         <div class="clientInformationQuestion">
           <h3 class="zoomh3"> Which types of products are you interested in? </h3>
-          <div class = "radioTypeQuestion">
+          <div class = "radioTypeQuestion organicChoiceFilter">
        
             <label for="organicChoice-1" class="zoomtext">
               <input type="radio" id="organicOnly" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
