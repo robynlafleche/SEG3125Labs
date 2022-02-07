@@ -35,9 +35,10 @@
   
    <button class="navtab" onclick='openPage("Login")'>Sign In </button>
    <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
-   <div class="">
-    <input type="text" class="box"  id = "srch" class="navbutton" placeholder="" />
-    <button onclick="returnSearch()" class="navbutton" id="seachButton"> 🔎</button>
+   <div style="width:100%">
+    <input type="text" class="box"  id = "srch" class="navbutton" placeholder="Search for a product" />
+    <button onclick="returnSearch()" class="navbutton" id="seachButton" > Search🔎</button>
+    <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
    </div>
    <div id="searchResults"></div>
  
