@@ -76,9 +76,12 @@
    <button class="tab" onclick='getPage("Product")'>Products 🥦 </button>
    <button class="tab" onclick='getPage("Cart")'>Cart 🛒 </button>
     -->
-   <div class="zoomButton"> 🔎
-     <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled>Zoom in</button>
-     <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled>Zoom out</button>
+    <!-- zoom in and zoom out emoji from https://css.gg/zoom-in https://css.gg/zoom-out -->
+    <link href='https://css.gg/zoom-in.css' rel='stylesheet'>
+    <link href='https://css.gg/zoom-out.css' rel='stylesheet'>
+   <div class="zoomButton"> 
+     <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
+     <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
    </div>
 
   
