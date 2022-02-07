@@ -583,6 +583,13 @@ function authenticateUser()
 
 function onLogoutButton() 
 {
+  // First confirm the user wants to logout.
+  // Confirmation dialog adapted form https://www.w3schools.com/jsref/met_win_confirm.asp .
+
+  var userConfirmation = confirm("Are you sure you want to log out?");
+
+  if (userConfirmation)
+  {
       // Must reset all the settings
       clearAllSettings();
       updateCartDisplay();
@@ -593,7 +600,8 @@ function onLogoutButton()
       currentCustomerProfile = null;
 
       isLoggedIn = false;
-      updateLoginWidgetStatus();    
+      updateLoginWidgetStatus();
+  }
 }
 
 
