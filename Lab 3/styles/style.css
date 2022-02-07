@@ -1,13 +1,12 @@
 .tab {
-  height: 60px;
-  width: 33.3%;
-  font-size: 20px;
+  width: 20%;
+  font-size: 15px;
   float: left;
   background-color: transparent;
+  border: none;
 }
 
 .tabs {
-  border-radius: 25px;
   background-color: #5e875e;
 }
 
@@ -150,7 +149,7 @@ html {
   margin-left: 45%;
 }
 .zoomButton {
-  text-align: center;
+  text-align: left;
   padding-top: 50px;
   padding-bottom: 10px;
   width: 100%;
@@ -190,10 +189,12 @@ html {
 
 .box {
   height: 20px;
-  width: 90%;
+  width: 20%;
+  float: right;
 }
 
 #seachButton {
+  float: right;
   border: none;
   outline: none;
   background-color: transparent;

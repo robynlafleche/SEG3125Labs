@@ -39,6 +39,12 @@
     <input type="text" class="box"  id = "srch" class="navbutton" placeholder="Search for a product" />
     <button onclick="returnSearch()" class="navbutton" id="seachButton" > Search🔎</button>
     <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
+    <!-- <div class="tabs"> -->
+      <!-- emojis from https://unicode-table.com/en/emoji/ -->
+     <button class="tab tabs" onclick='getPage("Client")'>Client 👤 </button>
+     <button class="tab tabs" onclick='getPage("Product")'>Products 🥦 </button>
+     <button class="tab  tabs " onclick='getPage("Cart")'>Cart 🛒 </button>
+     <!-- </div> -->
    </div>
    <div id="searchResults"></div>
  
@@ -66,10 +72,10 @@
 
   <div class="tabs">
     <!-- emojis from https://unicode-table.com/en/emoji/ -->
-   <button class="tab" onclick='getPage("Client")'>Client 👤 </button>
+   <!-- <button class="tab" onclick='getPage("Client")'>Client 👤 </button>
    <button class="tab" onclick='getPage("Product")'>Products 🥦 </button>
    <button class="tab" onclick='getPage("Cart")'>Cart 🛒 </button>
-   
+    -->
    <div class="zoomButton"> 🔎
      <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled>Zoom in</button>
      <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled>Zoom out</button>
