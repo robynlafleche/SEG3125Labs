@@ -39,32 +39,70 @@
         <button type="button" id="LogoutButton" class="zoom" onClick="onLogoutButton()">Log Out</button>
         </div>
 
-        <div id="LogIn_SignUp_Section">
+        <div id="LogInSubSection" class="Login_Signup_Section">
           
-          <div class="LogInModalForm">
+          <div class="LogInSignUpModalForm">
             <h1 id="LogInHeader">Log In</h1>
             
             <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
             <div class="fieldSections">
-              <label class="inputLabel" for="email"><b>Email* :</b></label>
-              <input type="text" id="emailInput" placeholder="Enter Email" name="email" required>
+              <label class="inputLabelLogIn" for="email"><b>Email* :</b></label>
+              <input type="text" class="customerInputTextField" id="emailInput" placeholder="Enter Email" name="email" required>
             </div>
             
             <div class="fieldSections">
-              <label class="inputLabel" for="passwordField"><b>Password* :</b></label>
-              <input type="password" id="passwordInput" placeholder="Enter Password" name="passwordField" required>
+              <label class="inputLabelLogIn" for="passwordField"><b>Password* :</b></label>
+              <input type="password" class="customerInputTextField" id="passwordInput" placeholder="Enter Password" name="passwordField" required>
             </div>
             
             <div class="formAcionButtons">
               <button type="button" id="LoginButtonModal" onclick="authenticateUser()">Login</button>
               <button type="button" class="CancelButtonModal"  onclick="onLoginCancel()">Cancel</button>            
+            </div>            
+          </div>
+        </div>
+
+
+        <div id="SignUpSubSection" class="Login_Signup_Section">
+
+          <div class="LogInSignUpModalForm">
+            <h1 id="SignUpHeader">Create an account with <i>Group 6 Store</i></h1>
+
+            <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
+
+            <div class="fieldSections">
+              <label class="inputLabelSignup" for="customerFirstName"><b>First Name* :</b></label>
+              <input type="text" class="customerInputTextField" id="emailInputSignUp" placeholder="Enter First Name" name="customerFirstName" required>
             </div>
 
+            <div class="fieldSections">
+              <label class="inputLabelSignup" for="customerLastName"><b>Last Name* :</b></label>
+              <input type="text" class="customerInputTextField" id="emailInputSignUp" placeholder="Enter Last Name" name="customerLastName" required>
+            </div>
+
+            <div class="fieldSections">
+              <label class="inputLabelSignup" for="emailSignUp"><b>Email* :</b></label>
+              <input type="text" class="customerInputTextField" id="emailInputSignUp" placeholder="Enter Email" name="emailSignUp" required>
+            </div>
             
+            <div class="fieldSections">
+              <label class="inputLabelSignup" for="passwordFieldSignUp"><b>Password* :</b></label>
+              <input type="password" class="customerInputTextField" id="passwordInputSignUp" placeholder="Enter Password" name="passwordFieldSignUp" required>
+            </div>
 
+            <div class="fieldSections">
+              <label class="inputLabelSignup" for="confirmPasswordFieldSignUp"><b>Confirm Password* :</b></label>
+              <input type="password" class="customerInputTextField" id="confirmPasswordInputSignUp" placeholder="Re-Enter Password" name="confirmPasswordFieldSignUp" required>
+            </div>            
+            
+            <div class="formAcionButtons">
+              <button type="button" id="createAcountButton" onclick="registerCustomer()">Create Account</button>
+              <button type="button" class="CancelButtonModal"  onclick="onSignupCancel()">Cancel</button>            
+            </div>
           </div>
+      </div>
 
-        </div>
+
 
     </div>
 

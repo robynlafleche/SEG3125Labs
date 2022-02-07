@@ -163,7 +163,7 @@ html {
 
 
 /* Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_css_modals.asp */
-#LogIn_SignUp_Section {
+.Login_Signup_Section {
   display: none;
   position: fixed; 
   z-index: 1; /* Sit on top */
@@ -176,7 +176,7 @@ html {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */  
 }
 
-.LogInModalForm {
+.LogInSignUpModalForm {
   background-color: #fefefe;
   margin: 10% auto; /* 5% from the top and centered */
   padding: 10px;
@@ -198,9 +198,15 @@ html {
 }
 
 /* Solution for alignment obtained from https://stackoverflow.com/questions/4309950/how-to-align-input-forms-in-html */
-.inputLabel {
+.inputLabelLogIn {
   display: inline-block;
   width:110px;
+  text-align: right;  
+}
+
+.inputLabelSignup {
+  display: inline-block;
+  width:185px;
   text-align: right;  
 }
 
@@ -218,6 +224,21 @@ html {
 #LoginButtonModal:hover {
   background-color: green;
 }
+
+#createAcountButton {
+  /* background-color: green; */
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+  width: 20%;
+/*  margin-bottom:10px; */
+  font-size: 20px;  
+}
+
+#createAcountButton:hover {
+  background-color: orange;
+}
+
 
 #LogoutButton {
   display: none;

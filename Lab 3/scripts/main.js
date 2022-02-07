@@ -281,8 +281,14 @@ function triggerZoomUpddateToWidgets()
 
 function clearLoginAndSignUpInputs()
 {
-  document.getElementById("emailInput").value = "";
-  document.getElementById("passwordInput").value = "";
+  //document.getElementById("emailInput").value = "";
+  //document.getElementById("passwordInput").value = "";
+
+  var allCustomerInputTextFields = document.getElementsByClassName("customerInputTextField");
+
+  for (var i = 0; i < allCustomerInputTextFields.length; i++) {
+    allCustomerInputTextFields[i].value = "";
+  }
 }
 
 function clearAllFilters() 
@@ -506,17 +512,25 @@ function updateZoomInButtonSensitivities(isZoomedIn)
 
 function onLoginButton()
 {
-  document.getElementById("LogIn_SignUp_Section").style.display = "block";
+  clearLoginAndSignUpInputs();
+  document.getElementById("LogInSubSection").style.display = "block";
 }
 
 function onLoginCancel()
 {
-  document.getElementById("LogIn_SignUp_Section").style.display = "none";
+  document.getElementById("LogInSubSection").style.display = "none";
 }
 
+function onSignupCancel()
+{
+  document.getElementById("SignUpSubSection").style.display = "none";
+}
 
 function onSignUpButton()
 {
+  clearLoginAndSignUpInputs();
+  document.getElementById("SignUpSubSection").style.display = "block";
+
   /*
   let input = document.getElementById('fileAcessor');
   input.addEventListener('change', () => {
@@ -538,6 +552,12 @@ function onSignUpButton()
   */
 
 }
+
+function registerCustomer()
+{
+
+}
+
 
 
 function authenticateUser()
@@ -598,7 +618,7 @@ function authenticateUser()
       matchFound = true;
 
       alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
-      document.getElementById("LogIn_SignUp_Section").style.display = "none";
+      document.getElementById("LogInSubSection").style.display = "none";
       isLoggedIn = true;
       updateLoginWidgetStatus();      
     }
