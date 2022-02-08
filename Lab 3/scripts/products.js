@@ -191,3 +191,38 @@ var products = [
 		},
 
 ];
+
+// based on user's dietary restrictions provided, return a reduced list of products
+
+function restrictProducts(prod, rule) {
+	let product_names = [];
+	for (let i = 0; i < prod.length; i++) {
+		if ((rule == "Vegetarian") && (prod[i].vegetarian == true)){
+			product_names.push(prod[i].name);
+		}
+		else if ((rule == "Allergic to gluten") && (prod[i].glutenFree == true)){
+			product_names.push(prod[i].name);
+		}
+		else if ((rule == "Diabetic") && (prod[i].diabeticSafe == true)){
+			product_names.push(prod[i].name);
+		}
+		else if ((rule == "Lactose intolerant") && (prod[i].dairyFree == true)){
+			product_names.push(prod[i].name);
+		}
+		else if (rule == "None"){
+			product_names.push(prod[i].name);
+		}
+	}
+	return product_names;
+}
+
+// calculate the total price of selected items, given a list of products 
+function getTotalPrice(prods) {
+	totalPrice = 0;
+	for (let i = 0; i < products.length; i++) {
+		if (prods.indexOf(products[i].name) > -1){
+			totalPrice += products[i].price;
+		}
+	}
+	return totalPrice;
+}
