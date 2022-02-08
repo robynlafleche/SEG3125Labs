@@ -29,8 +29,8 @@
    <button class="navtab" onclick='getPage("About")'>About Us </button>
    
   
-   <button class="navtab" onclick='openPage("Login")'>Sign In </button>
-   <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
+   <button class="navtab" id="LoginButtonMain" onclick='onLoginButton()'>Log In</button>
+   <button class="navtab" id="SignUpButton" onclick='onSignUpButton()'>Sign Up </button>
    <div style="width:100%">
     <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product" />
     <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
@@ -128,16 +128,16 @@
           <small>(Check all that apply)</small><br>
           <div class="radioTypeQuestion diateryCharacteristicFilter">
             <label for="inp-1" class="zoomtext">
-                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="meat" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
                        >Vegetarian</input></label><br>
             <label for="inp-2" class="zoomtext">
-                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="gluten" onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
                        >Allergic to gluten</input></label><br>
             <label for="inp-3" class="zoomtext">
-                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="diabetic" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
                        >Diabetic</input></label><br>
             <label for="inp-4" class="zoomtext">
-                <input type="checkbox" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="lactose" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
                        >Lactose intolerant</input></label><br>
           </div>
         </div>
@@ -148,15 +148,15 @@
           <div class = "radioTypeQuestion">
        
             <label for="organicChoice-1" class="zoomtext">
-              <input type="radio" id="organicChoice-1" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
+              <input type="radio" class="organicChoiceRadioBox" id="organicOnly" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
             </label><br>
 
             <label for="organicChoice-2" id="organicChoice-2" class="zoomtext">
-              <input type="radio" id="organicChoice-2" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
+              <input type="radio" class="organicChoiceRadioBox" id="nonOrganicOnly" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
             </label><br>
 
             <label for="organicChoice-3" id="organicChoice-3" class="zoomtext">
-              <input type="radio" id="organicChoice-3" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
+              <input type="radio" class="organicChoiceRadioBox" id="noOrganicFilter" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
             </label><br>
 
           </div>
@@ -487,3 +487,72 @@
 
 </body>
 <div class="signature">Website designed by Group 6</div>
+
+
+<!-- Log In and Sign Up forms begin here. --> 
+
+
+<div id="LogInSubSection" class="Login_Signup_Section">
+
+  <div class="LogInSignUpModalForm">
+    <h1 id="LogInHeader">Log In</h1>
+
+    <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
+    <div class="fieldSections">
+      <label class="inputLabelLogIn" for="email"><b>Email* :</b></label>
+      <input type="text" class="customerInputTextField" id="emailInputLogIn" placeholder="Enter Email" name="email" required>
+    </div>
+
+    <div class="fieldSections">
+      <label class="inputLabelLogIn" for="passwordFieldLogIn"><b>Password* :</b></label>
+      <input type="password" class="customerInputTextField" id="passwordInputLogIn" placeholder="Enter Password" name="passwordFieldLogIn" required>
+    </div>
+
+    <div class="formAcionButtons">
+      <button type="button" id="LoginButtonModal" onclick="authenticateUser()">Login</button>
+      <button type="button" class="CancelButtonModal"  onclick="onLoginCancel()">Cancel</button>            
+    </div>            
+  </div>
+</div>
+
+
+
+<div id="SignUpSubSection" class="Login_Signup_Section">
+
+  <div class="LogInSignUpModalForm">
+    <h1 id="SignUpHeader">Create an account with <i>Group 6 Store</i></h1>
+
+    <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
+
+    <div class="fieldSections">
+      <label class="inputLabelSignup" for="customerFirstName"><b>First Name* :</b></label>
+      <input type="text" class="customerInputTextField" id="firstNameInputSignUp" placeholder="Enter First Name" name="customerFirstName" required>
+    </div>
+
+    <div class="fieldSections">
+      <label class="inputLabelSignup" for="customerLastName"><b>Last Name* :</b></label>
+      <input type="text" class="customerInputTextField" id="lastNameInputSignUp" placeholder="Enter Last Name" name="customerLastName" required>
+    </div>
+
+    <div class="fieldSections">
+      <label class="inputLabelSignup" for="emailSignUp"><b>Email* :</b></label>
+      <input type="text" class="customerInputTextField" id="emailInputSignUp" placeholder="Enter Email" name="emailSignUp" required>
+    </div>
+
+    <div class="fieldSections">
+      <label class="inputLabelSignup" for="passwordFieldSignUp"><b>Password* :</b></label>
+      <input type="password" class="customerInputTextField" id="passwordInputSignUp" placeholder="Enter Password" name="passwordFieldSignUp" required>
+    </div>
+
+    <div class="fieldSections">
+      <label class="inputLabelSignup" for="confirmPasswordFieldSignUp"><b>Confirm Password* :</b></label>
+      <input type="password" class="customerInputTextField" id="confirmPasswordInputSignUp" placeholder="Re-Enter Password" name="confirmPasswordFieldSignUp" required>
+    </div>            
+
+    <div class="formAcionButtons">
+      <button type="button" id="createAcountButton" onclick="registerCustomer()">Create Account</button>
+      <button type="button" class="CancelButtonModal"  onclick="onSignupCancel()">Cancel</button>            
+    </div>
+  </div>
+</div>
+

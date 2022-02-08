@@ -58,14 +58,52 @@ function getPage(elem) {
 
 }
 
+
+
+class CustomerProfile {
+  constructor(firstName, lastName, emailAddress, password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+    this.password = password;
+    this.cartContent = new Map([]); // Map where keys are the product IDs and values are the quantities.
+    this.diaterycharacteristicChoices =  new Map([
+      ["meat", false],
+      ["gluten", false],
+      ["diabetic", false],
+      ["lactose", false]
+    ]);
+    this.organicSelection = "noOrganicFilter";
+    this.isZoomedIn = false;
+  }
+}
+
+
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
 products is an array containing the names of the products added to the cart
 cartTotal is the total after all the items are added to the cart*/
 
 {
-	var products = new Map([]);
+	var products = new Map([]); // keys are the product names and the values are the quantity currently in the cart.
 	var cartTotal = 0;
   var zoomedIn = false;
+
+  var isLoggedIn = false; // false when in guest-user mode, and true when logged in.
+  var customerProfiles = new Map([]); // The keys are the email addresses and the values are the customer profiles.
+  var currentCustomerEmail; // The email address of the customer that is currently logged in.
+  var currentCustomerProfile;
+
+  // A sample customer so the system already has 1 customer at the very begining.
+  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "k", "p"); //"kdahe094@hotmail.com", "password");
+  sampleCustomer.cartContent.set("Organic banana", 1);
+  sampleCustomer.cartContent.set("Milk", 2);
+  sampleCustomer.cartContent.set("Poultry", 4);
+  sampleCustomer.cartContent.set("Fish", 1);
+  sampleCustomer.organicSelection = "organicOnly"; // Organic Products Only 
+  sampleCustomer.isZoomedIn = true;
+
+  // Add the sample customer to the custumer map.
+  customerProfiles.set("k", sampleCustomer);  
 }
 
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
@@ -157,7 +195,17 @@ function updateCartTotal(price, quantity, name) {
 }
 
 function getCartTotal() {
-	document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
+
+  if (cartTotal > 0)
+  {
+    document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
+  }
+  else
+  {
+    document.getElementById("cartTotal").textContent = "";
+  }
+
+
 }
 
 
@@ -359,3 +407,313 @@ function updateZoomInButtonSensitivities(isZoomedIn)
   document.getElementById("zoomOutButton").disabled = !zoomedIn; // Zoom-out button only available when zoomed-in
 }
 
+
+function clearAllSettings() 
+{
+  clearAllFilters();
+  cartTotal = 0;
+  products.clear();
+
+  // Must reset the zoom settiings as well
+  zoomedIn = false;
+
+  triggerZoomUpddateToWidgets();
+
+}
+
+function clearAllFilters() 
+{
+
+  var diateryCharacteristicCheckboxes = document.getElementsByClassName("diateryCharacteristicCheckbox");
+
+  for (var i = 0; i < diateryCharacteristicCheckboxes.length; i++) {
+    diateryCharacteristicCheckboxes[i].checked = false;
+  }
+
+  document.getElementById("noOrganicFilter").checked = true;
+  updateOrganicFilters("noOrganicFilter");
+
+  resetAllProductQuantities();
+
+}
+
+
+function resetAllProductQuantities() 
+{
+  // Still requires implementation.
+}
+
+
+function triggerZoomUpddateToWidgets()
+{
+  if (zoomedIn)
+  {
+    zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)
+  }
+  else
+  {
+    zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)
+  }  
+}
+
+
+function clearLoginAndSignUpInputs()
+{
+  var allCustomerInputTextFields = document.getElementsByClassName("customerInputTextField");
+
+  for (var i = 0; i < allCustomerInputTextFields.length; i++) {
+    allCustomerInputTextFields[i].value = "";
+  }
+}
+
+
+function updateLoginWidgetStatus() {
+
+  if (isLoggedIn)
+  {
+    document.getElementById("LoginButtonMain").textContent  = "Log Out";
+    document.getElementById("SignUpButton").disabled = true;
+  }
+  else
+  {
+    document.getElementById("LoginButtonMain").textContent  = "Log In";
+    document.getElementById("SignUpButton").disabled = false;
+  }
+  
+
+  document.getElementById("Client").style.display = "none"
+  document.getElementById("Product").style.display = "none"
+  document.getElementById("Cart").style.display = "none"
+  disabledZoomFeatures(true, true)
+}
+
+
+function onLoginButton()
+{
+  if (!isLoggedIn)
+  {
+    // The button text is "Log In", the user wants to log into their account.
+    clearLoginAndSignUpInputs();
+    document.getElementById("LogInSubSection").style.display = "block";
+  }
+  else
+  {    
+    // The button text is "Log Out", the user wants to log off of their account.
+
+    // First confirm the user wants to logout.
+    // Confirmation dialog adapted form https://www.w3schools.com/jsref/met_win_confirm.asp .
+
+    var userConfirmation = confirm("Are you sure you want to log out?");
+
+    if (userConfirmation)
+    {
+        copySettingsToCustomerProfile();
+  
+        alert("Thank you for shopping with us " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ". You have now been logged out.");
+        // Must reset all the settings.
+        clearAllSettings();
+        updateCartDisplay();
+        
+        getCartTotal();
+
+        clearLoginAndSignUpInputs();
+        currentCustomerProfile = null;
+  
+        isLoggedIn = false;
+        updateLoginWidgetStatus();
+    }    
+  }
+
+}
+
+function onLoginCancel()
+{
+  document.getElementById("LogInSubSection").style.display = "none";
+}
+
+
+function onSignUpButton()
+{
+  clearLoginAndSignUpInputs();
+  document.getElementById("SignUpSubSection").style.display = "block";
+}
+
+function onSignupCancel()
+{
+  document.getElementById("SignUpSubSection").style.display = "none";
+}
+
+
+function authenticateUser()
+{
+  var emailEntered = document.getElementById("emailInputLogIn").value;
+  if (emailEntered == "")
+  {
+    alert("The email field is required");
+    return;
+  }
+
+  var passwordEntered = document.getElementById("passwordInputLogIn").value;
+  if (passwordEntered == "")
+  {
+    alert("The password field is required");
+    return;
+  }  
+
+  var matchFound = false
+
+  customerProfiles.forEach (function(customerProfile, customerEmail)
+  {
+    if (emailEntered == customerEmail && passwordEntered == customerProfile.password)
+    {
+      // Found a user with the credentials entered.
+      loadCustomerSetting(customerProfile);
+      updateCartDisplay()
+      addLines();
+      getCartTotal();
+      triggerZoomUpddateToWidgets();
+
+      currentCustomerProfile = customerProfile;
+      matchFound = true;
+
+      alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
+      document.getElementById("LogInSubSection").style.display = "none";
+      isLoggedIn = true;
+      updateLoginWidgetStatus();      
+    }
+  })  
+
+  if (!matchFound)
+  {
+    alert("Email address and password entered do not match any records.");
+  }
+}
+
+
+function loadCustomerSetting(customerProfile)
+{
+  clearAllSettings();
+
+  customerProfile.cartContent.forEach (function(productQuantity, productName) {
+
+   products.set(productName, productQuantity);
+   var priceName = productName + "Price"
+   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+   var additionalPrice = parseFloat(productPrice) * parseFloat(productQuantity)
+   cartTotal += additionalPrice;
+  })
+
+  zoomedIn = customerProfile.isZoomedIn;    
+
+  customerProfile.diaterycharacteristicChoices.forEach (function(ischaracteristicFilterOn, characteristicID)
+  {
+    document.getElementById(characteristicID).checked = ischaracteristicFilterOn;
+    updateDiateryCharacteristicsFilters(characteristicID, ischaracteristicFilterOn)
+  })  
+
+  updateOrganicFilters(customerProfile.organicSelection)
+  document.getElementById(customerProfile.organicSelection).checked = true
+
+}
+
+function registerCustomer()
+{
+  var firstNameEntered = document.getElementById("firstNameInputSignUp").value;
+  if (firstNameEntered == "")
+  {
+    alert("The first name field is required");
+    return;
+  } 
+
+  var lastNameEntered = document.getElementById("lastNameInputSignUp").value;
+  if (lastNameEntered == "")
+  {
+    alert("The last name field is required");
+    return;
+  }   
+
+  var emailEntered = document.getElementById("emailInputSignUp").value;
+  if (emailEntered == "")
+  {
+    alert("The email field is required");
+    return;
+  }
+  if (isEmailAlreadyInUse(emailEntered))
+  {
+    console.log("An account already exists with the email " + emailEntered);
+    alert("An account already exists with the email " + emailEntered);
+    return;    
+  }
+
+  var passwordEntered = document.getElementById("passwordInputSignUp").value;
+  if (passwordEntered == "")
+  {
+    alert("The password field is required");
+    return;
+  }
+
+  var passwordConfirmEntered = document.getElementById("confirmPasswordInputSignUp").value;
+  if (passwordConfirmEntered != passwordEntered)
+  {
+    alert("The password confirmation does not match the password entered.");
+    return;
+  }
+
+  // The inputs are valid, so the customer can now be registered into the system.
+  var newCustomer = new CustomerProfile(firstNameEntered, lastNameEntered, emailEntered, passwordEntered); //"kdahe094@hotmail.com", "password");
+  customerProfiles.set(emailEntered, newCustomer);
+
+  alert("Your account has been created. Welcome " + newCustomer.firstName + " " + newCustomer.lastName + ".");
+  document.getElementById("SignUpSubSection").style.display = "none";
+
+}
+
+function isEmailAlreadyInUse(newEmailAddress)
+{
+  console.log("newEmailAddress = " + newEmailAddress)
+  var matchFound = false;
+  customerProfiles.forEach (function(customerProfile, customerEmail)
+  {
+    console.log("customerEmail = " + customerEmail)
+    console.log("newEmailAddress == customerEmail = " + newEmailAddress == customerEmail)
+    if (newEmailAddress == customerEmail)
+    {
+      console.log("same");
+      //console.log(customerProfile)
+      matchFound = true;
+      return matchFound
+    }
+  })
+  return matchFound;
+}
+
+
+function copySettingsToCustomerProfile()
+{
+  // Update the customer profile for the currently logged in customer as he or she is about to be logged out.
+  
+  currentCustomerProfile.cartContent.clear();
+
+  // Copy the current cart over to the customer's cart.
+  products.forEach (function(productQuantity, productName) {
+    currentCustomerProfile.cartContent.set(productName, productQuantity);
+   })
+
+   currentCustomerProfile.isZoomedIn = zoomedIn;
+
+  var diateryCharacteristicCheckboxes = document.getElementsByClassName("diateryCharacteristicCheckbox");
+
+  for (var i = 0; i < diateryCharacteristicCheckboxes.length; i++) {
+    currentCustomerProfile.diaterycharacteristicChoices.set(diateryCharacteristicCheckboxes[i].id, diateryCharacteristicCheckboxes[i].checked);
+  }
+
+  var organicChoiceRadioboxes = document.getElementsByClassName("organicChoiceRadioBox");
+  for (var i = 0; i < organicChoiceRadioboxes.length; i++) {
+    if (organicChoiceRadioboxes[i].checked)
+    {
+      currentCustomerProfile.organicSelection = organicChoiceRadioboxes[i].id;
+      break
+    }
+  }
+
+}
