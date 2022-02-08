@@ -174,10 +174,22 @@
 
 <!-- Client tab ends here -->
 
-
+<div id = "Products" style="display:none">
+	<div class="pagetab">
+	<select name="sort" onchange="sortPrices(this.value);"  class="zoomh4">
+    <optgroup> 
+		<option selected="selected"> Sort by price </option>
+		<option value="low"> Low to high </option>
+		<option value="high"> High to low </option>
+    </optgroup>
+    </select>
+    </div>
+</div>
+    
 <!-- Product tab begins here -->
 
-  <div id = "Product" style="display:none">
+ <!-- 
+ <div id = "Product" style="display:none">
     <div class="pagetab" >
       <select name="sort" onchange="sortPrices(this.value);"  class="zoomh4">
         <optgroup > 
@@ -465,27 +477,21 @@
 
       </div>
      </div>
+ -->
 
 <!-- Product tab ends here -->   
 
-
-
-    </div>
-  </div>
 
   <div id = "Cart" style="display:none">
     <div class="pagetab">
        <h2 class="zoomh2"> Cart </h2>
   
        <div id="cart" class="zoomtext"> Here are the contents of your cart:                  
-
-</div>
+       </div>
 	   <div id="cartTotal" class="zoomtext">
-
-</div>
+	   </div>
 
 	</div>
-    </div>
   </div>
 
 
