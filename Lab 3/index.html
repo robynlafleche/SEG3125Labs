@@ -21,18 +21,88 @@
 
 
 <body class="tabs">
-    <div class="tabs">
-         <!-- emojis from https://unicode-table.com/en/emoji/ -->
-        <button class="tablink" onclick="openPage('Client', this, '#5E875E')"> CLIENT 👤 </button>
-        <button class="tablink" onclick="openPage('Products', this, '#5E875E')"> PRODUCTS 🥦 </button>
-        <button class="tablink" onclick="openPage('Cart', this, '#5E875E')"> CART 🛒 </button>
-        <br>
-        <div class="zoomButton"> 🔎
-          <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled>Zoom in</button>
-          <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled>Zoom out</button>
-        </div>
+     <!-- emojis from https://unicode-table.com/en/emoji/ -->
+    <!-- <div>
+      <img class="logo" style="size: 20px;"
+         src="UI Idea/styles/logo.png" />
+    </div> -->
+   <button class="navtab" onclick='getPage("About")'>About Us </button>
+   
+  
+   <button class="navtab" onclick='openPage("Login")'>Sign In </button>
+   <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
+   <div style="width:100%">
+    <input type="text" class="box"  id = "srch" class="navbutton" placeholder="Search for a product" />
+    <button onclick="returnSearch()" class="navbutton" id="seachButton" > Search🔎</button>
+    <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
+    <!-- <div class="tabs"> -->
+      <!-- emojis from https://unicode-table.com/en/emoji/ -->
+     <button class="tab tabs" onclick='getPage("Client")'>Client 👤 </button>
+     <button class="tab tabs" onclick='getPage("Product")'>Products 🥦 </button>
+     <button class="tab  tabs " onclick='getPage("Cart")'>Cart 🛒 </button>
+     <!-- </div> -->
+   </div>
+   <div id="searchResults"></div>
 
     </div>
+
+
+<!-- Login div -->
+<div id="Login"  style="display:none;" class="loginPageStyle" >
+  <div class="loginfo">
+  USERNAME:
+  <input type="text" class="box"
+  placeholder="example@yahoo.com" />
+  </div>
+  <br>
+  <br>
+  <div class="loginfo">
+  PASSWORD:
+  <input type="text" class="box"
+  placeholder="*****************" />
+  </div>
+  <button id="LoginButton" onclick="">SIGN IN</button>
+</div>
+
+
+  <div class="tabs">
+    <!-- emojis from https://unicode-table.com/en/emoji/ -->
+   <!-- <button class="tab" onclick='getPage("Client")'>Client 👤 </button>
+   <button class="tab" onclick='getPage("Product")'>Products 🥦 </button>
+   <button class="tab" onclick='getPage("Cart")'>Cart 🛒 </button>
+    -->
+    <!-- zoom in and zoom out emoji from https://css.gg/zoom-in https://css.gg/zoom-out -->
+    <link href='https://css.gg/zoom-in.css' rel='stylesheet'>
+    <link href='https://css.gg/zoom-out.css' rel='stylesheet'>
+   <div class="zoomButton"> 
+     <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
+     <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
+   </div>
+
+  
+
+ 
+
+<!-- Navigation tabs start here -->
+<div id = "About" class="option" style="display:none">
+  <div class="pagetab">
+    Hello there
+    <div>
+      <img class="logo"
+         src="UI Idea/styles/logo.png" />
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id = "SignUp" class="option" style="display:none">
+  <div class="pagetab">
+    Hello there
+  </div>
+</div>
+
 
 <!-- Client tab begins here -->
   <div id = "Client" class="option" style="display:none">

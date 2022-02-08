@@ -1,72 +1,89 @@
 /* latin */
 @font-face {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/acme/v17/RrQfboBx-C5_XxrBbk_m3Lg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/acme/v17/RrQfboBx-C5_XxrBbk_m3Lg.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCFPrcVIT9d0c-dYA.woff) format('woff');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCFPrcVIT9d0c-dYA.woff)
+    format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
 }
 /* cyrillic */
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCMPrcVIT9d0c-dYA.woff) format('woff');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCMPrcVIT9d0c-dYA.woff)
+    format("woff");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* vietnamese */
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCHPrcVIT9d0c-dYA.woff) format('woff');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCHPrcVIT9d0c-dYA.woff)
+    format("woff");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrcVIT9d0c-dYA.woff) format('woff');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrcVIT9d0c-dYA.woff)
+    format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCIPrcVIT9d0c8.woff) format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCIPrcVIT9d0c8.woff)
+    format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Sanchez';
+  font-family: "Sanchez";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/sanchez/v11/Ycm2sZJORluHnXbIfmdR_T4HxlzAkw.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(https://fonts.gstatic.com/s/sanchez/v11/Ycm2sZJORluHnXbIfmdR_T4HxlzAkw.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Sanchez';
+  font-family: "Sanchez";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/sanchez/v11/Ycm2sZJORluHnXbIfmlR_T4Hxlw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/sanchez/v11/Ycm2sZJORluHnXbIfmlR_T4Hxlw.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
-
-/* 
-Style tab links.tab {
-  background-color: #5E875E;
+/* Style tab links */
+.tab {
+  background-color: #5e875e;
   color: white;
   float: left;
   border: none;
@@ -76,18 +93,15 @@ Style tab links.tab {
   font-size: 20px;
   height: 60px;
   width: 33.333%;
-  font-family: 'Sanchez', serif;
-
+  font-family: "Sanchez", serif;
 }
 
 .tab:hover {
-  background-color: #5E875E;
+  background-color: #5e875e;
   color: white;
   transform: scale(1.25);
 }
- */
-
-.tabs {
+*/ .tabs {
   border-radius: 25px;
 }
 
@@ -112,7 +126,7 @@ td {
 
 .storename {
   text-align: center;
-  font-family: 'Sanchez', serif;
+  font-family: "Sanchez", serif;
   font-size: 25px;
   height: 25%;
   border-color: grey;
@@ -138,7 +152,7 @@ td {
 }
 
 .nav {
-  background-color: #5E875E;
+  background-color: #5e875e;
   height: 60px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -154,7 +168,7 @@ td {
   text-align: center;
   padding-bottom: 15px;
   color: white;
-  background-color: #5E875E;
+  background-color: #5e875e;
   font-family: "Sanchez", serif;
 }
 
@@ -216,16 +230,16 @@ td {
 } */
 
 body {
-  background-color: #5E875E;
+  background-color: #5e875e;
   background-color: transparent;
-  font-family: 'Sanchez', serif;
+  font-family: "Sanchez", serif;
 }
 
 /*adding ability to scroll from https://stackoverflow.com/a/12575301 */
 html {
   overflow-y: scroll;
-  background-color: #5E875E;
-  font-family: 'Sanchez', serif;
+  background-color: #5e875e;
+  font-family: "Sanchez", serif;
 }
 
 .radioTypeQuestion {
@@ -237,13 +251,70 @@ html {
   padding-top: 50px;
   padding-bottom: 10px;
   width: 100%;
-  background-color: #5E875E;
+  background-color: #5e875e;
 }
 
 .zoom {
   font-size: 20px;
+  background-color: transparent;
+  border: none;
 }
 
-#Client {background-color: #5E875E;}
-#Products {background-color: #5E875E;}
-#Cart {background-color: #5E875E;}
+#Client {
+  background-color: #5e875e;
+}
+#Products {
+  background-color: #5e875e;
+}
+#Cart {
+  background-color: #5e875e;
+}
+
+.loginfo {
+  padding-left: 40%;
+  width: 50px;
+}
+
+#LoginButton {
+  margin-top: 10px;
+  margin-left: 40%;
+}
+.box {
+  height: 20px;
+  width: 20%;
+  float: right;
+}
+
+#seachButton {
+  float: right;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* putting the search button in the input field inspired from https://qr.ae/pGEBKI */
+}
+#Login {
+  width: 100%;
+  height: 190px;
+  padding-top: 30px;
+  background-color: rgba(175, 207, 175, 1);
+}
+
+.navtab {
+  border: none;
+  height: 40px;
+  width: 33.1%;
+  background-color: transparent;
+}
+
+.navButton {
+  background-color: #4caf50;
+}
+
+.navsss {
+  padding-top: 10px;
+  padding-left: 25%;
+  border: none;
+  height: 40px;
+  width: 50%;
+  display: inline-block;
+}

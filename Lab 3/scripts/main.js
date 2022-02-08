@@ -1,11 +1,33 @@
 //code for getPage function inspired from https://stackoverflow.com/a/56111513/15518664 and  by professor Caroline Barriere
 //https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery  
-function getPage(elem,hide1,hide2) {
-    let value = ""
-    let page = document.getElementById(elem);
-    document.getElementById(hide1).style.display = "none"
-    document.getElementById(hide2).style.display = "none"
-    if (page.style.display == "")
+//name of all the tabs
+let allTabNames = ["Client","Product","Cart","About","SignUp"]
+
+let fruits = ["apple","kiwi"]
+function returnSearch(){
+  for(let i = 0; i < fruits.length; i++){
+    if(document.getElementById('srch').value === fruits[i]){
+      console.log(fruits[i],"found it")
+      document.getElementById('searchResults').innerHTML =fruits[i] ;
+
+    }
+  }
+  
+}
+
+function getPage(elem) {
+  let value = ""
+  let page = document.getElementById(elem);
+  let j 
+  for (let i = 0; i < allTabNames.length; i++) {
+    j = document.getElementById(allTabNames[i])
+    console.log("i is",allTabNames[i])
+    console.log("elem is ",elem)
+    if (j != page){
+      j.style.display = "none"
+    }
+  }
+   if (page.style.display == "")
     {
       value = "none";
       disabledZoomFeatures(true, true)
@@ -16,8 +38,34 @@ function getPage(elem,hide1,hide2) {
     }
 
     page.style.display = value;
+    // let value = ""
+    // let page = document.getElementById(elem);
+    // document.getElementById(hide1).style.display = "none"
+    // document.getElementById(hide2).style.display = "none"
+    // document.getElementById(hide3).style.display = "none"
+    // if (page.style.display == "")
+    // {
+    //   value = "none";
+    //   disabledZoomFeatures(true, true)
+    // }
+    // else
+    // {
+    //   disabledZoomFeatures(zoomedIn, !zoomedIn)
+    // }
+
+    // page.style.display = value;
 
 
+}
+
+/*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
+products is an array containing the names of the products added to the cart
+cartTotal is the total after all the items are added to the cart*/
+
+{
+	var products = new Map([]);
+	var cartTotal = 0;
+  var zoomedIn = false;
 }
 
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
