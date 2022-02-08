@@ -20,10 +20,26 @@
     <link rel="icon"  type="image/png" href="images\tablogo.png">
     </head class="tabs">
 
-    <div class="nav">
-        <p id="storename">Group 6 Grocery Store</p>
+
+<!-- user icon from https://css.gg/user -->
+    <link href='https://css.gg/user.css' rel='stylesheet'>
+<!-- using flexbox idea from https://www.w3schools.com/css/css3_flexbox_items.asp -->
+    <div >
+      <div class="flex-container">
+        <span id="storename">Group 6 Grocery Store</span>
+
         <p id="customerName">Customer Name</p>
-      <br>
+        <input type="text" class="box tablink  tabs"   placeholder="Search for a product" />
+        <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
+        <!-- <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button> -->
+    <!-- style="position: absolute;
+        top: 35px;
+        right: 26%;" -->
+        <button class="tablink tabs normaltab" onclick='getPage("Client")' >👤 </button>
+        <button class="tablink  tabs normaltab" onclick='getPage("Cart")'>🛒 </button>
+      
+      </div>
+        <br>
     </div>
 
 
@@ -33,25 +49,36 @@
       <img class="logo" style="size: 20px;"
          src="UI Idea/styles/logo.png" />
     </div> -->
+
+    
+    <div class="flex-container" style="padding-top:5%">
    <button class="navtab" onclick='getPage("About")'>About Us </button>
    
   
    <button class="navtab" id="LoginButtonMain" onclick='onLoginButton()'>Log In</button>
    <button class="navtab" id="SignUpButton" onclick='onSignUpButton()'>Sign Up </button>
+   <button class="tablink tabs navtab" onclick='getPage("Product")'>Products 🥦 </button>
+       <!-- zoom in and zoom out emoji from https://css.gg/zoom-in https://css.gg/zoom-out -->
+       <link href='https://css.gg/zoom-in.css' rel='stylesheet'>
+       <link href='https://css.gg/zoom-out.css' rel='stylesheet'>
+  
+        <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
+        <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
+    
    <div style="width:100%">
-    <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product" />
-    <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
-    <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
+  </div>
     <!-- <div class="tabs"> -->
       <!-- emojis from https://unicode-table.com/en/emoji/ -->
-      <button class="tablink tabs normaltab" onclick='getPage("Client")'>Client 👤 </button>
-     <button class="tablink tabs normaltab" onclick='getPage("Product")'>Products 🥦 </button>
-     <button class="tablink  tabs normaltab" onclick='getPage("Cart")'>Cart 🛒 </button>
+     
+     
+    
       <!-- </div> -->
    </div>
    <div id="searchResults"></div>
 
     </div>
+
+
 
 
 <!-- Login div -->
@@ -78,15 +105,9 @@
    <button class="tab" onclick='getPage("Product")'>Products 🥦 </button>
    <button class="tab" onclick='getPage("Cart")'>Cart 🛒 </button>
     -->
-    <!-- zoom in and zoom out emoji from https://css.gg/zoom-in https://css.gg/zoom-out -->
-    <link href='https://css.gg/zoom-in.css' rel='stylesheet'>
-    <link href='https://css.gg/zoom-out.css' rel='stylesheet'>
-   <div class="zoomButton"> 
-     <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
-     <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
-   </div>
 
-  
+<!-- line from  -->
+   <hr width="90%" color="green">
 
   <!-- emojis from https://unicode-table.com/en/emoji/ -->
 
