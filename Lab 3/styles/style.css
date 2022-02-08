@@ -129,16 +129,29 @@ td {
   font-size: 20px;
 }
 
-.storename {
+#storename {
   text-align: center;
   font-family: "Sanchez", serif;
   font-size: 25px;
   height: 25%;
   border-color: grey;
   color: aliceblue;
-  text-align: center;
   font-family: cursive;
 }
+
+#customerName {
+  display : none; /* Only shown when a user is logged in. */
+  text-align: left;
+  font-family: "Sanchez", serif;
+  font-size: 25px;
+  height: 5%;
+  border-color: grey;
+  color: orange;
+  font-family: cursive;
+  float : right
+}
+
+
 
 .pageTab {
   margin-left: 200px;

@@ -418,6 +418,9 @@ function clearAllSettings()
   zoomedIn = false;
 
   triggerZoomUpddateToWidgets();
+ 
+  document.getElementById("customerName").style.display = "none"
+
 
 }
 
@@ -579,7 +582,11 @@ function authenticateUser()
       alert("Login sucessful. Welcome " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ".");
       document.getElementById("LogInSubSection").style.display = "none";
       isLoggedIn = true;
-      updateLoginWidgetStatus();      
+      updateLoginWidgetStatus(); 
+      
+      // Include the customer's name in the top right indicating he or she is logged in.
+      document.getElementById("customerName").style.display = "flex";
+      document.getElementById("customerName").innerHTML = "Welcome " + customerProfile.firstName + " " + customerProfile.lastName;      
     }
   })  
 
@@ -613,7 +620,6 @@ function loadCustomerSetting(customerProfile)
 
   updateOrganicFilters(customerProfile.organicSelection)
   document.getElementById(customerProfile.organicSelection).checked = true
-
 }
 
 function registerCustomer()
