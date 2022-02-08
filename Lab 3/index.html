@@ -8,7 +8,7 @@
         <meta charset="utf-8">
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
     <script src="scripts/main.js"></script>
-    <title>Group 6 Store</title>
+    <title>Group 6 Grocery</title>
     <!-- code inspired from https://stackoverflow.com/a/11488968/15518664 -->
     <link rel="icon"  type="image/png" href="images\tablogo.png">
     </head class="tabs">
@@ -23,9 +23,9 @@
 <body class="tabs">
     <div class="tabs">
          <!-- emojis from https://unicode-table.com/en/emoji/ -->
-        <button class="tab" onclick='getPage("Client","Product","Cart")'>Client 👤 </button>
-        <button class="tab" onclick='getPage("Product","Client","Cart")'>Products 🥦 </button>
-        <button class="tab" onclick='getPage("Cart","Client","Product")'>Cart 🛒 </button>
+        <button class="tablink" onclick="openPage('Client', this, '#5E875E')"> CLIENT 👤 </button>
+        <button class="tablink" onclick="openPage('Products', this, '#5E875E')"> PRODUCTS 🥦 </button>
+        <button class="tablink" onclick="openPage('Cart', this, '#5E875E')"> CART 🛒 </button>
         <br>
         <div class="zoomButton"> 🔎
           <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled>Zoom in</button>
@@ -34,11 +34,7 @@
 
     </div>
 
- 
-
 <!-- Client tab begins here -->
-
-
   <div id = "Client" class="option" style="display:none">
       <div class="pagetab">
         <h1 class="pageTopHeadings">Client Information</h1>
@@ -90,10 +86,10 @@
       </div>
   </div>
 
-
 <!-- Client tab ends here -->
 
 
+<!-- Product tab begins here -->
 
   <div id = "Product" style="display:none">
     <div class="pagetab" >
@@ -384,7 +380,7 @@
       </div>
      </div>
 
-     
+<!-- Product tab ends here -->   
 
 
 
