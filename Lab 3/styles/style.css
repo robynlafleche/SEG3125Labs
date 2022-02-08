@@ -170,6 +170,92 @@ td {
   border-bottom: 20px;
   padding-bottom: 20px;
 }
+/* style information for Product page */
+
+.product-navbar {
+  float: left;
+  overflow: hidden;
+}
+
+.product-tab {
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.product-navbar button:hover, .product-subnav:hover .product-tab {
+  background-color: rgb(28, 58, 28);
+  color: white;
+}
+
+.product-subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.product-subnav .subnav-product-tab {
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.product-subnav .product-subnav-content {
+  display: none;
+  position: absolute;
+  background-color: #77A177;
+  width: auto;
+}
+
+.product-subnav-content button:hover .product-tab{
+  background-color: white;
+  color: black;
+}
+
+.product-subnav:hover .product-subnav-content {
+  display: block;
+}
+
+.product-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.price {
+  font-size: 20px;
+  color: grey;
+}
+
+.quantity {
+  font-size: 18px;
+  margin: 10px 10px;
+}
+
+.addCartBtn {
+  background-color: #434643;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+}
+
+body {
+  background-color: #5e875e;
+  background-color: transparent;
+  font-family: "Sanchez", serif;
+}
+
+/*adding ability to scroll from https://stackoverflow.com/a/12575301 */
+html {
+  overflow-y: scroll;
+  background-color: #5e875e;
+  font-family: "Sanchez", serif;
+}
 
 /* position of signature from https://stackoverflow.com/a/8824859 */
 .signature {
@@ -183,62 +269,6 @@ td {
   font-family: "Sanchez", serif;
 }
 
-/* style information for Product page */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  text-align: center;
-}
-
-.product-box {
-  background-color: white;
-  padding: 20px 20px 20px;
-}
-
-.addCartBtn {
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.price {
-  font-size: 20px;
-  color: grey;
-}
-
-.quantity {
-  font-size: 18px;
-  margin: 10px 10px;
-}
-
-.container .img {
-  height: 100px;
-  width: 250px;
-}
-
-.container .h2 {
-  font-size: 18px;
-  text-align: center;
-}
-
-.addCardBtn button:hover {
-  opacity: 0.7;
-}
-
-.image {
-  height: 55px;
-}
-
-/* .product-box {
-  margin-left: 50%;
-} */
 
 body {
   background-color: #5e875e;

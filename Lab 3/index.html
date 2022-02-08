@@ -5,19 +5,20 @@
 
 <html>
 <head>
-	<!--required meta tags--!>
+	<!--required meta tags-->
     <meta charset="utf-8">
     
-    <!--required CSS stylesheet--!>
+    <!--required CSS stylesheet-->
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 
-	<!---required Javascript scripts---!>
+	<!---required Javascript scripts--->
     <script src="scripts/main.js"></script>
     <script src="scripts/products.js"></script>
     
     <title>Group 6 Grocery Store</title>
     <!-- code inspired from https://stackoverflow.com/a/11488968/15518664 -->
     <link rel="icon"  type="image/png" href="images\tablogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head class="tabs">
 
     <div class="nav">
@@ -187,282 +188,24 @@
       </optgroup>
       </select>
 
-     <h1 class="pageTopHeadings">
-       Items selected based off of your profile settings.
-     </h1>
-     <div class="container" id="container">
-       <div class="product-box" id="1">
-        <div class="organic">
-          <img src="images/banana.jpg" alt="banana" class="image">
-          <h2 class="zoomh2">
-            Organic Banana
-          </h2>
-          <p id="Organic bananaPrice" class="price">
-            $1.00
-          </p>
-          <div class="quantity">
-            Quantity:
-            <input id="Organic bananaQuantity" type="number" min="1" max="10" value="1">
+      <div class="product-navbar">
+        <button class="product-tab" onclick="filterProductsPage()">Shop All Products</button>
+        <button class="product-tab" onclick="filterProductsPage('restrictions')">Shop based off your profile settings</button>
+        <div class="product-subnav">
+          <button class="product-tab">Shop by category <i class="fa fa-caret-down"></i></button>
+          <div class="product-subnav-content">
+            <button class="subnav-product-tab" onclick="filterProductsPage('fruits-veg')">🍎 Fruits and Vegetables</button>
+            <button class="subnav-product-tab" onclick="filterProductsPage('dairy')">🧀 Dairy products</button>
+            <button class="subnav-product-tab" onclick="filterProductsPage('meat')">🥩 Meat</button>
+            <button class="subnav-product-tab" onclick="filterProductsPage('bakery')">🍞 Bakery</button>
           </div>
-          <button type="button"  id="Organic banana" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-          </button>
-        </div>
-       </div>
-
-       <div class="product-box" id="2">
-         <div class="organic">
-          <img src="images/apple.jpg" alt="apple" class="image">
-          <h2 class="zoomh2">
-            Organic Apple
-          </h2>
-          <p id="Organic applePrice" class="price">
-            $1.50
-          </p>
-          <div class="quantity">
-            Quantity:
-            <input id="Organic appleQuantity" type="number" min="1" max="10" value="1">
-          </div>
-          <button type="button"  id="Organic apple" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-          </button>
-         </div>
-       </div>
-
-       <div class="product-box" id="3">
-         <div class="organic">
-          <img src="images/strawberry.jpg" alt="strawberry" class="image">
-          <h2 class="zoomh2">
-            Organic Strawberry
-          </h2>
-          <p id="Organic strawberryPrice" class="price">
-            $2.50
-          </p>
-          <div class="quantity">
-            Quantity:
-            <input id="Organic strawberryQuantity" type="number" min="1" max="10" value="1">
-          </div>
-          <button type="button"  id="Organic strawberry" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-          </button>
-         </div>
-       </div>
-
-       <div class="product-box" id="4">
-         <div class="gluten">
-          <img src="images/bread.jpg" alt="bread" class="image">
-          <h2 class="zoomh2">
-            Bread
-          </h2>
-          <p id="BreadPrice" class="price">
-            $1.50
-          </p>
-          <div class="quantity">
-            Quantity:
-            <input id="BreadQuantity" type="number" min="1" max="10" value="1">
-          </div>
-          <button type="button"  id="Bread" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-          </button>
-         </div>
-      </div>
-
-      <div class="product-box" id="5">
-        <div class="gluten">
-          <img src="images/tortillas.jpg" alt="tortillas" class="image">
-          <h2 class="zoomh2">
-            Tortillas
-          </h2>
-          <p id="TortillasPrice" class="price">
-            $2.75
-          </p>
-          <div class="quantity">
-            Quantity:
-            <input id="TortillasQuantity" type="number" min="1" max="10" value="1">
-          </div>
-          <button type="button"  id="Tortillas" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-          </button>
         </div>
       </div>
 
-      <div class="product-box" id="6">
-        <div class="gluten diabetic">
-          <img src="images/muffins.jpg" alt="muffins" class="image">
-        <h2 class="zoomh2">
-          Muffins
-        </h2>
-        <p id="MuffinsPrice" class="price">
-          $4.50
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="MuffinsQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Muffins" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
+      <div class="product-container" id="product-container">
+        
       </div>
-
-      <div class="product-box" id="7">
-        <div class="lactose">
-          <img src="images/butter.jpg" alt="butter" class="image">
-        <h2 class="zoomh2">
-          Butter
-        </h2>
-        <p id="ButterPrice" class="price">
-          $3.75
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="ButterQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Butter" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-
-
-      </div>
-
-      <div class="product-box" id="8">
-        <div class="lactose">
-          <img src="images/milk.jpg" alt="milk" class="image">
-        <h2 class="zoomh2">
-          Milk
-        </h2>
-        <p id="MilkPrice" class="price">
-          $4.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="MilkQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Milk" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="9">
-        <div class="lactose">
-          <img src="images/cheese.jpg" alt="cheese" class="image">
-        <h2 class="zoomh2">
-          Cheese
-        </h2>
-        <p id="CheesePrice" class="price">
-          $3.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="CheeseQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Cheese" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="10">
-        <div class="organic">
-          <img src="images/kale.jpg" alt="kale" class="image">
-        <h2 class="zoomh2">
-          Organic Kale
-        </h2>
-        <p id="Organic kalePrice" class="price">
-          $2.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="Organic kaleQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Organic kale" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="11">
-        <div class="organic">
-          <img src="images/peppers.jpg" alt="peppers" class="image">
-        <h2 class="zoomh2">
-          Organic Peppers
-        </h2>
-        <p id="Organic peppersPrice" class="price">
-          $1.75
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="Organic peppersQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Organic peppers" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="12">
-        <div class="organic">
-          <img src="images/tomato.jpg" alt="tomato" class="image">
-        <h2 class="zoomh2">
-          Organic Tomato
-        </h2>
-        <p id="Organic tomatoPrice" class="price">
-          $1.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="Organic tomatoQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Organic tomato" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="13">
-        <div class="meat diabetic">
-          <img src="images/pork.jpg" alt="pork" class="image">
-        <h2 class="zoomh2">
-          Pork
-        </h2>
-        <p id="PorkPrice" class="price">
-          $8.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input type="number" min="1" max="10" value="1">
-        </div>
-        <button id="PorkQuantity" type="button" class="addCartBtn"  id="Pork" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="14">
-        <div class="meat">
-          <img src="images/poultry.jpg" alt="poultry" class="image">
-        <h2 class="zoomh2">
-          Poultry
-        </h2>
-        <p id="PoultryPrice" class="price">
-          $9.00
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="PoultryQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button" id="Poultry" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-      </div>
-
-      <div class="product-box" id="15">
-        <div class="meat">
-          <img src="images/fish.jpg" alt="fish" class="image">
-        <h2 class="zoomh2">
-          Fish
-        </h2>
-        <p id="FishPrice" class="price">
-          $9.50
-        </p>
-        <div class="quantity">
-          Quantity:
-          <input id="FishQuantity" type="number" min="1" max="10" value="1">
-        </div>
-        <button type="button"  id="Fish" class="addCartBtn" onclick="cartedItems(this.id)"> Add to cart
-        </button>
-        </div>
-
-
+      
       </div>
      </div>
 

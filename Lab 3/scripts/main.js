@@ -55,7 +55,7 @@ function getPage(elem) {
 
     // page.style.display = value;
 
-
+displayAllProducts()
 }
 
 
@@ -118,7 +118,6 @@ cartTotal is the total after all the items are added to the cart*/
 
 /*Adds the items selected by the user to the cart*/
 function cartedItems(productName) {
-
   var priceName = productName + "Price"
   var quantityName = productName + "Quantity"
   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
@@ -143,6 +142,7 @@ function cartedItems(productName) {
   updateCartDisplay()
   addLines();
   getCartTotal();
+
 }
 
 
