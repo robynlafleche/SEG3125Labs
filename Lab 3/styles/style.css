@@ -64,8 +64,8 @@
 }
 
 
-/* Style tab links */
-.tab {
+/* 
+Style tab links.tab {
   background-color: #5E875E;
   color: white;
   float: left;
@@ -85,6 +85,7 @@
   color: white;
   transform: scale(1.25);
 }
+ */
 
 .tabs {
   border-radius: 25px;
