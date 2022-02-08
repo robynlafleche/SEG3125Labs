@@ -102,7 +102,13 @@
   transform: scale(1.25);
 }
 
-
+* {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
 /* code inspired from https://www.w3schools.com/css/css_table.asp */
 table,
