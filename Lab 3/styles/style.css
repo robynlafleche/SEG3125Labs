@@ -63,15 +63,9 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Sanchez', serif;
-  background-color: #5E875E;
-}
 
 /* Style tab links */
-.tablink {
+.tab {
   background-color: #5E875E;
   color: white;
   float: left;
@@ -86,27 +80,14 @@ body, html {
 
 }
 
-.tablink:hover {
+.tab:hover {
   background-color: #5E875E;
   color: white;
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 
 .tabs {
   border-radius: 25px;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.pagetab {
-  display: none;
-  padding: 5px 20px;
-  height: 40px;
-  vertical-align: -20px;
-  font-family: 'Sanchez', serif;
-  font-size: 20px;
-  background-color: #5E875E;
-  width: 100vw;
-  border-radius: 15px;
 }
 
 /* code inspired from https://www.w3schools.com/css/css_table.asp */
@@ -234,13 +215,16 @@ td {
 } */
 
 body {
-  background-color: #f5f5dc;
+  background-color: #5E875E;
   background-color: transparent;
+  font-family: 'Sanchez', serif;
 }
 
 /*adding ability to scroll from https://stackoverflow.com/a/12575301 */
 html {
   overflow-y: scroll;
+  background-color: #5E875E;
+  font-family: 'Sanchez', serif;
 }
 
 .radioTypeQuestion {
