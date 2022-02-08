@@ -104,6 +104,10 @@
 
 .tabs {
   border-radius: 25px;
+  border: none;
+  height: 40px;
+  width: 20%;
+  background-color: transparent;
 }
 
 /* code inspired from https://www.w3schools.com/css/css_table.asp */
@@ -284,12 +288,14 @@ html {
   height: 20px;
   width: 20%;
   float: right;
+  margin-top: 10px;
 }
 
 #seachButton {
   float: right;
   border: none;
   outline: none;
+  margin-top: 10px;
   background-color: transparent;
   /* putting the search button in the input field inspired from https://qr.ae/pGEBKI */
 }
@@ -303,10 +309,16 @@ html {
 .navtab {
   border: none;
   height: 40px;
-  width: 33.1%;
+  width: 20%;
   background-color: transparent;
 }
 
+.normaltab {
+  border: none;
+  height: 40px;
+  width: 20%;
+  background-color: transparent;
+}
 .navButton {
   background-color: #4caf50;
 }
@@ -318,4 +330,9 @@ html {
   height: 40px;
   width: 50%;
   display: inline-block;
+}
+
+.aboutUs {
+  float: center;
+  padding-top: 10%;
 }

@@ -32,15 +32,15 @@
    <button class="navtab" onclick='openPage("Login")'>Sign In </button>
    <button class="navtab" onclick='getPage("SignUp")'>Sign Up </button>
    <div style="width:100%">
-    <input type="text" class="box"  id = "srch" class="navbutton" placeholder="Search for a product" />
-    <button onclick="returnSearch()" class="navbutton" id="seachButton" > Search🔎</button>
+    <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product" />
+    <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
     <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
     <!-- <div class="tabs"> -->
       <!-- emojis from https://unicode-table.com/en/emoji/ -->
-     <button class="tab tabs" onclick='getPage("Client")'>Client 👤 </button>
-     <button class="tab tabs" onclick='getPage("Product")'>Products 🥦 </button>
-     <button class="tab  tabs " onclick='getPage("Cart")'>Cart 🛒 </button>
-     <!-- </div> -->
+      <button class="tablink tabs normaltab" onclick='getPage("Client")'>Client 👤 </button>
+     <button class="tablink tabs normaltab" onclick='getPage("Product")'>Products 🥦 </button>
+     <button class="tablink  tabs normaltab" onclick='getPage("Cart")'>Cart 🛒 </button>
+      <!-- </div> -->
    </div>
    <div id="searchResults"></div>
 
@@ -81,15 +81,26 @@
 
   
 
- 
+  <!-- emojis from https://unicode-table.com/en/emoji/ -->
 
 <!-- Navigation tabs start here -->
 <div id = "About" class="option" style="display:none">
   <div class="pagetab">
-    Hello there
+  
     <div>
       <img class="logo"
-         src="UI Idea/styles/logo.png" />
+         src="UI Idea/styles/logo.png" style="float:left" />
+        <div class="aboutUs">
+            Welcome to Group 6 Store.😊
+            <br>
+            
+            <br>
+            Our website has the feature to filter the produces you are browsing based on diatery characteristics that you prefer.
+            <br>
+            <br>
+            You can also create a profile and save your diatery preferences for ease of access.
+        </div>
+         
     </div>
   </div>
 </div>
