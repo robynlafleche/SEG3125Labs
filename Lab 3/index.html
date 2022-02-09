@@ -141,28 +141,16 @@
                        >Lactose intolerant</input></label><br>
           </div>
         </div>
+        
 
-
-        <div class="clientInformationQuestion">
+        <div class = "questionWithOptions">
           <h3 class="zoomh3"> Which types of products are you interested in? </h3>
-          <div class = "radioTypeQuestion">
-       
-            <label for="organicChoice-1" class="zoomtext">
-              <input type="radio" class="organicChoiceRadioBox" id="organicOnly" name="organicChoice" onchange="updateOrganicFilters('organicOnly')"> Organic Products Only </input>
-            </label><br>
-
-            <label for="organicChoice-2" id="organicChoice-2" class="zoomtext">
-              <input type="radio" class="organicChoiceRadioBox" id="nonOrganicOnly" name="organicChoice" onchange="updateOrganicFilters('nonOrganicOnly')"> Non-organic Products Only </input>
-            </label><br>
-
-            <label for="organicChoice-3" id="organicChoice-3" class="zoomtext">
-              <input type="radio" class="organicChoiceRadioBox" id="noOrganicFilter" name="organicChoice" onchange="updateOrganicFilters('noOrganicFilter')"> All products </input>
-            </label><br>
-
-          </div>
+            <select id="organicSelectionComboBox" onchange="updateOrganicFilters(this.value)">
+              <option value="noOrganicFilter" name="organicChoice" selected="selected">All products</option>
+              <option value="organicOnly" name="organicChoice"">Organic Products Only</option>
+              <option value="nonOrganicOnly" name="organicChoice">Non-organic Products Only</option>
+            </select>
         </div>
-
-
 
       </div>
   </div>
