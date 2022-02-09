@@ -136,7 +136,7 @@ button.add-to-cart {
     border-color: black;
     color: black;
     font-family: "Sanchez", serif;
-    width: 150%;
+    width: 200%;
     display: inline-block;
 }
 
@@ -161,7 +161,7 @@ td {
 .amount {
 	position: relative;
 	top: -5px;
-	left: 5px;
+	left: 8px;
 }
 
 #storename {
