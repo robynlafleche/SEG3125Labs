@@ -58,8 +58,9 @@ function getPage(elem) {
     // }
 
     // page.style.display = value;
-
-	displayAllProducts()
+  
+    removeAll()
+    displayAllProducts()
 }
 
 
@@ -128,12 +129,14 @@ function setProductQuantity(quantity) {
 }
 
 /*Adds the items selected by the user to the cart*/
-function cartedItems(productName) {
-  var productName = productName.replace("button", "")
-  var priceName = productName + "Price"
-  var quantityName = productName + "Quantity"
-  var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
-  var productQuantity = document.getElementById(quantityName).value
+function cartedItems(productButtonId) {
+
+  productName = productButtonId.replace("_button", ""); // replace solution obtained from https://stackoverflow.com/questions/10398931/how-to-remove-text-from-a-string
+  var productPrice = getProductPrice(productButtonId);
+
+  var quantity_id = productName + "_quantity";
+  var productQuantity = document.getElementById(quantity_id).value
+  
   var additionalPrice = parseFloat(productPrice) * productQuantity
   updateCartTotal(additionalPrice, productQuantity, productName);
 
@@ -174,13 +177,9 @@ function updateCartDisplay()
   // Now display each item in the cart one by one.
   products.forEach (function(productQuantity, productName)
   {
-  
-  
-    var priceName = productName + "Price"
-    var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+    var productButtonId = productName + "_button"
+    var productPrice = getProductPrice(productButtonId);
     var additionalPrice = parseFloat(productPrice) * productQuantity
-   //
-
     document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
 
   })
@@ -198,7 +197,7 @@ function addLines() {
 /*Updates the cart total with the prices of each item multiplied by their quantities*/
 function updateCartTotal(price, quantity, name) {
   cartTotal += price;
-  alert(cartTotal)
+  //alert(cartTotal)
 
   var itemString = "item"
   if (quantity > 1)
