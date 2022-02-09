@@ -134,16 +134,16 @@
           <small>(Check all that apply)</small><br>
           <div class="radioTypeQuestion diateryCharacteristicFilter">
             <label for="inp-1" class="zoomtext">
-                <input type="checkbox" class="diateryCharacteristicCheckbox" id="meat" onclick="updateDiateryCharacteristicsFilters('meat', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="meat" onclick="updateDiateryCharacteristicsFilters('vegetarian', this.checked)"
                        >Vegetarian</input></label><br>
             <label for="inp-2" class="zoomtext">
-                <input type="checkbox" class="diateryCharacteristicCheckbox" id="gluten" onclick="updateDiateryCharacteristicsFilters('gluten', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="gluten" onclick="updateDiateryCharacteristicsFilters('glutenFree', this.checked)"
                        >Allergic to gluten</input></label><br>
             <label for="inp-3" class="zoomtext">
-                <input type="checkbox" class="diateryCharacteristicCheckbox" id="diabetic" onclick="updateDiateryCharacteristicsFilters('diabetic', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="diabetic" onclick="updateDiateryCharacteristicsFilters('diabeticSafe', this.checked)"
                        >Diabetic</input></label><br>
             <label for="inp-4" class="zoomtext">
-                <input type="checkbox" class="diateryCharacteristicCheckbox" id="lactose" onclick="updateDiateryCharacteristicsFilters('lactose', this.checked)"
+                <input type="checkbox" class="diateryCharacteristicCheckbox" id="lactose" onclick="updateDiateryCharacteristicsFilters('dairyFree', this.checked)"
                        >Lactose intolerant</input></label><br>
           </div>
         </div>
@@ -201,7 +201,7 @@
       <div class="product-page">
          
         <div class="product-navbar">
-          <button class="product-tab" onclick="filterProductsPage()">Shop All Products</button>
+          <button class="product-tab" onclick="filterProductsPage('all')">Shop All Products</button>
           <button class="product-tab" onclick="filterProductsPage('restrictions')">Shop based off your profile settings</button>
           <div class="product-subnav">
             <button class="product-tab">Shop by category <i class="fa fa-caret-down"></i></button>

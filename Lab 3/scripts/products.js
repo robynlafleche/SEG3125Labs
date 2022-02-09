@@ -8,7 +8,7 @@ var products = [
 		imageSrc: "images/banana.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "fruit",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -20,7 +20,7 @@ var products = [
 		imageSrc: "images/apple.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "fruit",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -32,7 +32,7 @@ var products = [
 		imageSrc: "images/strawberry.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "fruit",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -44,7 +44,7 @@ var products = [
 		imageSrc: "images/bread.jpg",
 		vegetarian: true,
 		diabeticSafe: false,
-		foodCategory: "bread",
+		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
@@ -56,7 +56,7 @@ var products = [
 		imageSrc: "images/tortillas.jpg",
 		vegetarian: true,
 		diabeticSafe: false,
-		foodCategory: "bread",
+		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
@@ -116,7 +116,7 @@ var products = [
 		imageSrc: "images/kale.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "vegetable",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -128,7 +128,7 @@ var products = [
 		imageSrc: "images/peppers.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "vegetable",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -140,7 +140,7 @@ var products = [
 		imageSrc: "images/tomato.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
-		foodCategory: "fruit",
+		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
@@ -176,7 +176,7 @@ var products = [
 		imageSrc: "images/fish.jpg",
 		vegetarian: false,
 		diabeticSafe: true,
-		foodCategory: "fish",
+		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
@@ -237,25 +237,163 @@ function displayAllProducts() {
 
 }
 
-// based on user's dietary restrictions provided, return a reduced list of products
+//removes all children from the product page
+function removeAll() {
+	var container = document.getElementById("product-container") 
+	container.innerHTML = ""
+}
 
-function restrictProducts(prod, rule) {
+const allFiltersToApply = [];
+var organicFilterChoice = "";
+
+function updateDiateryCharacteristicsFilters(filterType, filterOn) {
+
+  var elementIndex = -1
+
+  // Search to see if this filter type is already on the filter list.
+  for (var i = 0; i < allFiltersToApply.length; i++) {
+    if (allFiltersToApply[i] == filterType)
+    {
+      // The element has been found.
+      elementIndex = i;
+      break;
+    }
+  }
+
+  if (elementIndex == -1 && filterOn)
+  {
+    // The filter type is not in the filter list and it should be, so add it.
+    allFiltersToApply.push(filterType);
+  }
+  else if (elementIndex != -1 && !filterOn)
+  {
+    // The filter type is in the filter list and it must be removed.
+    for (var i = elementIndex; i < allFiltersToApply.length - 1; i++) {
+      allFiltersToApply[i] = allFiltersToApply[i+1]; // shift every other element down
+    }
+
+    // Delete the last element to complete the shift.
+    allFiltersToApply.pop();
+  }
+}
+
+function updateOrganicFilters(choice) {
+
+  organicFilterChoice = choice
+}
+
+function filterProductsPage (selection) {
+
+	if (selection == 'all') {
+		removeAll()
+		displayAllProducts()
+	}
+	else if (selection == 'restrictions') {
+		var container =  document.getElementById("product-container")
+		removeAll()
+		displayAllProducts()
+		var displayChange = restrictProducts()
+		if (displayChange.length != 15) {
+			for (var i = 0; i < displayChange.length; i++) {
+				container.removeChild(document.getElementById(displayChange[i]))
+			}
+		}
+		
+		
+
+	}
+	else if (selection == 'fruits-veg') {
+		var container =  document.getElementById("product-container")
+		removeAll()
+		displayAllProducts()
+		var displayChange = [];
+		for (var i = 0; i < 15; i++) {
+			if (products[i].foodCategory != selection) {
+				displayChange.push(products[i].name)
+			}
+		}
+
+		for (var i = 0; i < displayChange.length; i++) {
+			container.removeChild(document.getElementById(displayChange[i]))
+		}
+	}
+
+	else if (selection == 'meat') {
+		var container =  document.getElementById("product-container")
+		removeAll()
+		displayAllProducts()
+		var displayChange = [];
+		for (var i = 0; i < 15; i++) {
+			if (products[i].foodCategory != selection) {
+				displayChange.push(products[i].name)
+			}
+		}
+
+		for (var i = 0; i < displayChange.length; i++) {
+			container.removeChild(document.getElementById(displayChange[i]))
+		}
+	}
+
+	else if (selection == 'dairy') {
+		var container =  document.getElementById("product-container")
+		removeAll()
+		displayAllProducts()
+		var displayChange = [];
+		for (var i = 0; i < 15; i++) {
+			if (products[i].foodCategory != selection) {
+				displayChange.push(products[i].name)
+			}
+		}
+
+		for (var i = 0; i < displayChange.length; i++) {
+			container.removeChild(document.getElementById(displayChange[i]))
+		}
+	}
+
+	else if (selection == 'bakery') {
+		var container =  document.getElementById("product-container")
+		removeAll()
+		displayAllProducts()
+		var displayChange = [];
+		for (var i = 0; i < 15; i++) {
+			if (products[i].foodCategory != selection) {
+				displayChange.push(products[i].name)
+			}
+		}
+
+		for (var i = 0; i < displayChange.length; i++) {
+			container.removeChild(document.getElementById(displayChange[i]))
+		}
+	}
+
+}
+
+// based on user's dietary restrictions provided, return a list of products not to be displayed
+
+function restrictProducts() {
 	let product_names = [];
-	for (let i = 0; i < prod.length; i++) {
-		if ((rule == "Vegetarian") && (prod[i].vegetarian == true)){
-			product_names.push(prod[i].name);
+	
+	if (allFiltersToApply.length != 0) {
+		for (var i = 0; i < allFiltersToApply.length; i++) {
+			for (var j = 0; j < 15; j++) {
+				if ((allFiltersToApply[i] == "vegetarian") && (products[j].vegetarian != true)){
+					product_names.push(products[j].name);
+				}
+				else if ((allFiltersToApply[i] == "glutenFree") && (products[j].glutenFree != true)){
+					product_names.push(products[j].name);
+				}
+				else if ((allFiltersToApply[i] == "diabeticSafe") && (products[j].diabeticSafe != true)){
+					product_names.push(products[j].name);
+				}
+				else if ((allFiltersToApply[i] == "dairyFree") && (products[j].dairyFree != true)){
+					product_names.push(products[j].name);
+				}
+			}
 		}
-		else if ((rule == "Allergic to gluten") && (prod[i].glutenFree == true)){
-			product_names.push(prod[i].name);
-		}
-		else if ((rule == "Diabetic") && (prod[i].diabeticSafe == true)){
-			product_names.push(prod[i].name);
-		}
-		else if ((rule == "Lactose intolerant") && (prod[i].dairyFree == true)){
-			product_names.push(prod[i].name);
-		}
-		else if (rule == "None"){
-			product_names.push(prod[i].name);
+	}
+	else {
+		for (var k = 0; k < 15; k++) {
+			product_names.push(products[k].name);
 		}
 	}
 	return product_names;
