@@ -195,6 +195,7 @@ function displayAllProducts() {
 	div.id = products[i].name
 
 	var pNamePara = document.createElement('p')
+	pNamePara.class = "zoomtext"
 	pNamePara.innerHTML = products[i].name
 	var pPricePara = document.createElement('p')
 	pPricePara.class = "price"
@@ -478,22 +479,25 @@ function getTotalPrice(prods) {
 	return totalPrice;
 }
 function displaySearch() {
+	document.getElementById('search-container').innerHTML = ''
 	// document.getElementById("Search").style.visibility = 'visible'
 	//document.getElementById("Search").style.display = ''
 	console.log(document.getElementById("srch").value)
 	let val = document.getElementById("srch").value.trim().toLowerCase()
-
+	let counter = 0
 	console.log("here")
 	var container = document.getElementById("search-container")  
 	container.display 
-
+	let storedNames = []
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
-
+	console.log("count",products)
 	// includes function inspired from https://stackoverflow.com/a/1789952/15518664
-	if(products[i].name.includes(val)){
-		console.log("count")
+	if(products[i].name.includes(val) ){
+		counter ++
 	div.id = products[i].name
+	storedNames.push(products[i].name)
+	console.log("products[i].name",products[i].name)
 
 	var pNamePara = document.createElement('p')
 	pNamePara.innerHTML = products[i].name
@@ -532,4 +536,13 @@ function displaySearch() {
 
 	}
 
-	}}
+	}
+	if(counter === 0) {
+		var message = document.createElement('div')
+		// emoji from https://www.science.co.il/internet/html/Smileys.php
+		message.innerHTML = "We couldn't find any results for your search😔"
+		message.style.textAlign = "center"
+		document.getElementById("search-container").appendChild(message)
+	}
+
+}
