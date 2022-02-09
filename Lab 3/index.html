@@ -40,8 +40,8 @@
    <button class="navtab" id="LoginButtonMain" onclick='onLoginButton()'>Log In</button>
    <button class="navtab" id="SignUpButton" onclick='onSignUpButton()'>Sign Up </button>
    <div style="width:100%">
-    <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product" />
-    <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
+    <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product ex: milk" />
+    <button  class="navbutton " id="seachButton"  onclick='displaySearch(); getPage("Search")'> Search🔎</button>
     <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
     <!-- <div class="tabs"> -->
       <!-- emojis from https://unicode-table.com/en/emoji/ -->
@@ -113,6 +113,17 @@
 
 
 
+<!-- Navigation tabs start here -->
+<div id ="Search" class="option" style="display:none">
+  <div class="pagetab">
+    <div>
+     <h2 class="pageTopHeadings">Search Results:</h2>
+      <div class="search-container" id="search-container" ></div>
+    
+         
+    </div>
+  </div>
+</div>
 
 <div id = "SignUp" class="option" style="display:none">
   <div class="pagetab">
@@ -219,7 +230,11 @@
       
       </div>
      </div>
-
+     <!-- <div id = "Search" > -->
+        <!-- <div  id="search-container"  ></div>
+     
+      </div> -->
+     
 
 <!-- Product tab ends here -->   
 
@@ -236,6 +251,18 @@
 	</div>
   </div>
 
+
+
+  <!-- <div id = "Search" yle="display:none">
+    <div class="pagetab">
+       <h2 class="zoomh2"> Search Results </h2>
+  
+       <div id="search-container" class="search-container">                 
+       </div>
+	  
+
+	</div>
+  </div> -->
 
 
 </body>

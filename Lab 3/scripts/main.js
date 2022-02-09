@@ -1,11 +1,12 @@
 //code for getPage function inspired from https://stackoverflow.com/a/56111513/15518664 and  by professor Caroline Barriere
 //https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery  
 //name of all the tabs
-let allTabNames = ["Client","Product","Cart","About","SignUp"]
+let allTabNames = ["Client","Product","Cart","About","SignUp","Search"]
 
 let fruits = ["apple","kiwi"]
 function returnSearch(){
   for(let i = 0; i < fruits.length; i++){
+
     if(document.getElementById('srch').value === fruits[i]){
       console.log(fruits[i],"found it")
       document.getElementById('searchResults').innerHTML =fruits[i] ;
@@ -16,6 +17,13 @@ function returnSearch(){
 }
 
 function getPage(elem) {
+
+
+ // deletes previous search results if the current page is not the search page
+ if(elem != "Search") {
+    document.getElementById("search-container").innerHTML = "";
+ }
+ 
   let value = ""
   let page = document.getElementById(elem);
   let j 
@@ -23,6 +31,7 @@ function getPage(elem) {
     j = document.getElementById(allTabNames[i])
     console.log("i is",allTabNames[i])
     console.log("elem is ",elem)
+    console.log("j is",j)
     if (j != page){
       j.style.display = "none"
     }
