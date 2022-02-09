@@ -237,6 +237,7 @@ function getProductPrice(item) {
 	}
 }
 
+/*
 function addToCart(item) {
 	// first check to see if the product is already in the array
 	// first retrieve the quantity the user selected
@@ -254,7 +255,7 @@ function addToCart(item) {
 	
 }
 
-
+/*
 function displayCart() {
 	
 	// create container to display products
@@ -283,8 +284,9 @@ function displayCart() {
 	}
 
 }
+*/
 
-/*
+
 function displayAllProducts() {
 
 	var container = document.getElementById("product-container")  
