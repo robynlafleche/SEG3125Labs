@@ -32,8 +32,7 @@
     <div >
       <div class="flex-container">
         <span id="storename">Group 6 Grocery Store</span>
-
-        <p id="customerName">Customer Name</p>
+        
         <input type="text" class="box tablink  tabs"   id="srch"  placeholder="Search for a product name. ex: milk" />
   
         <button onclick="document.getElementById('srch').value =''; document.getElementById('search-container').innerHTML = ''" class="navbutton" id="clear"> Clear</button>
@@ -44,6 +43,9 @@
         right: 26%;" -->
         <button class="tablink tabs "  onclick='getPage("Client")' >👤 </button>
         <button class="tablink  tabs " onclick='getPage("Cart")'>🛒 </button>
+
+        <br>
+        <p id="customerName">Customer Name</p>
 
       </div>
         <br>
@@ -250,7 +252,7 @@
     </div>
 
     <div class="formAcionButtons">
-      <button type="button" id="LoginButtonModal" onclick="authenticateUser()">Login</button>
+      <button type="button" id="LoginButtonModal" onclick="authenticateUser()">Log in</button>
       <button type="button" class="CancelButtonModal"  onclick="onLoginCancel()">Cancel</button>            
     </div>            
   </div>
