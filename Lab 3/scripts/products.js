@@ -238,9 +238,10 @@ function displayAllProducts() {
 
 function getProductPrice(name_of_product)
 {
-    for (var i = 0; i < all_products_in_store.length; i++)
+	console.log(name_of_product)
+    for (var i = 0; i < 15; i++)
     {
-        if (all_products_in_store[i].name = name_of_product)
+        if (all_products_in_store[i].name == name_of_product)
         {
             return all_products_in_store[i].price;
         }

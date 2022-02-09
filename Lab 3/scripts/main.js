@@ -132,7 +132,7 @@ function setProductQuantity(quantity) {
 function cartedItems(productButtonId) {
 
   productName = productButtonId.replace("_button", ""); // replace solution obtained from https://stackoverflow.com/questions/10398931/how-to-remove-text-from-a-string
-  var productPrice = getProductPrice(productButtonId);
+  var productPrice = getProductPrice(productName);
 
   var quantity_id = productName + "_quantity";
   var productQuantity = document.getElementById(quantity_id).value
@@ -154,45 +154,101 @@ function cartedItems(productButtonId) {
   }
 
 
-  updateCartDisplay()
-  addLines();
-  getCartTotal();
+  //updateCartDisplay()
+  //addLines();
+  //getCartTotal();
 
 }
 
 
 /* Map usage and iteration inspired from https://www.w3schools.com/js/js_object_maps.asp*/
-function updateCartDisplay()
+function updateCartDisplay(price, quantity, name)
 {
-  
-  document.getElementById("cart").setAttribute('style', 'white-space: pre;');
+  var table = document.getElementById("table")
+  var row = table.insertRow()
+  row.id = name + "row"
+
+  var img = document.createElement('img')
+  for (var i = 0; i < 15; i++) {
+    if (all_products_in_store[i].name == name) {
+      img.src = all_products_in_store[i].imageSrc
+    }
+  } 
+  img.getAnimations
+
+  img.style.width = "50px"
+  img.style.height = "50px"
+
+  var del = document.createElement('button')
+	del.id = name + "del"
+	del.class = "deleteBtn"
+	del.setAttribute('onclick', 'removeItemFromCart(this.id);') 
+	del.innerText = "🗑"
+
+  var cell1 = row.insertCell(0)
+  var cell2 = row.insertCell(1)
+  var cell3 = row.insertCell(2)
+  var cell4 = row.insertCell(3)
+  var cell5 = row.insertCell(4)
+  var cell6 = row.insertCell(5)
+
+  cell1.append(del)
+  cell2.innerHTML = name
+  cell3.append(img)
+  cell4.innerHTML = "$"+price
+  cell5.innerHTML = quantity
+  cell6.innerHTML = "$"+price*quantity
+
+  cartTotalDisplay()
+
+  //document.getElementById("cart").setAttribute('style', 'white-space: pre;');
   //adding table code inspired from https://www.w3schools.com/jsref/met_table_insertrow.asp
 
-  let flag = true
+  //let flag = true
   // Clear the cart display text
-  document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
+  //document.getElementById("cart").textContent = "Here are the contents of your cart:\n\n";
 
  
 
-  // Now display each item in the cart one by one.
-  products.forEach (function(productQuantity, productName)
-  {
-    var productButtonId = productName + "_button"
-    var productPrice = getProductPrice(productButtonId);
-    var additionalPrice = parseFloat(productPrice) * productQuantity
-    document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
+  // // Now display each item in the cart one by one.
+  // products.forEach (function(productQuantity, productName)
+  // {
+  //   var productButtonId = productName + "_button"
+  //   var productPrice = getProductPrice(productName);
+  //   var additionalPrice = parseFloat(productPrice) * productQuantity
+  //   document.getElementById("cart").textContent += " " + productName + " [" + productQuantity + "] = " + "$" + additionalPrice.toFixed(2) + "\r\n";
 
-  })
+  // })
+}
+
+//function that displays the cart total
+function cartTotalDisplay() {
+  var display = document.getElementById("totalDisplay")
+  display.innerHTML = "$"+cartTotal
+}
+
+//function that removes items from cart
+function removeItemFromCart(delId) {
+  
+  var rowId = delId.replace("del", "row")
+  var row = document.getElementById(rowId)
+  var price = row.cells[3].innerHTML.replace("$", "")
+  var quantity = row.cells[4].innerHTML
+  cartTotal = cartTotal - price*quantity
+  cartTotalDisplay()
+  
+  row.parentNode.removeChild(row)
+
 }
 
 
 // function to add line spaces
-function addLines() {
-	document.getElementById("cartTotal").setAttribute('style', 'white-space: pre;');
-	for (var i = 0; i < 1; i++) {
-		 document.getElementById("cart").textContent += "\r\n";
-	}
-}
+// function addLines() {
+// 	document.getElementById("cartTotal").setAttribute('style', 'white-space: pre;');
+// 	for (var i = 0; i < 1; i++) {
+// 		 document.getElementById("cart").textContent += "\r\n";
+// 	}
+// }
 
 /*Updates the cart total with the prices of each item multiplied by their quantities*/
 function updateCartTotal(price, quantity, name) {
@@ -205,21 +261,22 @@ function updateCartTotal(price, quantity, name) {
     itemString = "items"
   }
   alert("Added " + quantity + " " + name + " " + itemString + " to cart.\nYour cart total is $" + cartTotal.toFixed(2))
+  updateCartDisplay(price,quantity, name)
 }
 
-function getCartTotal() {
+// function getCartTotal() {
 
-  if (cartTotal > 0)
-  {
-    document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
-  }
-  else
-  {
-    document.getElementById("cartTotal").textContent = "";
-  }
+//   if (cartTotal > 0)
+//   {
+//     document.getElementById("cartTotal").textContent = " Total price: $" + cartTotal.toFixed(2);
+//   }
+//   else
+//   {
+//     document.getElementById("cartTotal").textContent = "";
+//   }
 
 
-}
+// }
 
 //  code for the zoom feature inspired from https://stackoverflow.com/a/56546498/15518664 -->
 //code for applying style to several elements inspired from https://stackoverflow.com/a/66797497/15518664
