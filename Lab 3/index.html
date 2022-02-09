@@ -188,15 +188,15 @@
       <div class="product-page">
          
         <div class="product-navbar">
-          <button class="product-tab" onclick="filterProductsPage('all')">Shop All Products</button>
-          <button class="product-tab" onclick="filterProductsPage('restrictions')">Shop based off your profile settings</button>
+          <button class="product-tab" id="shopAllProductsButton" onclick="filterProductsPage('all'); highlightShopSelection(this.id)">Shop All Products</button>
+          <button class="product-tab" id="shopPreferencesButton" onclick="filterProductsPage('restrictions'); highlightShopSelection(this.id)">Shop based off your profile settings</button>
           <div class="product-subnav">
-            <button class="product-tab">Shop by category <i class="fa fa-caret-down"></i></button>
+            <button class="product-tab" id="shopCategoryButton">Shop by category <i class="fa fa-caret-down"></i></button>
             <div class="product-subnav-content">
-              <button class="subnav-product-tab" onclick="filterProductsPage('fruits-veg')">🍎 Fruits and Vegetables</button>
-              <button class="subnav-product-tab" onclick="filterProductsPage('dairy')">🧀 Dairy products</button>
-              <button class="subnav-product-tab" onclick="filterProductsPage('meat')">🥩 Meat</button>
-              <button class="subnav-product-tab" onclick="filterProductsPage('bakery')">🍞 Bakery</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('fruits-veg'); highlightShopSelection('shopCategoryButton')">🍎 Fruits and Vegetables</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('dairy'); highlightShopSelection('shopCategoryButton')">🧀 Dairy products</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('meat'); highlightShopSelection('shopCategoryButton')">🥩 Meat</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('bakery'); highlightShopSelection('shopCategoryButton')">🍞 Bakery</button>
             </div>
           </div>
         </div>

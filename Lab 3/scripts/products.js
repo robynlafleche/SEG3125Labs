@@ -187,7 +187,7 @@ var all_products_in_store = [
 
 function displayAllProducts() {
 
-	var container = document.getElementById("product-container")  
+	var container = document.getElementById("product-container") 	
 
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
@@ -232,6 +232,8 @@ function displayAllProducts() {
 	container.appendChild(div)
 	
 	}
+
+	highlightShopSelection("shopAllProductsButton")
 
 }
 
@@ -297,6 +299,19 @@ function updateOrganicFilters(choice) {
   organicFilterChoice = choice
 
 }
+
+
+function highlightShopSelection(shopSelectionButtonID)
+{
+	var allSelectionButtons = document.getElementsByClassName("product-tab");
+
+	for (var i = 0; i < allSelectionButtons.length; i++) {
+		allSelectionButtons[i].style.backgroundColor = 'rgb(233, 233, 237)';
+	}
+	
+	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'orange';
+}
+
 
 function filterProductsPage (selection) {
 
