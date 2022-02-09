@@ -2,23 +2,22 @@
 
 // array of products contained in our store, along with their categories
 
-var products = [
+var all_products_in_store = [
 	{
 		name: "organic banana",
-		imageSrc: "images/banana.png",
+		imageSrc: "images/banana.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.00,
-		quantity: 0
+		price: 1.00
 	},
 	
 	{
 		name: "organic apple",
-		imageSrc: "images/apple.png",
+		imageSrc: "images/apple.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
@@ -26,12 +25,11 @@ var products = [
 		dairyFree: true,
 		organic: true,
 		price: 1.50,
-		quantity: 0
 	},
 	
 	{
 		name: "organic strawberry",
-		imageSrc: "images/strawberry.png",
+		imageSrc: "images/strawberry.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
@@ -39,180 +37,153 @@ var products = [
 		dairyFree: true,
 		organic: true,
 		price: 2.50,
-		quantity: 0
 	},
 	
 	{
 		name: "white bread",
-		imageSrc: "images/bread.png",
+		imageSrc: "images/bread.jpg",
 		vegetarian: true,
-		diabeticSafe: false,
+		diabeticSafe: true,
 		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
-		price: 1.50,
-		quantity: 0
+		price: 1.50
 	},
 		
 	{
 		name: "tortillas",
-		imageSrc: "images/tortillas.png",
+		imageSrc: "images/tortillas.jpg",
 		vegetarian: true,
-		diabeticSafe: false,
+		diabeticSafe: true,
 		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
-		price: 2.75,
-		quantity: 0
+		price: 2.75
 	},
 	
 	{
 		name: "muffins",
-		imageSrc: "images/muffins.png",
+		imageSrc: "images/muffins.jpg",
 		vegetarian: true,
-		diabeticSafe: false,
+		diabeticSafe: true,
 		foodCategory: "bakery",
 		glutenFree: false,
-		dairyFree: false,
+		dairyFree: true,
 		organic: false,
-		price: 4.50,
-		quantity: 0
+		price: 4.50
 	},
 	
 	{
 		name: "butter",
-		imageSrc: "images/butter.png",
+		imageSrc: "images/butter.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 3.75,
-		quantity: 0
+		price: 3.75
 	},
 	
 	{
 		name: "milk",
-		imageSrc: "images/milk.png",
+		imageSrc: "images/milk.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 4.00,
-		quantity: 0
+		price: 4.00
 	},
 	
 	{
 		name: "cheese",
-		imageSrc: "images/cheese.png",
+		imageSrc: "images/cheese.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 3.00,
-		quantity: 0
+		price: 3.00
 	},
 	
 	{
 		name: "organic kale",
-		imageSrc: "images/kale.png",
+		imageSrc: "images/kale.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 2.00,
-		quantity: 0
+		price: 2.00
 	},
 	
 	{
 		name: "organic peppers",
-		imageSrc: "images/peppers.png",
+		imageSrc: "images/peppers.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.75,
-		quantity: 0
+		price: 1.75
 	},
 	
 	{
 		name: "organic tomatoes",
-		imageSrc: "images/tomato.png",
+		imageSrc: "images/tomato.jpg",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.00,
-		quantity: 0
+		price: 1.00
 	},
 	
 	{
 		name: "pork",
-		imageSrc: "images/pork.png",
+		imageSrc: "images/pork.jpg",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 8.00,
-		quantity: 0
+		price: 8.00
 	},
 	
 	{
 		name: "poultry",
-		imageSrc: "images/poultry.png",
+		imageSrc: "images/poultry.jpg",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 9.00,
-		quantity: 0
+		price: 9.00
 	},
 	
 	{
-		name: "fish",
-		imageSrc: "images/fish.png",
+		name: "salmon",
+		imageSrc: "images/fish.jpg",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 9.50,
-		quantity: 0
-	},
-	
-	{
-		name: "beef",
-		imageSrc: "images/beef.png",
-		vegetarian: false,
-		diabeticSafe: true,
-		foodCategory: "meat",
-		glutenFree: true,
-		dairyFree: true,
-		organic: false,
-		price: 11.00,
-		quantity: 0
+		price: 9.50
 	},
 
 ];
-
 
 function displayAllProducts() {
 
@@ -221,22 +192,22 @@ function displayAllProducts() {
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
 
-	div.id = products[i].name
+	div.id = all_products_in_store[i].name
 
 	var pNamePara = document.createElement('p')
 	pNamePara.class = "zoomtext"
-	pNamePara.innerHTML = products[i].name
+	pNamePara.innerHTML = all_products_in_store[i].name
 	var pPricePara = document.createElement('p')
 	pPricePara.class = "price"
-	pPricePara.innerHTML = "$" + products[i].price
+	pPricePara.innerHTML = "$" + all_products_in_store[i].price
 	var img = document.createElement('img')
-	img.src = products[i].imageSrc
+	img.src = all_products_in_store[i].imageSrc
   
 	img.style.width = "100px"
   	img.style.height = "100px"
 
 	var quantity = document.createElement('input')
-	quantity.id = products[i].name + " quantity"
+	quantity.id = all_products_in_store[i].name + "_quantity"
 	quantity.class = "quantity"
 	quantity.max = "10"
 	quantity.min = "1"
@@ -245,7 +216,7 @@ function displayAllProducts() {
 	quantity.setAttribute('onclick', 'setProductQuantity(this.value);') 
 
 	var btn = document.createElement('button')
-	btn.id = products[i].name+" button"
+	btn.id = all_products_in_store[i].name+"_button"
 	btn.class = "addCartBtn"
 	btn.setAttribute('onclick', 'cartedItems(this.id);') 
 	btn.innerText = "Add product to cart"
@@ -259,20 +230,32 @@ function displayAllProducts() {
 	div.append(btn)
 
 	container.appendChild(div)
-		
-
 	
 	}
-	
 
 }
+
+
+function getProductPrice(name_of_product)
+{
+    for (var i = 0; i < all_products_in_store.length; i++)
+    {
+        if (all_products_in_store[i].name = name_of_product)
+        {
+            return all_products_in_store[i].price;
+        }
+    }
+
+    console.error("The following product does not exist : " + name_of_product);
+    return 0.00;
+}
+
 
 //removes all children from the product page
 function removeAll() {
 	var container = document.getElementById("product-container") 
 	container.innerHTML = ""
 }
-
 
 const allFiltersToApply = [];
 var organicFilterChoice = "";
@@ -337,8 +320,8 @@ function filterProductsPage (selection) {
 		displayAllProducts()
 		var productsToRemove = [];
 		for (var i = 0; i < 15; i++) {
-			if (products[i].foodCategory != selection) {
-				productsToRemove.push(products[i].name)
+			if (all_products_in_store[i].foodCategory != selection) {
+				productsToRemove.push(all_products_in_store[i].name)
 			}
 		}
 
@@ -353,8 +336,8 @@ function filterProductsPage (selection) {
 		displayAllProducts()
 		var productsToRemove = [];
 		for (var i = 0; i < 15; i++) {
-			if (products[i].foodCategory != selection) {
-				productsToRemove.push(products[i].name)
+			if (all_products_in_store[i].foodCategory != selection) {
+				productsToRemove.push(all_products_in_store[i].name)
 			}
 		}
 
@@ -369,8 +352,8 @@ function filterProductsPage (selection) {
 		displayAllProducts()
 		var productsToRemove = [];
 		for (var i = 0; i < 15; i++) {
-			if (products[i].foodCategory != selection) {
-				productsToRemove.push(products[i].name)
+			if (all_products_in_store[i].foodCategory != selection) {
+				productsToRemove.push(all_products_in_store[i].name)
 			}
 		}
 
@@ -385,8 +368,8 @@ function filterProductsPage (selection) {
 		displayAllProducts()
 		var productsToRemove = [];
 		for (var i = 0; i < 15; i++) {
-			if (products[i].foodCategory != selection) {
-				productsToRemove.push(products[i].name)
+			if (all_products_in_store[i].foodCategory != selection) {
+				productsToRemove.push(all_products_in_store[i].name)
 			}
 		}
 
@@ -406,17 +389,17 @@ function restrictProducts() {
 	if (allFiltersToApply.length != 0) {
 		for (var i = 0; i < allFiltersToApply.length; i++) {
 			for (var j = 0; j < 15; j++) {
-				if ((allFiltersToApply[i] == "vegetarian") && (products[j].vegetarian != true)){
-					product_names_to_filter_dietary.push(products[j].name);
+				if ((allFiltersToApply[i] == "vegetarian") && (all_products_in_store[j].vegetarian != true)){
+					product_names_to_filter_dietary.push(all_products_in_store[j].name);
 				}
-				else if ((allFiltersToApply[i] == "glutenFree") && (products[j].glutenFree != true)){
-					product_names_to_filter_dietary.push(products[j].name);
+				else if ((allFiltersToApply[i] == "glutenFree") && (all_products_in_store[j].glutenFree != true)){
+					product_names_to_filter_dietary.push(all_products_in_store[j].name);
 				}
-				else if ((allFiltersToApply[i] == "diabeticSafe") && (products[j].diabeticSafe != true)){
-					product_names_to_filter_dietary.push(products[j].name);
+				else if ((allFiltersToApply[i] == "diabeticSafe") && (all_products_in_store[j].diabeticSafe != true)){
+					product_names_to_filter_dietary.push(all_products_in_store[j].name);
 				}
-				else if ((allFiltersToApply[i] == "dairyFree") && (products[j].dairyFree != true)){
-					product_names_to_filter_dietary.push(products[j].name);
+				else if ((allFiltersToApply[i] == "dairyFree") && (all_products_in_store[j].dairyFree != true)){
+					product_names_to_filter_dietary.push(all_products_in_store[j].name);
 				}
 			}
 		}
@@ -427,13 +410,13 @@ function restrictProducts() {
 
 	for (var j = 0; j < 15; j++)
 	{
-		if (organicFilterChoice == "organicOnly" && !products[j].organic)
+		if (organicFilterChoice == "organicOnly" && !all_products_in_store[j].organic)
 		{
-			product_names_to_filter_organic.push(products[j].name);
+			product_names_to_filter_organic.push(all_products_in_store[j].name);
 		}
-		else if (organicFilterChoice == "nonOrganicOnly" && products[j].organic)
+		else if (organicFilterChoice == "nonOrganicOnly" && all_products_in_store[j].organic)
 		{
-			product_names_to_filter_organic.push(products[j].name);
+			product_names_to_filter_organic.push(all_products_in_store[j].name);
 		}
 	}
 
@@ -476,7 +459,7 @@ var dataArray = []
 /*After the prices are sorted, parentclass for each price is referenced by id and appended to the original container in the sorted order*/
 function sortPrices(value) {
   for (var i = 0; i < 15; i++) {
-    dataArray[i] = new idPrice(products[i].name, products[i].price)
+    dataArray[i] = new idPrice(all_products_in_store[i].name, all_products_in_store[i].price)
   }
   for (var i = 0; i < dataArray.length; i++) {
     for (var j = 0; j < dataArray.length; j++) {
@@ -501,9 +484,9 @@ function sortPrices(value) {
 // calculate the total price of selected items, given a list of products 
 function getTotalPrice(prods) {
 	totalPrice = 0;
-	for (let i = 0; i < products.length; i++) {
-		if (prods.indexOf(products[i].name) > -1){
-			totalPrice += products[i].price;
+	for (let i = 0; i < all_products_in_store.length; i++) {
+		if (prods.indexOf(all_products_in_store[i].name) > -1){
+			totalPrice += all_products_in_store[i].price;
 		}
 	}
 	return totalPrice;
@@ -535,27 +518,27 @@ function displaySearch() {
 	let storedNames = []
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
-	console.log("count",products)
+	console.log("count",all_products_in_store)
 	// includes function inspired from https://stackoverflow.com/a/1789952/15518664
-	if(products[i].name.includes(val) ){
+	if(all_products_in_store[i].name.includes(val) ){
 		counter ++
-	div.id = products[i].name
-	storedNames.push(products[i].name)
-	console.log("products[i].name",products[i].name)
+	div.id = all_products_in_store[i].name
+	storedNames.push(all_products_in_store[i].name)
+	console.log("products[i].name",all_products_in_store[i].name)
 
 	var pNamePara = document.createElement('p')
-	pNamePara.innerHTML = products[i].name
+	pNamePara.innerHTML = all_products_in_store[i].name
 	var pPricePara = document.createElement('p')
 	pPricePara.class = "price"
-	pPricePara.innerHTML = "$" + products[i].price
+	pPricePara.innerHTML = "$" + all_products_in_store[i].price
 	var img = document.createElement('img')
-	img.src = products[i].imageSrc
+	img.src = all_products_in_store[i].imageSrc
 
 	img.style.width = "100px"
   	img.style.height = "100px"
 
 	var quantity = document.createElement('input')
-	quantity.id = products[i].name + "quantity"
+	quantity.id = all_products_in_store[i].name + "_quantity"
 	quantity.class = "quantity"
 	quantity.max = 10
 	quantity.min = 1
@@ -563,9 +546,10 @@ function displaySearch() {
 	quantity.value = 1
 
 	var btn = document.createElement('button')
-	btn.id = products[i].name+"button"
+	btn.id = all_products_in_store[i].name+"_button"
 	btn.class = "addCartBtn"
 	//btn.onclick = cartedItems(this.id)
+	btn.setAttribute('onclick', 'cartedItems(this.id);') 
 	btn.innerText = "Add product to cart"
 
 
