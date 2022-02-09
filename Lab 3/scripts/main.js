@@ -59,7 +59,7 @@ function getPage(elem) {
 
     // page.style.display = value;
 
-	displayAllProducts();
+	displayAllProducts()
 }
 
 

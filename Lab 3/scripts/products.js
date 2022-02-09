@@ -213,79 +213,6 @@ var products = [
 
 ];
 
-// this list will store the names of all products the user adds to their cart
-const cartProducts = [];
-var productCounter = -1;
-
-// function to return the quantity given the product name as input
-function getProductQuantity(item) {
-	// iterate through cart products
-	for (let i = 0; i < cartProducts.length; i++) {
-		if (cartProducts[i].name == item) {
-			return cartProducts[i].quantity;
-		}
-	}
-	return 0;
-}
-
-// function to return the price given the product name as input
-function getProductPrice(item) {
-	for (let i = 0; i < products.length; i++) {
-		if (products[i].name == item) {
-			return products[i].price;
-		}
-	}
-}
-
-/*
-function addToCart(item) {
-	// first check to see if the product is already in the array
-	// first retrieve the quantity the user selected
-	var amount = document.getElementById(item+'_amount').value;
-	// then push both the item and the quantity to the cart array
-	cartProducts.push({name: item, quantity: amount});
-	// increment product counter
-	productCounter++;
-	// for testing purposes only
-	let string = ""
-	for (const [key, value] of Object.entries(cartProducts[productCounter])) {
-		string += `${key}: ${value}\n`
-	}
-	alert(string);
-	
-}
-
-/*
-function displayCart() {
-	
-	// create container to display products
-	var cartContainer = document.getElementById("cart_container");
-	// iterate through cart products
-	for (let i = 0; i < cartProducts.length; i++) {
-		// create a new div for each product
-		var div = document.createElement('div');
-		div.id = cartProducts[i].name;
-		// variable to display product name
-		var cartProductName = document.createElement('p');
-		cartProductName.innerHTML = cartProducts[i].name;
-		// variable to display product price
-		var cartProductPrice = document.createElement('p');
-		cartProductPrice.innerHTML = getProductPrice(cartProductName);
-		// variable to display product quantity
-		var cartProductQuantity = document.createElement('p');
-		cartProductQuantity.innerHTML = getProductQuantity(cartProductName);
-		// append div elements
-		div.append(cartProductName);
-		div.append(cartProductPrice);
-		div.append(cartProductQuantity);
-		// append child elements to container
-		cartContainer.appendChild(div)
-
-	}
-
-}
-*/
-
 
 function displayAllProducts() {
 
@@ -345,7 +272,7 @@ function removeAll() {
 	var container = document.getElementById("product-container") 
 	container.innerHTML = ""
 }
-*/
+
 
 const allFiltersToApply = [];
 var organicFilterChoice = "";
