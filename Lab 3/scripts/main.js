@@ -78,7 +78,7 @@ class CustomerProfile {
       ["diabetic", false],
       ["lactose", false]
     ]);
-    this.organicSelection = "noOrganicFilter";
+    this.organicSelection = "organicOnly";
     this.isZoomedIn = false;
   }
 }
@@ -319,7 +319,7 @@ function clearAllFilters()
     diateryCharacteristicCheckboxes[i].checked = false;
   }
 
-  document.getElementById("noOrganicFilter").checked = true;
+  document.getElementById("organicSelectionComboBox").value = "noOrganicFilter";
   updateOrganicFilters("noOrganicFilter");
 
   resetAllProductQuantities();
@@ -490,8 +490,7 @@ function loadCustomerSetting(customerProfile)
   customerProfile.cartContent.forEach (function(productQuantity, productName) {
 
    products.set(productName, productQuantity);
-   var priceName = productName + "Price"
-   var productPrice = document.getElementById(priceName).innerHTML.replace('$', '')
+   var productPrice = getProductPrice(productName);
    var additionalPrice = parseFloat(productPrice) * parseFloat(productQuantity)
    cartTotal += additionalPrice;
   })
@@ -505,7 +504,7 @@ function loadCustomerSetting(customerProfile)
   })  
 
   updateOrganicFilters(customerProfile.organicSelection)
-  document.getElementById(customerProfile.organicSelection).checked = true
+  document.getElementById("organicSelectionComboBox").value = customerProfile.organicSelection
 }
 
 function registerCustomer()
@@ -599,13 +598,6 @@ function copySettingsToCustomerProfile()
     currentCustomerProfile.diaterycharacteristicChoices.set(diateryCharacteristicCheckboxes[i].id, diateryCharacteristicCheckboxes[i].checked);
   }
 
-  var organicChoiceRadioboxes = document.getElementsByClassName("organicChoiceRadioBox");
-  for (var i = 0; i < organicChoiceRadioboxes.length; i++) {
-    if (organicChoiceRadioboxes[i].checked)
-    {
-      currentCustomerProfile.organicSelection = organicChoiceRadioboxes[i].id;
-      break
-    }
-  }
+  currentCustomerProfile.organicSelection = document.getElementById("organicSelectionComboBox").value;
 
 }
