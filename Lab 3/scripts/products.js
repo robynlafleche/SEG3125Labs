@@ -298,6 +298,19 @@ function updateOrganicFilters(choice) {
 
 }
 
+
+function highlightShopSelection(shopSelectionButtonID)
+{
+	var allSelectionButtons = document.getElementsByClassName("product-tab");
+
+	for (var i = 0; i < allSelectionButtons.length; i++) {
+		allSelectionButtons[i].style.backgroundColor = 'grey';
+	}
+	
+	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'red';
+}
+
+
 function filterProductsPage (selection) {
 
 	if (selection == 'all') {
