@@ -67,7 +67,7 @@ var all_products_in_store = [
 		name: "muffins",
 		imageSrc: "images/muffins.jpg",
 		vegetarian: true,
-		diabeticSafe: true,
+		diabeticSafe: false,
 		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
@@ -151,7 +151,7 @@ var all_products_in_store = [
 		name: "pork",
 		imageSrc: "images/pork.jpg",
 		vegetarian: false,
-		diabeticSafe: true,
+		diabeticSafe: false,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
@@ -542,7 +542,7 @@ function displaySearch() {
 	quantity.class = "quantity"
 	quantity.max = 10
 	quantity.min = 1
-	quantity.type = Number
+	quantity.type = "number"
 	quantity.value = 1
 
 	var btn = document.createElement('button')
