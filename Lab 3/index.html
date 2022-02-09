@@ -42,7 +42,7 @@
    <div style="width:100%">
     <input type="text" class="box tablink  tabs"  id = "srch" class="navbutton" placeholder="Search for a product ex: milk" />
     <button  class="navbutton " id="seachButton"  onclick='displaySearch(); getPage("Search")'> Search🔎</button>
-    <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button>
+    <button onclick="document.getElementById('srch').value ='';  document.getElementById('search-container').innerHTML = ''" class="navbutton" id="seachButton"> Clear</button>
     <!-- <div class="tabs"> -->
       <!-- emojis from https://unicode-table.com/en/emoji/ -->
       <button class="tablink tabs normaltab" onclick='getPage("Client")'>Client 👤 </button>
@@ -220,13 +220,14 @@
             <button class="subnav-product-tab" onclick="filterProductsPage('dairy')">🧀 Dairy products</button>
             <button class="subnav-product-tab" onclick="filterProductsPage('meat')">🥩 Meat</button>
             <button class="subnav-product-tab" onclick="filterProductsPage('bakery')">🍞 Bakery</button>
+            <br>
           </div>
         </div>
       </div>
 
-      <div class="product-container" id="product-container">
+      <span class="product-container" id="product-container">
         
-      </div>
+      </span>
       
       </div>
      </div>
