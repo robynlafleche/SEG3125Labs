@@ -296,6 +296,16 @@ html {
   text-align: left;
   margin-left: 45%;
 }
+
+.questionWithOptions {
+  border-radius: 25px;
+  border: 2px solid grey;
+  padding-bottom: 165px;
+  vertical-align: left;
+  text-align: center;
+  margin-bottom: 10px;
+  }
+
 .zoomButton {
   text-align: center;
   padding-top: 50px;
