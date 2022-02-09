@@ -304,7 +304,7 @@ html {
   vertical-align: left;
   text-align: center;
   margin-bottom: 10px;
-  }
+}
 
 .zoomButton {
   text-align: center;
@@ -359,7 +359,7 @@ html {
   height: 40px;
   width: 20%;
   background-color: transparent;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 /* .normaltab {

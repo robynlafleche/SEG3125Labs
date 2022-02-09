@@ -582,6 +582,11 @@ function updateProductSize() {
 	  field.style.fontSize = "22px"
 	  
 	}
+	var fieldsnew = document.getElementsByClassName("aboutUs");
+	for(let field of fieldsnew){
+		field.style.fontSize = "22px"
+		
+	  }
 }
 function resetProductSize() {
 	var fields = document.getElementsByClassName("product-container");
@@ -589,4 +594,9 @@ function resetProductSize() {
 	  field.style.fontSize = "16px"
 	  
 	}
+	var fieldsnew = document.getElementsByClassName("aboutUs");
+	for(let field of fieldsnew){
+		field.style.fontSize = "16px"
+		
+	  }
 }
