@@ -445,3 +445,9 @@ html {
   font-size: 20px;
   float: right;
 }
+
+/* putting the clear search button in the input field inspired from https://qr.ae/pGEBKI 
+}*/
+#clear {
+  margin-left: -43px;
+}
