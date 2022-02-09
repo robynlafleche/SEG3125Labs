@@ -100,10 +100,11 @@ cartTotal is the total after all the items are added to the cart*/
 
   // A sample customer so the system already has 1 customer at the very begining.
   var sampleCustomer = new CustomerProfile("Karim", "Dahel", "kdahe094@hotmail.com", "password");
-  sampleCustomer.cartContent.set("Organic banana", 1);
-  sampleCustomer.cartContent.set("Milk", 2);
-  sampleCustomer.cartContent.set("Poultry", 4);
-  sampleCustomer.cartContent.set("Fish", 1);
+  sampleCustomer.cartContent.set("organic banana", 1);
+  sampleCustomer.cartContent.set("salmon", 2);
+  sampleCustomer.cartContent.set("poultry", 4);
+  sampleCustomer.cartContent.set("milk", 1);
+
   sampleCustomer.organicSelection = "organicOnly"; // Organic Products Only 
   sampleCustomer.isZoomedIn = true;
 
@@ -386,11 +387,11 @@ function triggerZoomUpddateToWidgets()
 {
   if (zoomedIn)
   {
-    zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)
+    zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true);  updateProductSize();
   }
   else
   {
-    zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)
+    zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false);  resetProductSize();
   }  
 }
 
