@@ -574,3 +574,19 @@ function displaySearch() {
 	}
 
 }
+
+//for zooming in the products page
+function updateProductSize() {
+	var fields = document.getElementsByClassName("product-container");
+	for(let field of fields){
+	  field.style.fontSize = "22px"
+	  
+	}
+}
+function resetProductSize() {
+	var fields = document.getElementsByClassName("product-container");
+	for(let field of fields){
+	  field.style.fontSize = "16px"
+	  
+	}
+}

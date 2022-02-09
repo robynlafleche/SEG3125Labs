@@ -71,8 +71,8 @@
        <link href='https://css.gg/zoom-in.css' rel='stylesheet'>
        <link href='https://css.gg/zoom-out.css' rel='stylesheet'>
 
-        <button type="button" id="zoomInButton" class="zoom" onclick='zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
-        <button type="button" id="zoomOutButton" class="zoom" onclick='zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
+        <button type="button" id="zoomInButton"  class="zoom" onclick='updateProductSize(); zoomIn("zoomtext");  zoomInH2("zoomh2");  zoomInH2("zoomh3");  zoomInH2("zoomh4"); updateZoomInButtonSensitivities(true)' disabled><i class="gg-zoom-in"></i></button>
+        <button type="button" id="zoomOutButton" class="zoom" onclick='resetProductSize(); zoomOut("zoomtext"); zoomOuth2("zoomh2");  zoomOuth3("zoomh3");  zoomOuth2("zoomh4"); updateZoomInButtonSensitivities(false)' disabled><i class="gg-zoom-out"></i></button>
 
    <div style="width:100%">
   </div>
