@@ -444,3 +444,57 @@ function getTotalPrice(prods) {
 	}
 	return totalPrice;
 }
+function displaySearch() {
+	// document.getElementById("Search").style.visibility = 'visible'
+	//document.getElementById("Search").style.display = ''
+	console.log(document.getElementById("srch").value)
+	let val = document.getElementById("srch").value.trim().toLowerCase()
+
+	console.log("here")
+	var container = document.getElementById("search-container")  
+	container.display 
+
+	for (let i = 0; i < 15; i++) {
+	var div = document.createElement('div')
+	if(products[i].name === val){
+		console.log("count")
+	div.id = products[i].name
+
+	var pNamePara = document.createElement('p')
+	pNamePara.innerHTML = products[i].name
+	var pPricePara = document.createElement('p')
+	pPricePara.class = "price"
+	pPricePara.innerHTML = "$" + products[i].price
+	var img = document.createElement('img')
+	img.src = products[i].imageSrc
+
+	img.style.width = "100px"
+  	img.style.height = "100px"
+
+	var quantity = document.createElement('input')
+	quantity.id = products[i].name + "quantity"
+	quantity.class = "quantity"
+	quantity.max = 10
+	quantity.min = 1
+	quantity.type = Number
+	quantity.value = 1
+
+	var btn = document.createElement('button')
+	btn.id = products[i].name+"button"
+	btn.class = "addCartBtn"
+	//btn.onclick = cartedItems(this.id)
+	btn.innerText = "Add product to cart"
+
+
+
+	div.append(pNamePara)
+	div.append(img)
+	div.append(pPricePara)
+	div.append(quantity)
+	div.append(btn)
+
+	container.appendChild(div)
+
+	}
+
+	}}

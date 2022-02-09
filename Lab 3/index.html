@@ -34,16 +34,16 @@
         <span id="storename">Group 6 Grocery Store</span>
 
         <p id="customerName">Customer Name</p>
-        <input type="text" class="box tablink  tabs"   placeholder="Search for a product" />
+        <input type="text" class="box tablink  tabs"   id="srch"  placeholder="Search for a product" />
   
-        <button onclick="document.getElementById('srch').value =''" class="navbutton" id="clear"> Clear</button>
-        <button onclick="returnSearch()" class="navbutton " id="seachButton" > Search🔎</button>
+        <button onclick="document.getElementById('srch').value =''; document.getElementById('search-container').innerHTML = ''" class="navbutton" id="clear"> Clear</button>
+        <button onclick='displaySearch(); getPage("Search")' class="navbutton " id="seachButton" > Search🔎</button>
         <!-- <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button> -->
     <!-- style="position: absolute;
         top: 35px;
         right: 26%;" -->
-        <button class="tablink tabs normaltab" onclick='getPage("Client")' >👤 </button>
-        <button class="tablink  tabs normaltab" onclick='getPage("Cart")'>🛒 </button>
+        <button class="tablink tabs "  onclick='getPage("Client")' >👤 </button>
+        <button class="tablink  tabs " onclick='getPage("Cart")'>🛒 </button>
 
       </div>
         <br>
@@ -79,6 +79,16 @@
   <!-- emojis from https://unicode-table.com/en/emoji/ -->
   <hr width="90%" color="green">
 <!-- Navigation tabs start here -->
+<div id ="Search" class="option" style="display:none">
+  <div class="pagetab">
+    <div>
+     <h2 class="pageTopHeadings">Search Results:</h2>
+      <div class="search-container" id="search-container" ></div>
+
+
+    </div>
+  </div>
+</div>
 <div id = "About" class="option" style="display:none">
   <div class="pagetab">
     <div>
