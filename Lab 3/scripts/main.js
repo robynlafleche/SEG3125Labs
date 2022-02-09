@@ -79,7 +79,7 @@ class CustomerProfile {
       ["lactose", false]
     ]);
     this.organicSelection = "organicOnly";
-    this.isZoomedIn = false;
+    this.isZoomedIn = true;
   }
 }
 
