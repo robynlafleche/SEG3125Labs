@@ -195,8 +195,8 @@ td {
 
 .product-navbar button:hover,
 .product-subnav:hover .product-tab {
-  background-color: rgb(28, 58, 28);
-  color: white;
+  background-color: orange;
+  /*color: white;*/
 }
 
 .product-subnav {

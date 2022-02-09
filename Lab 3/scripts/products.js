@@ -187,7 +187,7 @@ var all_products_in_store = [
 
 function displayAllProducts() {
 
-	var container = document.getElementById("product-container")  
+	var container = document.getElementById("product-container") 	
 
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
@@ -232,6 +232,8 @@ function displayAllProducts() {
 	container.appendChild(div)
 	
 	}
+
+	highlightShopSelection("shopAllProductsButton")
 
 }
 
@@ -307,8 +309,7 @@ function highlightShopSelection(shopSelectionButtonID)
 		allSelectionButtons[i].style.backgroundColor = 'rgb(233, 233, 237)';
 	}
 	
-	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'rgb(28, 58, 28)';
-	document.getElementById(shopSelectionButtonID).style.color = "white"
+	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'orange';
 }
 
 

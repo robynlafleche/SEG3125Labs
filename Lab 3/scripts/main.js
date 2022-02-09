@@ -362,8 +362,7 @@ function clearAllSettings()
 
   triggerZoomUpddateToWidgets();
  
-  document.getElementById("customerName").style.display = "none"
-
+  document.getElementById("customerName").style.display = "none"  
 
 }
 
@@ -379,15 +378,8 @@ function clearAllFilters()
   document.getElementById("organicSelectionComboBox").value = "noOrganicFilter";
   updateOrganicFilters("noOrganicFilter");
 
-  resetAllProductQuantities();
-
 }
 
-
-function resetAllProductQuantities() 
-{
-  // Still requires implementation.
-}
 
 
 function triggerZoomUpddateToWidgets()
