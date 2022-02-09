@@ -330,7 +330,7 @@ html {
   margin-left: 40%;
 }
 .box {
-  width: 40%;
+  width: 38%;
 }
 
 #seachButton {
@@ -473,5 +473,5 @@ html {
 
 /* putting the search button in the input field inspired from https://qr.ae/pGEBKI */
 #clear {
-  margin-left: -47px;
+  margin-left: -51px;
 }

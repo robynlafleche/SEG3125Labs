@@ -456,7 +456,9 @@ function displaySearch() {
 
 	for (let i = 0; i < 15; i++) {
 	var div = document.createElement('div')
-	if(products[i].name === val){
+
+	// includes function inspired from https://stackoverflow.com/a/1789952/15518664
+	if(products[i].name.includes(val)){
 		console.log("count")
 	div.id = products[i].name
 
