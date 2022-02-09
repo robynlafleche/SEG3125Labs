@@ -199,10 +199,184 @@
           </div>
         </div>
   
-        <div class="product-container" id="product-container">
-          
-        </div>
+		<!-- table to display products -->
+<br>
+<center>
+  <table>
+    <tr>
+      	<td>	
+      		<div class="product-card">
+				<img src="images/banana.png" style="width:200%">
+				<h2>Organic Banana</h2>
+				<p class="price">$1.00</p>
+				<input type="number" id="banana_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('banana')"> Add to Cart </button>
+			</div> 
+		</td>
+		<td>
+		      <div class="product-card">
+				<img src="images/apple.png" style="width:200%">
+				<h2>Organic Apple</h2>
+				<p class="price">$1.50</p>
+				<input type="number" id="apple_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('apple')"> Add to Cart </button>
+			</div> 
+      	</td>
+      	<td>
+      	      <div class="product-card">
+				<img src="images/strawberry.png" style="width:200%">
+				<h2>Organic Strawberry</h2>
+				<p class="price">$2.50</p>
+				<input type="number" id="strawberry_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('strawberry')"> Add to Cart </button>
+			</div> 
+      	</td>
+      	<td>
+      	      <div class="product-card">
+				<img src="images/bread.png" style="width:200%">
+				<h2>White Bread</h2>
+				<p class="price">$1.50</p>
+				<input type="number" id="bread_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('bread')"> Add to Cart </button>
+			</div> 
+      	</td>
+    </tr>	
+    <tr>
+        <td>
+        	<div class="product-card">
+				<img src="images/tortilla.png" style="width:200%">
+				<h2>Tortillas</h2>
+				<p class="price">$2.75</p>
+				<input type="number" id="tortilla_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('tortillas')"> Add to Cart </button>
+			</div> 
+        </td>
+        <td>
+        	<div class="product-card">
+				<img src="images/muffin.png" style="width:200%">
+				<h2>Muffins</h2>
+				<p class="price">$4.50</p>
+				<input type="number" id="muffin_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('muffins')"> Add to Cart </button>
+			</div> 
+        </td>
+        <td>
+        	<div class="product-card">
+				<img src="images/butter.png" style="width:200%">
+				<h2>Butter</h2>
+				<p class="price">$3.75</p>
+				<input type="number" id="butter_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('butter')"> Add to Cart </button>
+			</div> 
+        </td>
+        <td>
+        	<div class="product-card">
+				<img src="images/milk.png" style="width:200%">
+				<h2>Milk</h2>
+				<p class="price">$4.00</p>
+				<input type="number" id="milk_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('milk')"> Add to Cart </button>
+			</div> 
+        </td>
+    </tr>
+    <tr>
+      	<td>
+      		<div class="product-card">
+				<img src="images/cheese.png" style="width:200%">
+				<h2>Cheese</h2>
+				<p class="price">$3.00</p>
+				<input type="number" id="cheese_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('cheese')"> Add to Cart </button>
+			</div> 
+      	</td>
+      	<td>
+      		<div class="product-card">
+				<img src="images/kale.png" style="width:200%">
+				<h2>Organic Kale</h2>
+				<p class="price">$2.00</p>
+				<input type="number" id="kale_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('kale')"> Add to Cart </button>
+			</div> 
+      	</td>
+      	<td>
+      		<div class="product-card">
+				<img src="images/pepper.png" style="width:200%">
+				<h2>Organic Peppers</h2>
+				<p class="price">$1.75</p>
+				<input type="number" id="pepper_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('peppers')"> Add to Cart </button>
+			</div> 
+      	</td>
+      	<td>
+      		<div class="product-card">
+				<img src="images/tomato.png" style="width:200%">
+				<h2>Organic Tomatoes</h2>
+				<p class="price">$1.00</p>
+				<input type="number" id="tomato_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('tomato')"> Add to Cart </button>
+			</div> 
+      	</td>
+    </tr>
+    
+    <tr>
+    	<td>
+    		<div class="product-card">
+				<img src="images/pork.png" style="width:200%">
+				<h2>Pork</h2>
+				<p class="price">$8.00</p>
+				<input type="number" id="pork_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('pork')"> Add to Cart </button>
+			</div> 
+    	</td>
+    	<td>
+    		<div class="product-card">
+				<img src="images/poultry.png" style="width:200%">
+				<h2>Poultry</h2>
+				<p class="price">$9.00</p>
+				<input type="number" id="poultry_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('poultry')"> Add to Cart </button>
+			</div> 
+    	</td>
+    	<td>
+    		<div class="product-card">
+				<img src="images/fish.png" style="width:200%">
+				<h2>Fish</h2>
+				<p class="price">$9.50</p>
+				<input type="number" id="fish_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('fish')"> Add to Cart </button>
+			</div> 
+    	</td>
+    	<td>
+    		<div class="product-card">
+				<img src="images/beef.png" style="width:200%">
+				<h2>Beef</h2>
+				<p class="price">$11.00</p>
+				<input type="number" id="beef_amount" class="amount" name="quantity" value="1" min="1" max="10">
+				<button class="add-to-cart" onclick="addToCart('beef')"> Add to Cart </button>
+			</div> 
+    	</td>
+    	</tr>
+    	    <tr>
+    	<td>
+			<br> 
+    	</td>
+    	<td>
+			<br>
+    	</td>
+    	<td>
+			<br>
+    	</td>
+    	<td>
+			<br>
+    	</td>
+    	</tr>
+    	<br>
+    	<br>
+</center>
+
+      
       </div>
+     </div>
       
       
       </div>
