@@ -485,7 +485,21 @@ function displaySearch() {
 	console.log(document.getElementById("srch").value)
 	let val = document.getElementById("srch").value.trim().toLowerCase()
 	let counter = 0
-	console.log("here")
+	console.log("val = " + val)
+
+	if (val == "")
+	{
+		// Do nothing if no text is in the search field
+		console.log("val is empty")
+		//return;
+	}
+
+	if (document.getElementById("Search").style.display = "none")
+	{
+		getPage("Search");
+	}
+	
+
 	var container = document.getElementById("search-container")  
 	container.display 
 	let storedNames = []
