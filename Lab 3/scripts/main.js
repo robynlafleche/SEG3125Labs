@@ -162,6 +162,16 @@ function cartedItems(productButtonId) {
 }
 
 
+function clearCartDisplay()
+{
+  products.forEach (function(productQuantity, productName) {
+    deletedButton = productName + "del";
+    removeItemFromCart(deletedButton);
+   })
+  
+}
+
+
 /* Map usage and iteration inspired from https://www.w3schools.com/js/js_object_maps.asp*/
 function updateCartDisplay(price, quantity, name)
 {
@@ -450,10 +460,12 @@ function onLoginButton()
   
         alert("Thank you for shopping with us " + currentCustomerProfile.firstName + " " + currentCustomerProfile.lastName + ". You have now been logged out.");
         // Must reset all the settings.
+        clearCartDisplay();
         clearAllSettings();
-        updateCartDisplay();
+        //updateCartDisplay();
         
-        getCartTotal();
+        
+        //getCartTotal();
 
         clearLoginAndSignUpInputs();
         currentCustomerProfile = null;
@@ -464,6 +476,8 @@ function onLoginButton()
   }
 
 }
+
+
 
 function onLoginCancel()
 {
@@ -507,9 +521,9 @@ function authenticateUser()
     {
       // Found a user with the credentials entered.
       loadCustomerSetting(customerProfile);
-      updateCartDisplay()
-      addLines();
-      getCartTotal();
+      //updateCartDisplay()
+      //addLines();
+      //getCartTotal();
       triggerZoomUpddateToWidgets();
 
       currentCustomerProfile = customerProfile;
@@ -543,6 +557,8 @@ function loadCustomerSetting(customerProfile)
    var productPrice = getProductPrice(productName);
    var additionalPrice = parseFloat(productPrice) * parseFloat(productQuantity)
    cartTotal += additionalPrice;
+
+   updateCartDisplay(productPrice, productQuantity, productName);
   })
 
   zoomedIn = customerProfile.isZoomedIn;    
