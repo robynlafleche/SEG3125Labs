@@ -304,10 +304,11 @@ function highlightShopSelection(shopSelectionButtonID)
 	var allSelectionButtons = document.getElementsByClassName("product-tab");
 
 	for (var i = 0; i < allSelectionButtons.length; i++) {
-		allSelectionButtons[i].style.backgroundColor = 'grey';
+		allSelectionButtons[i].style.backgroundColor = 'rgb(233, 233, 237)';
 	}
 	
-	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'red';
+	document.getElementById(shopSelectionButtonID).style.backgroundColor = 'rgb(28, 58, 28)';
+	document.getElementById(shopSelectionButtonID).style.color = "white"
 }
 
 
