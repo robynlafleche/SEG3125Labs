@@ -172,16 +172,27 @@ td {
 }
 /* style information for Product page */
 
+.product-page {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+
 .product-navbar {
   float: left;
   overflow: hidden;
+  padding: 20px;
 }
 
 .product-tab {
-  font-size: 16px;
+  font-size: 14px;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 20px;
+  margin: 10px;
 }
 
 .product-navbar button:hover, .product-subnav:hover .product-tab {

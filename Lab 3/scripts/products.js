@@ -206,17 +206,18 @@ function displayAllProducts() {
   	img.style.height = "100px"
 
 	var quantity = document.createElement('input')
-	quantity.id = products[i].name + "quantity"
+	quantity.id = products[i].name + " quantity"
 	quantity.class = "quantity"
-	quantity.max = 10
-	quantity.min = 1
-	quantity.type = Number
-	quantity.value = 1
+	quantity.max = "10"
+	quantity.min = "1"
+	quantity.type = "number"
+	quantity.value = "1"
+	quantity.setAttribute('onclick', 'setProductQuantity(this.value);') 
 
 	var btn = document.createElement('button')
-	btn.id = products[i].name+"button"
+	btn.id = products[i].name+" button"
 	btn.class = "addCartBtn"
-	//btn.onclick = cartedItems(this.id)
+	btn.setAttribute('onclick', 'cartedItems(this.id);') 
 	btn.innerText = "Add product to cart"
 	
 
@@ -258,6 +259,41 @@ function restrictProducts(prod, rule) {
 		}
 	}
 	return product_names;
+}
+
+
+/*Creates an object for the id of the parent class and it's price*/
+function idPrice(id, price) {
+  this.id = id
+  this.price = price
+}
+
+var dataArray = []
+
+/*Sorts the prices either from low-high or high-low depending on user's selection*/
+/*After the prices are sorted, parentclass for each price is referenced by id and appended to the original container in the sorted order*/
+function sortPrices(value) {
+  for (var i = 0; i < 15; i++) {
+    dataArray[i] = new idPrice(products[i].name, products[i].price)
+  }
+  for (var i = 0; i < dataArray.length; i++) {
+    for (var j = 0; j < dataArray.length; j++) {
+      if (dataArray[i].price < dataArray[j].price) {
+        var temp = dataArray[i]
+        dataArray[i] = dataArray[j]
+        dataArray[j] = temp
+      }
+    }
+  }
+  if (value=="high") {
+  dataArray.reverse()
+  }
+  var container = document.getElementById("product-container")
+  for (var i = 0; i < 15; i++) {
+  var node1 = document.getElementById(dataArray[i].id)
+  console.log(dataArray[0].id)
+  container.append(node1)
+}
 }
 
 // calculate the total price of selected items, given a list of products 

@@ -191,31 +191,34 @@
 
  <div id = "Product" style="display:none">
     <div class="pagetab" >
-      <select name="sort" onchange="sortPrices(this.value);"  class="zoomh4">
+      <select class="sort-price" name="sort" onchange="sortPrices(this.value);"  class="zoomh4">
         <optgroup > 
         <option selected="selected" >Sort by price</option>
         <option value="low"  >Low to high</option>
         <option value="high" >High to low</option>
       </optgroup>
       </select>
-
-      <div class="product-navbar">
-        <button class="product-tab" onclick="filterProductsPage()">Shop All Products</button>
-        <button class="product-tab" onclick="filterProductsPage('restrictions')">Shop based off your profile settings</button>
-        <div class="product-subnav">
-          <button class="product-tab">Shop by category <i class="fa fa-caret-down"></i></button>
-          <div class="product-subnav-content">
-            <button class="subnav-product-tab" onclick="filterProductsPage('fruits-veg')">🍎 Fruits and Vegetables</button>
-            <button class="subnav-product-tab" onclick="filterProductsPage('dairy')">🧀 Dairy products</button>
-            <button class="subnav-product-tab" onclick="filterProductsPage('meat')">🥩 Meat</button>
-            <button class="subnav-product-tab" onclick="filterProductsPage('bakery')">🍞 Bakery</button>
+      <div class="product-page">
+         
+        <div class="product-navbar">
+          <button class="product-tab" onclick="filterProductsPage()">Shop All Products</button>
+          <button class="product-tab" onclick="filterProductsPage('restrictions')">Shop based off your profile settings</button>
+          <div class="product-subnav">
+            <button class="product-tab">Shop by category <i class="fa fa-caret-down"></i></button>
+            <div class="product-subnav-content">
+              <button class="subnav-product-tab" onclick="filterProductsPage('fruits-veg')">🍎 Fruits and Vegetables</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('dairy')">🧀 Dairy products</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('meat')">🥩 Meat</button>
+              <button class="subnav-product-tab" onclick="filterProductsPage('bakery')">🍞 Bakery</button>
+            </div>
           </div>
         </div>
+  
+        <div class="product-container" id="product-container">
+          
+        </div>
       </div>
-
-      <div class="product-container" id="product-container">
-        
-      </div>
+      
       
       </div>
      </div>
