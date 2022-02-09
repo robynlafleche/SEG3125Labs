@@ -99,7 +99,7 @@ cartTotal is the total after all the items are added to the cart*/
   var currentCustomerProfile;
 
   // A sample customer so the system already has 1 customer at the very begining.
-  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "k", "p"); //"kdahe094@hotmail.com", "password");
+  var sampleCustomer = new CustomerProfile("Karim", "Dahel", "kdahe094@hotmail.com", "password");
   sampleCustomer.cartContent.set("Organic banana", 1);
   sampleCustomer.cartContent.set("Milk", 2);
   sampleCustomer.cartContent.set("Poultry", 4);
@@ -108,7 +108,7 @@ cartTotal is the total after all the items are added to the cart*/
   sampleCustomer.isZoomedIn = true;
 
   // Add the sample customer to the custumer map.
-  customerProfiles.set("k", sampleCustomer);  
+  customerProfiles.set("kdahe094@hotmail.com", sampleCustomer);
 }
 
 /*code inspired from youtube tutorial https://www.google.com/search?q=add+to+cart+button+html+and+javascript&oq=&aqs=chrome.0.35i39i362l8.147681j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_Mrz1Yc3LF5-aptQP1NC7uA820
@@ -535,6 +535,14 @@ function registerCustomer()
     alert("An account already exists with the email " + emailEntered);
     return;    
   }
+  // Must validate the email address entered
+  // Validation regular was expression obtained from https://stackoverflow.com/questions/940577/javascript-regular-expression-email-validation
+  var emailAddressRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (!emailAddressRegexp.test(emailEntered)) 
+  {
+    alert('The email address entered is invalid.');
+    return ;
+  }  
 
   var passwordEntered = document.getElementById("passwordInputSignUp").value;
   if (passwordEntered == "")
