@@ -5,19 +5,20 @@
 var products = [
 	{
 		name: "organic banana",
-		imageSrc: "images/banana.jpg",
+		imageSrc: "images/banana.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.00
+		price: 1.00,
+		quantity: 0
 	},
 	
 	{
 		name: "organic apple",
-		imageSrc: "images/apple.jpg",
+		imageSrc: "images/apple.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
@@ -25,11 +26,12 @@ var products = [
 		dairyFree: true,
 		organic: true,
 		price: 1.50,
+		quantity: 0
 	},
 	
 	{
 		name: "organic strawberry",
-		imageSrc: "images/strawberry.jpg",
+		imageSrc: "images/strawberry.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
@@ -37,154 +39,252 @@ var products = [
 		dairyFree: true,
 		organic: true,
 		price: 2.50,
+		quantity: 0
 	},
 	
 	{
 		name: "white bread",
-		imageSrc: "images/bread.jpg",
+		imageSrc: "images/bread.png",
 		vegetarian: true,
-		diabeticSafe: true,
+		diabeticSafe: false,
 		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
-		price: 1.50
+		price: 1.50,
+		quantity: 0
 	},
 		
 	{
 		name: "tortillas",
-		imageSrc: "images/tortillas.jpg",
+		imageSrc: "images/tortillas.png",
 		vegetarian: true,
-		diabeticSafe: true,
+		diabeticSafe: false,
 		foodCategory: "bakery",
 		glutenFree: false,
 		dairyFree: true,
 		organic: false,
-		price: 2.75
+		price: 2.75,
+		quantity: 0
 	},
 	
 	{
 		name: "muffins",
-		imageSrc: "images/muffins.jpg",
+		imageSrc: "images/muffins.png",
 		vegetarian: true,
-		diabeticSafe: true,
+		diabeticSafe: false,
 		foodCategory: "bakery",
 		glutenFree: false,
-		dairyFree: true,
+		dairyFree: false,
 		organic: false,
-		price: 4.50
+		price: 4.50,
+		quantity: 0
 	},
 	
 	{
 		name: "butter",
-		imageSrc: "images/butter.jpg",
+		imageSrc: "images/butter.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 3.75
+		price: 3.75,
+		quantity: 0
 	},
 	
 	{
 		name: "milk",
-		imageSrc: "images/milk.jpg",
+		imageSrc: "images/milk.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 4.00
+		price: 4.00,
+		quantity: 0
 	},
 	
 	{
 		name: "cheese",
-		imageSrc: "images/cheese.jpg",
+		imageSrc: "images/cheese.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "dairy",
 		glutenFree: true,
 		dairyFree: false,
 		organic: false,
-		price: 3.00
+		price: 3.00,
+		quantity: 0
 	},
 	
 	{
 		name: "organic kale",
-		imageSrc: "images/kale.jpg",
+		imageSrc: "images/kale.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 2.00
+		price: 2.00,
+		quantity: 0
 	},
 	
 	{
 		name: "organic peppers",
-		imageSrc: "images/peppers.jpg",
+		imageSrc: "images/peppers.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.75
+		price: 1.75,
+		quantity: 0
 	},
 	
 	{
 		name: "organic tomatoes",
-		imageSrc: "images/tomato.jpg",
+		imageSrc: "images/tomato.png",
 		vegetarian: true,
 		diabeticSafe: true,
 		foodCategory: "fruits-veg",
 		glutenFree: true,
 		dairyFree: true,
 		organic: true,
-		price: 1.00
+		price: 1.00,
+		quantity: 0
 	},
 	
 	{
 		name: "pork",
-		imageSrc: "images/pork.jpg",
+		imageSrc: "images/pork.png",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 8.00
+		price: 8.00,
+		quantity: 0
 	},
 	
 	{
 		name: "poultry",
-		imageSrc: "images/poultry.jpg",
+		imageSrc: "images/poultry.png",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 9.00
+		price: 9.00,
+		quantity: 0
 	},
 	
 	{
-		name: "salmon",
-		imageSrc: "images/fish.jpg",
+		name: "fish",
+		imageSrc: "images/fish.png",
 		vegetarian: false,
 		diabeticSafe: true,
 		foodCategory: "meat",
 		glutenFree: true,
 		dairyFree: true,
 		organic: false,
-		price: 9.50
+		price: 9.50,
+		quantity: 0
+	},
+	
+	{
+		name: "beef",
+		imageSrc: "images/beef.png",
+		vegetarian: false,
+		diabeticSafe: true,
+		foodCategory: "meat",
+		glutenFree: true,
+		dairyFree: true,
+		organic: false,
+		price: 11.00,
+		quantity: 0
 	},
 
 ];
 
+// this list will store the names of all products the user adds to their cart
+const cartProducts = [];
+var productCounter = -1;
+
+// function to return the quantity given the product name as input
+function getProductQuantity(item) {
+	// iterate through cart products
+	for (let i = 0; i < cartProducts.length; i++) {
+		if (cartProducts[i].name == item) {
+			return cartProducts[i].quantity;
+		}
+	}
+	return 0;
+}
+
+// function to return the price given the product name as input
+function getProductPrice(item) {
+	for (let i = 0; i < products.length; i++) {
+		if (products[i].name == item) {
+			return products[i].price;
+		}
+	}
+}
+
+function addToCart(item) {
+	// first check to see if the product is already in the array
+	// first retrieve the quantity the user selected
+	var amount = document.getElementById(item+'_amount').value;
+	// then push both the item and the quantity to the cart array
+	cartProducts.push({name: item, quantity: amount});
+	// increment product counter
+	productCounter++;
+	// for testing purposes only
+	let string = ""
+	for (const [key, value] of Object.entries(cartProducts[productCounter])) {
+		string += `${key}: ${value}\n`
+	}
+	alert(string);
+	
+}
+
+
+function displayCart() {
+	
+	// create container to display products
+	var cartContainer = document.getElementById("cart_container");
+	// iterate through cart products
+	for (let i = 0; i < cartProducts.length; i++) {
+		// create a new div for each product
+		var div = document.createElement('div');
+		div.id = cartProducts[i].name;
+		// variable to display product name
+		var cartProductName = document.createElement('p');
+		cartProductName.innerHTML = cartProducts[i].name;
+		// variable to display product price
+		var cartProductPrice = document.createElement('p');
+		cartProductPrice.innerHTML = getProductPrice(cartProductName);
+		// variable to display product quantity
+		var cartProductQuantity = document.createElement('p');
+		cartProductQuantity.innerHTML = getProductQuantity(cartProductName);
+		// append div elements
+		div.append(cartProductName);
+		div.append(cartProductPrice);
+		div.append(cartProductQuantity);
+		// append child elements to container
+		cartContainer.appendChild(div)
+
+	}
+
+}
+
+/*
 function displayAllProducts() {
 
 	var container = document.getElementById("product-container")  
@@ -243,6 +343,7 @@ function removeAll() {
 	var container = document.getElementById("product-container") 
 	container.innerHTML = ""
 }
+*/
 
 const allFiltersToApply = [];
 var organicFilterChoice = "";
