@@ -542,7 +542,7 @@ function displaySearch() {
 	quantity.class = "quantity"
 	quantity.max = 10
 	quantity.min = 1
-	quantity.type = Number
+	quantity.type = "number"
 	quantity.value = 1
 
 	var btn = document.createElement('button')
