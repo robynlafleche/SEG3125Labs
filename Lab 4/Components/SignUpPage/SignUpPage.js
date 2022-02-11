@@ -54,6 +54,7 @@ function registerCustomer()
   alert("Your account has been created. Welcome " + newCustomer.firstName + " " + newCustomer.lastName + ".");
   document.getElementById("SignUpSubSection").style.display = "none";
 
+  publishMessage("NewCustomerRegisterTopic", newCustomer);
 }
 
 

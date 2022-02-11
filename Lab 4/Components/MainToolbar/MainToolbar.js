@@ -12,6 +12,19 @@ function onUserPreferencesButtonClicked()
 
 function onviewCartButtonClicked()
 {
+  document.getElementById('srch').value = "";
   publishMessage("DisplaySignUpPageTopic", true);
 }
 
+
+function onNewCustomerRegisterTopic(newCustomerProfile)
+{
+  document.getElementById('srch').value = newCustomerProfile.firstName + " " + newCustomerProfile.lastName;
+}
+
+
+
+
+
+
+subscribeToTopic("NewCustomerRegisterTopic", onNewCustomerRegisterTopic);
