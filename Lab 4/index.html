@@ -1,0 +1,134 @@
+ <!-- Code for X inspired by professor Caroline Barriere https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery   */ -->
+
+
+ <!DOCTYPE html>
+
+ <html>
+ <head>
+   <!--required meta tags-->
+     <meta charset="utf-8">
+     
+     <!--required CSS stylesheet-->
+   <link href="styles/style.css" rel="stylesheet" type="text/css">
+ 
+   <!---required Javascript scripts--->
+     <script src="scripts/MainToolbar/MainToolbar.js"></script>
+     <script src="scripts/TransportMachine/TheTransportMachine.js"></script>
+     <script src="scripts/LoginPage/LoginPage.js"></script>
+     <script src="scripts/SignUpPage/SignUpPage.js"></script>
+
+
+
+     
+     <title>Group 6 Grocery Store</title>
+     <!-- code inspired from https://stackoverflow.com/a/11488968/15518664 -->
+     <link rel="icon"  type="image/png" href="images\tablogo.png">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     </head class="tabs">
+ 
+     <!-- <div class="nav">
+         <p id="storename">Group 6 Grocery Store</p>
+         <p id="customerName">Customer Name</p>
+       <br>
+     </div> -->
+ <!-- user icon from https://css.gg/user -->
+ <link href='https://css.gg/user.css' rel='stylesheet'>
+ <!-- using flexbox idea from https://www.w3schools.com/css/css3_flexbox_items.asp -->
+     <div >
+       <div class="flex-container">
+         <span id="storename">Group 6 Grocery Store</span>
+         
+         <input type="text" class="box tablink  tabs"   id="srch"  placeholder="Search for a product name. ex: milk" />
+   
+         <button onclick="document.getElementById('srch').value =''; document.getElementById('search-container').innerHTML = ''" class="navbutton" id="clear"> Clear</button>
+         <button onclick='displaySearch();' class="navbutton " id="seachButton" > Search🔎</button>
+         <!-- <button onclick="document.getElementById('srch').value =''" class="navbutton" id="seachButton"> Clear</button> -->
+     <!-- style="position: absolute;
+         top: 35px;
+         right: 26%;" -->
+         <button class="tablink tabs " title="User Preferences" onclick='onUserPreferencesButtonClicked()' >👤 </button>
+         <button class="tablink  tabs " title="View Cart" onclick='onviewCartButtonClicked()'>🛒 </button>
+ 
+         <br>
+         <p id="customerName">Customer Name</p>
+ 
+       </div>
+         <br>
+     </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- Log In and Sign Up forms begin here. --> 
+ 
+ 
+ <div id="LogInSubSection" class="Login_Signup_Section">
+ 
+   <div class="LogInSignUpModalForm">
+     <h1 id="LogInHeader">Log In</h1>
+ 
+     <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
+     <div class="fieldSections">
+       <label class="inputLabelLogIn" for="email"><b>Email* :</b></label>
+       <input type="text" class="customerInputTextField" id="emailInputLogIn" placeholder="Enter Email" name="email" required>
+     </div>
+ 
+     <div class="fieldSections">
+       <label class="inputLabelLogIn" for="passwordFieldLogIn"><b>Password* :</b></label>
+       <input type="password" class="customerInputTextField" id="passwordInputLogIn" placeholder="Enter Password" name="passwordFieldLogIn" required>
+     </div>
+ 
+     <div class="formAcionButtons">
+       <button type="button" id="LoginButtonModal" onclick="">Log in</button>
+       <button type="button" class="CancelButtonModal"  onclick="onLoginCancel()">Cancel</button>            
+     </div>            
+   </div>
+ </div>
+ 
+ 
+ 
+ <div id="SignUpSubSection" class="Login_Signup_Section">
+ 
+   <div class="LogInSignUpModalForm">
+     <h1 id="SignUpHeader">Create an account with <i>Group 6 Store</i></h1>
+ 
+     <!--Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_js_popup_form.asp --->  
+ 
+     <div class="fieldSections">
+       <label class="inputLabelSignup" for="customerFirstName"><b>First Name* :</b></label>
+       <input type="text" class="customerInputTextField" id="firstNameInputSignUp" placeholder="Enter First Name" name="customerFirstName" required>
+     </div>
+ 
+     <div class="fieldSections">
+       <label class="inputLabelSignup" for="customerLastName"><b>Last Name* :</b></label>
+       <input type="text" class="customerInputTextField" id="lastNameInputSignUp" placeholder="Enter Last Name" name="customerLastName" required>
+     </div>
+ 
+     <div class="fieldSections">
+       <label class="inputLabelSignup" for="emailSignUp"><b>Email* :</b></label>
+       <input type="text" class="customerInputTextField" id="emailInputSignUp" placeholder="Enter Email" name="emailSignUp" required>
+     </div>
+ 
+     <div class="fieldSections">
+       <label class="inputLabelSignup" for="passwordFieldSignUp"><b>Password* :</b></label>
+       <input type="password" class="customerInputTextField" id="passwordInputSignUp" placeholder="Enter Password" name="passwordFieldSignUp" required>
+     </div>
+ 
+     <div class="fieldSections">
+       <label class="inputLabelSignup" for="confirmPasswordFieldSignUp"><b>Confirm Password* :</b></label>
+       <input type="password" class="customerInputTextField" id="confirmPasswordInputSignUp" placeholder="Re-Enter Password" name="confirmPasswordFieldSignUp" required>
+     </div>            
+ 
+     <div class="formAcionButtons">
+       <button type="button" id="createAcountButton" onclick="">Create Account</button>
+       <button type="button" class="CancelButtonModal"  onclick="onSignupCancel()">Cancel</button>            
+     </div>
+   </div>
+ </div>
+ 
+ 
