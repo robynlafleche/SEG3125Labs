@@ -1,26 +1,42 @@
 body {
-    font-family: 'Martel', serif;
-    font-weight: 400;
-    color: #C5D0DD;
-    background-color: #2B394A;
-    font-size: 16px;
+  font-family: "Martel", serif;
+  font-weight: 400;
+  color: #c5d0dd;
+  background-color: #2b394a;
+  font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    color: white;
-    
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  color: white;
 }
 
 .button {
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    background-color: #FDA5A4;
-
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #fda5a4;
+  /* style from https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link */
+  appearance: button;
+  text-decoration: none;
+  color: initial;
 }
 
 section {
-    padding: 100px 50px;
+  padding: 100px 50px;
+}
+
+.photoForServices {
+  height: 150px;
+  width: 150px;
+}
+
+.col-sm {
+  width: 25%;
 }
