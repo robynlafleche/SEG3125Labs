@@ -49,6 +49,8 @@ section {
   padding: 6px 12px;
   font-size: 14px;
 }
-.hide {
-  display: none;
+
+.button {
+  margin-top: 10px;
+  color: black;
 }
