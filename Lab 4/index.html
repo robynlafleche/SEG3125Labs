@@ -6,11 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Required js scripts -->
+    <script src="scripts/bookAppointment.js"></script>
+
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Martel:400,700" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
-
+    <!-- Latest compiled and minified CSS from https://www.w3schools.com/bootstrap/bootstrap_get_started.asp -->
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Lab 4</title>
 </head>
 
@@ -130,10 +141,8 @@
             <div class="row">
                 <div class="col-sm">
                     <h4>Hair Cutting(for curly and straight hair)</h4>
-                </div>
-               
-              </div>
-              
+                </div> 
+              </div>         
               <div class="row">
                 <div class="col-sm">
                     <p>Short cut</p>
@@ -158,47 +167,6 @@
                      <!-- photo from https://www.pinterest.ca/pin/30540103714900884/ -->
                      <img src="images/long-cut-straight.png" class="photoForServices">
                     <p>$50</p>
-                </div>
-               
-              </div>
-              <div class="row">
-                <div class="col-sm">
-                    <h4>Hair Styling</h4>
-                </div>
-                <div class="col-sm">
-                    <h4>Hair Cutting</h4>
-                </div>
-                <div class="col-sm">
-                    <h4>Hair Coloring</h4>
-                </div>
-                <div class="col-sm">
-                    <h4>Nail Styling</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm">
-                    <p></p>
-                    <!-- photo from https://www.pinterest.ca/pin/480688960238563404/  -->
-                    <img src="images/1.hair-styling.png" class="photoForServices"><p></p>
-                    <p>$30</p>
-                </div>
-                <div class="col-sm">
-                    <p></p>
-                    <!-- photo from https://www.pinterest.ca/pin/121034308727327761/  -->
-                    <img src="images/2.hair-cutting.png" class="photoForServices"><p></p>
-                    <p>$35</p>
-                </div>
-                <div class="col-sm">
-                    <p></p>
-                    <!-- photo from https://klinegroup.com/plant-based-color-steps-up-at-mcb-paris/ -->
-                    <img src="images/3. hair-coloring.png" class="photoForServices"><p></p>
-                    <p>$50</p>
-                </div>
-                <div class="col-sm">
-                    <p></p>
-                    <!-- photo from https://www.stylemepretty.com/vault/image/2887447 -->
-                    <img src="images/4. nail-styling.png" class="photoForServices"><p></p>
-                    <p>$25</p>
                 </div>
               </div>
               <a href="#booking" class="button">Book Now</a>
@@ -236,7 +204,13 @@
                   <input type="number" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Service" aria-label="Service">
+                    <!-- <input type="text" class="form-control" placeholder="Service" aria-label="Service"> -->
+                    <select class="form-select" aria-label="Default select example" id="dropdownMenuButtonForServices">
+                        <option selected>Service</option>
+                        <option value="1">Short Hair Cut</option>
+                        <option value="2">Medium Hair Cut</option>
+                        <option value="3">Long Hair Cut</option>
+                    </select>
                   </div>
             </div>
             <div class="row">
@@ -252,7 +226,7 @@
                   <input type="text" class="form-control" placeholder="Special Instructions" aria-label="Special Instructions">
                 </div>
             </div>
-            <button href="#" class="button">Book Appointment</button>
+            <button href="#" class="button" onclick="bookAppointment()">Book Appointment</button>
             
         </div>
     </section>
