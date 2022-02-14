@@ -1,7 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  color: #F125CC !important;
+  color: #ff66c4 !important;
   background-color:#ffe6e6 !important;
   font-size: 16px;
 }
@@ -14,7 +14,12 @@ h5,
 h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  color: #F125CC;
+  color: #ff66c4;
+}
+
+.nav-link {
+  color: black;
+  font-family: "Open Sans", sans-serif;
 }
 
 .button {
