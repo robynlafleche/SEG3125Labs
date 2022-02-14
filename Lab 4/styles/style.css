@@ -1,8 +1,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  color: #c5d0dd !important;
-  background-color: #2b394a !important;
+  color: #F125CC !important;
+  background-color:#ffe6e6 !important;
   font-size: 16px;
 }
 
@@ -14,7 +14,7 @@ h5,
 h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  color: white;
+  color: #F125CC;
 }
 
 .button {
@@ -25,11 +25,12 @@ h6 {
   /* style from https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link */
   appearance: button;
   text-decoration: none;
-  color: initial;
+  color: #ffe6e6;
 }
 
 section {
   padding: 100px 50px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .photoForServices {
@@ -43,7 +44,7 @@ section {
 
 #dropdownMenuButtonForServices {
   background-color: white;
-  color: gray;
+  color: black;
   width: 100%;
   height: 34px;
   padding: 6px 12px;
@@ -52,5 +53,5 @@ section {
 
 .button {
   margin-top: 10px;
-  color: black;
+  color: #ffe6e6;
 }
