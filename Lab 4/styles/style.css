@@ -1,5 +1,5 @@
 body {
-  font-family: "Martel", serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #c5d0dd !important;
   background-color: #2b394a !important;
@@ -12,13 +12,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Karla", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: white;
 }
 
 .button {
-  font-family: "Karla", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
   background-color: #fda5a4;
