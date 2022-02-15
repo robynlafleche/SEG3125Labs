@@ -20,6 +20,8 @@ h6 {
 .nav-link {
   color: black;
   font-family: "Open Sans", sans-serif;
+  position: relative;
+  top: -9px;
 }
 
 .button {
