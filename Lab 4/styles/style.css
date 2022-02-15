@@ -1,5 +1,5 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
   font-weight: 400;
   color: #ff66c4 !important;
   background-color: #ffe6e6 !important;
@@ -12,20 +12,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
   font-weight: 700;
   color: #ff66c4;
 }
 
 .nav-link {
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
   position: relative;
   top: -9px;
 }
 
 .button {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
   font-weight: 700;
   font-size: 16px;
   background-color: #fda5a4;
@@ -37,7 +37,7 @@ h6 {
 
 section {
   padding: 100px 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
 }
 
 .photoForServices {
@@ -64,7 +64,7 @@ section {
 }
 
 .footer {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Gudea', sans-serif;
 }
 
 #hairStylePhotos {
