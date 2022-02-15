@@ -189,46 +189,53 @@
 
 
     <!-- BOOKING -->
-    <section id="booking" class="booking">
-        <div class="container">
-            <h2>Booking</h2>
-            <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    <section id="booking" class="booking section_padding">
+        <div class="container bg-white">
+            <form>
+                <h2>Book an appointment</h2>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstNameInput">First Name</label>
+                        <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastNameInput">First Name</label>
+                        <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+                    </div>
                 </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="phoneNumerInput">Phone Number</label>
+                        <input type="phone number" class="form-control" id="phoneNumberInput" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="dropdownMenuButtonForServices">Service you would like</label>
+                        <select class="form-select" aria-label="Default select example" id="dropdownMenuButtonForServices">
+                            <option selected>Select a service</option>
+                            <option value="1">Short Cut</option>
+                            <option value="2">Medium Cut</option>
+                            <option value="3">Long Cut</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                  <input type="number" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dateInput">Date</label>
+                        <input type="date" class="form-control" id="dateInput" placeholder="Date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="timeInput">Time</label>
+                        <input type="time" class="form-control" id="lastNameInput" placeholder="time" min="9:00" max="18:00">
+                    </div>
                 </div>
-                <div class="col">
-                    <!-- <input type="text" class="form-control" placeholder="Service" aria-label="Service"> -->
-                    <select class="form-select" aria-label="Default select example" id="dropdownMenuButtonForServices">
-                        <option selected>Service</option>
-                        <option value="1">Short Cut</option>
-                        <option value="2">Medium Cut</option>
-                        <option value="3">Long Cut</option>
-                    </select>
-                  </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                  <input type="date" class="form-control" placeholder="Date" aria-label="Date">
+                <div class="form-group col-md-12">
+                    <label for="specialInstructionsInput">Notes</label>
+                    <textarea class="form-control" id="specialInstructionsInput" col="30" rows="5" placeholder="Write your concerns here"></textarea>
                 </div>
-                <div class="col">
-                    <input type="time" class="form-control" placeholder="Time" aria-label="Time">
-                  </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Special Instructions" aria-label="Special Instructions">
+                <div class="form-group col-md-12">
+                    <button href="#" type="button" class="btn btn-light" onclick="bookAppointment()">Book Appointment</button>
                 </div>
-            </div>
-            <button href="#" type="button" class="btn btn-light" onclick="bookAppointment()">Book Appointment</button>
-            
+            </form>
         </div>
     </section>
     <!-- // BOOKING -->
@@ -236,29 +243,56 @@
 
     <!-- CONTACT US -->
     <section id="contact" class="contact">
-        <div class="container">
+        <div class="container bg-white">
             <h2>Contact Us</h2>
             <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                </div>
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-8">
+                            <div class="form-group col-md-12">
+                                <textarea class="form-control" id="specialInstructionsInput" col="30" rows="14" placeholder="Write your concerns here"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button href="#" type="button" class="btn btn-light" onclick="submitContactForm()">Submit Form</button>
+                        
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p>613-352-1526</p>
+                            <p>Mon to Fri 9am to 6pm</p>
+                            <p>group6@uottawa.ca</p>
+                            <p>Send us your questions anytime!</p>
+                            <p>Ottawa, Ontario</p>
+                            <p>75 Laurier Ave. E, Ottawa, ON K1N 6N5.</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11201.26887632515!2d-75.6831329!3d45.4231064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x188a59c3622fdbae!2sUniversity%20of%20Ottawa!5e0!3m2!1sen!2sca!4v1644894436637!5m2!1sen!2sca" 
+                            width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                    
+                        </div>
+                        
+                    </div>
+                </form>
             </div>
-            <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Message" aria-label="Message">
-                </div>
-            </div>
-            <button href="#" type="button" class="btn btn-light">Submit</button>
+            
+
         </div>
     </section>
     <!-- // CONTACT US -->
 
 
     <!-- FOOTER -->
-    <section id="footer" class="footer">
+    <div id="footer" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-sm-6 col-lg-4">
@@ -272,10 +306,10 @@
                         <h4>Contact Us</h4>
                         <div class="contact_info">
                             <h5>Ottawa, Ontario</h5>
-                            <p>1234, street, Ottawa, Ontario, CA.</p>
+                            <p>75 Laurier Ave. E, Ottawa, ON K1N 6N5.</p>
                         </div>
                         <div class="contact_info">
-                            <h5>613-3562-1526</h5>
+                            <h5>613-352-1526</h5>
                             <p>Mon to Fri 9am to 6 pm.</p>
                         </div>
                     </div>
@@ -288,7 +322,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!-- // FOOTER -->
 
 

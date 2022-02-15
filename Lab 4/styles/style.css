@@ -58,5 +58,9 @@ section {
 
 .button {
   margin-top: 10px;
-  color: #ffe6e6;
+  color: #ffe6f4;
+}
+
+.footer {
+  font-family: "Open Sans", sans-serif;
 }
