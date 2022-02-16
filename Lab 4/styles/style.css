@@ -41,8 +41,8 @@ section {
 }
 
 .photoForServices {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 
 .col-sm {
@@ -78,4 +78,15 @@ section {
 
 #hairStylePhotos {
   margin-left: 130px;
+}
+
+#imagesForBeginingLeft {
+  width: 400px;
+  height: 350px;
+}
+
+#imagesForBeginingRight {
+  width: 400px;
+  height: 350px;
+  float: right;
 }
