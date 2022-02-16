@@ -88,9 +88,7 @@ section {
 #imagesForBeginingRight {
   width: 400px;
   height: 350px;
-  float: right;
 }
-
 
 .reviewCustomerName {
   color: #ff66c4;
@@ -102,7 +100,6 @@ section {
   background-color: #ffe6e6;
 }
 
-
 /* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
 .carousel-control {
   margin-left: 300px;
@@ -110,11 +107,10 @@ section {
   /*margin-top: 150px;/*put your desired top margin*/
 }
 
-
 /* Transparent background solution obtained from https://stackoverflow.com/questions/38048439/remove-bootstrap-carousel-gradient/38048544 */
 .carousel-control.left,
 .carousel-control.right {
-  background:#ffe6e6 !important;
+  background: #ffe6e6 !important;
 }
 
 .glyphicon.glyphicon-chevron-left,
@@ -129,25 +125,21 @@ section {
 
 .customerReviewInstance {
   border: 1px #ffe6e6;
-  width: 550px; 
+  width: 550px;
   margin-left: 35%;
 }
 
-
 /* Positioning solution obtained from https://stackoverflow.com/questions/48311855/how-to-position-carousel-indicators-in-bootstrap-4 */
 .carousel-indicators {
-  margin-bottom: -40px;  
+  margin-bottom: -40px;
 }
-
 
 /* Circle color solution obtained from https://stackoverflow.com/questions/62250065/how-do-you-style-bootstrap-4-carousel-indicators-to-have-no-fill-and-only-circul */
 .carousel .carousel-indicators li {
-  box-shadow:0 0 0 .1rem #ff66c4 !important;
+  box-shadow: 0 0 0 0.1rem #ff66c4 !important;
 }
-
 
 /* Changing active color obtained from https://www.reddit.com/r/bootstrap/comments/g6sgwa/help_changing_the_color_of_indicators_on_carousel/ */
 .carousel .carousel-indicators .active {
   background-color: #ff66c4 !important;
 }
-
