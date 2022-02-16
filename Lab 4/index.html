@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Required js scripts -->
-    <script src="scripts/bookAppointment.js"></script>
+    <script src="scripts/BookAnAppointmentSection.js"></script>
     <script src="https://kit.fontawesome.com/fe4398600e.js" crossorigin="anonymous"></script>
-
 
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
@@ -27,6 +26,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Lab 4</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -50,7 +55,7 @@
                     <a class="nav-link" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#reviews">Customer Reviews</a>
+                    <a class="nav-link" href="#customerReviews">Customer Reviews</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
@@ -253,10 +258,60 @@
 
 
     <!-- REVIEWS -->
-    <section id="reviews" class="reviews">
+    <!-- Carousel created based on the following tutorial : https://www.w3schools.com/bootstrap/bootstrap_carousel.asp -->
+    <section id="customerReviews">
         <div class="container">
-            <h2>Carousel with customer reviews</h2>
+            <h2>Customer Reviews</h2>
         </div>
+
+        <div id="customerReviewsCarousel" class="carousel slide" data-interval="false">
+
+          <!-- Little dots at the bottom to access any slide. -->   
+          <ol class="carousel-indicators">
+            <li data-target="#customerReviewsCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#customerReviewsCarousel" data-slide-to="1"></li>
+            <li data-target="#customerReviewsCarousel" data-slide-to="2"></li>
+          </ol>     
+               
+            <!-- Main content for each slide -->
+            <div class="carousel-inner">
+              <div class="item active text-center customerReviewInstance">
+                <p class="reviewCustomerName">Jessica Woods</p>
+                <p class="customerReviewTextContent">The services was fantastic. Little to no wait time and staff was very friendly.
+                    Very good for the price you pay.
+                </p>                
+              </div>
+        
+              <div class="item text-center customerReviewInstance">
+                <p class="reviewCustomerName">Amanda Smith</p>
+                <p class="customerReviewTextContent">I would highly recommend for anyone who is looking for a Bridal Up-Do for their wedding.
+                    Michelle Maclean is one of the best hairstylist I have ever seen.
+                </p>                
+              </div>
+            
+              <div class="item text-center customerReviewInstance">
+                <p class="reviewCustomerName">Jenna Newman</p>
+                <p class="customerReviewTextContent">Very good staff. I just wish there were hair products I could take home. Other than that the service
+                    was perfect.
+                </p>                 
+              </div>
+            </div>
+     
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#customerReviewsCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#customerReviewsCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+            
+        </div>
+
+
+
     </section>
     <!-- // REVIEWS -->
 
