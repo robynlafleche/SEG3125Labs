@@ -92,11 +92,11 @@ section {
 }
 
 
-.reviewCustomerName {
+/* .reviewCustomerName {
   color: #ff66c4;
   font-family: "Gudea", sans-serif;
   font-size: 18px;
-}
+} */
 
 #customerReviewsCarousel {
   background-color: #ffe6e6;
@@ -105,8 +105,8 @@ section {
 
 /* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
 .carousel-control {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: -50px;
+  margin-right: -50px;
   /*margin-top: 150px;/*put your desired top margin*/
 }
 
@@ -123,14 +123,20 @@ section {
 }
 
 /* Wrap property obtained from https://www.w3schools.com/cssref/css3_pr_word-wrap.asp */
-.customerReviewTextContent {
-  word-wrap: break-word;
-}
+/* .customerReviewTextContent {
+  
+} */
 
 .customerReviewInstance {
   border: 1px #ffe6e6;
-  width: 550px; 
-  margin-left: 35%;
+  position: absolute;
+  object-fit:cover;
+  top: 0;
+  left: 0;
+  height: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
 }
 
 
