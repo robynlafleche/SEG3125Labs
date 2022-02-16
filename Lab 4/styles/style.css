@@ -96,13 +96,49 @@ section {
   color: #ff66c4;
   font-family: "Gudea", sans-serif;
   font-size: 18px;
-  margin-left: 50%;
-
 }
+
+#customerReviewsCarousel {
+  background-color: #ffe6e6;
+}
+
+
+/* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
+.carousel-control {
+  margin-left: 300px;
+  margin-right: 300px;
+  /*margin-top: 150px;/*put your desired top margin*/
+}
+
+
+/* Transparent background solution obtained from https://stackoverflow.com/questions/38048439/remove-bootstrap-carousel-gradient/38048544 */
+.carousel-control.left,
+.carousel-control.right {
+  background:#ffe6e6 !important;
+}
+
+.glyphicon.glyphicon-chevron-left,
+.glyphicon.glyphicon-chevron-right {
+  color: #ff66c4;
+}
+
+.customerReviewTextContent {
+  word-wrap: break-word;
+}
+
+.customerReviewInstance {
+  border: 1px #ffe6e6;
+  width: 550px; 
+  margin-left: 600px;
+}
+
 
 .carousel-indicators {
-  
+  margin-bottom: -40px
 }
+
+
+/*
 
 .customerReviewInstance {
   position: relative;
@@ -117,3 +153,5 @@ section {
   -webkit-perspective: 1000px;
   perspective: 1000px;
 }
+
+*/
