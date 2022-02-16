@@ -122,6 +122,7 @@ section {
   color: #ff66c4;
 }
 
+/* Wrap property obtained from https://www.w3schools.com/cssref/css3_pr_word-wrap.asp */
 .customerReviewTextContent {
   word-wrap: break-word;
 }
@@ -133,25 +134,20 @@ section {
 }
 
 
+/* Positioning solution obtained from https://stackoverflow.com/questions/48311855/how-to-position-carousel-indicators-in-bootstrap-4 */
 .carousel-indicators {
-  margin-bottom: -40px
+  margin-bottom: -40px;  
 }
 
 
-/*
-
-.customerReviewInstance {
-  position: relative;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  transition: -webkit-transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease,-webkit-transform .6s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
+/* Circle color solution obtained from https://stackoverflow.com/questions/62250065/how-do-you-style-bootstrap-4-carousel-indicators-to-have-no-fill-and-only-circul */
+.carousel .carousel-indicators li {
+  box-shadow:0 0 0 .1rem #ff66c4 !important;
 }
 
-*/
+
+/* Changing active color obtained from https://www.reddit.com/r/bootstrap/comments/g6sgwa/help_changing_the_color_of_indicators_on_carousel/ */
+.carousel .carousel-indicators .active {
+  background-color: #ff66c4 !important;
+}
+
