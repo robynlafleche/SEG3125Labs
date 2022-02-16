@@ -150,3 +150,7 @@ section {
 .carousel .carousel-indicators .active {
   background-color: #ff66c4 !important;
 }
+
+.contactUsPageInfo {
+  margin-top: 20px;
+}
