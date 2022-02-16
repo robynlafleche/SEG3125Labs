@@ -90,3 +90,30 @@ section {
   height: 350px;
   float: right;
 }
+
+
+.reviewCustomerName {
+  color: #ff66c4;
+  font-family: "Gudea", sans-serif;
+  font-size: 18px;
+  margin-left: 50%;
+
+}
+
+.carousel-indicators {
+  
+}
+
+.customerReviewInstance {
+  position: relative;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  transition: -webkit-transform .6s ease;
+  transition: transform .6s ease;
+  transition: transform .6s ease,-webkit-transform .6s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
