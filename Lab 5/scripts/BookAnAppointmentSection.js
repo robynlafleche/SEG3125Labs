@@ -200,8 +200,31 @@ function updateStylistAvailableComboBox()
   var stylistSelectionAvailable = listOfSelectedServices.length == 0;
   $("#dropdownMenuButtonForStylists").prop('disabled', stylistSelectionAvailable);
 
-  availableStylists = obtainAllStylistForSelectedServices(listOfSelectedServices);
+  availableStylistIDs = obtainAllStylistForSelectedServices(listOfSelectedServices);
 
+  console.log("availableStylists = " + availableStylistIDs);
+
+  stylistIdToListOfServicesMap.forEach (function(listOfServicesOfferedByStylist, stylistID) {
+
+    var stylistIDFound = false;
+    for (var i = 0; i < availableStylistIDs.length; i++)
+    {
+      if(availableStylistIDs[i] == stylistID)
+      {
+        stylistIDFound = true;
+      }
+    }
+
+    if (stylistIDFound)
+    {
+      $("#" + stylistID).show();
+    }
+    else
+    {
+      $("#" + stylistID).hide();
+    }
+
+  })
 
 }
 
