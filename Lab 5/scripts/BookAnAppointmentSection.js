@@ -3,7 +3,7 @@
 var haircuttersToServicesOfferedMap = new Map([]);
 // All haircutters are capable of doing cuts of any size (short, medium, and large).
 
-// Haircut styles for Amanda O'Neill
+// Haircut styles for stylists
 const oNeilStyles = ["partialFoilCheckbox", "tonerCheckbox", "upDoCheckbox", "bridalUpDoCheckbox",            "shortCutCheckbox", "mediumCutCheckbox", "longCutCheckbox"];
 const boucherStyles = ["balayageCheckbox", "upDoCheckbox", "bridalUpDoCheckbox",                       "shortCutCheckbox", "mediumCutCheckbox", "longCutCheckbox"];
 const macleanStyles = ["tonerCheckbox", "balayageCheckbox", "formalStyleCheckbox",                       "shortCutCheckbox", "mediumCutCheckbox", "longCutCheckbox"];
@@ -20,6 +20,64 @@ const mutuallyExclusiveSetsOfCheckboxed = [ ["shortCutCheckbox", "mediumCutCheck
                                                     ["upDoCheckbox", "formalStyleCheckbox", "bridalUpDoCheckbox"] ];
 
 
+// Availabilities for stylists
+// The keys are the days of the week and the values are list of time slots for each day.
+const oNeilTimeSlots = new Map([]); 
+oNeilTimeSlots.set("Monday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                        "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);
+
+oNeilTimeSlots.set("Wednesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                          "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);
+
+oNeilTimeSlots.set("Friday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                      "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                        "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);                          
+
+                        
+const boucherTimeSlots = new Map([]);
+boucherTimeSlots.set("Monday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm"]);
+boucherTimeSlots.set("Tuesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm"]);
+boucherTimeSlots.set("Wednesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm"]);    
+boucherTimeSlots.set("Thursday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                        "12:00 pm - 12:30 pm"]);      
+boucherTimeSlots.set("Friday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                      "12:00 pm - 12:30 pm"]);  
+                      
+                      
+const macleanTimeSlots = new Map([]); 
+macleanTimeSlots.set("Monday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                  "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);
+macleanTimeSlots.set("Tuesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                  "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);  
+macleanTimeSlots.set("Thursday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm"]);      
+macleanTimeSlots.set("Friday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm"]);
+                  
+                  
+const rocanTimeSlots = new Map([]); 
+rocanTimeSlots.set("Tuesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                  "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);  
+rocanTimeSlots.set("Thursday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                  "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);    
+rocanTimeSlots.set("Friday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
+                  "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                  "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]); 
+
+var stylistIdToMapofAvailabilitiesMap = new Map([]);
+stylistIdToMapofAvailabilitiesMap.set("ONeil", oNeilTimeSlots);
+stylistIdToMapofAvailabilitiesMap.set("Boucher", boucherTimeSlots);
+stylistIdToMapofAvailabilitiesMap.set("Maclean", macleanTimeSlots);
+stylistIdToMapofAvailabilitiesMap.set("Rocan", rocanTimeSlots);
 
 
 
