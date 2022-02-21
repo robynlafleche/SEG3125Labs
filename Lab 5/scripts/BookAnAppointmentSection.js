@@ -204,6 +204,9 @@ function updateStylistAvailableComboBox()
 
   console.log("availableStylists = " + availableStylistIDs);
 
+  // Set back to default option.
+  $("#dropdownMenuButtonForStylists").val(0); 
+
   stylistIdToListOfServicesMap.forEach (function(listOfServicesOfferedByStylist, stylistID) {
 
     var stylistIDFound = false;
@@ -223,9 +226,7 @@ function updateStylistAvailableComboBox()
     {
       $("#" + stylistID).hide();
     }
-
   })
-
 }
 
 
