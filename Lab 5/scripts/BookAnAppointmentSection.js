@@ -79,7 +79,7 @@ stylistIdToMapofAvailabilitiesMap.set("Boucher", boucherTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Maclean", macleanTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Rocan", rocanTimeSlots);
 
-
+var dateToday = new Date();
 
 
 
@@ -205,6 +205,7 @@ $(document).ready(function(){
     /*$('#dateInput').datepicker({
       startDate: '-2m',
       endDate: '+2d'
+
     });*/
 
     //$( "#dateInput" ).datepicker();
@@ -213,13 +214,12 @@ $(document).ready(function(){
 
 
   $("#dateInput").click(function(){
-    $( "#dateInput" ).datepicker();
+    
+    $('#dateInput').datepicker({
+      showButtonPanel: true,
+      minDate: dateToday,
+    });
   });
-
-
-
-
-
 
 
 });
