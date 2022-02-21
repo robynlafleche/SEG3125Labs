@@ -9,6 +9,9 @@
     <!-- Required jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha256-SMGbWcp5wJOVXYlZJyAXqoVWaE/vgFA5xfrH3i/jVw0=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
+
     <!-- Required js scripts -->
     <script src="scripts/BookAnAppointmentSection.js"></script>
     <script src="scripts/ContactUsSection.js"></script>
@@ -31,10 +34,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Lab 4</title>
 
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="scripts/moment-2.4.0.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap-datetimepicker.js"></script> 
+    
+    <!-- Date picker obtained from https://www.geeksforgeeks.org/jquery-ui-date-picker/ -->
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>    
 
 </head>
 
@@ -426,7 +438,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="dateInput">Date*</label>
-                        <input type="date" class="form-control DisablingInput" id="dateInput" placeholder="Date" disabled>
+                        <input type="text" class="form-control DisablingInput" id="dateInput" placeholder="Date" disabled>
                     </div>
 
 

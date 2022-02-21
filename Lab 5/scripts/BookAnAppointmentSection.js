@@ -202,10 +202,20 @@ $(document).ready(function(){
 
     $("#dateInput").prop('disabled', selectedStylistID == 0);
 
+    /*$('#dateInput').datepicker({
+      startDate: '-2m',
+      endDate: '+2d'
+    });*/
+
+    //$( "#dateInput" ).datepicker();
+
+  });
 
 
+  $("#dateInput").click(function(){
+    $( "#dateInput" ).datepicker();
+  });
 
-  })
 
 
 
