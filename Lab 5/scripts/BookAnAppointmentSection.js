@@ -136,7 +136,29 @@ $(document).ready(function(){
   });
 
 
+
+  $("#dropdownMenuButtonForStylists").change(function(){
+
+    console.log("dropdownMenuButtonForStylists this.val = " + this.value);
+    var selectedStylistID = this.value; // Forthe options, the value and the ids are the same in this case.
+
+    $("#dateInput").prop('disabled', selectedStylistID == 0);
+
+
+
+
+  })
+
+
+
+
+
+
 });
+
+
+
+
 
 
 function getAllSelectedServices()
@@ -163,7 +185,7 @@ function getAllSelectedServices()
 function obtainAllStylistForSelectedServices(pListOfSelectedServices)
 {
 
-  console.log("pListOfSelectedServices = " + pListOfSelectedServices);
+  //console.log("pListOfSelectedServices = " + pListOfSelectedServices);
 
   var listOfMatchedStylists = [];
 
@@ -205,7 +227,7 @@ function updateStylistAvailableComboBox()
   console.log("availableStylists = " + availableStylistIDs);
 
   // Set back to default option.
-  $("#dropdownMenuButtonForStylists").val(0); 
+  $("#dropdownMenuButtonForStylists").val(0);
 
   stylistIdToListOfServicesMap.forEach (function(listOfServicesOfferedByStylist, stylistID) {
 
