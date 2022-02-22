@@ -91,7 +91,7 @@
         <div class="container">
             <div  class="card-group"style=" background-color: white;">
                
-                <div class="col" class="text-center">
+                <div class="col" class="text-center" class="card">
                    <div class="aboutPage" class="text-center">
                       <h2 class="text-center" class="font-weight-bold">About Our Salon</h2>
                       <!-- <p>Some text explaining a little bit about our team and website</p> -->
@@ -100,9 +100,9 @@
                       We are known for our attention to detail and customer satisfaction. </div>
                     </div>
                 </div>
-                <div class="col" >
+                <div class="col" class="card" >
                     <!-- photo from https://www.pinterest.ca/pin/205969382950608867/ -->
-                 <img src="images/welcome-photo.png"  style="  margin-top: 25px;" class="img-fluid img-thumbnail">
+                 <img src="images/welcome-photo.png"   class="img-fluid img-thumbnail">
               </div>
                
              </div>
@@ -158,84 +158,35 @@
 
     <!-- SERVICES -->
     <section id="services" class="services">
-        <div class="container">
+        <div class="container" id="servicesPage">
         <h2>Services that we provide</h2>
-            <div class="row">
-                <div class="col">
-                    <h4>Hair Cutting</h4>
-                </div> 
-              </div>         
-              <div class="row" id="hairStylePhotos">
-                <div class="col-md-4">
-                    <p>Short cut</p>
-                    <!-- photo from https://www.pinterest.ca/pin/1688918602066809/ -->
-                    <img src="images/short-cut-straight.png" class="photoForServices">
-                    <p>$30</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Medium cut</p>
-                    <!-- photo from https://www.pinterest.ca/pin/211174973801839/ -->
-                    <img src="images/medium-hair-straight.png" class="photoForServices">
-                    <p>$35</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Long cut</p>
-                    <!-- photo from https://www.pinterest.ca/pin/30540103714900884/ -->
-                     <img src="images/long-cut-straight.png" class="photoForServices">
-                    <p>$50</p>
-                </div>
+        <p>Hair cutting</p>
+        <div class="card-group">
+          
+            <div class="card" style="width: 18rem;">
+                 <!-- photo from https://www.latest-hairstyles.com/bobs/thick-hair.html -->
+              <img class="card-img-top" src="images/short-cut.png" alt="Card image cap" style="height:340px"> 
+              <div class="card-body">
+                <h5 class="card-title">Short Cut</h5>
+                <p class="card-text">Price: $30</div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                 <!-- photo from https://www.pinterest.ca/pin/211174973801839/ -->
+              <img class="card-img-top" src="images/medium-hair.png" alt="Card image cap" style="height:340px">
+              <div class="card-body">
+                <h5 class="card-title">Medium Cut</h5>
+                <p class="card-text">Price: $35</p>
               </div>
-              <div class="row">
-                <div class="col">
-                    <h4>Hair Color</h4>
-                </div> 
-              </div>         
-              <div class="row" id="hairStylePhotos">
-                <div class="col-md-4">
-                    <p>Partial Foil</p>
-                    <!-- photo from https://www.chromasalon.ca/partialhighlights.html -->
-                    <img src="images/partial-foil.png" class="photoForServices">
-                    <p>$150</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Toner</p>
-                    <!-- photo from https://www.pinterest.ca/pin/10133167902329166/ -->
-                    <img src="images/toner.png" class="photoForServices">
-                    <p>$100</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Balayage </p>
-                    <!-- photo from https://www.latest-hairstyles.com/color/caramel-balayage.html -->
-                     <img src="images/Balyage.png" class="photoForServices">
-                    <p>$200</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                    <h4>Hair Style</h4>
-                </div> 
-              </div>         
-              <div class="row" id="hairStylePhotos">
-                <div class="col-md-4">
-                    <p>Up-Do</p>
-                    <!-- photo from https://stayglam.com/beauty/braided-updo-ideas/ -->
-                    <img src="images/Updo.png" class="photoForServices">
-                    <p>$90</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Formal Style</p>
-                    <!-- photo from https://www.pinterest.ca/pin/503981014558825781/ -->
-                    <img src="images/formal-style.png" class="photoForServices">
-                    <p>$95</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Bridal Up-Do </p>
-                    <!-- photo from https://www.pinterest.ca/pin/205969382950608867/ -->
-                     <img src="images/bridal updo.png" class="photoForServices">
-                    <p>$110</p>
-                </div>
-              </div>
-              
+            </div>
+            <div class="card" style="width: 18rem;">
+                        <!-- photo from https://www.pinterest.ca/pin/30540103714900884/ -->
+              <img class="card-img-top" src="images/long-cut-straight.png" alt="Card image cap" style="height:340px">
+              <div class="card-body">
+                <h5 class="card-title">Long Cut</h5>
+                <p class="card-text">Price:  $50</div>
+            </div>
+          </div>
+
               <button  type="button" class="btn btn-light"><a href="#booking">Book Now</a></button>
         </div>
     </section>
