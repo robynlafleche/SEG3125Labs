@@ -79,7 +79,7 @@ stylistIdToMapofAvailabilitiesMap.set("Boucher", boucherTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Maclean", macleanTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Rocan", rocanTimeSlots);
 
-var dateToday = new Date();
+
 
 
 
@@ -212,12 +212,18 @@ $(document).ready(function(){
 
   });
 
+  var dateToday = new Date();
+
+  var dateNextYear = new Date();
+  var currentYear = dateNextYear.getFullYear();
+  dateNextYear.setFullYear(currentYear+1);
 
   $("#dateInput").click(function(){
     
     $('#dateInput').datepicker({
       showButtonPanel: true,
       minDate: dateToday,
+      maxDate: dateNextYear,
     });
   });
 
