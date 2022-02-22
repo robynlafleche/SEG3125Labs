@@ -122,11 +122,11 @@ $(document).ready(function(){
           // Uncheck all the other checkboxes in the current group.
           for (var j = 0; j < currentMEGroup.length; j++)
           {
-            //console.log("\n");
-            //console.log("currentMEGroup[j] = " + currentMEGroup[j]);
-            //console.log("this.id = " + this.id);
+            ////console.log("\n");
+            ////console.log("currentMEGroup[j] = " + currentMEGroup[j]);
+            ////console.log("this.id = " + this.id);
             var toCheck = currentMEGroup[j] == this.id;
-            //console.log("toCheck = " + toCheck);
+            ////console.log("toCheck = " + toCheck);
             // Solution to check/uncheck obtained from https://stackoverflow.com/questions/17420534/check-uncheck-checkbox-using-jquery
             $("#"+ currentMEGroup[j]).prop('checked', toCheck);
           }          
@@ -188,6 +188,7 @@ $(document).ready(function(){
     else if (!phoneNumberRegExp.test(phoneNumberEntered))
     {
       alert("Please enter a valid phone number in the form of XXX-XXX-XXXX.");
+      return;
     }
     
     // 4) The email field.    
@@ -235,13 +236,33 @@ $(document).ready(function(){
 
   $("#dropdownMenuButtonForStylists").change(function(){
 
-    console.log("dropdownMenuButtonForStylists this.val = " + this.value);
+    //console.log("dropdownMenuButtonForStylists this.val = " + this.value);
     var selectedStylistID = this.value; // Forthe options, the value and the ids are the same in this case.
 
     clearInputTimeSetting(true);
     clearInputDateSetting(true);
     $("#dateInput").prop('disabled', selectedStylistID == 0);
     //$("#timeInput").prop('disabled', true);
+
+    console.log("currentStylistAvailableDays 1 :  " + currentStylistAvailableDays);
+
+    setAllUnavailableDates();
+
+    console.log("currentStylistAvailableDays 2 :  " + currentStylistAvailableDays);    
+
+    var dateToday = new Date();
+
+    var dateNextYear = new Date();
+    var currentYear = dateNextYear.getFullYear();
+    dateNextYear.setFullYear(currentYear+1);
+
+     $('#dateInput').datepicker({
+      showButtonPanel: false,
+      minDate: dateToday,
+      maxDate: dateNextYear,
+      dateFormat : "yy-mm-dd",
+      beforeShowDay: unavailableDate,
+    });
 
   });
 
@@ -252,16 +273,16 @@ $(document).ready(function(){
     var yearSelected = dateSelectedText.split("-")[0];
     var monthSelected = dateSelectedText.split("-")[1];
     var daySelected = dateSelectedText.split("-")[2];
-    console.log("yearSelected : " + yearSelected);
-    console.log("monthSelected : " + monthSelected);
-    console.log("daySelected : " + daySelected);        
+    //console.log("yearSelected : " + yearSelected);
+    //console.log("monthSelected : " + monthSelected);
+    //console.log("daySelected : " + daySelected);        
 
     var dateSelected = new Date();
     dateSelected.setFullYear(yearSelected);
     dateSelected.setMonth(monthSelected-1); // Subtract 1 since month seem to be 0-based not 1-based.
     dateSelected.setDate(daySelected);
 
-    console.log("dateSelected getDay() : " + dateSelected.toDateString());
+    ////console.log("dateSelected getDay() : " + dateSelected.toDateString());
 
     $("#dateInput").val(dateSelected.toDateString()); 
 
@@ -275,21 +296,28 @@ $(document).ready(function(){
 
   $("#dateInput").click(function(){
 
+
+/*
+    console.log("currentStylistAvailableDays 1 :  " + currentStylistAvailableDays);
+
+    setAllUnavailableDates();
+
+    console.log("currentStylistAvailableDays 2 :  " + currentStylistAvailableDays);
+*/
+    /*
     var dateToday = new Date();
 
     var dateNextYear = new Date();
     var currentYear = dateNextYear.getFullYear();
     dateNextYear.setFullYear(currentYear+1);
 
-    setAllUnavailableDates();
-    
-    $('#dateInput').datepicker({
+     $('#dateInput').datepicker({
       showButtonPanel: false,
       minDate: dateToday,
       maxDate: dateNextYear,
       dateFormat : "yy-mm-dd",
       beforeShowDay: unavailableDate,
-    });
+    }); */
   });
 
 
@@ -315,7 +343,7 @@ function isStylistSelected()
 function isServiceDateSelected()
 {
   var dateSelected = $("#dateInput").val();
-  console.log("dateSelected : " + dateSelected);
+  ////console.log("dateSelected : " + dateSelected);
   return dateSelected != "";
 }
 
@@ -323,7 +351,7 @@ function isServiceDateSelected()
 function isServicetTimeSelected()
 {
   var timeSelected = $("#timeInput").val();
-  console.log("timeSelected : " + timeSelected);
+  ////console.log("timeSelected : " + timeSelected);
   return timeSelected != 0;
 }
 
@@ -395,17 +423,17 @@ function removeAllUnavailableTimeSlots(dayOfTheWeekChosen)
     return;
   }
 
-  console.log("dayOfTheWeekChosen : " + dayOfTheWeekChosen);
+  ////console.log("dayOfTheWeekChosen : " + dayOfTheWeekChosen);
 
 
   var currrentStylistTimeslots = stylistIdToMapofAvailabilitiesMap.get(currentStylistID);
 
-  //console.log("currrentStylistTimeslots : " + currrentStylistTimeslots);
+  //////console.log("currrentStylistTimeslots : " + currrentStylistTimeslots);
 
   // Iteration solution btained from https://stackoverflow.com/questions/590163/how-to-get-all-options-of-a-select-using-jquery
   $("#timeInput option").each(function(timeslot)
   {
-    console.log("$(this).val() : " + $(this).val());
+    ////console.log("$(this).val() : " + $(this).val());
     timeslot = $(this).val();
     // Start by hiding every timeslot option.
     $("#" + timeslot).hide();
@@ -413,14 +441,14 @@ function removeAllUnavailableTimeSlots(dayOfTheWeekChosen)
   
   var timeSlotsAvailable = currrentStylistTimeslots.get(dayOfTheWeekChosen);
 
-  //console.log("timeSlotsAvailable : " + timeSlotsAvailable);
+  //////console.log("timeSlotsAvailable : " + timeSlotsAvailable);
 
   // Now show only the ones available.
   for (var i = 0; i < timeSlotsAvailable.length; i++)
   {
     var currentTimeSlotAvailable = timeSlotsAvailable[i];
     var IDTimeslot = convertTimeSlotToIDFormat(currentTimeSlotAvailable);
-    //console.log("IDTimeslot : " + IDTimeslot);
+    //////console.log("IDTimeslot : " + IDTimeslot);
     $("#" + IDTimeslot).show();
   }
 
@@ -451,7 +479,7 @@ function getAllSelectedServices()
 function obtainAllStylistForSelectedServices(pListOfSelectedServices)
 {
 
-  //console.log("pListOfSelectedServices = " + pListOfSelectedServices);
+  //////console.log("pListOfSelectedServices = " + pListOfSelectedServices);
 
   var listOfMatchedStylists = [];
 
@@ -490,7 +518,7 @@ function updateStylistAvailableComboBox()
 
   availableStylistIDs = obtainAllStylistForSelectedServices(listOfSelectedServices);
 
-  console.log("availableStylists = " + availableStylistIDs);
+  ////console.log("availableStylists = " + availableStylistIDs);
 
   // Set back to default option.
   $("#dropdownMenuButtonForStylists").val(0);
