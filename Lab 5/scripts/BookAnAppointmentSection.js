@@ -46,7 +46,8 @@ boucherTimeSlots.set("Wednesday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:
 boucherTimeSlots.set("Thursday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
                         "12:00 pm - 12:30 pm"]);      
 boucherTimeSlots.set("Friday", ["8:00 am - 8:30 am", "8:30 am - 9:00 am", "9:00 am - 9:30 am", "9:30 am - 10:00 am", "10:00 am - 10:30 am", "10:30 am - 11:00 am",
-                      "12:00 pm - 12:30 pm"]);  
+                      "12:00 pm - 12:30 pm", "12:30 pm - 1:00 pm", "1:00 pm - 1:30 pm", "1:30 pm - 2:00 pm", "2:00 pm - 2:30 pm", "2:30 pm - 3:00 pm", 
+                      "3:00 pm - 3:30 pm", "3:30 pm - 4:00 pm"]);
                       
                       
 const macleanTimeSlots = new Map([]); 
@@ -162,7 +163,7 @@ $(document).ready(function(){
 
 
     // 2) The last name field.
-    var lastNameEntered = $("#firstNameBookingFormInput").val();
+    var lastNameEntered = $("#lastNameBookingFormInput").val();
     var lastNameRegexp = /^[a-zA-Z ]*$/;
 
     if (lastNameEntered == "")
@@ -201,21 +202,35 @@ $(document).ready(function(){
     {
       alert("Please enter a valid email address.");
       return ;
-    } 
+    }
+    
+    if (!isServiceSelected())
+    {
+      alert("Please select at least one service.");
+      return;
+    }
+
+    if (!isStylistSelected())
+    {
+      alert("Please select a stylist.");
+      return;
+    }
+    
+    if (!isServiceDateSelected())
+    {
+      alert("Please select a date for your appointment.");
+      return;
+    }
+
+    if (!isServicetTimeSelected())
+    {
+      alert("Please select a time for your appointment.");
+      return;
+    }
+    
+    alert("You have succesfully booked an appointment");
+
   });
-
-
-// Disabling specific dates "unavailableDate(date)" function was obtained and adapted from https://stackoverflow.com/questions/9742289/jquery-ui-date-picker-disabling-specific-dates
-function unavailableDate(date) {
-  dayOfTheWeek = integerToDayOfTheWeekMap.get(date.getDay());
-  if ($.inArray(dayOfTheWeek, currentStylistAvailableDays) != -1) 
-  {
-      return [true, ""];
-  } else {
-      return [false, "", "Unavailable"];
-  }
-}
-
 
 
   $("#dropdownMenuButtonForStylists").change(function(){
@@ -223,8 +238,10 @@ function unavailableDate(date) {
     console.log("dropdownMenuButtonForStylists this.val = " + this.value);
     var selectedStylistID = this.value; // Forthe options, the value and the ids are the same in this case.
 
+    clearInputTimeSetting(true);
+    clearInputDateSetting(true);
     $("#dateInput").prop('disabled', selectedStylistID == 0);
-    $("#timeInput").prop('disabled', selectedStylistID == 0);
+    //$("#timeInput").prop('disabled', true);
 
   });
 
@@ -250,6 +267,8 @@ function unavailableDate(date) {
 
     var currentlySelectedDayOfTheWeek = integerToDayOfTheWeekMap.get(dateSelected.getDay());
 
+    //$("#timeInput").prop('disabled', false);
+    clearInputTimeSetting(false)
     removeAllUnavailableTimeSlots(currentlySelectedDayOfTheWeek);
 
   });
@@ -277,6 +296,68 @@ function unavailableDate(date) {
 });
 
 
+/*function clearStylistAvailableSetting()
+{
+  $("#dropdownMenuButtonForStylists").val(0);
+}*/
+
+function isServiceSelected()
+{
+  return !$("#dropdownMenuButtonForStylists").is(':disabled');
+}
+
+function isStylistSelected()
+{
+  return $("#dropdownMenuButtonForStylists").val() != 0;
+}
+
+
+function isServiceDateSelected()
+{
+  var dateSelected = $("#dateInput").val();
+  console.log("dateSelected : " + dateSelected);
+  return dateSelected != "";
+}
+
+
+function isServicetTimeSelected()
+{
+  var timeSelected = $("#timeInput").val();
+  console.log("timeSelected : " + timeSelected);
+  return timeSelected != 0;
+}
+
+
+
+function clearInputDateSetting(disableWidget)
+{
+  $("#dateInput").val("");
+
+  if (disableWidget)
+  {
+    $("#dateInput").prop('disabled', true);
+  }
+}
+
+function clearInputTimeSetting(disableWidget)
+{
+  $("#timeInput").val(0);
+
+  $("#timeInput").prop('disabled', disableWidget);
+}
+
+
+
+// Disabling specific dates "unavailableDate(date)" function was obtained and adapted from https://stackoverflow.com/questions/9742289/jquery-ui-date-picker-disabling-specific-dates
+function unavailableDate(date) {
+  dayOfTheWeek = integerToDayOfTheWeekMap.get(date.getDay());
+  if ($.inArray(dayOfTheWeek, currentStylistAvailableDays) != -1) 
+  {
+      return [true, ""];
+  } else {
+      return [false, "", "Unavailable"];
+  }
+}
 
 function setAllUnavailableDates()
 {
@@ -405,6 +486,7 @@ function updateStylistAvailableComboBox()
 
   var stylistSelectionAvailable = listOfSelectedServices.length == 0;
   $("#dropdownMenuButtonForStylists").prop('disabled', stylistSelectionAvailable);
+  $("#timeInput").prop('disabled', true);
 
   availableStylistIDs = obtainAllStylistForSelectedServices(listOfSelectedServices);
 
@@ -412,6 +494,7 @@ function updateStylistAvailableComboBox()
 
   // Set back to default option.
   $("#dropdownMenuButtonForStylists").val(0);
+  clearInputDateSetting(true);
 
   stylistIdToListOfServicesMap.forEach (function(listOfServicesOfferedByStylist, stylistID) {
 
