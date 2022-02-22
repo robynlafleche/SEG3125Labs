@@ -79,7 +79,7 @@ stylistIdToMapofAvailabilitiesMap.set("Boucher", boucherTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Maclean", macleanTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Rocan", rocanTimeSlots);
 
-
+var currentStylistUnavailableDates = ["9-11-2022", "14-11-2022", "15-11-2022"];
 
 
 
@@ -194,6 +194,19 @@ $(document).ready(function(){
   });
 
 
+// Disabling specific dates "unavailableDate(date)" function was obtained from https://stackoverflow.com/questions/9742289/jquery-ui-date-picker-disabling-specific-dates
+
+function unavailableDate(date) {
+  dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  if ($.inArray(dmy, currentStylistUnavailableDates
+  ) == -1) {
+      return [true, ""];
+  } else {
+      return [false, "", "Unavailable"];
+  }
+}
+
+
 
   $("#dropdownMenuButtonForStylists").change(function(){
 
@@ -201,14 +214,6 @@ $(document).ready(function(){
     var selectedStylistID = this.value; // Forthe options, the value and the ids are the same in this case.
 
     $("#dateInput").prop('disabled', selectedStylistID == 0);
-
-    /*$('#dateInput').datepicker({
-      startDate: '-2m',
-      endDate: '+2d'
-
-    });*/
-
-    //$( "#dateInput" ).datepicker();
 
   });
 
@@ -237,6 +242,9 @@ $(document).ready(function(){
 
 
 
+
+
+
   $("#dateInput").click(function(){
 
     var dateToday = new Date();
@@ -250,6 +258,7 @@ $(document).ready(function(){
       minDate: dateToday,
       maxDate: dateNextYear,
       dateFormat : "yy-mm-dd",
+      beforeShowDay: unavailableDate,
     });
   });
 
