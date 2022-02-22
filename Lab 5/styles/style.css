@@ -37,8 +37,8 @@ nav .container ul li a {
   position: relative;
 }
 
-nav .container ul li a:hover{
-	background-color: rgb(180, 179, 179);
+nav .container ul li a:hover {
+  background-color: rgb(180, 179, 179);
 }
 
 nav .container ul li a.active {
@@ -111,7 +111,6 @@ section {
   height: 350px;
 }
 
-
 /* .reviewCustomerName {
   color: #ff66c4;
   font-family: "Gudea", sans-serif;
@@ -124,7 +123,7 @@ section {
 
 /* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
 .carousel-control {
-  margin-top: 100px;/*put your desired top margin*/
+  margin-top: 100px; /*put your desired top margin*/
   height: 50px;
 }
 
@@ -148,7 +147,7 @@ section {
 .customerReviewInstance {
   background-color: white;
   position: absolute;
-  object-fit:cover;
+  object-fit: cover;
   top: 0;
   left: 0;
   height: auto;
@@ -159,10 +158,10 @@ section {
 }
 
 .customerReviewInstance img {
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
   display: block;
-  margin: 0 auto;;
+  margin: 0 auto;
 }
 
 /* Positioning solution obtained from https://stackoverflow.com/questions/48311855/how-to-position-carousel-indicators-in-bootstrap-4 */
@@ -189,7 +188,7 @@ section {
   display: inline-block;
   padding: 10px;
   width: 50px;
-  height:50px;
+  height: 50px;
   position: fixed;
   bottom: 30px;
   right: 5px;
@@ -198,13 +197,11 @@ section {
   margin: 5px;
   text-align: center;
   font-size: 2em;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
 }
 
-#toTop:hover{
-
+#toTop:hover {
   background-color: #fda5a4;
   cursor: pointer;
 }
@@ -217,4 +214,40 @@ section {
 #toTop.show {
   opacity: 1;
   visibility: visible;
+}
+#welcomePageImage {
+  opacity: 0.6;
+}
+#welcomePageText {
+  /* code inspired from https://www.w3schools.com/howto/howto_css_image_text.asp */
+  top: 30%;
+  left: 1%;
+  color: black;
+  /* inspired from https://stackoverflow.com/a/63252512 */
+  position: -webkit-sticky;
+  font-size: 8vmin;
+}
+#aboutUsPartText {
+  font-size: 20px;
+}
+.aboutPage {
+  padding-top: 20%;
+}
+#servicesPage {
+  background-color: white;
+}
+
+/* Tooltips from  https://stackoverflow.com/a/36921710 */
+div.click-to-top span {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+}
+
+div.click-to-top:hover span {
+  display: block;
 }
