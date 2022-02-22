@@ -79,7 +79,18 @@ stylistIdToMapofAvailabilitiesMap.set("Boucher", boucherTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Maclean", macleanTimeSlots);
 stylistIdToMapofAvailabilitiesMap.set("Rocan", rocanTimeSlots);
 
-var currentStylistUnavailableDates = ["9-11-2022", "14-11-2022", "15-11-2022"];
+var currentStylistAvailableDays = [];
+
+const integerToDayOfTheWeekMap = new Map();
+integerToDayOfTheWeekMap.set(0, "Sunday");
+integerToDayOfTheWeekMap.set(1, "Monday");
+integerToDayOfTheWeekMap.set(2, "Tuesday");
+integerToDayOfTheWeekMap.set(3, "Wednesday");
+integerToDayOfTheWeekMap.set(4, "Thursday");
+integerToDayOfTheWeekMap.set(5, "Friday");
+integerToDayOfTheWeekMap.set(6, "Saturday");
+
+//var currentlySelectedDayOfTheWeek = ""
 
 
 
@@ -194,12 +205,11 @@ $(document).ready(function(){
   });
 
 
-// Disabling specific dates "unavailableDate(date)" function was obtained from https://stackoverflow.com/questions/9742289/jquery-ui-date-picker-disabling-specific-dates
-
+// Disabling specific dates "unavailableDate(date)" function was obtained and adapted from https://stackoverflow.com/questions/9742289/jquery-ui-date-picker-disabling-specific-dates
 function unavailableDate(date) {
-  dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-  if ($.inArray(dmy, currentStylistUnavailableDates
-  ) == -1) {
+  dayOfTheWeek = integerToDayOfTheWeekMap.get(date.getDay());
+  if ($.inArray(dayOfTheWeek, currentStylistAvailableDays) != -1) 
+  {
       return [true, ""];
   } else {
       return [false, "", "Unavailable"];
@@ -214,6 +224,7 @@ function unavailableDate(date) {
     var selectedStylistID = this.value; // Forthe options, the value and the ids are the same in this case.
 
     $("#dateInput").prop('disabled', selectedStylistID == 0);
+    $("#timeInput").prop('disabled', selectedStylistID == 0);
 
   });
 
@@ -237,13 +248,11 @@ function unavailableDate(date) {
 
     $("#dateInput").val(dateSelected.toDateString()); 
 
+    var currentlySelectedDayOfTheWeek = integerToDayOfTheWeekMap.get(dateSelected.getDay());
+
+    removeAllUnavailableTimeSlots(currentlySelectedDayOfTheWeek);
+
   });
-
-
-
-
-
-
 
   $("#dateInput").click(function(){
 
@@ -252,6 +261,8 @@ function unavailableDate(date) {
     var dateNextYear = new Date();
     var currentYear = dateNextYear.getFullYear();
     dateNextYear.setFullYear(currentYear+1);
+
+    setAllUnavailableDates();
     
     $('#dateInput').datepicker({
       showButtonPanel: false,
@@ -267,7 +278,72 @@ function unavailableDate(date) {
 
 
 
+function setAllUnavailableDates()
+{
+  var currentStylistID = $("#dropdownMenuButtonForStylists").val();
 
+  if (currentStylistID == "0")
+  {
+    // "Select a stylist" option.
+    return;
+  }
+
+  var currrentStylistTimeslots = stylistIdToMapofAvailabilitiesMap.get(currentStylistID);
+
+  currentStylistAvailableDays = [];
+
+  currrentStylistTimeslots.forEach (function(availableTimeSlots, dayOfTheWeek) {
+    currentStylistAvailableDays.push(dayOfTheWeek);
+   });
+
+}
+
+
+function convertTimeSlotToIDFormat(timeSlotWithSpacesAndColons)
+{
+  // 8:30 am - 9:00 am
+  return "A" + timeSlotWithSpacesAndColons.replace(/ /g, "").replace(/:/g, ""); 
+}
+
+function removeAllUnavailableTimeSlots(dayOfTheWeekChosen)
+{
+  var currentStylistID = $("#dropdownMenuButtonForStylists").val();
+  if (currentStylistID == "0")
+  {
+    // "Select a stylist" option.
+    return;
+  }
+
+  console.log("dayOfTheWeekChosen : " + dayOfTheWeekChosen);
+
+
+  var currrentStylistTimeslots = stylistIdToMapofAvailabilitiesMap.get(currentStylistID);
+
+  //console.log("currrentStylistTimeslots : " + currrentStylistTimeslots);
+
+  // Iteration solution btained from https://stackoverflow.com/questions/590163/how-to-get-all-options-of-a-select-using-jquery
+  $("#timeInput option").each(function(timeslot)
+  {
+    console.log("$(this).val() : " + $(this).val());
+    timeslot = $(this).val();
+    // Start by hiding every timeslot option.
+    $("#" + timeslot).hide();
+  });
+  
+  var timeSlotsAvailable = currrentStylistTimeslots.get(dayOfTheWeekChosen);
+
+  //console.log("timeSlotsAvailable : " + timeSlotsAvailable);
+
+  // Now show only the ones available.
+  for (var i = 0; i < timeSlotsAvailable.length; i++)
+  {
+    var currentTimeSlotAvailable = timeSlotsAvailable[i];
+    var IDTimeslot = convertTimeSlotToIDFormat(currentTimeSlotAvailable);
+    //console.log("IDTimeslot : " + IDTimeslot);
+    $("#" + IDTimeslot).show();
+  }
+
+}
 
 
 function getAllSelectedServices()
@@ -315,7 +391,6 @@ function obtainAllStylistForSelectedServices(pListOfSelectedServices)
   if (numberOfServicesMatched == pListOfSelectedServices.length)
   {
     listOfMatchedStylists.push(stylistID);
-
   }
 
   })

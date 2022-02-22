@@ -71,6 +71,10 @@ section {
   background-color: white;
 }
 
+#dateInput{
+  /*color: black;*/
+}
+
 #timeInput {
   background-color: white;
   color: black;
