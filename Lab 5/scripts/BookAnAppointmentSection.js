@@ -212,19 +212,50 @@ $(document).ready(function(){
 
   });
 
-  var dateToday = new Date();
 
-  var dateNextYear = new Date();
-  var currentYear = dateNextYear.getFullYear();
-  dateNextYear.setFullYear(currentYear+1);
+  $("#dateInput").change(function(){
+
+    var dateSelectedText = $("#dateInput").val();
+    var yearSelected = dateSelectedText.split("-")[0];
+    var monthSelected = dateSelectedText.split("-")[1];
+    var daySelected = dateSelectedText.split("-")[2];
+    console.log("yearSelected : " + yearSelected);
+    console.log("monthSelected : " + monthSelected);
+    console.log("daySelected : " + daySelected);        
+
+    var dateSelected = new Date();
+    dateSelected.setFullYear(yearSelected);
+    dateSelected.setMonth(monthSelected-1); // Subtract 1 since month seem to be 0-based not 1-based.
+    dateSelected.setDate(daySelected);
+
+    console.log("dateSelected getDay() : " + dateSelected.toDateString());
+
+    $("#dateInput").val(dateSelected.toDateString()); 
+
+
+  });
+
+
+
 
   $("#dateInput").click(function(){
+
+    var dateToday = new Date();
+
+    var dateNextYear = new Date();
+    var currentYear = dateNextYear.getFullYear();
+    dateNextYear.setFullYear(currentYear+1);
+    
     
     $('#dateInput').datepicker({
       showButtonPanel: true,
       minDate: dateToday,
       maxDate: dateNextYear,
+      dateFormat : "yy-mm-dd",
     });
+
+
+
   });
 
 
