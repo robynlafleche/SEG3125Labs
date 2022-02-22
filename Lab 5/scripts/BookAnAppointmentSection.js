@@ -232,7 +232,6 @@ $(document).ready(function(){
 
     $("#dateInput").val(dateSelected.toDateString()); 
 
-
   });
 
 
@@ -246,16 +245,12 @@ $(document).ready(function(){
     var currentYear = dateNextYear.getFullYear();
     dateNextYear.setFullYear(currentYear+1);
     
-    
     $('#dateInput').datepicker({
-      showButtonPanel: true,
+      showButtonPanel: false,
       minDate: dateToday,
       maxDate: dateNextYear,
       dateFormat : "yy-mm-dd",
     });
-
-
-
   });
 
 

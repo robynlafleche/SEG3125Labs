@@ -67,6 +67,10 @@ section {
   font-size: 14px;
 }
 
+#dateInput:read-only{
+  background-color: white;
+}
+
 #timeInput {
   background-color: white;
   color: black;
