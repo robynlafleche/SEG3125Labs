@@ -1,5 +1,10 @@
-var checkBoxes = $('tbody .myCheckBox');
-checkBoxes.change(function () {
-    $('#confirmButton').prop('disabled', checkBoxes.filter(':checked').length < 1);
-});
-checkBoxes.change(); // or add disabled="true" in the HTML
+// code inspired from https://stackoverflow.com/a/47449031/15518664
+function callFunction() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+  
+    document.querySelectorAll('#theDisabledBookingButtonInServices')[0].disabled = true;
+    if (checkedOne) {
+      document.querySelectorAll('#theDisabledBookingButtonInServices')[0].disabled = false;
+    }
+  }

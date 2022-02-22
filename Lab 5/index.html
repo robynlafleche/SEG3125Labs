@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -171,7 +172,7 @@
               <img class="card-img-top" src="images/short-cut.png" alt="Card image cap" style="height:340px"> 
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="myCheckBox"  onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Short Cut
                     </label>
@@ -186,7 +187,7 @@
               <img class="card-img-top" src="images/medium-hair.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Medium Cut
                     </label>
@@ -200,7 +201,7 @@
               <img class="card-img-top" src="images/long-cut-straight.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Long Cut
                     </label>
@@ -220,7 +221,7 @@
               <img class="card-img-top" src="images/partial-foil.png" alt="Card image cap" style="height:340px"> 
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Partial Foil
                     </label>
@@ -233,7 +234,7 @@
               <img class="card-img-top" src="images/toner.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Toner
                     </label>
@@ -247,7 +248,7 @@
               <img class="card-img-top" src="images/Balyage.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Balayage
                     </label>
@@ -267,7 +268,7 @@
               <img class="card-img-top" src="images/Updo.png" alt="Card image cap" style="height:340px"> 
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class='check' class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Up-Do
                     </label>
@@ -280,7 +281,7 @@
               <img class="card-img-top" src="images/formal-style.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class='check' class="form-check-input" onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Formal Style
                     </label>
@@ -294,7 +295,7 @@
               <img class="card-img-top" src="images/bridal updo.png" alt="Card image cap" style="height:340px">
               <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class='check form-check-input' onchange="callFunction()" class="myCheckBox" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" >
                         Bridal Up-Do
                     </label>
@@ -304,8 +305,7 @@
             </div>
           </div>
           <!-- end of hair styling -->
-
-              <button  type="button" class="btn btn-light"><a href="#booking">Book Now</a></button>
+              <button id="theDisabledBookingButtonInServices" class="btn btn-light" type="button" class="" disabled><a href="#booking" >Book Now</a></button>
         </div>
     </section>
     <!-- // SERVICES -->
