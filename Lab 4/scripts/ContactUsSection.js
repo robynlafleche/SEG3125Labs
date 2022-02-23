@@ -1,44 +1,69 @@
-function submitContactForm() {
 
-  var firstNameEntered = document.getElementById("firstNameContactUsInput").value;
-  if (firstNameEntered == "")
-  {
-    alert("The first name field is required");
-    return;
-  } 
+$(document).ready(function(){
 
-  var lastNameEntered = document.getElementById("lastNameContactUsInput").value;
-  if (lastNameEntered == "")
-  {
-    alert("The last name field is required");
-    return;
-  }   
+  $("#SubmitFormButton").click(function(){
+      
+    // 1) Start by verifying the first name field.
+    var firstNameEntered = $("#firstNameContactUsInput").val();
+    var firstNameRegexp = /^[a-zA-Z ]*$/;
 
-  var emailEntered = document.getElementById("emailContactUsInput").value;
-  if (emailEntered == "")
-  {
-    alert("The email field is required");
-    return;
-  }
-  // Must validate the email address entered
-  // Validation regular was expression obtained from https://stackoverflow.com/questions/940577/javascript-regular-expression-email-validation
-  var emailAddressRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!emailAddressRegexp.test(emailEntered)) 
-  {
-    alert('The email address entered is invalid.');
-    return ;
-  } 
+    if (firstNameEntered == "")
+    {
+      alert("The first name field is required.");
+      return;
+    }
+    else if (!firstNameRegexp.test(firstNameEntered))
+    {
+      alert("The first name field can only contain characters and spaced.");
+      return;
+    }
 
 
-  var concernsEntered = document.getElementById("specialInstructionsInput").text;
-  if (concernsEntered == "")
-  {
-    alert("Please indicate your concerns.");
-    return;
-  } 
+    // 2) The last name field.
+    var lastNameEntered = $("#lastNameContactUsInput").val();
+    var lastNameRegexp = /^[a-zA-Z ]*$/;
 
+    if (lastNameEntered == "")
+    {
+      alert("The last name field is required.");
+      return;
+    }
+    else if (!lastNameRegexp.test(lastNameEntered))
+    {
+      alert("The last name field can only contain characters and spaced.");
+      return;
+    }
 
-  alert("Thank you for your feedback " + firstNameEntered + " " + lastNameEntered + ".");
-}
+    // 3) The email field.    
+    var emailEntered = $("#emailContactUsInput").val();
+    var emailAddressRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (emailEntered == "")
+    {
+      alert("The email field is required");
+      return;
+    }
+    else if (!emailAddressRegexp.test(emailEntered)) 
+    {
+      alert("Please enter a valid email address.");
+      return ;
+    }
 
+    var customerMessage = $("#contactMessageInput").val();
 
+    if (customerMessage == "")
+    {
+      alert("Please include a message.");
+      return;
+    }
+
+    alert("Thank you for your feedback " + firstNameEntered + " " + lastNameEntered + "."); 
+
+    // Now clear every field.
+    $("#firstNameContactUsInput").val("");
+    $("#lastNameContactUsInput").val("");
+    $("#emailContactUsInput").val("");
+    $("#contactMessageInput").val("");
+
+  });  
+
+});  
