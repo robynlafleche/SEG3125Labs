@@ -296,39 +296,12 @@ $(document).ready(function(){
   });
 
   $("#dateInput").click(function(){
-
-
-/*
-    console.log("currentStylistAvailableDays 1 :  " + currentStylistAvailableDays);
-
-    setAllUnavailableDates();
-
-    console.log("currentStylistAvailableDays 2 :  " + currentStylistAvailableDays);
-*/
-    /*
-    var dateToday = new Date();
-
-    var dateNextYear = new Date();
-    var currentYear = dateNextYear.getFullYear();
-    dateNextYear.setFullYear(currentYear+1);
-
-     $('#dateInput').datepicker({
-      showButtonPanel: false,
-      minDate: dateToday,
-      maxDate: dateNextYear,
-      dateFormat : "yy-mm-dd",
-      beforeShowDay: unavailableDate,
-    }); */
   });
 
 
 });
 
 
-/*function clearStylistAvailableSetting()
-{
-  $("#dropdownMenuButtonForStylists").val(0);
-}*/
 
 function isServiceSelected()
 {
