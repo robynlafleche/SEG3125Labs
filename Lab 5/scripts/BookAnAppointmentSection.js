@@ -137,15 +137,11 @@ $(document).ready(function(){
     updateStylistAvailableComboBox();
 
     //alert ("The element with id " + this.id + " changed : " + this.checked);
-});
-
-
-
-
-
-
+  });
 
   $("#BookAnAppointmentButton").click(function(){
+
+    publishMessage("DisplayPaymentSectionTopic", "");
     
     // 1) Start by verifying the first name field.
     var firstNameEntered = $("#firstNameBookingFormInput").val();
@@ -231,75 +227,12 @@ $(document).ready(function(){
       return;
     }
     
-    alert("You have succesfully booked an appointment");
+    //alert("You have succesfully booked an appointment");
 
   });
 
 
-  $("#SubmitFormButton").click(function(){
-    
-    // 1) Start by verifying the first name field.
-    var firstNameEntered = $("#firstNameContactUsInput").val();
-    var firstNameRegexp = /^[a-zA-Z ]*$/;
-
-    if (firstNameEntered == "")
-    {
-      alert("The first name field is required.");
-      return;
-    }
-    else if (!firstNameRegexp.test(firstNameEntered))
-    {
-      alert("The first name field can only contain characters and spaced.");
-      return;
-    }
-
-
-    // 2) The last name field.
-    var lastNameEntered = $("#lastNameContactUsInput").val();
-    var lastNameRegexp = /^[a-zA-Z ]*$/;
-
-    if (lastNameEntered == "")
-    {
-      alert("The last name field is required.");
-      return;
-    }
-    else if (!lastNameRegexp.test(lastNameEntered))
-    {
-      alert("The last name field can only contain characters and spaced.");
-      return;
-    }
-
-    // 3) The email field.    
-    var emailEntered = $("#emailContactUsInput").val();
-    var emailAddressRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (emailEntered == "")
-    {
-      alert("The email field is required");
-      return;
-    }
-    else if (!emailAddressRegexp.test(emailEntered)) 
-    {
-      alert("Please enter a valid email address.");
-      return ;
-    }
-
-    var customerMessage = $("#contactMessageInput").val();
-
-    if (customerMessage == "")
-    {
-      alert("Please include a message.");
-      return;
-    }
-
-    alert("Thank you for your feedback " + firstNameEntered + " " + lastNameEntered + "."); 
-
-    // Now clear every field.
-    $("#firstNameContactUsInput").val("");
-    $("#lastNameContactUsInput").val("");
-    $("#emailContactUsInput").val("");
-    $("#contactMessageInput").val("");
-
-  });  
+  
 
 
   $("#dropdownMenuButtonForStylists").change(function(){
@@ -615,79 +548,40 @@ function updateStylistAvailableComboBox()
 }
 
 
+function clearAllStylistCheckboxes()
+{
+  for (var i = 0; i < mutuallyExclusiveSetsOfCheckboxed.length; i++) {
+       
+    var currentMEGroup = mutuallyExclusiveSetsOfCheckboxed[i];
 
-/*
-function bookAppointment() {
-
-      var firstNameEntered = document.getElementById("firstNameBookingFormInput").value;
-    if (firstNameEntered == "")
+    for (var j = 0; j < currentMEGroup.length; j++)
     {
-      alert("The first name field is required");
-      return;
+      var checkBoxId = currentMEGroup[i];
+
+      $("#" + checkBoxId).prop('checked', false);
     } 
-  
-    var lastNameEntered = document.getElementById("lastNameBookingFormInput").value;
-    if (lastNameEntered == "")
-    {
-      alert("The last name field is required");
-      return;
-    }   
-    
-    var phoneNumberEntered = document.getElementById("phoneNumberInput").value;
-    if (phoneNumberEntered == "")
-    {
-      alert("The phone number field is required");
-      return;
-    }      
-  
-
-    var emailEntered = document.getElementById("emailBookingFormInput").value;
-    if (emailEntered == "")
-    {
-      alert("The email field is required");
-      return;
-    }
-    // Must validate the email address entered
-    // Validation regular was expression obtained from https://stackoverflow.com/questions/940577/javascript-regular-expression-email-validation
-    var emailAddressRegexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!emailAddressRegexp.test(emailEntered)) 
-    {
-      alert('The email address entered is invalid.');
-      return ;
-    } 
-    
-
-    var serviceSelected = document.getElementById("dropdownMenuButtonForServices").value;
-    if (serviceSelected == "Select a service")
-    {
-      alert("The service is required");
-      return;
-    }
-
-    var stylistSelected = document.getElementById("dropdownMenuButtonForStylists").value;
-    if (stylistSelected == "Select a stylist")
-    {
-      alert("The stylist is required");
-      return;
-    }    
-
-
-    var dateSelected = document.getElementById("dateInput").value;
-    if (dateSelected == "")
-    {
-      alert("The date is required");
-      return;
-    }   
-    
-    var timeSelected = document.getElementById("timeInput").value;
-    if (timeSelected == "")
-    {
-      alert("The time is required");
-      return;
-    }     
-
-    
-    alert("You have succesfully booked an appointment");
+  } 
 }
 
-*/
+
+function onPaymentSectionFinishedTopic(resetAllFields)
+{
+  if (resetAllFields)
+  {
+    clearInputDateSetting(true)
+    clearInputTimeSetting(true)
+    clearAllStylistCheckboxes();
+    updateStylistAvailableComboBox();
+
+    $("#firstNameBookingFormInput").val("");
+    $("#lastNameBookingFormInput").val("");
+    $("#phoneNumberInput").val("");
+    $("#emailBookingFormInput").val("");
+    $("#specialInstructionsInput").val("");
+  }
+}
+
+
+subscribeToTopic("PaymentSectionFinishedTopic", onPaymentSectionFinishedTopic);
+
+

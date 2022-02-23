@@ -13,9 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
 
     <!-- Required js scripts -->
+    <script src="https://kit.fontawesome.com/fe4398600e.js" crossorigin="anonymous"></script>
+
+    <script src="TransportMachine/TheTransportMachine.js"></script>
     <script src="scripts/BookAnAppointmentSection.js"></script>
     <script src="scripts/ContactUsSection.js"></script>
-    <script src="https://kit.fontawesome.com/fe4398600e.js" crossorigin="anonymous"></script>
+    <script src="scripts/PaymentInfoSection.js"></script>    
 
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
@@ -483,6 +486,46 @@
         </div>
     </section>
     <!-- // BOOKING -->
+
+
+
+    <!-- // CREDIT CARD PAGE -->
+
+    <section id="creditCardForm" class="creditCardModalForm">
+        <div class="container bg-white creditCardModalSubForm">
+            <h2>Payment Information</h2>
+            <p>Please enter your credit card details to confirm your booking.</p>
+            <div class="row">
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-8">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nameOnCardInput">Name on Card*</label>
+                                    <input type="text" class="form-control" id="nameOnCardInput" placeholder="Name on Card">
+
+                                    <label for="cardNumberInput">Credit Card number*</label>
+                                    <input type="text" class="form-control" id="cardNumberInput" placeholder="Card number">
+
+                                    <label for="expiryDateInput">Expiry date*</label>
+                                    <input type="text" class="form-control" id="expiryDateInput" placeholder="MM/YY">                                           
+                                </div>
+                        </div>
+                            <div class="form-group col-md-12">
+                                <button href="#" type="button" class="btn btn-light" id="CompleteBookingButton">Complete booking</button>
+                                <button href="#" type="button" class="btn btn-light" id="CompleteBookingCancelButton">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+
+        </div>
+    </section>
+
+      <!-- // CREDIT CARD PAGE -->
+
 
 
     <!-- CONTACT US -->
