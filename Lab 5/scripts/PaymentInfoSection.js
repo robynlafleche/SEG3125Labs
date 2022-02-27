@@ -119,5 +119,4 @@ function onDisplayPaymentSectionTopic(emptyString)
 
 
 
-console.log("subscribeToTopic = " + "DisplayPaymentSectionTopic");
 subscribeToTopic("DisplayPaymentSectionTopic", onDisplayPaymentSectionTopic);

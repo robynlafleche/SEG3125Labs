@@ -99,42 +99,12 @@ $(document).ready(function(){
 
   
   /* Change detection obtained from https://www.codegrepper.com/code-examples/javascript/jquery+checkbox+change+event */
-  $('input[type="checkbox"]').change(function() {
+  $('.bookingCheckBox').change(function() {    
 
-    if (this.checked)
-    {
-      // A checkbox just got checked, must uncheck all checkboxes in the same group.
-      for (var i = 0; i < mutuallyExclusiveSetsOfCheckboxed.length; i++) {
-       
-        var currentMEGroup = mutuallyExclusiveSetsOfCheckboxed[i];
+    onBookingCheckboxSelectionChanged(this.checked, this.id);
 
-        var IDFound = false;
-        for (var j = 0; j < currentMEGroup.length; j++)
-        {
-          if (currentMEGroup[j] == this.id)
-          {
-            IDFound = true;            
-          }
-        }
-
-        if (IDFound)
-        {
-          // Uncheck all the other checkboxes in the current group.
-          for (var j = 0; j < currentMEGroup.length; j++)
-          {
-            ////console.log("\n");
-            ////console.log("currentMEGroup[j] = " + currentMEGroup[j]);
-            ////console.log("this.id = " + this.id);
-            var toCheck = currentMEGroup[j] == this.id;
-            ////console.log("toCheck = " + toCheck);
-            // Solution to check/uncheck obtained from https://stackoverflow.com/questions/17420534/check-uncheck-checkbox-using-jquery
-            $("#"+ currentMEGroup[j]).prop('checked', toCheck);
-          }          
-        }
-      }      
-    }
-
-    updateStylistAvailableComboBox();
+    var checkboxStatus = new ServiceTypeCheckBoxStatus(this.id, this.checked);
+    publishMessage("BookingCheckboxStatusChangeTopic", checkboxStatus);    
 
     //alert ("The element with id " + this.id + " changed : " + this.checked);
   });
@@ -299,6 +269,47 @@ $(document).ready(function(){
 
 
 });
+
+
+
+
+function onBookingCheckboxSelectionChanged(pChecked, pCheckBoxId)
+{
+  if (pChecked)
+  {
+    // A checkbox just got checked, must uncheck all checkboxes in the same group.
+    for (var i = 0; i < mutuallyExclusiveSetsOfCheckboxed.length; i++) {
+     
+      var currentMEGroup = mutuallyExclusiveSetsOfCheckboxed[i];
+
+      var IDFound = false;
+      for (var j = 0; j < currentMEGroup.length; j++)
+      {
+        if (currentMEGroup[j] == pCheckBoxId)
+        {
+          IDFound = true;            
+        }
+      }
+
+      if (IDFound)
+      {
+        // Uncheck all the other checkboxes in the current group.
+        for (var j = 0; j < currentMEGroup.length; j++)
+        {
+          ////console.log("\n");
+          ////console.log("currentMEGroup[j] = " + currentMEGroup[j]);
+          ////console.log("this.id = " + this.id);
+          var toCheck = currentMEGroup[j] == pCheckBoxId;
+          ////console.log("toCheck = " + toCheck);
+          // Solution to check/uncheck obtained from https://stackoverflow.com/questions/17420534/check-uncheck-checkbox-using-jquery
+          $("#"+ currentMEGroup[j]).prop('checked', toCheck);
+        }          
+      }
+    }
+  }      
+
+  updateStylistAvailableComboBox();
+}
 
 
 
@@ -528,7 +539,7 @@ function clearAllStylistCheckboxes()
 
     for (var j = 0; j < currentMEGroup.length; j++)
     {
-      var checkBoxId = currentMEGroup[i];
+      var checkBoxId = currentMEGroup[j];
 
       $("#" + checkBoxId).prop('checked', false);
     } 
@@ -553,6 +564,19 @@ function onPaymentSectionFinishedTopic(resetAllFields)
   }
 }
 
+function onServicesWeProvideCheckboxStatusChange(pCheckboxStatus)
+{
+
+  // Remove the SWP suffix to get the booking counterpart ID (removal technique obtained from https://masteringjs.io/tutorials/fundamentals/remove-last-character)
+  var checkBoxId = pCheckboxStatus.checkboxId.substring(0, pCheckboxStatus.checkboxId.length - 3);
+  $("#" + checkBoxId).prop('checked', pCheckboxStatus.isChecked);
+
+  onBookingCheckboxSelectionChanged(pCheckboxStatus.isChecked, checkBoxId);
+}
+
 
 subscribeToTopic("PaymentSectionFinishedTopic", onPaymentSectionFinishedTopic);
+subscribeToTopic("ServicesWeProvideCheckboxStatusChangeTopic", onServicesWeProvideCheckboxStatusChange);
+
+
 

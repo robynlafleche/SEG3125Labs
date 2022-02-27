@@ -42,6 +42,7 @@
 
     <!-- Application components scripts -->
     <script src="TransportMachine/TheTransportMachine.js"></script>
+    <script src="TransportableClasses/ServiceTypeCheckBoxStatus.js"></script>
     <script src="scripts/BookAnAppointmentSection.js"></script>
     <script src="scripts/ContactUsSection.js"></script>
     <script src="scripts/SelectingServiceInServices.js"></script>
@@ -194,7 +195,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input  onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input  class="form-check-input servicesWeProvideCheckBox" type="checkbox" value="" id="shortCutCheckboxSWP">
                         <label class="form-check-label" >Short Cut</label>
                     </div>
                 <p class="card-text">Price: $30</p>
@@ -210,7 +211,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="mediumCutCheckboxSWP">
                         <label class="form-check-label" >Medium Cut</label>
                     </div>
                     <p class="card-text">Price: $35</p>
@@ -226,7 +227,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="longCutCheckboxSWP">
                         <label class="form-check-label" for="flexCheckDefault">Long Cut</label>
                     </div>
                     <p class="card-text">Price:  $50</div>
@@ -247,7 +248,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="partialFoilCheckboxSWP">
                         <label class="form-check-label" >Partial Foil</label>
                     </div>
                     <p class="card-text">Price: $150</div>
@@ -263,7 +264,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="tonerCheckboxSWP">
                         <label class="form-check-label" >Toner</label>
                     </div>
                 <p class="card-text">Price: $100</p>
@@ -280,7 +281,7 @@
                  </div>
                  <div class="card-body">
                     <div class="form-check">
-                        <input class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="balayageCheckboxSWP">
                         <label class="form-check-label" >Balayage</label>
                     </div>
                     <p class="card-text">Price:  $200</div>
@@ -300,7 +301,7 @@
               </div>
             <div class="card-body">
                 <div class="form-check">
-                    <input  class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                    <input  class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="upDoCheckboxSWP">
                     <label class="form-check-label" >Up-Do</label>
                 </div>
                 <p class="card-text">Price: $90</div>
@@ -315,7 +316,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-check">
-                        <input  class="form-check-input" onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                        <input  class="form-check-input servicesWeProvideCheckBox"  type="checkbox" value="" id="formalStyleCheckboxSWP">
                         <label class="form-check-label" >Formal Style</label>
                     </div>
                     <p class="card-text">Price: $95</p>
@@ -332,7 +333,7 @@
               </div>
               <div class="card-body">
                 <div class="form-check">
-                    <input  class='form-check-input' onchange="callFunction()" type="checkbox" value="" id="flexCheckDefault">
+                    <input  class='form-check-input servicesWeProvideCheckBox'  type="checkbox" value="" id="bridalUpDoCheckboxSWP">
                     <label class="form-check-label" >Bridal Up-Do</label>
                 </div>
                 <p class="card-text">Price:  $110</div>
@@ -441,46 +442,46 @@
                       <!-- Checkbox creation obtaineed from http://127.0.0.1:5500/Lab%205/index.html#booking  -->
                       <form class="form-inline">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="shortCutCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="shortCutCheckbox">
                             <label class="form-check-label" for="shortCutCheckbox">Short cut</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="mediumCutCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="mediumCutCheckbox">
                             <label class="form-check-label" for="mediumCutCheckbox">Medium cut</label>
                         </div>      
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="longCutCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="longCutCheckbox">
                             <label class="form-check-label" for="longCutCheckbox">Long cut</label>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="partialFoilCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="partialFoilCheckbox">
                             <label class="form-check-label" for="partialFoilCheckbox">Partial Foil</label>
                         </div>    
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="tonerCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="tonerCheckbox">
                             <label class="form-check-label" for="partialFoilCheckbox">Toner</label>
                         </div>   
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="balayageCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="balayageCheckbox">
                             <label class="form-check-label" for="balayageCheckbox">Balayage</label>
                         </div>      
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="upDoCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="upDoCheckbox">
                             <label class="form-check-label" for="upDoCheckbox">Up-Do</label>
                         </div>  
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="formalStyleCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="formalStyleCheckbox">
                             <label class="form-check-label" for="formalStyleCheckbox">Formal Style</label>
                         </div>                             
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="bridalUpDoCheckbox">
+                            <input class="form-check-input bookingCheckBox" type="checkbox" value="" id="bridalUpDoCheckbox">
                             <label class="form-check-label" for="bridalUpDoCheckbox">Bridal Up-Do</label>
                         </div>  
                     </form>
@@ -542,7 +543,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="specialInstructionsInput">Special Instructions</label>
-                    <textarea class="form-control" id="specialInstructionsInput" col="30" rows="5" placeholder="Write your concerns here"></textarea>
+                    <textarea class="form-control" id="specialInstructionsInput" col="30" rows="5" placeholder="Write any special instructions here"></textarea>
                 </div>
                 <div class="form-group col-md-12">
                     <button href="#" id="BookAnAppointmentButton" type="button" class="btn btn-light">Book Appointment</button>
