@@ -1,5 +1,7 @@
 /*https://www.youtube.com/watch?v=8oRPdU-mf58 tutorial used to get the highlighting functionality*/
 
+var ActiveID;
+
 $(document).ready(function(){
     $('.navbar ul li a').click(function(event) {
         $('.navbar ul li a').removeClass('active');
