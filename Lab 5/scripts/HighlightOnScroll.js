@@ -1,4 +1,4 @@
-/*https://www.youtube.com/watch?v=8oRPdU-mf58*/
+/*https://www.youtube.com/watch?v=8oRPdU-mf58 tutorial used to get the highlighting functionality*/
 
 $(document).ready(function(){
     $('.navbar ul li a').click(function(event) {
