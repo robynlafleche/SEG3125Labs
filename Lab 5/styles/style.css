@@ -1,8 +1,8 @@
 body {
   font-family: "Gudea", sans-serif;
   font-weight: 400;
-  color: #ff66c4 !important;
-  background-color: #ffe6e6 !important;
+  color: #ccccff !important;
+  background-color: #ccccff !important;
   font-size: 16px;
 }
 
@@ -14,7 +14,7 @@ h5,
 h6 {
   font-family: "Gudea", sans-serif;
   font-weight: 700;
-  color: #ff66c4;
+  color: #2b0178 !important;
 }
 
 /* .nav-link {
@@ -42,23 +42,24 @@ nav .container ul li a:hover {
 }
 
 nav .container ul li a.active {
-  background-color: #fabebe;
+  background-color: #ccccff;
 }
 
 .button {
   font-family: "Gudea", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  background-color: #fda5a4;
+  background-color: #ccccff;
   /* style from https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link */
   appearance: button;
   text-decoration: none;
-  color: #ffe6e6;
+  color: #ccccff;
 }
 
 section {
-  padding: 100px 50px;
+  padding: 50px 50px;
   font-family: "Gudea", sans-serif;
+  color:  #856dfc !important;
 }
 
 .photoForServices {
@@ -107,7 +108,7 @@ section {
 
 .button {
   margin-top: 10px;
-  color: #ffe6f4;
+  color: #ccccff !important;
 }
 
 .footer {
@@ -135,7 +136,8 @@ section {
 } */
 
 #customerReviewsCarousel {
-  background-color: #ffe6e6;
+  background-color: #ccccff;
+  height: 300px;
 }
 
 /* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
@@ -147,13 +149,13 @@ section {
 /* Transparent background solution obtained from https://stackoverflow.com/questions/38048439/remove-bootstrap-carousel-gradient/38048544 */
 .carousel-control.left,
 .carousel-control.right {
-  background: #ffe6e6 !important;
+  background: #ccccff !important;
   width: 0px;
 }
 
 .glyphicon.glyphicon-chevron-left,
 .glyphicon.glyphicon-chevron-right {
-  color: #ff66c4;
+  color: #ccccff;
 }
 
 /* Wrap property obtained from https://www.w3schools.com/cssref/css3_pr_word-wrap.asp */
@@ -183,17 +185,17 @@ section {
 
 /* Positioning solution obtained from https://stackoverflow.com/questions/48311855/how-to-position-carousel-indicators-in-bootstrap-4 */
 .carousel-indicators {
-  margin-bottom: -40px;
+  margin-bottom: -15px;
 }
 
 /* Circle color solution obtained from https://stackoverflow.com/questions/62250065/how-do-you-style-bootstrap-4-carousel-indicators-to-have-no-fill-and-only-circul */
 .carousel .carousel-indicators li {
-  box-shadow: 0 0 0 0.1rem #ff66c4 !important;
+  box-shadow: 0 0 0 0.1rem #2b0178 !important;
 }
 
 /* Changing active color obtained from https://www.reddit.com/r/bootstrap/comments/g6sgwa/help_changing_the_color_of_indicators_on_carousel/ */
 .carousel .carousel-indicators .active {
-  background-color: #ff66c4 !important;
+  background-color: #2b0178 !important;
 }
 
 .contactUsPageInfo {
@@ -219,7 +221,7 @@ section {
 }
 
 #toTop:hover {
-  background-color: #fda5a4;
+  background-color: #2b0178;
   cursor: pointer;
 }
 
@@ -232,6 +234,20 @@ section {
   opacity: 1;
   visibility: visible;
 }
+
+.checkbox
+ {
+   float:left;
+   width:33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 #welcomePageImage {
   opacity: 0.6;
 }
@@ -252,6 +268,11 @@ section {
 }
 #servicesPage {
   background-color: white;
+}
+
+.servicesPage.container {
+  height: 500px;
+
 }
 
 /* Tooltips from  https://stackoverflow.com/a/36921710 */
