@@ -59,7 +59,7 @@ nav .container ul li a.active {
 section {
   padding: 50px 50px;
   font-family: "Gudea", sans-serif;
-  color:  #856dfc !important;
+  color: #856dfc !important;
 }
 
 .photoForServices {
@@ -89,11 +89,11 @@ section {
   font-size: 14px;
 }
 
-#dateInput:read-only{
+#dateInput:read-only {
   background-color: white;
 }
 
-#dateInput{
+#dateInput {
   /*color: black;*/
 }
 
@@ -235,10 +235,9 @@ section {
   visibility: visible;
 }
 
-.checkbox
- {
-   float:left;
-   width:33%;
+.checkbox {
+  float: left;
+  width: 33%;
 }
 
 /* Clear floats after the columns */
@@ -262,9 +261,10 @@ section {
 }
 #aboutUsPartText {
   font-size: 20px;
+  padding-top: 20%;
 }
 .aboutPage {
-  padding-top: 20%;
+  padding-top: 0%;
 }
 #servicesPage {
   background-color: white;
@@ -272,7 +272,6 @@ section {
 
 .servicesPage.container {
   height: 500px;
-
 }
 
 /* Tooltips from  https://stackoverflow.com/a/36921710 */
@@ -290,9 +289,7 @@ div.click-to-top:hover span {
   display: block;
 }
 
-
-.DisablingInput:disabled
-{
+.DisablingInput:disabled {
   background-color: #eeeeee !important;
   color: #9dabc7 !important;
 }
