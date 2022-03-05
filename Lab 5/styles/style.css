@@ -285,6 +285,11 @@ div.click-to-top span {
   color: #fff;
 }
 
+#bottomSpacer
+{
+  color: white;
+}
+
 div.click-to-top:hover span {
   display: block;
 }
