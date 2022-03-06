@@ -202,6 +202,19 @@ section {
   margin-top: 20px;
 }
 
+.ui-datepicker-header {
+    background: #ccb3ff !important;
+    color: #ffffff;
+    font-family:"Gudea", sans-serif;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #ccb3ff !important;
+}
+
+.ui-state-default {
+  color: #330099 !important;
+}
+
 #toTop {
   color: rgb(61, 58, 58);
   display: inline-block;
@@ -320,3 +333,4 @@ div.click-to-top:hover span {
   border: 3px solid black;
   width: 10%;
 }
+
