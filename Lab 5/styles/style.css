@@ -282,6 +282,10 @@ section {
 #servicesPage {
   background-color: white;
 }
+#teamPage {
+  background-color: white;
+  height: 760px;
+}
 
 .servicesPage.container {
   height: 500px;
