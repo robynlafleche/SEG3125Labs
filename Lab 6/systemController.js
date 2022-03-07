@@ -66,14 +66,29 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         currentCummulativeResults[currentSurveyQuestionName] = {};
         currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
 
-        var proxyJsonSurveyResults = {}
-        for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+        if (currentNewlySelectedFeatures == undefined)
         {
-            var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
-            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
-            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
+            // Do nothing as user has not selected any of the checkboxes.
         }
-        
+        else if (JSON.stringify(currentNewlySelectedFeatures).includes(","))
+        {
+            // More than 1 checkbox is selected
+            var proxyJsonSurveyResults = {}
+            for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+            {
+                var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
+                proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
+                addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+            }            
+        }
+        else
+        {
+            // Only 1 checkbox selected.
+            var proxyJsonSurveyResults = {};
+            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFeatures;
+            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+        }
+
 
         // Survey Question 3
         currentSurveyQuestionName = "Airbnb Highlight Location";
@@ -124,12 +139,27 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         currentSurveyQuestionName = "What was your favourite feature of the website?";
         currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
 
-        var proxyJsonSurveyResults = {}
-        for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+        if (currentNewlySelectedFeatures == undefined)
         {
-            var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
-            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
-            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
+            // Do nothing as user has not selected any of the checkboxes.
+        }
+        else if (JSON.stringify(currentNewlySelectedFeatures).includes(","))
+        {
+            // More than 1 checkbox is selected
+            var proxyJsonSurveyResults = {}
+            for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+            {
+                var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
+                proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
+                addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+            }            
+        }
+        else
+        {
+            // Only 1 checkbox selected.
+            var proxyJsonSurveyResults = {};
+            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFeatures;
+            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
         }
 
 
