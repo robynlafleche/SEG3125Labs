@@ -13,11 +13,17 @@ var fs = require('fs');
 // read the data file
 function readData(fileName){
     let dataRead = fs.readFileSync(fileName);
+
+    if (dataRead.length == 0)
+    {
+        return ""
+    }
+
     let infoRead = JSON.parse(dataRead);
     return infoRead;
 }
 
-// read the data file
+// write the data file
 function writeData(info, fileName){
     data = JSON.stringify(info);
     fs.writeFileSync(fileName, data);
@@ -53,6 +59,114 @@ function appendData(jsonSurveyResults, dbFilePath)
 function addSurveyResultsToDatabase(jsonSurveyResults)
 {
     appendData(jsonSurveyResults, DATABASE_FILENAME_PATH_ALL_RESULTS);
+
+    var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
+
+    console.log("currentCummulativeResults = ");
+    console.log(currentCummulativeResults);
+
+    if (currentCummulativeResults == "")
+    {
+        // First person to fill out the survey.
+        currentCummulativeResults = jsonSurveyResults;
+
+        // Survey Question 1
+        var budgetRange = currentCummulativeResults["Which budget range did the website advertise the most?"];
+        var cummulativeBudgetRangeResults = "{ \"" + budgetRange + "\":" + "1" + "}";
+        //console.log("cummulativeBudgetRangeResults = " + cummulativeBudgetRangeResults);
+        cummulativeBudgetRangeResults = JSON.parse(cummulativeBudgetRangeResults);
+        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
+
+        // Survey Question 2
+        var favoriteFeatures = currentCummulativeResults['What was your favourite feature of the website?'];
+        var cummulativefavoriteFeaturesResults = "[";
+
+        for (var featureIndex in favoriteFeatures){
+            var currentFeature = currentCummulativeResults['What was your favourite feature of the website?'][featureIndex];
+            var currentFeatureCount = "{ \"" + currentFeature + "\":" + "1" + "},";
+            cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults + currentFeatureCount;
+        } 
+        
+        // Drop that last comma. Obtained technique from https://flaviocopes.com/how-to-remove-last-char-string-js/
+        cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults.slice(0, -1);
+        cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults + "]";
+        cummulativefavoriteFeaturesResults = JSON.parse(cummulativefavoriteFeaturesResults);
+        currentCummulativeResults['What was your favourite feature of the website?'] = cummulativefavoriteFeaturesResults;
+
+
+        // Survey Question 3
+        var highlightLocation = currentCummulativeResults["Airbnb Highlight Location"];
+        var cummulativehighlightLocationResults = "[";
+        var highlightLocationCount = "{ \"" + highlightLocation + "\":" + "1" + "}";
+        cummulativehighlightLocationResults = cummulativehighlightLocationResults + highlightLocationCount;
+        cummulativehighlightLocationResults = cummulativehighlightLocationResults + "]";
+        cummulativehighlightLocationResults = JSON.parse(cummulativehighlightLocationResults);
+        currentCummulativeResults['Airbnb Highlight Location'] = cummulativehighlightLocationResults;
+
+
+        // Survey Question 4
+        var likelyRecommend = currentCummulativeResults["How likely are you to recommend Airbnb to a friend or colleague?"];
+        var cummulativelikelyRecommendResults = "[";
+        var likelyRecommendCount = "{ \"" + likelyRecommend + "\":" + "1" + "}";
+        cummulativelikelyRecommendResults = cummulativelikelyRecommendResults + likelyRecommendCount;
+        cummulativelikelyRecommendResults = cummulativelikelyRecommendResults + "]";
+        cummulativelikelyRecommendResults = JSON.parse(cummulativelikelyRecommendResults);
+        currentCummulativeResults['How likely are you to recommend Airbnb to a friend or colleague?'] = cummulativelikelyRecommendResults;        
+
+        // Survey Question 5
+        var appearanceRating = currentCummulativeResults["How would you rate the overall appearance of the website?"];
+        var cummulativeappearanceRatingResults = "[";
+        var appearanceRatingCount = "{ \"" + appearanceRating + "\":" + "1" + "}";
+        cummulativeappearanceRatingResults = cummulativeappearanceRatingResults + appearanceRatingCount;
+        cummulativeappearanceRatingResults = cummulativeappearanceRatingResults + "]";
+        cummulativeappearanceRatingResults = JSON.parse(cummulativeappearanceRatingResults);
+        currentCummulativeResults["How would you rate the overall appearance of the website?"] = cummulativeappearanceRatingResults;     
+        
+
+        // Survey Question 6
+        var easyFindRating = currentCummulativeResults["How easy was it for you to find a place to stay in your destination of choice?"];
+        var cummulativeeasyFindRatingResults = "[";
+        var easyFindRatingCount = "{ \"" + easyFindRating + "\":" + "1" + "}";
+        cummulativeeasyFindRatingResults = cummulativeeasyFindRatingResults + easyFindRatingCount;
+        cummulativeeasyFindRatingResults = cummulativeeasyFindRatingResults + "]";
+        cummulativeeasyFindRatingResults = JSON.parse(cummulativeeasyFindRatingResults);
+        currentCummulativeResults["How easy was it for you to find a place to stay in your destination of choice?"] = cummulativeeasyFindRatingResults;   
+        
+        
+        // Survey Question 7
+        var readableRating = currentCummulativeResults["How readable are the characters displayed on the website?"];
+        var cummulativeeasyreadableRatingResults = "[";
+        var readableRatingCount = "{ \"" + readableRating + "\":" + "1" + "}";
+        cummulativeeasyreadableRatingResults = cummulativeeasyreadableRatingResults + readableRatingCount;
+        cummulativeeasyreadableRatingResults = cummulativeeasyreadableRatingResults + "]";
+        cummulativeeasyreadableRatingResults = JSON.parse(cummulativeeasyreadableRatingResults);
+        currentCummulativeResults["How readable are the characters displayed on the website?"] = cummulativeeasyreadableRatingResults;  
+        
+
+        // Survey Question 8
+        var SigningUpRating = currentCummulativeResults["How would you rank the difficulty of signing up for an account on Airbnb?"];
+        var cummulativeSigningUpRatingResults = "[";
+        var SigningUpRatingCount = "{ \"" + SigningUpRating + "\":" + "1" + "}";
+        cummulativeSigningUpRatingResults = cummulativeSigningUpRatingResults + SigningUpRatingCount;
+        cummulativeSigningUpRatingResults = cummulativeSigningUpRatingResults + "]";
+        cummulativeSigningUpRatingResults = JSON.parse(cummulativeSigningUpRatingResults);
+        currentCummulativeResults["How would you rank the difficulty of signing up for an account on Airbnb?"] = cummulativeSigningUpRatingResults;           
+
+        // Survey Question 9
+        var currentSuggestion = currentCummulativeResults["Suggestions about the user interface experience"];
+        var cummulativeSuggestionsnResults = "[";
+        cummulativeSuggestionsnResults = cummulativeSuggestionsnResults + "\"" + currentSuggestion + "\""; 
+        cummulativeSuggestionsnResults = cummulativeSuggestionsnResults + "]";
+        cummulativeSuggestionsnResults = JSON.parse(cummulativeSuggestionsnResults);
+        currentCummulativeResults['Suggestions about the user interface experience'] = cummulativeSuggestionsnResults;
+
+
+        writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
+    }
+
+
+
+    
     /*for (var key in jsonSurveyResults){
         //console.log(key + ": " + json[key]);
         // in the case of checkboxes, the user might check more than one
