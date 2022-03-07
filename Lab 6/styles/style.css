@@ -1,6 +1,6 @@
 body {
-  /*Image taken by Ghazal Sadeghpour*/
-  background: url("../images/bg.jpg") no-repeat center center fixed;
+  /*Image from https://www.delicious.com.au/travel/international/gallery/50-most-beautiful-destinations-world/c5v6vkyo?page=2*/
+  background: url("../images/home1.png") no-repeat center center fixed;
 
   background-size: cover;
 }
@@ -60,9 +60,9 @@ body {
 }
 
 img {
-  display: block;
+  /* display: block; */
   width: 100%;
-  height: 100%;
+  height: 220px;
   padding-bottom: 20px;
 }
 
