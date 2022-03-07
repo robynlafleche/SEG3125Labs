@@ -3,13 +3,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-	<!-- <link href="styles/style.css" rel="stylesheet" type="text/css"> -->
+	<!-- <link href="styles/survey.css" rel="stylesheet" type="text/css"> -->
     <title>Lab 6 - </title>
 	<script src="https://kit.fontawesome.com/fe4398600e.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="scripts/rating.js"></script>
   </head>
   <body>
@@ -123,23 +124,23 @@
 			</div>
 			<div class="form-group">
 				<h3>How would you rate the overall appearance of the website? </h3>
-						
-				<h2 class="bold rating-header">0 / 5</h2>
-				<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1">
+				<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+				<h4 class="bold rating">0 / 5</h4>
+				<button type="button" title="Poor" class="btnrating btn btn-default btn-lg" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2" id="rating-2">
+				<button type="button" title="Unsatisfactory" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2" id="rating-2">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" name="How would you rate the overall appearance of the website?" value="3" id="rating-3">
+				<button type="button" title="Satisfactory" class="btnrating btn btn-default btn-lg" data-attr="3" name="How would you rate the overall appearance of the website?" value="3" id="rating-3">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4" id="rating-4">
+				<button type="button" title="Very satisfactory" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4" id="rating-4">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5" id="rating-5">
+				<button type="button" title="Outstanding" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5" id="rating-5">
 					<i class="fa fa-star" aria-hidden="true"></i>
-				</button>		
+				</button>
 			</div>
 		</div>
 		<div class="tab">

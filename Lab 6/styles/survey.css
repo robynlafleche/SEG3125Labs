@@ -1,0 +1,9 @@
+.selected{
+    background: #0ff;
+}
+.ratings_over{
+    background: #fcc;
+}
+.selected.ratings_over{
+    background: #cff;
+}
