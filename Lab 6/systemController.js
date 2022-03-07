@@ -167,53 +167,42 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
     else
     {
         // There is at least 1 survey already in the database.
+
+        var currentQuestionName = ""
         
         // Survey Question 1
-        var newInputBudgetRange = jsonSurveyResults["Which budget range did the website advertise the most?"];
-        var cummulativeBudgetRangeResults = currentCummulativeResults["Which budget range did the website advertise the most?"]; 
-        
-        console.log("newInputBudgetRange = " + newInputBudgetRange)
-
-
-        var valueFound = false;
-        for (var budgetRangeResult in cummulativeBudgetRangeResults)
-        {
-            console.log("budgetRangeResult = " + budgetRangeResult)
-            console.log("cummulativeBudgetRangeResults[budgetRangeResult] = " + cummulativeBudgetRangeResults[budgetRangeResult])
-
-            if (budgetRangeResult == newInputBudgetRange)
-            {
-                cummulativeBudgetRangeResults[budgetRangeResult] = parseInt(cummulativeBudgetRangeResults[budgetRangeResult]) + 1;
-                valueFound = true;
-            }
-        }
-
-        if (!valueFound)
-        {
-            cummulativeBudgetRangeResults[newInputBudgetRange] = 1;
-        }
-
-        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
-        
-        /*
-        var budgetRange = currentCummulativeResults["Which budget range did the website advertise the most?"];
-        var cummulativeBudgetRangeResults = "[";
-        var budgetRangeCount = "{ \"" + budgetRange + "\":" + "1" + "}";
-        cummulativeBudgetRangeResults = cummulativeBudgetRangeResults + budgetRangeCount;
-        cummulativeBudgetRangeResults = cummulativeBudgetRangeResults + "]";        
-        cummulativeBudgetRangeResults = JSON.parse(cummulativeBudgetRangeResults);
-        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
-        */
-        
-        // "Which budget range did the website advertise the most?":[{"70-80$ / night":1}],
-
-
+        currentQuestionName = "Which budget range did the website advertise the most?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentQuestionName);
 
         writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
 
     }
 
 
+
+    function addNewSurveyQuestionResultToDatabase(newInputJSonSurveyResults, currentCummulativeAllSurveyResults, currentSurveyQuestionName)
+    {
+        var newSurveyQuestionInput = newInputJSonSurveyResults[currentSurveyQuestionName];
+        var cummulativeSurveyQuestionResults = currentCummulativeAllSurveyResults[currentSurveyQuestionName]; 
+        
+        var valueFound = false;
+        for (var surveyQuestionResult in cummulativeSurveyQuestionResults)
+        {
+            if (surveyQuestionResult == newSurveyQuestionInput)
+            {
+                cummulativeSurveyQuestionResults[surveyQuestionResult] = parseInt(cummulativeSurveyQuestionResults[surveyQuestionResult]) + 1;
+                valueFound = true;
+            }
+        }
+
+        if (!valueFound)
+        {
+            cummulativeSurveyQuestionResults[newSurveyQuestionInput] = 1;
+        }
+
+        currentCummulativeAllSurveyResults[currentSurveyQuestionName] = cummulativeSurveyQuestionResults;        
+        
+    }
 
 
 
