@@ -51,9 +51,9 @@ function combineCounts(name, value){
 
 function appendData(jsonSurveyResults, dbFilePath)
 {
-    data = JSON.stringify(jsonSurveyResults);
-    fs.appendFileSync(dbFilePath, "\n");
+    data = JSON.stringify(jsonSurveyResults);    
     fs.appendFileSync(dbFilePath, data);
+    fs.appendFileSync(dbFilePath, "\n");
 }
 
 function addSurveyResultsToDatabase(jsonSurveyResults)
@@ -72,10 +72,11 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
 
         // Survey Question 1
         var budgetRange = currentCummulativeResults["Which budget range did the website advertise the most?"];
-        var cummulativeBudgetRangeResults = "{ \"" + budgetRange + "\":" + "1" + "}";
-        //console.log("cummulativeBudgetRangeResults = " + cummulativeBudgetRangeResults);
+        var budgetRangeCount = "{ \"" + budgetRange + "\":" + "1" + "}";
+        var cummulativeBudgetRangeResults = budgetRangeCount;
         cummulativeBudgetRangeResults = JSON.parse(cummulativeBudgetRangeResults);
         currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
+
 
         // Survey Question 2
         var favoriteFeatures = currentCummulativeResults['What was your favourite feature of the website?'];
@@ -163,6 +164,56 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
 
         writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
     }
+    else
+    {
+        // There is at least 1 survey already in the database.
+        
+        // Survey Question 1
+        var newInputBudgetRange = jsonSurveyResults["Which budget range did the website advertise the most?"];
+        var cummulativeBudgetRangeResults = currentCummulativeResults["Which budget range did the website advertise the most?"]; 
+        
+        console.log("newInputBudgetRange = " + newInputBudgetRange)
+
+
+        var valueFound = false;
+        for (var budgetRangeResult in cummulativeBudgetRangeResults)
+        {
+            console.log("budgetRangeResult = " + budgetRangeResult)
+            console.log("cummulativeBudgetRangeResults[budgetRangeResult] = " + cummulativeBudgetRangeResults[budgetRangeResult])
+
+            if (budgetRangeResult == newInputBudgetRange)
+            {
+                cummulativeBudgetRangeResults[budgetRangeResult] = parseInt(cummulativeBudgetRangeResults[budgetRangeResult]) + 1;
+                valueFound = true;
+            }
+        }
+
+        if (!valueFound)
+        {
+            cummulativeBudgetRangeResults[newInputBudgetRange] = 1;
+        }
+
+        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
+        
+        /*
+        var budgetRange = currentCummulativeResults["Which budget range did the website advertise the most?"];
+        var cummulativeBudgetRangeResults = "[";
+        var budgetRangeCount = "{ \"" + budgetRange + "\":" + "1" + "}";
+        cummulativeBudgetRangeResults = cummulativeBudgetRangeResults + budgetRangeCount;
+        cummulativeBudgetRangeResults = cummulativeBudgetRangeResults + "]";        
+        cummulativeBudgetRangeResults = JSON.parse(cummulativeBudgetRangeResults);
+        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
+        */
+        
+        // "Which budget range did the website advertise the most?":[{"70-80$ / night":1}],
+
+
+
+        writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
+
+    }
+
+
 
 
 
