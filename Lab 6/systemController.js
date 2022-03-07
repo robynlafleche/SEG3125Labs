@@ -1,16 +1,18 @@
 // This module is adapted from the sample provided by Professor Caroline Barriere :// https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module6-SurveyAnalysis
 
 
+// This file stores the sum of all the survey results that have been entered into the system, by all users of the front-end web page.
 DATABASE_FILENAME_PATH_SUMMARY = "./BackEnd/Database/cummulativeSurveyResults.json";
-DATABASE_FILENAME_PATH_ALL_RESULTS = "./BackEnd/Database/individualSurveyResults.json";
 
+// The file stores every individual surver results one after the other, line by line (this will include names, emails, and phone numbers).
+DATABASE_FILENAME_PATH_ALL_RESULTS = "./BackEnd/Database/individualSurveyResults.json";
 
 // required packages
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 var fs = require('fs');
 
-// read the data file
+// Read a data file.
 function readData(fileName){
     let dataRead = fs.readFileSync(fileName);
 
@@ -18,65 +20,48 @@ function readData(fileName){
     {
         return ""
     }
-
+    // Convert the text into a JSON object.
     let infoRead = JSON.parse(dataRead);
     return infoRead;
 }
 
-// write the data file
+// Write to a data file
 function writeData(info, fileName){
-    data = JSON.stringify(info);
+    data = JSON.stringify(info); // Convert the JSON object into a string.
     fs.writeFileSync(fileName, data);
 }
 
-// update the data file, I use "name" to be equal to fruit, or animal or color
-// to match with the file names
-// I assume we always just add 1 to a single item
-function combineCounts(name, value){
-    // console.log(value);
-    info = readData(name);
-     // will be useful for text entry, since the item typed in might not be in the list
-    var found = 0;
-    for (var i=0; i<info.length; i++){
-        if (info[i][name] === value){
-            info[i].count = parseInt(info[i].count) + 1;
-            found = 1;
-        }
-    }
-    if (found === 0){
-        info.push({[name] : value, count: 1});
-    }
-    writeData(info, name);
-}
-
+// Append the given data at the end of the file (the content that is already in the file will still be in the file - it does not get erased).
 function appendData(jsonSurveyResults, dbFilePath)
 {
-    data = JSON.stringify(jsonSurveyResults);    
+    data = JSON.stringify(jsonSurveyResults); // Convert the JSON object into a string.  
     fs.appendFileSync(dbFilePath, data);
-    fs.appendFileSync(dbFilePath, "\n");
+    fs.appendFileSync(dbFilePath, "\n"); // Add a new line so we can see each entry line by line.
 }
 
 function addSurveyResultsToDatabase(jsonSurveyResults)
 {
+    // Add a specific survey entry, that a user just submitted to the database (both of the JSON databases).
+    
+    // Append the survey result at the end of the first JSON database.
     appendData(jsonSurveyResults, DATABASE_FILENAME_PATH_ALL_RESULTS);
 
-    var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
+    // Now work on the main database that stores the sum of all the results.
 
-    //console.log("currentCummulativeResults = ");
-    //console.log(currentCummulativeResults);
+    // Grab the current database content.
+    var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
 
     if (currentCummulativeResults == "")
     {
-        // First person to fill out the survey.
-        currentCummulativeResults = {};
+        // No data at all - this is the first person to fill out the survey.
+        currentCummulativeResults = {}; // Initialize the database content.
 
         // Survey Question 1
         currentSurveyQuestionName = "Which budget range did the website advertise the most?"
         currentCummulativeResults[currentSurveyQuestionName] = {};
         addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
-
         
-        // Survey Question 2
+        // Survey Question 2 (this one is a bit special because it is 'check all that apply').
         currentSurveyQuestionName = "What was your favourite feature of the website?";
         currentCummulativeResults[currentSurveyQuestionName] = {};
         currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
@@ -86,7 +71,6 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         {
             var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
             proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
-            //console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
             addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
         }
         
@@ -132,13 +116,10 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
     {
         // There is at least 1 survey already in the database.
 
-        var currentQuestionName = ""
-        
         // Survey Question 1
         currentSurveyQuestionName = "Which budget range did the website advertise the most?"
         addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
 
-        
         // Survey Question 2
         currentSurveyQuestionName = "What was your favourite feature of the website?";
         currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
@@ -148,7 +129,6 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         {
             var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
             proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
-            //console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
             addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
         }
 
@@ -186,17 +166,21 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
     }
 
 
-
     function addNewSurveyQuestionResultToDatabase(newInputJSonSurveyResults, currentCummulativeAllSurveyResults, currentSurveyQuestionName)
     {
+        // Grab the user's input for the current given question.
         var newSurveyQuestionInput = newInputJSonSurveyResults[currentSurveyQuestionName];
+
+        // Grab the sum of all results for the current given question. 
         var cummulativeSurveyQuestionResults = currentCummulativeAllSurveyResults[currentSurveyQuestionName]; 
         
+        // Search to see if the input provided by the user already exists in the database. If so, increment its counter.
         var valueFound = false;
         for (var surveyQuestionResult in cummulativeSurveyQuestionResults)
         {
             if (surveyQuestionResult == newSurveyQuestionInput)
             {
+                // Increment its counter.
                 cummulativeSurveyQuestionResults[surveyQuestionResult] = parseInt(cummulativeSurveyQuestionResults[surveyQuestionResult]) + 1;
                 valueFound = true;
             }
@@ -204,82 +188,57 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
 
         if (!valueFound)
         {
+            // This is a brand new entry. Start off at 1.
             cummulativeSurveyQuestionResults[newSurveyQuestionInput] = 1;
         }
 
+        // Update the content of the database for the specific question with its values now having been updated.
         currentCummulativeAllSurveyResults[currentSurveyQuestionName] = cummulativeSurveyQuestionResults;        
-        
     }
-
-
-
-    
-    /*for (var key in jsonSurveyResults){
-        //console.log(key + ": " + json[key]);
-        // in the case of checkboxes, the user might check more than one
-        if ((key === "What was your favourite feature of the website?") && (jsonSurveyResults[key].length > 1)){
-            for (var item in jsonSurveyResults[key]){
-                combineCounts(key, jsonSurveyResults[key][item]);
-            }
-        }
-        else {
-            combineCounts(key, jsonSurveyResults[key]);
-        }
-    }*/
 }
+
+// Above this line is the JSON implementation of the database. Below this line is the SQL implementation of the database.
+
+
+
+
 
 // This is the controler per se, with the get/post
 module.exports = function(app){
 
-    // when a user goes to localhost:3000/analysis
-    // serve a template (ejs file) which will include the data from the data files
+    // when a user goes to localhost:3000/surveyResults
+    // serve a template (ejs file) to which we provide all the surver results from out database.
     app.get('/surveyResults', function(req, res){
-        //var color = [{"color":"Red","count":16},{"color":"Green","count":14},{"color":"Blue","count":8}];
-        //var fruit = [{"fruit":"apple","count":2},{"fruit":"pear","count":2},{"fruit":"papaya","count":1},{"fruit":"strawberry","count":2},{"fruit":"peach","count":2},{"fruit":"kiwi","count":1},{"fruit":"qaw","count":3},{"fruit":"qawqwerty","count":1},{"fruit":"abcde","count":1},{"fruit":"aaa","count":1}];
-        //var animal = [{"animal":"Cat","count":5},{"animal":"Dog","count":7},{"animal":"Turtle","count":13}];
-        //res.render('showResults', {results: [color, fruit, animal]});
+
+        // Obtain all the surver results from our database into a JSON object.
         var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
-        //console.log("currentCummulativeResults :");
-        //console.log(currentCummulativeResults);
-        //console.log("Render");
+        console.log("currentCummulativeResults :");
+        console.log(currentCummulativeResults);
+        // Provide the complete database JSON object to the back-end server EJS file so it can render that data nicely on the server web page.
         res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResults});
     });
 
-    // when a user goes to localhost:3000/survey
-    // serve a static html (the survey itself to fill in)
+    // when a user goes to localhost:3000/homepage
+    // this just gets us the homepage on which the user can navigate to the survey page.
     app.get('/homepage', function(req, res){
-        console.log("__dirname = " + __dirname);
         var currentDiectory = __dirname;
-        // Drop the last 2 directories to take the path up to the main directory. Solution obtained from https://stackoverflow.com/questions/16750524/remove-last-directory-in-url
-        //var mainDirectory = currentDiectory.substring(0, currentDiectory.lastIndexOf('\\'));
-        //mainDirectory = mainDirectory.substring(0, mainDirectory.lastIndexOf('\\'));
-        //console.log("mainDirectory = " + mainDirectory);
         res.sendFile(currentDiectory +'/FrontEnd/index.html');
     });
 
-
+    // when a user goes to localhost:3000/survey
+    // serve a static html (the survey page the user fills in)
     app.get('/survey', function(req, res){
-        console.log("__dirname = " + __dirname);
         var currentDiectory = __dirname;
-        // Drop the last 2 directories to take the path up to the main directory. Solution obtained from https://stackoverflow.com/questions/16750524/remove-last-directory-in-url
-        //var mainDirectory = currentDiectory.substring(0, currentDiectory.lastIndexOf('\\'));
-        //mainDirectory = mainDirectory.substring(0, mainDirectory.lastIndexOf('\\'));
-        //console.log("mainDirectory = " + mainDirectory);
         res.sendFile(currentDiectory +'/FrontEnd/survey.html');
     });    
 
     
-    // when a user types SUBMIT in localhost:3000/survey 
+    // When a user pressed the submit button on the survey page on localhost:3000/survey 
     app.post('/survey', urlencodedParser, function(req, res){
         //Solution for [Object: null prototype] removal obtained from https://stackoverflow.com/questions/56298481/how-to-fix-object-null-prototype-title-product
-        const surveyInputResults = JSON.parse(JSON.stringify(req.body));
-        console.log(surveyInputResults);
-
+        const surveyInputResults = JSON.parse(JSON.stringify(req.body)); // gets rid of the [Object: null prototype]
+        // Add the survey input the user just provided to the database.
         addSurveyResultsToDatabase(surveyInputResults);
-        
-        // mystery line... (if I take it out, the SUBMIT button does change)
-        // if anyone can figure this out, let me know!
-        //res.sendFile(__dirname + "/views/niceSurvey.html");
     });
     
 

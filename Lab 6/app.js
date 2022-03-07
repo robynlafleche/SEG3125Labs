@@ -28,19 +28,3 @@ surveyController(app);
 app.listen(3000);
 console.log('listening port 3000');
 
-
-/*
-var http = require("http");
-
-http.createServer(function (req, res) {
-    // Send the HTTP header 
-    // HTTP Status: 200 : OK
-    // Content Type: text/plain
- 
-    // Send the response body as "Hello World"
-    res.end('Hello World\n');
- }).listen(3000);
- 
- // Console will print the message
- console.log("server is running on http://127.0.0.1:3000/")
-*/
