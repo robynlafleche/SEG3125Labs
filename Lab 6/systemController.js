@@ -62,8 +62,8 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
 
     var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
 
-    console.log("currentCummulativeResults = ");
-    console.log(currentCummulativeResults);
+    //console.log("currentCummulativeResults = ");
+    //console.log(currentCummulativeResults);
 
     if (currentCummulativeResults == "")
     {
@@ -86,7 +86,7 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         {
             var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
             proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
-            console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
+            //console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
             addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
         }
         
@@ -234,11 +234,15 @@ module.exports = function(app){
     // when a user goes to localhost:3000/analysis
     // serve a template (ejs file) which will include the data from the data files
     app.get('/surveyResults', function(req, res){
-        //var color = readData("color");
-        //var fruit = readData("fruit");
-        //var animal = readData("animal");
+        //var color = [{"color":"Red","count":16},{"color":"Green","count":14},{"color":"Blue","count":8}];
+        //var fruit = [{"fruit":"apple","count":2},{"fruit":"pear","count":2},{"fruit":"papaya","count":1},{"fruit":"strawberry","count":2},{"fruit":"peach","count":2},{"fruit":"kiwi","count":1},{"fruit":"qaw","count":3},{"fruit":"qawqwerty","count":1},{"fruit":"abcde","count":1},{"fruit":"aaa","count":1}];
+        //var animal = [{"animal":"Cat","count":5},{"animal":"Dog","count":7},{"animal":"Turtle","count":13}];
         //res.render('showResults', {results: [color, fruit, animal]});
-        console.log("on surveyResults");
+        var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
+        //console.log("currentCummulativeResults :");
+        //console.log(currentCummulativeResults);
+        //console.log("Render");
+        res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResults});
     });
 
     // when a user goes to localhost:3000/survey
