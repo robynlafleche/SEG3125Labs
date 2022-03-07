@@ -1,3 +1,10 @@
+// This module is adapted from the sample provided by Professor Caroline Barriere :// https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module6-SurveyAnalysis
+
+
+DATABASE_FILENAME_PATH_SUMMARY = "./BackEnd/Database/cummulativeSurveyResults.json";
+DATABASE_FILENAME_PATH_ALL_RESULTS = "./BackEnd/Database/individualSurveyResults.json";
+
+
 // required packages
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -5,7 +12,7 @@ var fs = require('fs');
 
 // read the data file
 function readData(fileName){
-    let dataRead = fs.readFileSync('./data/' + fileName + '.json');
+    let dataRead = fs.readFileSync(fileName);
     let infoRead = JSON.parse(dataRead);
     return infoRead;
 }
@@ -13,7 +20,7 @@ function readData(fileName){
 // read the data file
 function writeData(info, fileName){
     data = JSON.stringify(info);
-    fs.writeFileSync('./data/' + fileName + '.json', data);
+    fs.writeFileSync(fileName, data);
 }
 
 // update the data file, I use "name" to be equal to fruit, or animal or color
@@ -34,6 +41,30 @@ function combineCounts(name, value){
         info.push({[name] : value, count: 1});
     }
     writeData(info, name);
+}
+
+function appendData(jsonSurveyResults, dbFilePath)
+{
+    data = JSON.stringify(jsonSurveyResults);
+    fs.appendFileSync(dbFilePath, "\n");
+    fs.appendFileSync(dbFilePath, data);
+}
+
+function addSurveyResultsToDatabase(jsonSurveyResults)
+{
+    appendData(jsonSurveyResults, DATABASE_FILENAME_PATH_ALL_RESULTS);
+    /*for (var key in jsonSurveyResults){
+        //console.log(key + ": " + json[key]);
+        // in the case of checkboxes, the user might check more than one
+        if ((key === "What was your favourite feature of the website?") && (jsonSurveyResults[key].length > 1)){
+            for (var item in jsonSurveyResults[key]){
+                combineCounts(key, jsonSurveyResults[key][item]);
+            }
+        }
+        else {
+            combineCounts(key, jsonSurveyResults[key]);
+        }
+    }*/
 }
 
 // This is the controler per se, with the get/post
@@ -78,22 +109,9 @@ module.exports = function(app){
         //Solution for [Object: null prototype] removal obtained from https://stackoverflow.com/questions/56298481/how-to-fix-object-null-prototype-title-product
         const surveyInputResults = JSON.parse(JSON.stringify(req.body));
         console.log(surveyInputResults);
+
+        addSurveyResultsToDatabase(surveyInputResults);
         
-        /*
-        var json = req.body;
-        for (var key in json){
-            console.log(key + ": " + json[key]);
-            // in the case of checkboxes, the user might check more than one
-            if ((key === "color") && (json[key].length === 2)){
-                for (var item in json[key]){
-                    combineCounts(key, json[key][item]);
-                }
-            }
-            else {
-                combineCounts(key, json[key]);
-            }
-        }
-        */
         // mystery line... (if I take it out, the SUBMIT button does change)
         // if anyone can figure this out, let me know!
         //res.sendFile(__dirname + "/views/niceSurvey.html");
