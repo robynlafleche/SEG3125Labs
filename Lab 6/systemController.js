@@ -68,99 +68,63 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
     if (currentCummulativeResults == "")
     {
         // First person to fill out the survey.
-        currentCummulativeResults = jsonSurveyResults;
+        currentCummulativeResults = {};
 
         // Survey Question 1
-        var budgetRange = currentCummulativeResults["Which budget range did the website advertise the most?"];
-        var budgetRangeCount = "{ \"" + budgetRange + "\":" + "1" + "}";
-        var cummulativeBudgetRangeResults = budgetRangeCount;
-        cummulativeBudgetRangeResults = JSON.parse(cummulativeBudgetRangeResults);
-        currentCummulativeResults["Which budget range did the website advertise the most?"] = cummulativeBudgetRangeResults;
+        currentSurveyQuestionName = "Which budget range did the website advertise the most?"
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
 
-
-        // Survey Question 2
-        var favoriteFeatures = currentCummulativeResults['What was your favourite feature of the website?'];
-        var cummulativefavoriteFeaturesResults = "[";
-
-        for (var featureIndex in favoriteFeatures){
-            var currentFeature = currentCummulativeResults['What was your favourite feature of the website?'][featureIndex];
-            var currentFeatureCount = "{ \"" + currentFeature + "\":" + "1" + "},";
-            cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults + currentFeatureCount;
-        } 
         
-        // Drop that last comma. Obtained technique from https://flaviocopes.com/how-to-remove-last-char-string-js/
-        cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults.slice(0, -1);
-        cummulativefavoriteFeaturesResults = cummulativefavoriteFeaturesResults + "]";
-        cummulativefavoriteFeaturesResults = JSON.parse(cummulativefavoriteFeaturesResults);
-        currentCummulativeResults['What was your favourite feature of the website?'] = cummulativefavoriteFeaturesResults;
+        // Survey Question 2
+        currentSurveyQuestionName = "What was your favourite feature of the website?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
 
+        var proxyJsonSurveyResults = {}
+        for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+        {
+            var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
+            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
+            console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
+            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
+        }
+        
 
         // Survey Question 3
-        var highlightLocation = currentCummulativeResults["Airbnb Highlight Location"];
-        var cummulativehighlightLocationResults = "[";
-        var highlightLocationCount = "{ \"" + highlightLocation + "\":" + "1" + "}";
-        cummulativehighlightLocationResults = cummulativehighlightLocationResults + highlightLocationCount;
-        cummulativehighlightLocationResults = cummulativehighlightLocationResults + "]";
-        cummulativehighlightLocationResults = JSON.parse(cummulativehighlightLocationResults);
-        currentCummulativeResults['Airbnb Highlight Location'] = cummulativehighlightLocationResults;
-
-
-        // Survey Question 4
-        var likelyRecommend = currentCummulativeResults["How likely are you to recommend Airbnb to a friend or colleague?"];
-        var cummulativelikelyRecommendResults = "[";
-        var likelyRecommendCount = "{ \"" + likelyRecommend + "\":" + "1" + "}";
-        cummulativelikelyRecommendResults = cummulativelikelyRecommendResults + likelyRecommendCount;
-        cummulativelikelyRecommendResults = cummulativelikelyRecommendResults + "]";
-        cummulativelikelyRecommendResults = JSON.parse(cummulativelikelyRecommendResults);
-        currentCummulativeResults['How likely are you to recommend Airbnb to a friend or colleague?'] = cummulativelikelyRecommendResults;        
-
-        // Survey Question 5
-        var appearanceRating = currentCummulativeResults["How would you rate the overall appearance of the website?"];
-        var cummulativeappearanceRatingResults = "[";
-        var appearanceRatingCount = "{ \"" + appearanceRating + "\":" + "1" + "}";
-        cummulativeappearanceRatingResults = cummulativeappearanceRatingResults + appearanceRatingCount;
-        cummulativeappearanceRatingResults = cummulativeappearanceRatingResults + "]";
-        cummulativeappearanceRatingResults = JSON.parse(cummulativeappearanceRatingResults);
-        currentCummulativeResults["How would you rate the overall appearance of the website?"] = cummulativeappearanceRatingResults;     
+        currentSurveyQuestionName = "Airbnb Highlight Location";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName) ;
         
+        // Survey Question 4
+        currentSurveyQuestionName = "How likely are you to recommend Airbnb to a friend or colleague?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+                
+        // Survey Question 5
+        currentSurveyQuestionName = "How would you rate the overall appearance of the website?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
 
         // Survey Question 6
-        var easyFindRating = currentCummulativeResults["How easy was it for you to find a place to stay in your destination of choice?"];
-        var cummulativeeasyFindRatingResults = "[";
-        var easyFindRatingCount = "{ \"" + easyFindRating + "\":" + "1" + "}";
-        cummulativeeasyFindRatingResults = cummulativeeasyFindRatingResults + easyFindRatingCount;
-        cummulativeeasyFindRatingResults = cummulativeeasyFindRatingResults + "]";
-        cummulativeeasyFindRatingResults = JSON.parse(cummulativeeasyFindRatingResults);
-        currentCummulativeResults["How easy was it for you to find a place to stay in your destination of choice?"] = cummulativeeasyFindRatingResults;   
-        
+        currentSurveyQuestionName = "How easy was it for you to find a place to stay in your destination of choice?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
         
         // Survey Question 7
-        var readableRating = currentCummulativeResults["How readable are the characters displayed on the website?"];
-        var cummulativeeasyreadableRatingResults = "[";
-        var readableRatingCount = "{ \"" + readableRating + "\":" + "1" + "}";
-        cummulativeeasyreadableRatingResults = cummulativeeasyreadableRatingResults + readableRatingCount;
-        cummulativeeasyreadableRatingResults = cummulativeeasyreadableRatingResults + "]";
-        cummulativeeasyreadableRatingResults = JSON.parse(cummulativeeasyreadableRatingResults);
-        currentCummulativeResults["How readable are the characters displayed on the website?"] = cummulativeeasyreadableRatingResults;  
-        
+        currentSurveyQuestionName = "How readable are the characters displayed on the website?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
 
         // Survey Question 8
-        var SigningUpRating = currentCummulativeResults["How would you rank the difficulty of signing up for an account on Airbnb?"];
-        var cummulativeSigningUpRatingResults = "[";
-        var SigningUpRatingCount = "{ \"" + SigningUpRating + "\":" + "1" + "}";
-        cummulativeSigningUpRatingResults = cummulativeSigningUpRatingResults + SigningUpRatingCount;
-        cummulativeSigningUpRatingResults = cummulativeSigningUpRatingResults + "]";
-        cummulativeSigningUpRatingResults = JSON.parse(cummulativeSigningUpRatingResults);
-        currentCummulativeResults["How would you rank the difficulty of signing up for an account on Airbnb?"] = cummulativeSigningUpRatingResults;           
+        currentSurveyQuestionName = "How would you rank the difficulty of signing up for an account on Airbnb?";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
 
         // Survey Question 9
-        var currentSuggestion = currentCummulativeResults["Suggestions about the user interface experience"];
-        var cummulativeSuggestionsnResults = "[";
-        cummulativeSuggestionsnResults = cummulativeSuggestionsnResults + "\"" + currentSuggestion + "\""; 
-        cummulativeSuggestionsnResults = cummulativeSuggestionsnResults + "]";
-        cummulativeSuggestionsnResults = JSON.parse(cummulativeSuggestionsnResults);
-        currentCummulativeResults['Suggestions about the user interface experience'] = cummulativeSuggestionsnResults;
-
+        currentSurveyQuestionName = "Suggestions about the user interface experience";
+        currentCummulativeResults[currentSurveyQuestionName] = {};
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
 
         writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
     }
@@ -171,8 +135,51 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
         var currentQuestionName = ""
         
         // Survey Question 1
-        currentQuestionName = "Which budget range did the website advertise the most?";
-        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentQuestionName);
+        currentSurveyQuestionName = "Which budget range did the website advertise the most?"
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
+
+        
+        // Survey Question 2
+        currentSurveyQuestionName = "What was your favourite feature of the website?";
+        currentNewlySelectedFeatures = jsonSurveyResults[currentSurveyQuestionName];
+
+        var proxyJsonSurveyResults = {}
+        for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+        {
+            var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
+            proxyJsonSurveyResults[currentSurveyQuestionName] = currentNewlySelectedFavouriteFeature;
+            //console.log("currentNewlySelectedFavouriteFeature = " + currentNewlySelectedFavouriteFeature);
+            addNewSurveyQuestionResultToDatabase(proxyJsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName)
+        }
+
+
+        // Survey Question 3
+        currentSurveyQuestionName = "Airbnb Highlight Location";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName) ;
+        
+        // Survey Question 4
+        currentSurveyQuestionName = "How likely are you to recommend Airbnb to a friend or colleague?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+                
+        // Survey Question 5
+        currentSurveyQuestionName = "How would you rate the overall appearance of the website?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+
+        // Survey Question 6
+        currentSurveyQuestionName = "How easy was it for you to find a place to stay in your destination of choice?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+        
+        // Survey Question 7
+        currentSurveyQuestionName = "How readable are the characters displayed on the website?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+
+        // Survey Question 8
+        currentSurveyQuestionName = "How would you rank the difficulty of signing up for an account on Airbnb?";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
+
+        // Survey Question 9
+        currentSurveyQuestionName = "Suggestions about the user interface experience";
+        addNewSurveyQuestionResultToDatabase(jsonSurveyResults, currentCummulativeResults, currentSurveyQuestionName);
 
         writeData(currentCummulativeResults, DATABASE_FILENAME_PATH_SUMMARY);
 
