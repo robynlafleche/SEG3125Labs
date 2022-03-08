@@ -316,6 +316,14 @@ div.click-to-top:hover span {
   color: #9dabc7 !important;
 }
 
+#bookNowButtonLink {
+  color : black;
+}
+
+/*no underline solution obtained from https://stackoverflow.com/questions/2789703/remove-blue-underline-from-link */
+#bookNowButtonLink:hover {
+  text-decoration: none;
+}
 
 
 /* Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_css_modals.asp */
