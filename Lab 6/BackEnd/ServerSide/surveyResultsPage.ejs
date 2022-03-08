@@ -18,6 +18,9 @@
 <body>
     <h1 style="padding-left: 36%">Airbnb survey analysis</h1>
     <% for (var surveyQuestionResult in allSurveyResults){ %>
+      <script>
+        var clientGameState =  allSurveyResults       
+     </script>
     <div class="card" style="background-color:grey">
         <h2><%= surveyQuestionResult %></h2>
         <% for (var surveyResult in allSurveyResults[surveyQuestionResult]){ %>
@@ -28,13 +31,13 @@
     
     <!-- chart from https://www.chartjs.org/docs/latest/getting-started/ -->
     <script>
+      //from https://stackoverflow.com/a/59136857
+      var test = '<%- JSON.stringify(allSurveyResults) %>'; // test is now a valid js object
+
+      console.log("clientGameState"+ test)
       const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        '4 - Very Satisfactory',
+        
       ];
     
       const data = {
