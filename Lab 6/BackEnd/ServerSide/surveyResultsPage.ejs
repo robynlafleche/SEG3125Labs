@@ -28,17 +28,7 @@
         <% } %>  
       </div>        
     <% } %>  
-    var json = '[{  "Time": "2017-08-17 16:35:28.000",  "Value": "3.85"}, {"Time": "2017-08-17 17:36:28.000","Value": "3.85"}, {"Time": "2017-08-17 18:35:28.000","Value": "3.86"}, {"Time": "2017-08-17 19:35:28.000","Value": "3.86"}, {"Time": "2017-08-18 07:35:28.000","Value": "3.87"}, { "Time": "2017-08-18 18:35:28.000", "Value": "3.86"}]';
-    
-    json = JSON.parse(json);
-        json.forEach(function(element, index) {
-          element.x = new Date(element['Time']).getTime();
-          element.y = +element['Value'];
-    
-          delete element['Time'];
-          delete element['Value'];
-        });
-     console.log(json);
+ 
     <!-- chart from https://www.chartjs.org/docs/latest/getting-started/ -->
     <script>
       //from https://stackoverflow.com/a/59136857
@@ -47,19 +37,32 @@
 
       console.log("test;"+ test)
      // let ff = JSON.stringify(allSurveyResults);
+     //https://www.w3schools.com/js/js_json_parse.asp
       const obj = JSON.parse(test)
       console.log("ff o"+obj)
+      let dataforCharts = [];
+      let labelforCharts = []
+      let tmpdata = []
+      let tmplabels = []
       for (let i in obj){
+        tmpdata = [];
+        tmplabels = []
         console.log(i+"is it working??????");
+        for (let j in obj[i]){
+          tmpdata.push(obj[i][j])
+          tmplabels.push(j)
+
+          console.log("j is"+j+"   "+obj[i][j])
+        }
+        dataforCharts.push(tmpdata)
+        labelforCharts.push(tmplabels)
+        //i is the question itself
       }
-      for (var property in test) {
-  //console.log(`${property}: ${test[property]}`);
+for (let f in dataforCharts){
+  console.log("is it workin"+labelforCharts[f]+"::::"+dataforCharts[f])
 }
       console.log(test["How would you rate the overall appearance of the website?"]+"here>>>>")
-      const labels = [
-        '4 - Very Satisfactory',
-        
-      ];
+      const labels = labelforCharts[0];
     
       const data = {
         labels: labels,
@@ -67,7 +70,7 @@
           label: 'My First dataset',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20, 30, 45],
+          data: dataforCharts[0],
         }]
       };
     
@@ -91,35 +94,6 @@
      
     
      
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col"><%allSurveyResults[2] %></th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+   
 </body>
 </html>
