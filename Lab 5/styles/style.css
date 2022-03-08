@@ -316,6 +316,8 @@ div.click-to-top:hover span {
   color: #9dabc7 !important;
 }
 
+
+
 /* Adapted from example provided on W3 schools : https://www.w3schools.com/howto/howto_css_modals.asp */
 .creditCardModalForm {
   display: none;
@@ -332,11 +334,8 @@ div.click-to-top:hover span {
 
 .creditCardModalSubForm {
   background-color: #fefefe;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transform: scale(0.75);
-  
+  margin: 10% auto; /* 5% from the top and centered */
+  padding: 10px;
+  border: 3px solid black;
+  width: 50%;
 }
-
-
