@@ -1,9 +1,60 @@
-.selected{
-    background: #0ff;
+.checked {
+    color: orange;
 }
-.ratings_over{
-    background: #fcc;
+
+#surveyForm {
+    background-color: #04AA6D;
+    margin: 20px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
 }
-.selected.ratings_over{
-    background: #cff;
+
+.tab {
+    display: none;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+h3, h4 {
+    text-align: center;  
+}
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+
+#nextBtn {
+    background-color: #04AA6D;
+    color: #ffffff;
+    display:inline-block;
+}
+
+.btn:hover {
+    opacity: 0.8;
+  }
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+  
+.step.active {
+    opacity: 1;
+}
+  
+  
+.step.finish {
+    background-color: #04AA6D;
+}
+
+.signature {
+    text-align: center;
 }
