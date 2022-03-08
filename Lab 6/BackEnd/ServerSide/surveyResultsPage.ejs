@@ -44,7 +44,9 @@
       let labelforCharts = []
       let tmpdata = []
       let tmplabels = []
+      let questions = []
       for (let i in obj){
+        questions.push(i)
         tmpdata = [];
         tmplabels = []
         console.log(i+"is it working??????");
@@ -67,7 +69,7 @@ for (let f in dataforCharts){
       const data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: questions[0],
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: dataforCharts[0],
@@ -75,7 +77,7 @@ for (let f in dataforCharts){
       };
     
       const config = {
-        type: 'line',
+        type: 'pie',
         data: data,
         options: {}
       };
