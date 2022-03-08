@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <h1 style="padding-left: 36%">Airbnb survey analysis</h1>
+    <h1>Airbnb survey analysis</h1>
  
 
 
@@ -124,7 +124,7 @@
                 labels: labelforCharts[1]
             };
             var myDoughnutChart_2 = new Chart(ctx_2, {
-                type: 'bar',
+                type: 'pie',
                 data: data_2,
                 options: {
                     responsive: false,
@@ -382,48 +382,57 @@
     </script>
 </head>
 
-<body>
-  <div>
-    <h>Which budget range did the website advertise the most?</h>
-      <canvas id="question0" width="240px" height="240px"></canvas>
+<body style="text-align: center;">
+  <!--  code for box from https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing -->
+  <div class="chartsForData">
+    <h2>Which budget range did the website advertise the most?</h2>
+      <canvas class="styleForTheGraphs" id="question0" width="400px" height="400px"></canvas>
   </div>
 
-  <div>
-    <h>What was your favourite feature of the website?</h>
-      <canvas id="question1" width="240px" height="240px"></canvas>
+  <div class="chartsForData" >
+    <h2>What was your favourite feature of the website?</h2>
+      <canvas class="styleForTheGraphs" id="question1"  width="400px" height="400px"></canvas>
   </div>
 
-  <div>
-    <h>Airbnb Highlight Location</h>
-      <canvas id="question2" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>Airbnb Highlight Location</h2>
+      <canvas class="styleForTheGraphs" id="question2"  width="400px" height="400px"></canvas>
   </div>
 
-  <div>
-    <h>How likely are you to recommend Airbnb to a friend or colleague?</h>
-      <canvas id="question3" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>How likely are you to recommend Airbnb to a friend or colleague?</h2>
+      <canvas class="styleForTheGraphs" id="question3"  width="400px" height="400px"></canvas>
   </div>
-  <div>
-    <h>How would you rate the overall appearance of the website?</h>
-      <canvas id="question4" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>How would you rate the overall appearance of the website?</h2>
+      <canvas class="styleForTheGraphs" id="question4"  width="400px" height="400px"></canvas>
   </div>
-  <div>
-    <h>How easy was it for you to find a place to stay in your destination of choice?</h>
-      <canvas id="question5" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>How easy was it for you to find a place to stay in your destination of choice?</h>
+      <canvas class="styleForTheGraphs" id="question5"  width="400px" height="400px"></canvas>
   </div>
-  <div>
-    <h>How readable are the characters displayed on the website?</h>
-      <canvas id="question6" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>How readable are the characters displayed on the website?</h2>
+      <canvas class="styleForTheGraphs" id="question6"  width="400px" height="400px"></canvas>
   </div>
-  <div>
-    <h>How would you rank the difficulty of signing up for an account on Airbnb?</h>
-      <canvas id="question7" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>How would you rank the difficulty of signing up for an account on Airbnb?</h2>
+      <canvas class="styleForTheGraphs" id="question7"  width="400px" height="400px"></canvas>
   </div>
-  <div>
-    <h>Suggestions about the user interface experience</h>
-      <canvas id="question8" width="240px" height="240px"></canvas>
+  <div class="chartsForData">
+    <h2>Suggestions about the user interface experience</h2>
+      <canvas class="styleForTheGraphs" id="question8"  width="400px" height="400px"></canvas>
   </div>
      
     
    
 </body>
+<style>
+  .chartsForData {
+    text-align: left; box-sizing: border-box; width: 100%;border: solid #5B6DCD 10px;padding: 5px;
+  }
+  .styleForTheGraphs {
+    text-align: center; margin-left:36%
+  }
+</style>
 </html>
