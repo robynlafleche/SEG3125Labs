@@ -1,0 +1,17 @@
+<html lang="en-US">
+<head>
+    <title>Airbnb Survey Analysis</title>
+</head>
+
+<body>
+    <h1>Airbnb survey analysis</h1>
+    <% for (var surveyQuestionResult in allSurveyResults){ %>
+        <h2><%= surveyQuestionResult %></h2>
+        <% for (var surveyResult in allSurveyResults[surveyQuestionResult]){ %>
+            <li><%= surveyResult %> :  <%= allSurveyResults[surveyQuestionResult][surveyResult] %></li>
+        <% } %>            
+    <% } %>  
+    
+     
+</body>
+</html>

@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="scripts/rating.js"></script>
+	<script src="scripts/SurveyPage.js"></script>
+	
   </head>
   <body>
     <a  href="index.html" ><button type="button" class="btn btn-light"><i class="fa-solid fa-house"></i></button></a>
@@ -23,19 +25,19 @@
 			<h3>Personal Information</h3>
 			<div class="form-group col-md-6">
 			  <label for="inputFirstName">First Name</label>
-			  <input type="text" class="form-control" id="inputFirstName" placeholder="Jane">
+			  <input type="text" name="First Name" class="form-control" id="inputFirstName" placeholder="Jane">
 			</div>
 			<div class="form-group col-md-6">
 			  <label for="inputLast Name">Last Name</label>
-			  <input type="text" class="form-control" id="inputLastName" placeholder="Doe">
+			  <input type="text" name="Last Name" class="form-control" id="inputLastName" placeholder="Doe">
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputEmail4">Email</label>
-				<input type="email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
+				<input type="email" name="Email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
 			  </div>
 			  <div class="form-group col-md-6">
 				<label for="inputPhoneNumber">Phone Number</label>
-				<input type="tel" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+				<input type="tel" name="Phone Number" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 			  </div>
 		  </div>
 		<div class="tab">
@@ -117,7 +119,7 @@
 				<select id="recommendation" name="How likely are you to recommend Airbnb to a friend or colleague?">         
             		<option name="Very Likely" value="Very Likely" selected="selected">Very Likely</option>
             		<option name="Somewhat Likely" value="Somewhat Likely" selected="selected">Somewhat Likely</option>
-            		<option name="Neutral value="Neutral" selected="selected">Neutral</option>
+            		<option name="Neutral" value="Neutral" selected="selected">Neutral</option>
             		<option name="Somewhat Unlikely" value="Somewhat Unlikely" selected="selected">Somewhat Unlikely</option>
             		<option name="Very Unlikely" value="Very Unlikely" selected="selected">Very Unlikely</option>            
 				</select>
@@ -126,19 +128,19 @@
 				<h3>How would you rate the overall appearance of the website? </h3>
 				<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
 				<h4 class="bold rating">0 / 5</h4>
-				<button type="button" title="Poor" class="btnrating btn btn-default btn-lg" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1">
+				<button type="button" title="Poor" class="btnrating btn btn-default btn-lg" data-attr="1" name="How would you rate the overall appearance of the website?" value="1 - Poor" id="rating-1">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" title="Unsatisfactory" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2" id="rating-2">
+				<button type="button" title="Unsatisfactory" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2 - Unsatisfactory" id="rating-2">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" title="Satisfactory" class="btnrating btn btn-default btn-lg" data-attr="3" name="How would you rate the overall appearance of the website?" value="3" id="rating-3">
+				<button type="button" title="Satisfactory" class="btnrating btn btn-default btn-lg" data-attr="3" name="How would you rate the overall appearance of the website?" value="3 - Satisfactory" id="rating-3">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" title="Very satisfactory" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4" id="rating-4">
+				<button type="button" title="Very satisfactory" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4 - Very Satisfactory" id="rating-4">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
-				<button type="button" title="Outstanding" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5" id="rating-5">
+				<button type="button" title="Outstanding" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5 - Outstanding" id="rating-5">
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</button>
 			</div>
@@ -173,7 +175,7 @@
 		</div>
 		  
 	  </form>
-      <div class="btn btn-light">
+	<div class="btn btn-light">
 		<button type="submit" id="surveySubmitButton" class="btn btn-default" value="submit">Submit</button>
 	</div>
 
