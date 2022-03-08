@@ -3,23 +3,31 @@
 }
 
 #surveyForm {
-    background-color: #04AA6D;
+    background-color: white;
     margin: 20px auto;
     padding: 40px;
     width: 70%;
     min-width: 300px;
 }
 
+.form-check {
+    text-align: left;
+    margin-left: 40%;
+}
+
 .tab {
     display: none;
+    text-align: center;
 }
 
 input.invalid {
-    background-color: #ffdddd;
+    border-color: red;
 }
 
 h3, h4 {
-    text-align: center;  
+    text-align: center; 
+    padding: 10px; 
+    margin: 30px;
 }
 
 #prevBtn {

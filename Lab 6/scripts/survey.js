@@ -28,19 +28,67 @@ function showTab(n) {
 
   function nextPrev(n) {
     var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
-    x[currentTab].style.display = "none";
+    var validity = validateForm();
+    if (n == 1 && validity == false) return false;
+    x.item(currentTab).style.display = "none";
     currentTab = currentTab + n;
     
     if (currentTab >= x.length) {
       document.getElementById("regForm").submit();
       return false;
     }
+
     showTab(currentTab);
   }
 
   function validateForm() {
-    var valid = true;
-    
+   
+    var x, y, z, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x.item(currentTab).getElementsByTagName("input");
+    z = x.item(currentTab).getElementsByTagName("select");
+
+    for (i = 0; i < y.length; i++) {
+        //for selection box 
+        /* if (y.item(i).name == "What was your favourite feature of the website?") {
+            var getSelectedCheckboxValue = document.querySelectorAll(   
+                'input[name="What was your favourite feature of the website?"].checked'); 
+                alert(getSelectedCheckboxValue.length)
+            if(getSelectedCheckboxValue == null) { 
+                //alert("Please make a selection")
+            } 
+        } */
+
+        //for radio slection
+        /* if (y.item(i).name == "How readable are the characters displayed on the website?") {
+            var getSelectedRadioValue = document.querySelector(   
+                'input[name="How readable are the characters displayed on the website?"].checked'); 
+            if(getSelectedRadioValue == null) { 
+                //alert("Please make a selection")
+            } 
+        } */
+
+        //for all input tags including ones above
+        if (y.item(i).value == "") {
+        y.item(i).className += " invalid";
+        valid = false;
+      }
+    }
+    //for all select tags
+    for (j = 0; j < z.length; j++) {
+
+  
+        if (z.item(j).value == "") {
+          alert("Please select a selection");
+          valid = false;
+        }
+    }
+
+    if (valid) {
+      document.getElementsByClassName("step").item(currentTab).className += " finish";
+    }
     return valid; 
   }
+
+
+

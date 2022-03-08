@@ -16,33 +16,33 @@
   <body>
     <a  href="index.html" ><button type="button" class="btn btn-light"><i class="fa-solid fa-house"></i></button></a>
 	  <!-- <a href="survey.html">Survey</a> -->
-
 	  <form id="surveyForm">
 		<div class="container bg-white">
 			<div class="tab">
 				<h3>Personal Information</h3>
-				<div class="form-group">
-				  <label for="inputFirstName">First Name</label>
+				<div class="form-group" style="text-align: left;">
+				  <label for="inputFirstName">First Name:</label>
 				  <input type="text" class="form-control" id="inputFirstName" placeholder="Jane">
 				</div>
-				<div class="form-group">
-				  <label for="inputLast Name">Last Name</label>
+				<div class="form-group" style="text-align: left;">
+				  <label for="inputLast Name">Last Name:</label>
 				  <input type="text" class="form-control" id="inputLastName" placeholder="Doe">
 				</div>
-				<div class="form-group">
-					<label for="inputEmail4">Email</label>
+				<div class="form-group" style="text-align: left;">
+					<label for="inputEmail4">Email:</label>
 					<input type="email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
 				  </div>
-				  <div class="form-group">
-					<label for="inputPhoneNumber">Phone Number</label>
+				  <div class="form-group" style="text-align: left;">
+					<label for="inputPhoneNumber">Phone Number:</label>
 					<input type="tel" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 				  </div>
 			</div>
 			<div class="tab">
 				<div class="form-group">
 					<h3> Which budget range did the website advertise the most? </h3>
-				<select class="form-control" id="budget" name="Which budget range did the website advertise the most?">
-					<option name="50-60$/night" value="50-60$ / night" selected="selected">50-60$/night</option>
+				<select id="budget" name="Which budget range did the website advertise the most?">
+					<option value="" selected="selected">- select -</option>
+					<option name="50-60$/night" value="50-60$ / night" >50-60$/night</option>
 					<option name="60-70$/night" value="60-70$ / night" >60-70$/night</option>
 					<option name="70-80$/night" value="70-80$ / night" >70-80$/night</option>
 					<option name="80-90$/night" value="80-90$ / night" >80-90$/night</option>
@@ -82,6 +82,7 @@
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox"name="What was your favourite feature of the website?" value="Spring"> Spring</input>
 					</div>
+				 </div>
 			</div>
 			<div class="tab">
 				<div class="form-group">
@@ -114,17 +115,18 @@
 			<div class="tab">
 				<div class="form-group">
 					<h3> How likely are you to recommend Airbnb to a friend or colleague? </h3>
-					<select id="recommendation" name="How likely are you to recommend Airbnb to a friend or colleague?">         
-						<option name="Very Likely" value="Very Likely" selected="selected">Very Likely</option>
-						<option name="Somewhat Likely" value="Somewhat Likely" selected="selected">Somewhat Likely</option>
-						<option name="Neutral value="Neutral" selected="selected">Neutral</option>
-						<option name="Somewhat Unlikely" value="Somewhat Unlikely" selected="selected">Somewhat Unlikely</option>
-						<option name="Very Unlikely" value="Very Unlikely" selected="selected">Very Unlikely</option>            
+					<select id="recommendation" name="How likely are you to recommend Airbnb to a friend or colleague?"> 
+						<option value="" selected="selected">- select -</option>        
+						<option name="Very Likely" value="Very Likely" >Very Likely</option>
+						<option name="Somewhat Likely" value="Somewhat Likely" >Somewhat Likely</option>
+						<option name="Neutral" value="Neutral" >Neutral</option>
+						<option name="Somewhat Unlikely" value="Somewhat Unlikely" >Somewhat Unlikely</option>
+						<option name="Very Unlikely" value="Very Unlikely" >Very Unlikely</option>            
 					</select>
 				</div>
 				<div class="form-group">
 					<h3>How would you rate the overall appearance of the website? </h3>
-					<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+					<input type="hidden" id="selected_rating" name="selected_rating" value="0" required="required">
 					<h5 class="bold rating">0 / 5</h5>
 					<button type="button" title="Poor" class="btnrating btn btn-default btn-lg checked" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1"><i class="fa fa-star"></i></button>
 					<button type="button" title="Unsatisfactory" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2" id="rating-2"><i class="fa fa-star"></i></button>
@@ -136,22 +138,24 @@
 			<div class="tab">
 				<div class="form-group">
 					<h3> How easy was it for you to find a place to stay in your destination of choice? </h3>
-					<select id="easyfind" name="How easy was it for you to find a place to stay in your destination of choice?">         
-						<option name="Very Easy" value="Very Easy" selected="selected">Very Easy</option>
-						<option name="Easy" value="Easy" selected="selected">Easy</option>
-						<option name="Moderate" value="Moderate" selected="selected">Moderate</option>
-						<option name="Difficult" value="Difficult" selected="selected">Difficult</option>
-						<option name="Very Difficult" value="Very Difficult" selected="selected">Very Difficult</option>            
+					<select id="easyfind" name="How easy was it for you to find a place to stay in your destination of choice?">   
+						<option value="" selected="selected">- select -</option>      
+						<option name="Very Easy" value="Very Easy">Very Easy</option>
+						<option name="Easy" value="Easy">Easy</option>
+						<option name="Moderate" value="Moderate">Moderate</option>
+						<option name="Difficult" value="Difficult">Difficult</option>
+						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
 					</select>
 				</div>
 				<div class="form-group">
 					<h3> How would you rank the difficulty of signing up for an account on Airbnb? </h3>
-					<select id="easyfind" name="How would you rank the difficulty of signing up for an account on Airbnb?">         
-						<option value="Very Easy" selected="selected">Very Easy</option>
-						<option value="Easy" selected="selected">Easy</option>
-						<option value="Moderate" selected="selected">Moderate</option>
-						<option value="Difficult" selected="selected">Difficult</option>
-						<option value="Very Difficult" selected="selected">Very Difficult</option>            
+					<select id="difficulty" name="How would you rank the difficulty of signing up for an account on Airbnb?">         
+						<option value="" selected="selected">- select -</option>      
+						<option name="Very Easy" value="Very Easy">Very Easy</option>
+						<option name="Easy" value="Easy">Easy</option>
+						<option name="Moderate" value="Moderate">Moderate</option>
+						<option name="Difficult" value="Difficult">Difficult</option>
+						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
 					</select>
 				</div>
 			</div>
