@@ -135,20 +135,28 @@
                 }],
                 labels: labelforCharts[1]
             };
+            // code from https://www.chartjs.org/docs/3.7.0/samples/bar/horizontal.html
             var myDoughnutChart_2 = new Chart(ctx_2, {
-                type: 'pie',
+                type: 'bar',
                 data: data_2,
                 options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    legend: {
+                indexAxis: 'y',
+                // Elements options apply to all of the options unless overridden in a dataset
+                // In this case, we are setting the border of each horizontal bar to be 2px wide
+                elements: {
+                  bar: {
+                    borderWidth: 2,
+                  }
+                },
+                responsive: true,
+                legend: {
                         position: 'left',
-                        display: true,
+                        display: false,
                         labels: {
                             boxWidth: 12
                         }
                     }
-                }
+              },
             });
             var ctx_3 = document.getElementById("question2").getContext('2d');
             var data = {
@@ -462,7 +470,7 @@
   <div class="container-sm chartsForData" >
     <h4>What was your favourite feature of the website?</h4>
     <br>
-      <canvas class="styleForTheGraphs d-flex justify-content-center" id="question1"  width="400px" height="400px"></canvas>
+      <canvas class=" d-flex justify-content-center" id="question1"  width="900px" height="500px"></canvas>
   </div>
 
   <div class="container-sm chartsForData">
