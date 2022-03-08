@@ -16,7 +16,9 @@
 </head>
 
 <body style="margin-right:15%; margin-left:15%">
-    <h1 style="text-align:center; padding-bottom: 30px; background-color: white; ">Airbnb survey analysis</h1>
+   <span style="text-align:center; padding-bottom: 30px; background-color: white; "><h1 >Airbnb survey analysis</h1></span> 
+   <br>
+   <br>
 
  
 
@@ -91,7 +93,8 @@
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -139,7 +142,8 @@
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -179,7 +183,8 @@
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -213,13 +218,14 @@
                 labels: labelforCharts[3]
             };
             var myDoughnutChart = new Chart(ctx_4, {
-                type: 'pie',
+                type: 'bar',
                 data: data,
                 options: {
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: false,
                         labels: {
                             boxWidth: 12
                         }
@@ -259,7 +265,8 @@
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -293,13 +300,14 @@
                 labels: labelforCharts[5]
             };
             var myDoughnutChart = new Chart(ctx_6, {
-                type: 'pie',
+                type: 'bar',
                 data: data,
                 options: {
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: false,
                         labels: {
                             boxWidth: 12
                         }
@@ -336,10 +344,11 @@
                 type: 'pie',
                 data: data,
                 options: {
-                    responsive: false,
+                    responsive:false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -429,7 +438,8 @@
                     responsive: false,
                     maintainAspectRatio: false,
                     legend: {
-                        position: 'bottom',
+                        position: 'left',
+                        display: true,
                         labels: {
                             boxWidth: 12
                         }
@@ -443,43 +453,52 @@
 
 <!-- <body style="text-align: center;"> -->
   <!--  code for box from https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing -->
-  <div class="chartsForData">
+  <div  class="container-sm chartsForData  justify-content-center">
     <h4>Which budget range did the website advertise the most?</h4>
-      <canvas class="styleForTheGraphs" id="question0" width="400px" height="400px"></canvas>
+    <br>
+      <canvas class="styleForTheGraphs d-flex justify-content-center" id="question0" width="400px" height="400px"></canvas>
   </div>
 
-  <div class="chartsForData" >
+  <div class="container-sm chartsForData" >
     <h4>What was your favourite feature of the website?</h4>
-      <canvas class="styleForTheGraphs" id="question1"  width="400px" height="400px"></canvas>
+    <br>
+      <canvas class="styleForTheGraphs d-flex justify-content-center" id="question1"  width="400px" height="400px"></canvas>
   </div>
 
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>Airbnb Highlight Location</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question2"  width="400px" height="400px"></canvas>
   </div>
 
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>How likely are you to recommend Airbnb to a friend or colleague?</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question3"  width="400px" height="400px"></canvas>
   </div>
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>How would you rate the overall appearance of the website?</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question4"  width="400px" height="400px"></canvas>
   </div>
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>How easy was it for you to find a place to stay in your destination of choice?</h>
+      <br>
       <canvas class="styleForTheGraphs" id="question5"  width="400px" height="400px"></canvas>
   </div>
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>How readable are the characters displayed on the website?</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question6"  width="400px" height="400px"></canvas>
   </div>
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>How would you rank the difficulty of signing up for an account on Airbnb?</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question7"  width="400px" height="400px"></canvas>
   </div>
-  <div class="chartsForData">
+  <div class="container-sm chartsForData">
     <h4>Suggestions about the user interface experience</h4>
+    <br>
       <canvas class="styleForTheGraphs" id="question8"  width="400px" height="400px"></canvas>
   </div>
      
@@ -491,7 +510,7 @@
    margin-bottom:10%;padding-bottom: 60px;background-color: white;; text-align: left; box-sizing: border-box; width: 100%;border: solid #5B6DCD 5px;padding: 5px; margin-right:20%; padding-bottom:30px
   }
   .styleForTheGraphs {
-    text-align: center; margin-left:36%
+    text-align: center; position: relative;  margin-left:30%
   }
   body {
   /*Image from https://www.delicious.com.au/travel/international/gallery/50-most-beautiful-destinations-world/c5v6vkyo?page=2*/
