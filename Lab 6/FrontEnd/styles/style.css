@@ -73,7 +73,7 @@ figure img {
 
 figure:hover img {
   /* provides the zoom in effect upon hovering over one of the images */
-  transform: scale(3.5);
+  transform: scale(1.2);
 }
 
 .question {
