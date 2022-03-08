@@ -15,8 +15,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 </head>
 
-<body>
-    <h1>Airbnb survey analysis</h1>
+<body style="margin-right:15%; margin-left:15%">
+    <h1 style="text-align:center; padding-bottom: 30px;">Airbnb survey analysis</h1>
+
  
 
 
@@ -77,8 +78,8 @@
                     'rgb(255, 99, 132)',
                     'rgb(255, 159, 64)',
                     'rgb(255, 205, 86)',
-                
                     'rgb(201, 203, 207)'
+                   
                   ],
                 }],
                 labels: labelforCharts[0]
@@ -109,6 +110,10 @@
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(153, 102, 255, 0.2)',
+                  'rgba(123, 20, 71, 0.2)',
+                  'rgba(255, 20, 71, 0.2)',
+                  'rgba(0, 0, 255, 0.2)',
+                  'rgba(255, 255, 71, 0.2)',
                   'rgba(201, 203, 207, 0.2)'
                 ],
                 borderColor: [
@@ -118,6 +123,10 @@
                   'rgb(75, 192, 192)',
                   'rgb(54, 162, 235)',
                   'rgb(153, 102, 255)',
+                  'rgb(123, 20, 71)',
+                  'rgb(255, 20, 71)',
+                  'rgb(0, 0, 255)',
+                  'rgb(255, 255, 71)',
                   'rgb(201, 203, 207)'
                 ],
                 }],
@@ -382,45 +391,45 @@
     </script>
 </head>
 
-<body style="text-align: center;">
+<!-- <body style="text-align: center;"> -->
   <!--  code for box from https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing -->
   <div class="chartsForData">
-    <h2>Which budget range did the website advertise the most?</h2>
+    <h4>Which budget range did the website advertise the most?</h4>
       <canvas class="styleForTheGraphs" id="question0" width="400px" height="400px"></canvas>
   </div>
 
   <div class="chartsForData" >
-    <h2>What was your favourite feature of the website?</h2>
+    <h4>What was your favourite feature of the website?</h4>
       <canvas class="styleForTheGraphs" id="question1"  width="400px" height="400px"></canvas>
   </div>
 
   <div class="chartsForData">
-    <h2>Airbnb Highlight Location</h2>
+    <h4>Airbnb Highlight Location</h4>
       <canvas class="styleForTheGraphs" id="question2"  width="400px" height="400px"></canvas>
   </div>
 
   <div class="chartsForData">
-    <h2>How likely are you to recommend Airbnb to a friend or colleague?</h2>
+    <h4>How likely are you to recommend Airbnb to a friend or colleague?</h4>
       <canvas class="styleForTheGraphs" id="question3"  width="400px" height="400px"></canvas>
   </div>
   <div class="chartsForData">
-    <h2>How would you rate the overall appearance of the website?</h2>
+    <h4>How would you rate the overall appearance of the website?</h4>
       <canvas class="styleForTheGraphs" id="question4"  width="400px" height="400px"></canvas>
   </div>
   <div class="chartsForData">
-    <h2>How easy was it for you to find a place to stay in your destination of choice?</h>
+    <h4>How easy was it for you to find a place to stay in your destination of choice?</h>
       <canvas class="styleForTheGraphs" id="question5"  width="400px" height="400px"></canvas>
   </div>
   <div class="chartsForData">
-    <h2>How readable are the characters displayed on the website?</h2>
+    <h4>How readable are the characters displayed on the website?</h4>
       <canvas class="styleForTheGraphs" id="question6"  width="400px" height="400px"></canvas>
   </div>
   <div class="chartsForData">
-    <h2>How would you rank the difficulty of signing up for an account on Airbnb?</h2>
+    <h4>How would you rank the difficulty of signing up for an account on Airbnb?</h4>
       <canvas class="styleForTheGraphs" id="question7"  width="400px" height="400px"></canvas>
   </div>
   <div class="chartsForData">
-    <h2>Suggestions about the user interface experience</h2>
+    <h4>Suggestions about the user interface experience</h4>
       <canvas class="styleForTheGraphs" id="question8"  width="400px" height="400px"></canvas>
   </div>
      
@@ -429,10 +438,16 @@
 </body>
 <style>
   .chartsForData {
-    text-align: left; box-sizing: border-box; width: 100%;border: solid #5B6DCD 10px;padding: 5px;
+   background-color: white;; text-align: left; box-sizing: border-box; width: 100%;border: solid #5B6DCD 5px;padding: 5px; margin-right:20%; padding-bottom:30px
   }
   .styleForTheGraphs {
     text-align: center; margin-left:36%
   }
+  body {
+  /*Image from https://www.delicious.com.au/travel/international/gallery/50-most-beautiful-destinations-world/c5v6vkyo?page=2*/
+  background: url("../images/home1.png") no-repeat center center fixed;
+
+  background-size: cover;
+}
 </style>
 </html>
