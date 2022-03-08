@@ -28,13 +28,34 @@
         <% } %>  
       </div>        
     <% } %>  
+    var json = '[{  "Time": "2017-08-17 16:35:28.000",  "Value": "3.85"}, {"Time": "2017-08-17 17:36:28.000","Value": "3.85"}, {"Time": "2017-08-17 18:35:28.000","Value": "3.86"}, {"Time": "2017-08-17 19:35:28.000","Value": "3.86"}, {"Time": "2017-08-18 07:35:28.000","Value": "3.87"}, { "Time": "2017-08-18 18:35:28.000", "Value": "3.86"}]';
     
+    json = JSON.parse(json);
+        json.forEach(function(element, index) {
+          element.x = new Date(element['Time']).getTime();
+          element.y = +element['Value'];
+    
+          delete element['Time'];
+          delete element['Value'];
+        });
+     console.log(json);
     <!-- chart from https://www.chartjs.org/docs/latest/getting-started/ -->
     <script>
       //from https://stackoverflow.com/a/59136857
-      var test = '<%- JSON.stringify(allSurveyResults) %>'; // test is now a valid js object
+      let test ={}
+      test = '<%- JSON.stringify(allSurveyResults) %>'; // test is now a valid js object
 
-      console.log("clientGameState"+ test)
+      console.log("test;"+ test)
+     // let ff = JSON.stringify(allSurveyResults);
+      const obj = JSON.parse(test)
+      console.log("ff o"+obj)
+      for (let i in obj){
+        console.log(i+"is it working??????");
+      }
+      for (var property in test) {
+  //console.log(`${property}: ${test[property]}`);
+}
+      console.log(test["How would you rate the overall appearance of the website?"]+"here>>>>")
       const labels = [
         '4 - Very Satisfactory',
         
