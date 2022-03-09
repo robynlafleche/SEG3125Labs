@@ -380,6 +380,14 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
         'suggestion': 'Suggestions about the user interface experience'
     };
 
+    var listOfAllEquivalentNames = [];
+
+    for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
+    {
+        listOfAllEquivalentNames.push(sqlNameKey);
+    }
+
+
     // JSON iteration solution obtained from https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
     // JSON stringification of RowDataPacket obtained from https://stackoverflow.com/questions/31221980/how-to-access-a-rowdatapacket-object
 
@@ -459,9 +467,7 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
     */
 
     // The favourite feature entry must be added.
-
-
-    // Reordering solution obtained from https://stackoverflow.com/questions/16542529/how-to-change-the-order-of-the-fields-in-json
+    
 	var sql = "SELECT * FROM group6db.favouriteFeatures";
 	conn.query(sql, function (error, result_favouriteFeatures, fields) {
 		if (error) {
@@ -506,8 +512,31 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 
         console.log("jsonEquivalentSurveyDisplayableResults =");
         console.log(jsonEquivalentSurveyDisplayableResults); 
+
+        // Reordering solution obtained from https://stackoverflow.com/questions/16542529/how-to-change-the-order-of-the-fields-in-json
         
-        res_obj.render('surveyResultsPage', {allSurveyResults: jsonEquivalentSurveyDisplayableResults});        
+        var jsonEquivalentSurveyDisplayableResults_reordered = JSON.parse(JSON.stringify( jsonEquivalentSurveyDisplayableResults, 
+            ['Which budget range did the website advertise the most?','What was your favourite feature of the website?', 
+            'Airbnb Highlight Location','How likely are you to recommend Airbnb to a friend or colleague?',
+                'How would you rate the overall appearance of the website?', 'How easy was it for you to find a place to stay in your destination of choice?', 
+            'How readable are the characters displayed on the website?', 'How would you rank the difficulty of signing up for an account on Airbnb?', 
+        'Suggestions about the user interface experience'] , 9));
+        
+        console.log("listOfAllEquivalentNames =");
+        console.log(listOfAllEquivalentNames); 
+
+        console.log("jsonEquivalentSurveyDisplayableResults_reordered =");
+        console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
+
+        for (var index in jsonEquivalentSurveyDisplayableResults_reordered) {
+            jsonEquivalentSurveyDisplayableResults_reordered[index] = jsonEquivalentSurveyDisplayableResults[index];
+        }
+
+        console.log("jsonEquivalentSurveyDisplayableResults_reordered 2 =");
+        console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
+
+        
+        res_obj.render('surveyResultsPage', {allSurveyResults: jsonEquivalentSurveyDisplayableResults_reordered});        
 
         return jsonEquivalentSurveyDisplayableResults;
 	});      
