@@ -243,15 +243,15 @@ conn.connect(function(error){
 	if (error)
 		throw error;	
 	else{
-		console.log("connected to database");
+		console.log("Connected to database");
 	}
 });
 
 
 function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
 {
-	console.log("jsonSurveyResults :");
-	console.log(jsonSurveyResults);  
+	//console.log("jsonSurveyResults :");
+	//console.log(jsonSurveyResults);  
 
 	var firstName = jsonSurveyResults["inputFirstName"];
 	var lastName = jsonSurveyResults["inputLastName"];
@@ -270,7 +270,7 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
     conn.query("SELECT MAX(userID) as userID FROM group6db.users", function (err, result, fields) {
         if (err) throw err;
         userID = result[0].userID;
-        console.log("userID1 = " + userID);
+        //console.log("userID1 = " + userID);
 
         var budgetRange = jsonSurveyResults["Which budget range did the website advertise the most?"];
         var highlightLocation = jsonSurveyResults["Airbnb Highlight Location"];
@@ -292,7 +292,7 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
         }); 
     
         var currentNewlySelectedFeatures = jsonSurveyResults["What was your favourite feature of the website?"];
-        console.log("currentNewlySelectedFeatures = " + currentNewlySelectedFeatures);
+        //console.log("currentNewlySelectedFeatures = " + currentNewlySelectedFeatures);
 
         var listOfFeaturesToAddToDB = [];
 
@@ -321,7 +321,7 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
         conn.query("SELECT MAX(surveyResultID) as surveyResultID FROM group6db.surveyResults", function (err, result, fields) {
             if (err) throw err;
             surveyResultID = result[0].surveyResultID;
-            console.log("surveyResultID = " + surveyResultID);
+            //console.log("surveyResultID = " + surveyResultID);
 
             for (var i = 0; i<listOfFeaturesToAddToDB.length; i++)
             {
@@ -391,18 +391,18 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
     // JSON iteration solution obtained from https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
     // JSON stringification of RowDataPacket obtained from https://stackoverflow.com/questions/31221980/how-to-access-a-rowdatapacket-object
 
-    console.log("dbResultsSQL = " + dbResultsSQL);
+    //console.log("dbResultsSQL = " + dbResultsSQL);
     var jsonEquivalentSurveyResultsString = JSON.stringify(dbResultsSQL);
-    console.log("jsonEquivalentSurveyResultsString = " + jsonEquivalentSurveyResultsString);
+    //console.log("jsonEquivalentSurveyResultsString = " + jsonEquivalentSurveyResultsString);
 
     var jsonEquivalentSurveyResults =  JSON.parse(jsonEquivalentSurveyResultsString);
 
-    console.log("jsonEquivalentSurveyResults = " + jsonEquivalentSurveyResults);
-    console.log(jsonEquivalentSurveyResults);
+    //console.log("jsonEquivalentSurveyResults = " + jsonEquivalentSurveyResults);
+    //console.log(jsonEquivalentSurveyResults);
 
     for (var jsonSurveyResultIndex in jsonEquivalentSurveyResults) {
-        console.log("jsonEquivalentSurveyResult = ");
-        console.log(jsonEquivalentSurveyResults[jsonSurveyResultIndex]);
+        //console.log("jsonEquivalentSurveyResult = ");
+        //console.log(jsonEquivalentSurveyResults[jsonSurveyResultIndex]);
 
         var currentDBSurveyResultJSONFormat = jsonEquivalentSurveyResults[jsonSurveyResultIndex];
 
@@ -410,7 +410,7 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 
         for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
         {   
-            console.log("sqlNameKey = " + sqlNameKey);
+            //console.log("sqlNameKey = " + sqlNameKey);
             //console.log("sqlNamesToDisplayNamesMap.hasOwnProperty(sqlNameKey) = ");
             //console.log(sqlNamesToDisplayNamesMap.hasOwnProperty(sqlNameKey));
 
@@ -419,13 +419,13 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
             if (currentDBSurveyResultJSONFormat.hasOwnProperty(sqlNameKey))
             {
 
-                console.log("currentDBSurveyResultJSONFormat[surveyResultID] = " + currentDBSurveyResultJSONFormat["surveyResultID"]);
+                //console.log("currentDBSurveyResultJSONFormat[surveyResultID] = " + currentDBSurveyResultJSONFormat["surveyResultID"]);
 
                 // The current survey result does have an entry for the current survey question.
                 if (!jsonEquivalentSurveyDisplayableResults.hasOwnProperty(equivalentDisplayName))
                 {
                     // Initialize the setting for this field for our final result, if it does not already exist.
-                    console.log("equivalentDisplayName = " + equivalentDisplayName);
+                    //console.log("equivalentDisplayName = " + equivalentDisplayName);
                     jsonEquivalentSurveyDisplayableResults[equivalentDisplayName] = {}
                 }
 
@@ -455,27 +455,27 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 			throw error;
         }
 
-        console.log("result_favouriteFeatures = ");
-        console.log(result_favouriteFeatures);
+        //console.log("result_favouriteFeatures = ");
+        //console.log(result_favouriteFeatures);
 
         var jsonEquivalentSurveyResultsString_favouriteFeatures = JSON.stringify(result_favouriteFeatures);
         var jsonEquivalentSurveyResults_favouriteFeatures =  JSON.parse(jsonEquivalentSurveyResultsString_favouriteFeatures);
     
-        console.log("jsonEquivalentSurveyResults_favouriteFeatures = " + jsonEquivalentSurveyResults_favouriteFeatures);
-        console.log(jsonEquivalentSurveyResults_favouriteFeatures);
+        //console.log("jsonEquivalentSurveyResults_favouriteFeatures = " + jsonEquivalentSurveyResults_favouriteFeatures);
+        //console.log(jsonEquivalentSurveyResults_favouriteFeatures);
 
         equivalentDisplayName = sqlNamesToDisplayNamesMap["favouriteFeatureResultChoice"];
         jsonEquivalentSurveyDisplayableResults[equivalentDisplayName] = {};
     
         for (var jsonSurveyResultIndex_favouriteFeature in jsonEquivalentSurveyResults_favouriteFeatures) {
-            console.log("jsonSurveyResultIndex_favouriteFeature = ");
-            console.log(jsonEquivalentSurveyResults_favouriteFeatures[jsonSurveyResultIndex_favouriteFeature]);
+            //console.log("jsonSurveyResultIndex_favouriteFeature = ");
+            //console.log(jsonEquivalentSurveyResults_favouriteFeatures[jsonSurveyResultIndex_favouriteFeature]);
     
             var currentDBSurveyResultJSONFormat_favouriteFeature = jsonEquivalentSurveyResults_favouriteFeatures[jsonSurveyResultIndex_favouriteFeature];
     
             var currentFavouriteFeatureResultChoice = currentDBSurveyResultJSONFormat_favouriteFeature["favouriteFeatureResultChoice"];
 
-            console.log("currentFavouriteFeatureResultChoice = " + currentFavouriteFeatureResultChoice);
+            //console.log("currentFavouriteFeatureResultChoice = " + currentFavouriteFeatureResultChoice);
 
             sqlDataValue = currentDBSurveyResultJSONFormat_favouriteFeature["favouriteFeatureResultChoice"]; // for example, this could be 'Price bar chart'.
             if (!jsonEquivalentSurveyDisplayableResults[equivalentDisplayName].hasOwnProperty(sqlDataValue))
@@ -491,8 +491,8 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
             
         }
 
-        console.log("jsonEquivalentSurveyDisplayableResults =");
-        console.log(jsonEquivalentSurveyDisplayableResults); 
+        //console.log("jsonEquivalentSurveyDisplayableResults =");
+        //console.log(jsonEquivalentSurveyDisplayableResults); 
 
         // Reordering solution obtained from https://stackoverflow.com/questions/16542529/how-to-change-the-order-of-the-fields-in-json
         
@@ -503,18 +503,18 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
             'How readable are the characters displayed on the website?', 'How would you rank the difficulty of signing up for an account on Airbnb?', 
         'Suggestions about the user interface experience'] , 9));
         
-        console.log("listOfAllEquivalentNames =");
-        console.log(listOfAllEquivalentNames); 
+        //console.log("listOfAllEquivalentNames =");
+        //console.log(listOfAllEquivalentNames); 
 
-        console.log("jsonEquivalentSurveyDisplayableResults_reordered =");
-        console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
+        //console.log("jsonEquivalentSurveyDisplayableResults_reordered =");
+        //console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
 
         for (var index in jsonEquivalentSurveyDisplayableResults_reordered) {
             jsonEquivalentSurveyDisplayableResults_reordered[index] = jsonEquivalentSurveyDisplayableResults[index];
         }
 
-        console.log("jsonEquivalentSurveyDisplayableResults_reordered 2 =");
-        console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
+        //console.log("jsonEquivalentSurveyDisplayableResults_reordered 2 =");
+        //console.log(jsonEquivalentSurveyDisplayableResults_reordered); 
 
         
         res_obj.render('surveyResultsPage', {allSurveyResults: jsonEquivalentSurveyDisplayableResults_reordered});        
