@@ -19,7 +19,7 @@ $(document).ready(function(){
       submitCompletedSurvey();
       alert("Thank you for completing the survey.");
       // Go back to the home page.
-      //window.location.href = "index.html";
+      window.location.href = "index.html";
       return;
     }
 
