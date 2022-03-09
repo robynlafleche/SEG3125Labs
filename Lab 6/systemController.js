@@ -263,8 +263,83 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
 		if (error) {
 			throw error;
         }
-	});    
+	}); 
+    
+    // Get the foreigh key userID from the latest entry
+    var userID = -1;
+    conn.query("SELECT MAX(userID) as userID FROM group6db.users", function (err, result, fields) {
+        if (err) throw err;
+        userID = result[0].userID;
+        console.log("userID1 = " + userID);
 
+        var budgetRange = jsonSurveyResults["Which budget range did the website advertise the most?"];
+        var highlightLocation = jsonSurveyResults["Airbnb Highlight Location"];
+        var readability = jsonSurveyResults["How readable are the characters displayed on the website?"];
+        var recommendation = jsonSurveyResults["How likely are you to recommend Airbnb to a friend or colleague?"];
+        var starRating = jsonSurveyResults["selected_rating"];
+        var easinessLevel = jsonSurveyResults["How easy was it for you to find a place to stay in your destination of choice?"];
+        var difficultyLevel = jsonSurveyResults["How would you rank the difficulty of signing up for an account on Airbnb?"];
+        var suggestion = jsonSurveyResults["Suggestions about the user interface experience"];
+
+        sql = "INSERT INTO group6db.surveyResults (budgetRange, highlightLocation, readability, recommendation, starRating, easinessLevel, difficultyLevel, suggestion, userID) \
+            VALUES ('"+budgetRange+"', '"+highlightLocation+"', '"+readability+"', '"+recommendation+"', '"+starRating+"', '"+easinessLevel+"', \
+            '"+difficultyLevel+"', '"+suggestion+"', '"+userID+"')";
+
+            conn.query(sql, function(error, result) {
+            if (error) {
+                throw error;
+            }
+        }); 
+    
+        var currentNewlySelectedFeatures = jsonSurveyResults["What was your favourite feature of the website?"];
+        console.log("currentNewlySelectedFeatures = " + currentNewlySelectedFeatures);
+
+        var listOfFeaturesToAddToDB = [];
+
+        if (currentNewlySelectedFeatures == undefined)
+        {
+            // Do nothing as user has not selected any of the checkboxes.
+        }
+        else if (JSON.stringify(currentNewlySelectedFeatures).includes(","))
+        {
+            // More than 1 checkbox is selected
+            for (var favoriteFeatureIndex in currentNewlySelectedFeatures)
+            {
+                var currentNewlySelectedFavouriteFeature = currentNewlySelectedFeatures[favoriteFeatureIndex];
+                listOfFeaturesToAddToDB.push(currentNewlySelectedFavouriteFeature);
+            }            
+        }
+        else
+        {
+            // Only 1 checkbox selected.
+            listOfFeaturesToAddToDB.push(currentNewlySelectedFeatures);
+        }
+
+
+        // Get the foreigh key surveyResultID from the latest entry
+        var surveyResultID = -1;
+        conn.query("SELECT MAX(surveyResultID) as surveyResultID FROM group6db.surveyResults", function (err, result, fields) {
+            if (err) throw err;
+            surveyResultID = result[0].surveyResultID;
+            console.log("surveyResultID = " + surveyResultID);
+
+            for (var i = 0; i<listOfFeaturesToAddToDB.length; i++)
+            {
+                var currentFeature = listOfFeaturesToAddToDB[i];
+
+                sql = "INSERT INTO group6db.favouriteFeatures (favouriteFeatureResultChoice, surveyResultID) \
+                VALUES ('"+currentFeature+"', '"+surveyResultID+"')";
+            
+                conn.query(sql, function(error, result) {
+                    if (error) {
+                        throw error;
+                    }
+                });             
+
+            }
+        });
+
+      });
 }
 
 
