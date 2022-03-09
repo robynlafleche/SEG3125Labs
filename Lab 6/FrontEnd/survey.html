@@ -15,7 +15,8 @@
    
   </head>
   <body>
-   
+
+
 	  <!-- <a href="survey.html">Survey</a> -->
 	  <form id="surveyForm">
 		<div class="container bg-white">
@@ -23,25 +24,29 @@
 			<div class="tab">
 				<h3>Personal Information</h3>
 				<div class="form-group" style="text-align: left;">
-				  <label for="inputFirstName">First Name:</label>
-				  <input type="text" class="form-control" id="inputFirstName" placeholder="Jane">
+				  <label for="inputFirstName">*First Name:</label>
+				  <input name="inputFirstName" type="text" class="form-control" id="inputFirstName" placeholder="Jane">
+				  <P class="FeedbackSlot" id="FirstNameFeedbackSlot"></P>
 				</div>
 				<div class="form-group" style="text-align: left;">
-				  <label for="inputLast Name">Last Name:</label>
-				  <input type="text" class="form-control" id="inputLastName" placeholder="Doe">
+				  <label for="inputLast Name">*Last Name:</label>
+				  <input name="inputLastName" type="text" class="form-control" id="inputLastName" placeholder="Doe">
+				  <P class="FeedbackSlot" id="LastNameFeedbackSlot"></P>
 				</div>
 				<div class="form-group" style="text-align: left;">
-					<label for="inputEmail4">Email:</label>
-					<input type="email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
+					<label for="inputEmail4">*Email:</label>
+					<input name="inputEmail4" type="email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
+					<P class="FeedbackSlot" id="EmailFeedbackSlot"></P>
 				  </div>
 				  <div class="form-group" style="text-align: left;">
-					<label for="inputPhoneNumber">Phone Number:</label>
-					<input type="tel" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+					<label for="inputPhoneNumber">*Phone Number:</label>
+					<input name="inputPhoneNumber" type="tel" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+					<P class="FeedbackSlot" id="PhoneNumberFeedbackSlot"></P>
 				  </div>
 			</div>
 			<div class="tab">
 				<div class="form-group">
-					<h3> Which budget range did the website advertise the most? </h3>
+					<h3> *Which budget range did the website advertise the most? </h3>
 				<select id="budget" name="Which budget range did the website advertise the most?">
 					<option value="" selected="selected">- select -</option>
 					<option name="50-60$/night" value="50-60$ / night" >50-60$/night</option>
@@ -51,9 +56,10 @@
 					<option name="100-110$/night" value="100-110$ / night" >100-110$/night</option>
 					<option name="110-120$/night" value="110-120$ / night" >110-120$/night</option>
 				</select>
+				<P class="FeedbackSlot" id="BudgetFeedbackSlot"></P>
 				 </div>
 				 <div class="form-group">
-					<h3> What was your favourite feature of the website? </h3>
+					<h3> What was your favourite feature of the website (optional)? </h3>
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="User friendly search box"> User friendly search box</input>
 					</div>
@@ -88,19 +94,19 @@
 			</div>
 			<div class="tab">
 				<div class="form-group">
-					<h3> Which location did Airbnb highlight the most? </h3>
+					<h3> *Which location did Airbnb highlight the most? </h3>
 					<input name="Airbnb Highlight Location" type="text" class="form-control" id="location" placeholder="Enter the location">
+					<P class="FeedbackSlot" id="LocationFeedbackSlot"></P>
 				  </div>
 				  <div class="form-group">
-					<h3> How readable are the characters displayed on the website? </h3>
+					<h3> *How readable are the characters displayed on the website? </h3>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" id="Highly Readable"
 						name="How readable are the characters displayed on the website?" value="Highly Readable">Highly Readable</input>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" id="Readable"
-						name="How readable are the characters displayed on the website?" value="Readable">Readable</input>
-						
+						name="How readable are the characters displayed on the website?" value="Readable">Readable</input>						
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" id="Slightly Readable"
@@ -109,14 +115,14 @@
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" id="Unredable"
-						name="How readable are the characters displayed on the website?" value="Unredable">Unredable</input>
-						
+						name="How readable are the characters displayed on the website?" value="Unredable">Unredable</input>						
 					</div>
+					<P class="FeedbackSlot" id="ReadableFeedbackSlot"></P>
 				</div>
 			</div>
 			<div class="tab">
 				<div class="form-group">
-					<h3> How likely are you to recommend Airbnb to a friend or colleague? </h3>
+					<h3> *How likely are you to recommend Airbnb to a friend or colleague? </h3>
 					<select id="recommendation" name="How likely are you to recommend Airbnb to a friend or colleague?"> 
 						<option value="" selected="selected">- select -</option>        
 						<option name="Very Likely" value="Very Likely" >Very Likely</option>
@@ -125,9 +131,10 @@
 						<option name="Somewhat Unlikely" value="Somewhat Unlikely" >Somewhat Unlikely</option>
 						<option name="Very Unlikely" value="Very Unlikely" >Very Unlikely</option>            
 					</select>
+					<P class="FeedbackSlot" id="RecommendationFeedbackSlot"></P>
 				</div>
 				<div class="form-group">
-					<h3>How would you rate the overall appearance of the website? </h3>
+					<h3>*How would you rate the overall appearance of the website? </h3>
 					<input type="hidden" id="selected_rating" name="selected_rating" value="0" required="required">
 					<h5 class="bold rating">0 / 5</h5>
 					<button type="button" title="Poor" class="btnrating btn btn-default btn-lg checked" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1"><i class="fa fa-star"></i></button>
@@ -136,10 +143,11 @@
 					<button type="button" title="Very satisfactory" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4" id="rating-4"><i class="fa fa-star"></i></button>
 					<button type="button" title="Outstanding" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5" id="rating-5"><i class="fa fa-star"></i></button>
 				</div>
+				<P class="FeedbackSlot" id="OverallRatingFeedbackSlot"></P>
 			</div>
 			<div class="tab">
 				<div class="form-group">
-					<h3> How easy was it for you to find a place to stay in your destination of choice? </h3>
+					<h3> *How easy was it for you to find a place to stay in your destination of choice? </h3>
 					<select id="easyfind" name="How easy was it for you to find a place to stay in your destination of choice?">   
 						<option value="" selected="selected">- select -</option>      
 						<option name="Very Easy" value="Very Easy">Very Easy</option>
@@ -148,9 +156,10 @@
 						<option name="Difficult" value="Difficult">Difficult</option>
 						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
 					</select>
+					<P class="FeedbackSlot" id="EasyToFindFeedbackSlot"></P>
 				</div>
 				<div class="form-group">
-					<h3> How would you rank the difficulty of signing up for an account on Airbnb? </h3>
+					<h3> *How would you rank the difficulty of signing up for an account on Airbnb? </h3>
 					<select id="difficulty" name="How would you rank the difficulty of signing up for an account on Airbnb?">         
 						<option value="" selected="selected">- select -</option>      
 						<option name="Very Easy" value="Very Easy">Very Easy</option>
@@ -159,19 +168,20 @@
 						<option name="Difficult" value="Difficult">Difficult</option>
 						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
 					</select>
+					<P class="FeedbackSlot" id="SigningUpFeedbackSlot"></P>
 				</div>
 			</div>
 			<div class="tab">
 				<div class="form-group">
-					<h3>Suggestions about the user interface experience:</h3>
+					<h3>Suggestions about the user interface experience (optional):</h3>
 					<textarea class="form-control" name="Suggestions about the user interface experience" rows="5" id="comment"></textarea>
 				  </div>
 			</div>
 		</div>	
 		<div style="overflow:auto; display:inline;"><br>
 			<div style="float:right;">
-			  <button type="button" class="btn btn-light" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-			  <button type="button" class="btn btn-light" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			  <button type="button" class="btn btn-light" id="prevBtn">Previous</button>
+			  <button type="button" class="btn btn-light" id="nextBtn">Next</button>
 			</div>
 		</div>
 
@@ -188,11 +198,6 @@
 		  </div>
 	
 	</form>
-	
-    <div class="btn btn-light text-center">
-		<button type="submit" id="surveySubmitButton" class="btn btn-default" value="submit">Submit</button>
-	</div>
-	
 	
   </body>
   <script src="scripts/survey.js"></script>
