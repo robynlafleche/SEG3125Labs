@@ -159,11 +159,11 @@ button {
   height: 50px;
 }
 
-.h3 {
+/* .h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
   color: #132072;
-}
+} */
 
 .top {
   align-content: center;
@@ -177,8 +177,12 @@ label {
     "Lucida Sans", Arial, sans-serif;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
+h2,
+h3,
+h4 {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
 }
 
 .radio {
