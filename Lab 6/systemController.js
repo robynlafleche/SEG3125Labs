@@ -342,6 +342,124 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
       });
 }
 
+function obtainAndDisplayAllSurveyResultsFromMySQLDatabase()
+{
+	var sql = "SELECT * FROM group6db.surveyResults"; // NATURAL JOIN group6db.favouriteFeatures";
+	conn.query(sql, function (error, result, fields) {
+		if (error) {
+			throw error;
+        }
+
+        //console.log("result = ");
+        //console.log(result);
+
+        currentCummulativeResultsJSON_X = convertDBResultsFromMySQLToJSON(result);
+        console.log("currentCummulativeResultsJSON_X =");
+        console.log(currentCummulativeResultsJSON_X);          
+
+        return result;
+	});  
+    
+}
+
+function convertDBResultsFromMySQLToJSON(dbResultsSQL)
+{
+    var jsonEquivalentSurveyDisplayableResults = {};
+
+    var alreadyEncounteredSurveryResultIDs = [];
+
+    const sqlNamesToDisplayNamesMap = {
+        'budgetRange': 'Which budget range did the website advertise the most?',
+        'highlightLocation': 'Airbnb Highlight Location',
+        'recommendation': 'How likely are you to recommend Airbnb to a friend or colleague?',
+        'starRating': 'How would you rate the overall appearance of the website?',
+        'easinessLevel': 'How easy was it for you to find a place to stay in your destination of choice?',
+        'readability': 'How readable are the characters displayed on the website?',
+        'difficultyLevel': 'How would you rank the difficulty of signing up for an account on Airbnb?',
+        'suggestion': 'Suggestions about the user interface experience'
+    };
+
+    // JSON iteration solution obtained from https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
+    // JSON stringification of RowDataPacket obtained from https://stackoverflow.com/questions/31221980/how-to-access-a-rowdatapacket-object
+
+    console.log("dbResultsSQL = " + dbResultsSQL);
+    var jsonEquivalentSurveyResultsString = JSON.stringify(dbResultsSQL);
+    console.log("jsonEquivalentSurveyResultsString = " + jsonEquivalentSurveyResultsString);
+
+    var jsonEquivalentSurveyResults =  JSON.parse(jsonEquivalentSurveyResultsString);
+
+    console.log("jsonEquivalentSurveyResults = " + jsonEquivalentSurveyResults);
+    console.log(jsonEquivalentSurveyResults);
+
+    for (var jsonSurveyResultIndex in jsonEquivalentSurveyResults) {
+        console.log("jsonEquivalentSurveyResult = ");
+        console.log(jsonEquivalentSurveyResults[jsonSurveyResultIndex]);
+
+        var currentDBSurveyResultJSONFormat = jsonEquivalentSurveyResults[jsonSurveyResultIndex];
+
+        var surveyResultID = currentDBSurveyResultJSONFormat["surveyResultID"];
+
+        /*if (alreadyEncounteredSurveryResultIDs.includes(surveyResultID))
+        {
+            // Skip since we do not want to double count - this happens because of the SQL JOIN operation (but that stuff is no more now, has been removed)
+            continue;
+        } 
+        else
+        {
+            alreadyEncounteredSurveryResultIDs.push(surveyResultID);
+        }      */ 
+
+        for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
+        {   
+            console.log("sqlNameKey = " + sqlNameKey);
+            //console.log("sqlNamesToDisplayNamesMap.hasOwnProperty(sqlNameKey) = ");
+            //console.log(sqlNamesToDisplayNamesMap.hasOwnProperty(sqlNameKey));
+
+            var equivalentDisplayName = sqlNamesToDisplayNamesMap[sqlNameKey];
+
+            if (currentDBSurveyResultJSONFormat.hasOwnProperty(sqlNameKey))
+            {
+
+                console.log("currentDBSurveyResultJSONFormat[surveyResultID] = " + currentDBSurveyResultJSONFormat["surveyResultID"]);
+
+                // The current survey result does have an entry for the current survey question.
+                if (!jsonEquivalentSurveyDisplayableResults.hasOwnProperty(equivalentDisplayName))
+                {
+                    // Initialize the setting for this field for our final result, if it does not already exist.
+                    console.log("equivalentDisplayName = " + equivalentDisplayName);
+                    jsonEquivalentSurveyDisplayableResults[equivalentDisplayName] = {}
+                }
+
+                var sqlDataValue = currentDBSurveyResultJSONFormat[sqlNameKey]; // for example, this could be '50-60$ / night'.
+                if (!jsonEquivalentSurveyDisplayableResults[equivalentDisplayName].hasOwnProperty(sqlDataValue))
+                {
+                    jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue] = 1;
+                }
+                else
+                {
+                    // Increment its counter.
+                    jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue] = parseInt(jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue]) + 1;                    
+                }
+
+            }
+
+        }
+
+    }
+
+    /*
+    for (var dbSurveyEntry of dbResultsSQL)
+    {
+        for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
+        {
+            console.log("sqlNameKey = " + sqlNameKey);
+        }
+    }
+    */
+
+    return jsonEquivalentSurveyDisplayableResults;
+}
+
 
 
 
@@ -352,13 +470,23 @@ module.exports = function(app){
     // serve a template (ejs file) to which we provide all the surver results from out database.
     app.get('/surveyResults', function(req, res){
 
-        // Obtain all the surver results from our database into a JSON object.
-        var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
-        console.log("currentCummulativeResults :");
-        console.log(currentCummulativeResults);
+        // Obtain all the survey results from our JSON database into a JSON object.
+        var currentCummulativeResultsJSON = readData(DATABASE_FILENAME_PATH_SUMMARY);
+        //console.log("currentCummulativeResultsJSON :");
+        //console.log(currentCummulativeResultsJSON);
+
+
+        obtainAndDisplayAllSurveyResultsFromMySQLDatabase();
+
+        // Obtain all the survey results from our MySQL database into a JSON object.
+        //var currentCummulativeResultsSQL = obtainAllSurveyResultsFromMySQLDatabase();
+        //currentCummulativeResultsJSON_X = convertDBResultsFromMySQLToJSON(currentCummulativeResultsSQL);
+        //console.log("currentCummulativeResultsJSON_X :");
+        //console.log(currentCummulativeResultsJSON_X);        
+
                
         // Provide the complete database JSON object to the back-end server EJS file so it can render that data nicely on the server web page.
-        res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResults});
+        res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     });
 
     // when a user goes to localhost:3000/homepage
