@@ -342,7 +342,7 @@ function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
       });
 }
 
-function obtainAndDisplayAllSurveyResultsFromMySQLDatabase()
+function obtainAndDisplayAllSurveyResultsFromMySQLDatabase(res_obj)
 {
 	var sql = "SELECT * FROM group6db.surveyResults"; // NATURAL JOIN group6db.favouriteFeatures";
 	conn.query(sql, function (error, result, fields) {
@@ -353,16 +353,16 @@ function obtainAndDisplayAllSurveyResultsFromMySQLDatabase()
         //console.log("result = ");
         //console.log(result);
 
-        currentCummulativeResultsJSON_X = convertDBResultsFromMySQLToJSON(result);
-        console.log("currentCummulativeResultsJSON_X =");
-        console.log(currentCummulativeResultsJSON_X);          
+        currentCummulativeResultsJSON_X = convertDBResultsFromMySQLToJSON(result, res_obj);
+        //console.log("currentCummulativeResultsJSON_X =");
+        //console.log(currentCummulativeResultsJSON_X);          
 
-        return result;
+        return currentCummulativeResultsJSON_X;
 	});  
     
 }
 
-function convertDBResultsFromMySQLToJSON(dbResultsSQL)
+function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 {
     var jsonEquivalentSurveyDisplayableResults = {};
 
@@ -370,6 +370,7 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL)
 
     const sqlNamesToDisplayNamesMap = {
         'budgetRange': 'Which budget range did the website advertise the most?',
+        'favouriteFeatureResultChoice' : "What was your favourite feature of the website?",
         'highlightLocation': 'Airbnb Highlight Location',
         'recommendation': 'How likely are you to recommend Airbnb to a friend or colleague?',
         'starRating': 'How would you rate the overall appearance of the website?',
@@ -457,7 +458,62 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL)
     }
     */
 
-    return jsonEquivalentSurveyDisplayableResults;
+    // The favourite feature entry must be added.
+
+
+    // Reordering solution obtained from https://stackoverflow.com/questions/16542529/how-to-change-the-order-of-the-fields-in-json
+	var sql = "SELECT * FROM group6db.favouriteFeatures";
+	conn.query(sql, function (error, result_favouriteFeatures, fields) {
+		if (error) {
+			throw error;
+        }
+
+        console.log("result_favouriteFeatures = ");
+        console.log(result_favouriteFeatures);
+
+        var jsonEquivalentSurveyResultsString_favouriteFeatures = JSON.stringify(result_favouriteFeatures);
+        var jsonEquivalentSurveyResults_favouriteFeatures =  JSON.parse(jsonEquivalentSurveyResultsString_favouriteFeatures);
+    
+        console.log("jsonEquivalentSurveyResults_favouriteFeatures = " + jsonEquivalentSurveyResults_favouriteFeatures);
+        console.log(jsonEquivalentSurveyResults_favouriteFeatures);
+
+        equivalentDisplayName = sqlNamesToDisplayNamesMap["favouriteFeatureResultChoice"];
+        jsonEquivalentSurveyDisplayableResults[equivalentDisplayName] = {};
+    
+        for (var jsonSurveyResultIndex_favouriteFeature in jsonEquivalentSurveyResults_favouriteFeatures) {
+            console.log("jsonSurveyResultIndex_favouriteFeature = ");
+            console.log(jsonEquivalentSurveyResults_favouriteFeatures[jsonSurveyResultIndex_favouriteFeature]);
+    
+            var currentDBSurveyResultJSONFormat_favouriteFeature = jsonEquivalentSurveyResults_favouriteFeatures[jsonSurveyResultIndex_favouriteFeature];
+    
+            var currentFavouriteFeatureResultChoice = currentDBSurveyResultJSONFormat_favouriteFeature["favouriteFeatureResultChoice"];
+
+            console.log("currentFavouriteFeatureResultChoice = " + currentFavouriteFeatureResultChoice);
+
+            sqlDataValue = currentDBSurveyResultJSONFormat_favouriteFeature["favouriteFeatureResultChoice"]; // for example, this could be 'Price bar chart'.
+            if (!jsonEquivalentSurveyDisplayableResults[equivalentDisplayName].hasOwnProperty(sqlDataValue))
+            {
+                jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue] = 1;
+            }
+            else
+            {
+                // Increment its counter.
+                jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue] = parseInt(jsonEquivalentSurveyDisplayableResults[equivalentDisplayName][sqlDataValue]) + 1;                    
+            }            
+
+            
+        }
+
+        console.log("jsonEquivalentSurveyDisplayableResults =");
+        console.log(jsonEquivalentSurveyDisplayableResults); 
+        
+        res_obj.render('surveyResultsPage', {allSurveyResults: jsonEquivalentSurveyDisplayableResults});        
+
+        return jsonEquivalentSurveyDisplayableResults;
+	});      
+
+
+    //return jsonEquivalentSurveyDisplayableResults;
 }
 
 
@@ -476,7 +532,7 @@ module.exports = function(app){
         //console.log(currentCummulativeResultsJSON);
 
 
-        obtainAndDisplayAllSurveyResultsFromMySQLDatabase();
+        obtainAndDisplayAllSurveyResultsFromMySQLDatabase(res);
 
         // Obtain all the survey results from our MySQL database into a JSON object.
         //var currentCummulativeResultsSQL = obtainAllSurveyResultsFromMySQLDatabase();
@@ -486,7 +542,7 @@ module.exports = function(app){
 
                
         // Provide the complete database JSON object to the back-end server EJS file so it can render that data nicely on the server web page.
-        res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
+        //res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     });
 
     // when a user goes to localhost:3000/homepage
