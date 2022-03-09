@@ -8,11 +8,11 @@ $(document).ready(function($){
 	$(".rating").html($(this).attr("data-attr")+ ' / 5');
 	
     for (i = 1; i <= 5; ++i) {
-        $("#rating-"+i).removeClass('btn-warning');
+        $("#rating-"+i).find("i").removeClass('checked');
     }
     
 	for (i = 1; i <= $(this).attr("data-attr"); ++i) {
-	$("#rating-"+i).toggleClass('btn-warning');
+	$("#rating-"+i).find("i").toggleClass('checked');
 	}
 	
 	
