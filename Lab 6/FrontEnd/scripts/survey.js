@@ -1,31 +1,113 @@
 
 // Global variables
-var currentTab = 0; 
+var currentTab = 0;
+var totalNumberOfTabs; 
 
 
 $(document).ready(function(){
 
   updateCurrentTab();
+  updateStepIndicator();
+
+  totalNumberOfTabs = document.getElementsByClassName("tab").length;
+
+  $("#nextBtn").click(function(){
+    
+    if (currentTab == totalNumberOfTabs - 1)
+    {
+      // We are on the last tab, so the user just pressed the submit button.
+      return;
+    }
+
+    var allTabs = document.getElementsByClassName("tab");
+
+    //Hide the current tab
+    allTabs.item(currentTab).style.display = "none";
+
+    // Move to the next tab.
+    currentTab = currentTab + 1;
+    updateCurrentTab();
+
+    updateStepIndicator();
+
+  });
 
 
+  $("#prevBtn").click(function(){
 
+    var allTabs = document.getElementsByClassName("tab");
 
+    //Hide the current tab
+    allTabs.item(currentTab).style.display = "none";
 
+    // Move to the next tab.
+    currentTab = currentTab + -1;
+    updateCurrentTab();
 
+    updateStepIndicator();
+
+  });  
 
 
 });
 
-function updateCurrentTab(n) {
+
+
+function updateCurrentTab() {
 
   var allTabs = document.getElementsByClassName("tab");
 
   // Bring the current tab to the front.
   allTabs.item(currentTab).style.display = "block";
+  
+  // Show/Hide the previous button.
+  if (currentTab == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
 
-
+  // The Next button becomes a submit button on the last tab. 
+  if (currentTab == (allTabs.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }  
 
 }
+
+
+function updateStepIndicator()
+{
+  var allSteps = document.getElementsByClassName("step");
+
+  // Begin by clearing all indicator styles
+  for (var i = 0; i < allSteps.length; i++) 
+  {
+    allSteps.item(i).className = allSteps.item(i).className.replace(" active", "");
+    allSteps.item(i).className = allSteps.item(i).className.replace(" finish", "");
+  }
+
+  // Mark all the completed tabs as complete.
+  for (var i = 0; i < currentTab; i++) 
+  {
+    allSteps.item(i).className += " finish";
+  }  
+
+  // Mark the current tab as active.
+  allSteps.item(currentTab).className += " active";
+  
+  // Acitvate current indicator.
+  //allSteps.item(currentTab).className += " active";
+  //allSteps.item(currentTab).className += " finish";
+
+}
+
+
+
+
+
+
 
 
 
