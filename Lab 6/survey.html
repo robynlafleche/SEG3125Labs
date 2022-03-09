@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+	<link href="styles/survey.css" rel="stylesheet" type="text/css">
+    <title>Lab 6 - </title>
+	<script src="https://kit.fontawesome.com/fe4398600e.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+  </head>
+  <body>
+    <a  href="index.html" ><button type="button" class="btn btn-light"><i class="fa-solid fa-house"></i></button></a>
+	  <!-- <a href="survey.html">Survey</a> -->
+	  <form id="surveyForm">
+		<div class="container bg-white">
+			<div class="tab">
+				<h3>Personal Information</h3>
+				<div class="form-group" style="text-align: left;">
+				  <label for="inputFirstName">First Name:</label>
+				  <input type="text" class="form-control" id="inputFirstName" placeholder="Jane">
+				</div>
+				<div class="form-group" style="text-align: left;">
+				  <label for="inputLast Name">Last Name:</label>
+				  <input type="text" class="form-control" id="inputLastName" placeholder="Doe">
+				</div>
+				<div class="form-group" style="text-align: left;">
+					<label for="inputEmail4">Email:</label>
+					<input type="email" class="form-control" id="inputEmail4" placeholder="group6@mail.ca">
+				  </div>
+				  <div class="form-group" style="text-align: left;">
+					<label for="inputPhoneNumber">Phone Number:</label>
+					<input type="tel" class="form-control" id="inputPhoneNumber" placeholder="613-255-1456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+				  </div>
+			</div>
+			<div class="tab">
+				<div class="form-group">
+					<h3> Which budget range did the website advertise the most? </h3>
+				<select id="budget" name="Which budget range did the website advertise the most?">
+					<option value="" selected="selected">- select -</option>
+					<option name="50-60$/night" value="50-60$ / night" >50-60$/night</option>
+					<option name="60-70$/night" value="60-70$ / night" >60-70$/night</option>
+					<option name="70-80$/night" value="70-80$ / night" >70-80$/night</option>
+					<option name="80-90$/night" value="80-90$ / night" >80-90$/night</option>
+					<option name="100-110$/night" value="100-110$ / night" >100-110$/night</option>
+					<option name="110-120$/night" value="110-120$ / night" >110-120$/night</option>
+				</select>
+				 </div>
+				 <div class="form-group">
+					<h3> What was your favourite feature of the website? </h3>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="User friendly search box"> User friendly search box</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Ability to search by moving an interactive map"> Ability to search by moving an interactive map</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Presentation of the search results"> Presentation of the search results</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Clear presentation of information"> Clear presentation of information</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Price bar chart"> Price bar chart</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Neighbourhood guides"> Neighbourhood guides</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="React"> React</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Real time alerts and booking notifications"> Real time alerts and booking notifications</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="What was your favourite feature of the website?" value="Ratings and reviews"> Ratings and reviews</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox"name="What was your favourite feature of the website?" value="Spring"> Spring</input>
+					</div>
+				 </div>
+			</div>
+			<div class="tab">
+				<div class="form-group">
+					<h3> Which location did Airbnb highlight the most? </h3>
+					<input name="Airbnb Highlight Location" type="text" class="form-control" id="location" placeholder="Enter the location">
+				  </div>
+				  <div class="form-group">
+					<h3> How readable are the characters displayed on the website? </h3>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" id="Highly Readable"
+						name="How readable are the characters displayed on the website?" value="Highly Readable">Highly Readable</input>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" id="Readable"
+						name="How readable are the characters displayed on the website?" value="Readable">Readable</input>
+						
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" id="Slightly Readable"
+						name="How readable are the characters displayed on the website?" value="Slightly Readable">Slightly Readable</input>
+						
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" id="Unredable"
+						name="How readable are the characters displayed on the website?" value="Unredable">Unredable</input>
+						
+					</div>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="form-group">
+					<h3> How likely are you to recommend Airbnb to a friend or colleague? </h3>
+					<select id="recommendation" name="How likely are you to recommend Airbnb to a friend or colleague?"> 
+						<option value="" selected="selected">- select -</option>        
+						<option name="Very Likely" value="Very Likely" >Very Likely</option>
+						<option name="Somewhat Likely" value="Somewhat Likely" >Somewhat Likely</option>
+						<option name="Neutral" value="Neutral" >Neutral</option>
+						<option name="Somewhat Unlikely" value="Somewhat Unlikely" >Somewhat Unlikely</option>
+						<option name="Very Unlikely" value="Very Unlikely" >Very Unlikely</option>            
+					</select>
+				</div>
+				<div class="form-group">
+					<h3>How would you rate the overall appearance of the website? </h3>
+					<input type="hidden" id="selected_rating" name="selected_rating" value="0" required="required">
+					<h5 class="bold rating">0 / 5</h5>
+					<button type="button" title="Poor" class="btnrating btn btn-default btn-lg checked" data-attr="1" name="How would you rate the overall appearance of the website?" value="1" id="rating-1"><i class="fa fa-star"></i></button>
+					<button type="button" title="Unsatisfactory" class="btnrating btn btn-default btn-lg" data-attr="2" name="How would you rate the overall appearance of the website?" value="2" id="rating-2"><i class="fa fa-star"></i></button>
+					<button type="button" title="Satisfactory" class="btnrating btn btn-default btn-lg" data-attr="3" name="How would you rate the overall appearance of the website?" value="3" id="rating-3"><i class="fa fa-star"></i></button>
+					<button type="button" title="Very satisfactory" class="btnrating btn btn-default btn-lg" data-attr="4" name="How would you rate the overall appearance of the website?" value="4" id="rating-4"><i class="fa fa-star"></i></button>
+					<button type="button" title="Outstanding" class="btnrating btn btn-default btn-lg" data-attr="5" name="How would you rate the overall appearance of the website?" value="5" id="rating-5"><i class="fa fa-star"></i></button>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="form-group">
+					<h3> How easy was it for you to find a place to stay in your destination of choice? </h3>
+					<select id="easyfind" name="How easy was it for you to find a place to stay in your destination of choice?">   
+						<option value="" selected="selected">- select -</option>      
+						<option name="Very Easy" value="Very Easy">Very Easy</option>
+						<option name="Easy" value="Easy">Easy</option>
+						<option name="Moderate" value="Moderate">Moderate</option>
+						<option name="Difficult" value="Difficult">Difficult</option>
+						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
+					</select>
+				</div>
+				<div class="form-group">
+					<h3> How would you rank the difficulty of signing up for an account on Airbnb? </h3>
+					<select id="difficulty" name="How would you rank the difficulty of signing up for an account on Airbnb?">         
+						<option value="" selected="selected">- select -</option>      
+						<option name="Very Easy" value="Very Easy">Very Easy</option>
+						<option name="Easy" value="Easy">Easy</option>
+						<option name="Moderate" value="Moderate">Moderate</option>
+						<option name="Difficult" value="Difficult">Difficult</option>
+						<option name="Very Difficult" value="Very Difficult">Very Difficult</option>            
+					</select>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="form-group">
+					<h3>Suggestions about the user interface experience:</h3>
+					<textarea class="form-control" name="Suggestions about the user interface experience" rows="5" id="comment"></textarea>
+				  </div>
+			</div>
+		</div>	
+		<div style="overflow:auto; display:inline;"><br>
+			<div style="float:right;">
+			  <button type="button" class="btn btn-light" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+			  <button type="button" class="btn btn-light" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			</div>
+		</div>
+
+		<div style="text-align:center;margin-top:40px;">
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+		  </div>
+	</form>
+	  
+
+	<div class = "signature">
+		<p id="signature"> Website designed by Group 6</p>	
+		</div>
+  </body>
+  <script src="scripts/rating.js"></script>
+  <script src="scripts/survey.js"></script>
+</html>
