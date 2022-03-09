@@ -3,7 +3,9 @@
 
 var mysql = require('mysql');
 
+
 // create the connection to the database with desired credentials
+// code for connecting to the database was inspired by https://www.w3schools.com/nodejs/nodejs_mysql_insert.asp
 var conn = mysql.createConnection({
 	host: "127.0.0.1",
 	port: 3306,
