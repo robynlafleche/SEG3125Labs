@@ -72,3 +72,7 @@ body {
 
   background-size: cover;
 }
+
+.FeedbackSlot {
+  color: red;
+}
