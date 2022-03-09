@@ -12,6 +12,9 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 var fs = require('fs');
 
+// import mysql
+var mysql = require("mysql");
+
 // Read a data file.
 function readData(fileName){
     let dataRead = fs.readFileSync(fileName);
@@ -39,7 +42,7 @@ function appendData(jsonSurveyResults, dbFilePath)
     fs.appendFileSync(dbFilePath, "\n"); // Add a new line so we can see each entry line by line.
 }
 
-function addSurveyResultsToDatabase(jsonSurveyResults)
+function addSurveyResultsToDatabaseJSON(jsonSurveyResults)
 {
     // Add a specific survey entry, that a user just submitted to the database (both of the JSON databases).
     
@@ -229,6 +232,40 @@ function addSurveyResultsToDatabase(jsonSurveyResults)
 
 // Above this line is the JSON implementation of the database. Below this line is the SQL implementation of the database.
 
+// create a connection to the database
+var conn = mysql.createConnection({
+	host: "127.0.0.1",
+	user: "root",
+	password: "group6"
+});
+
+conn.connect(function(error){
+	if (error)
+		throw error;	
+	else{
+		console.log("connected to database");
+	}
+});
+
+
+function addSurveyResultsToDatabaseMySQL(jsonSurveyResults)
+{
+	console.log("jsonSurveyResults :");
+	console.log(jsonSurveyResults);  
+
+	var firstName = jsonSurveyResults["inputFirstName"];
+	var lastName = jsonSurveyResults["inputLastName"];
+	var email = jsonSurveyResults["inputEmail4"];
+	var phoneNumber = jsonSurveyResults["inputPhoneNumber"];
+
+	var sql = "INSERT INTO group6db.users (firstName, lastName, email, phoneNumber) VALUES ('"+firstName+"', '"+lastName+"', '"+email+"', '"+phoneNumber+"')";
+	conn.query(sql, function(error, result) {
+		if (error) {
+			throw error;
+        }
+	});    
+
+}
 
 
 
@@ -269,7 +306,8 @@ module.exports = function(app){
         //Solution for [Object: null prototype] removal obtained from https://stackoverflow.com/questions/56298481/how-to-fix-object-null-prototype-title-product
         const surveyInputResults = JSON.parse(JSON.stringify(req.body)); // gets rid of the [Object: null prototype]
         // Add the survey input the user just provided to the database.
-        addSurveyResultsToDatabase(surveyInputResults);
+        addSurveyResultsToDatabaseJSON(surveyInputResults);
+        addSurveyResultsToDatabaseMySQL(surveyInputResults);
     });
     
 
