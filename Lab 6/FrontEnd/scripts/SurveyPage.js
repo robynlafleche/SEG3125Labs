@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
 
-  $("#surveySubmitButton").click(function(){
+ /* $("#surveySubmitButton").click(function(){
 
     var surveyForm = $('#surveyForm');
 
@@ -18,6 +18,6 @@ $(document).ready(function(){
     });
     return false;    
 
-  });
+  });*/
 
 });

@@ -16,6 +16,10 @@ $(document).ready(function(){
     if (currentTab == totalNumberOfTabs - 1)
     {
       // We are on the last tab, so the user just pressed the submit button.
+      submitCompletedSurvey();
+      alert("Thank you for completing the survey.");
+      // Go back to the home page.
+      window.location.href = "index.html";
       return;
     }
 
@@ -358,7 +362,25 @@ function getNumberOfSelection(buttonsGroupName)
 
 
 
+function submitCompletedSurvey()
+{
+  // jQuery that will "listen" to the html survey.html
+  // This is adapted from the sample provided by Professor Caroline Barriere :// https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module6-SurveyAnalysis
+  
+  var surveyForm = $('#surveyForm');
 
+  $.ajax({
+    type: 'POST',
+    url: '/survey',
+    data: surveyForm.serializeArray(),
+    // Send the serialize (JSON formatted data over to the system controller)
+    success: function(data){
+    }
+  });
+
+  return false;  
+
+}
 
 
 
