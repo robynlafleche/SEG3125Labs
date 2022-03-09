@@ -244,6 +244,7 @@ module.exports = function(app){
         var currentCummulativeResults = readData(DATABASE_FILENAME_PATH_SUMMARY);
         console.log("currentCummulativeResults :");
         console.log(currentCummulativeResults);
+               
         // Provide the complete database JSON object to the back-end server EJS file so it can render that data nicely on the server web page.
         res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResults});
     });
