@@ -1,5 +1,38 @@
+
+// Global variables
 var currentTab = 0; 
-showTab(currentTab); 
+
+
+$(document).ready(function(){
+
+  updateCurrentTab();
+
+
+
+
+
+
+
+
+});
+
+function updateCurrentTab(n) {
+
+  var allTabs = document.getElementsByClassName("tab");
+
+  // Bring the current tab to the front.
+  allTabs.item(currentTab).style.display = "block";
+
+
+
+}
+
+
+
+
+
+
+
 
 function showTab(n) {
     var tabs = document.getElementsByClassName("tab");
@@ -26,6 +59,7 @@ function showTab(n) {
     x.item(n).className += " active";
   }
 
+
   function nextPrev(n) {
     var x = document.getElementsByClassName("tab");
     var validity = validateForm();
@@ -41,14 +75,16 @@ function showTab(n) {
     showTab(currentTab);
   }
 
+
+
   function validateForm() {
    
-    var x, y, z, valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x.item(currentTab).getElementsByTagName("input");
-    z = x.item(currentTab).getElementsByTagName("select");
+    var tabs, textFields, selectionFields, valid = true;
+    tabs = document.getElementsByClassName("tab");
+    textFields = tabs.item(currentTab).getElementsByTagName("input");
+    selectionFields = tabs.item(currentTab).getElementsByTagName("select");
 
-    for (i = 0; i < y.length; i++) {
+    for (i = 0; i < textFields.length; i++) {
         //for selection box 
         /* if (y.item(i).name == "What was your favourite feature of the website?") {
             var getSelectedCheckboxValue = document.querySelectorAll(   
@@ -69,16 +105,16 @@ function showTab(n) {
         } */
 
         //for all input tags including ones above
-        if (y.item(i).value == "") {
-        y.item(i).className += " invalid";
+        if (textFields.item(i).value == "") {
+        textFields.item(i).className += " invalid";
         valid = false;
       }
     }
     //for all select tags
-    for (j = 0; j < z.length; j++) {
+    for (j = 0; j < selectionFields.length; j++) {
 
   
-        if (z.item(j).value == "") {
+        if (selectionFields.item(j).value == "") {
           alert("Please select a selection");
           valid = false;
         }
