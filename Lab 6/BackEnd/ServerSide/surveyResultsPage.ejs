@@ -551,10 +551,22 @@
     <br>
       <canvas class="styleForTheGraphs" id="question7"  width="400px" height="400px"></canvas>
   </div>
-  <div class="container-sm chartsForData">
+  <div id="" class="container-sm chartsForData">
     <h4>Suggestions about the user interface experience</h4>
     <br>
-      <canvas class="styleForTheGraphs" id="question8"  width="600px" height="400px"></canvas>
+      <!-- <canvas class="styleForTheGraphs" id="question8"  width="600px" height="400px"></canvas> -->
+     <div id="thisOne" style="border: 2px solid blue;">
+      <script>
+        for (i = 0; i< labelforCharts[8].length; i++) {
+           document.write('<div id="toBechanged">'+i+": "+labelforCharts[8][i]+'<div/>'+'</br>')     
+            document.write('<hr size="60";width: 100px; display: block;  display:inline-block; color="blue">')     
+            document.write('<hr size="60" display: block;  display:inline-block; color="blue">')     
+        
+        }                                  
+    </script>
+    </div>
+    </div>
+    
   </div>
      
     
@@ -572,6 +584,9 @@
   background: url("../images/home1.png") no-repeat center center fixed;
 
   background-size: cover;
+}
+#toBechanged{
+   display:inline-block
 }
 </style>
 </html>
