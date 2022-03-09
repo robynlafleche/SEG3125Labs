@@ -408,16 +408,6 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 
         var surveyResultID = currentDBSurveyResultJSONFormat["surveyResultID"];
 
-        /*if (alreadyEncounteredSurveryResultIDs.includes(surveyResultID))
-        {
-            // Skip since we do not want to double count - this happens because of the SQL JOIN operation (but that stuff is no more now, has been removed)
-            continue;
-        } 
-        else
-        {
-            alreadyEncounteredSurveryResultIDs.push(surveyResultID);
-        }      */ 
-
         for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
         {   
             console.log("sqlNameKey = " + sqlNameKey);
@@ -456,15 +446,6 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
 
     }
 
-    /*
-    for (var dbSurveyEntry of dbResultsSQL)
-    {
-        for (var sqlNameKey in sqlNamesToDisplayNamesMap) 
-        {
-            console.log("sqlNameKey = " + sqlNameKey);
-        }
-    }
-    */
 
     // The favourite feature entry must be added.
     
@@ -541,8 +522,6 @@ function convertDBResultsFromMySQLToJSON(dbResultsSQL, res_obj)
         return jsonEquivalentSurveyDisplayableResults;
 	});      
 
-
-    //return jsonEquivalentSurveyDisplayableResults;
 }
 
 
@@ -560,17 +539,11 @@ module.exports = function(app){
         //console.log("currentCummulativeResultsJSON :");
         //console.log(currentCummulativeResultsJSON);
 
-
+        // Get the data from the new SQL database instead of the old JSON database.
         obtainAndDisplayAllSurveyResultsFromMySQLDatabase(res);
-
-        // Obtain all the survey results from our MySQL database into a JSON object.
-        //var currentCummulativeResultsSQL = obtainAllSurveyResultsFromMySQLDatabase();
-        //currentCummulativeResultsJSON_X = convertDBResultsFromMySQLToJSON(currentCummulativeResultsSQL);
-        //console.log("currentCummulativeResultsJSON_X :");
-        //console.log(currentCummulativeResultsJSON_X);        
-
                
         // Provide the complete database JSON object to the back-end server EJS file so it can render that data nicely on the server web page.
+        // This is no longer being used, the SQL database is used now instead of the JSON database.
         //res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     });
 

@@ -331,15 +331,10 @@ function validateCurrentForm()
       $("#SigningUpFeedbackSlot").text("");        
     }     
 
-
-
     return noErrorFound;    
-
-
   }
 
   return false;
-
 }
 
 
