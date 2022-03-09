@@ -18,4 +18,11 @@ conn.connect(function(err) {
 			throw err;
 		console.log("Database successfully created!");
 	});
+	var sql = "CREATE TABLE users (firstName VARCHAR(255), lastName VARCHAR(255), email VARCHAR(255), phoneNumber VARCHAR(255))";
+  	conn.query(sql, function (err, result) {
+    if (err) 
+    	throw err;
+    console.log("Table created");
+  });
+
 });
