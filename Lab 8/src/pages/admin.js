@@ -45,6 +45,7 @@ const Admin = () => {
 		'Room 4', 'Room 5','Room 6'],
 		datasets: [
 		  {
+			  
 			label: 'Number of Succesful attempts of finishing the room',
 			backgroundColor: [
 				'rgba(75, 192, 192, 0.2)',
@@ -129,11 +130,13 @@ return (
 						display:true,
 						position:'right'
 						}
+						
 					}}
         
 		 		  />
       		</div>
 			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw'}}>
+			  <h4>Number of succesful attempts per room</h4>
         		<Pie
 					data={state1}
 					options={{
