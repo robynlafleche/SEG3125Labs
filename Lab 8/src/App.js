@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Navbar from './components/Navbar';
@@ -14,7 +13,8 @@ import Admin from './pages/admin';
 function App() {
   return (
     <Router>
-    <Navbar fill variant="tabs" defaultActiveKey="/home"/>
+    <Navbar defaultActiveKey="/home"/>
+    <img src={require('./logo.png')} alt="logo" className="Nav-logo" />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/home' element={<Home/>} />

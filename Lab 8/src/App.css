@@ -37,3 +37,10 @@
     transform: rotate(360deg);
   }
 }
+
+.Nav-logo {
+  float: left !important;
+  margin-left: -150px !important;
+  margin-top: -320px !important;
+  transform: scale(0.5);
+}

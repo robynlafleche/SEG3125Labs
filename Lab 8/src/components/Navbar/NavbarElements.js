@@ -7,8 +7,8 @@ export const Nav = styled.nav`
 	background: #FFDA79;
 	height: 85px;
 	display: flex;
-	justify-content: space-between;
-	padding: 0.2rem calc((100vw - 1000px) / 2);
+	justify-content: space-around;
+	padding: 25px;
 	z-index: 12;
 	/* Third Nav */
 	/* justify-content: flex-start; */
@@ -18,6 +18,7 @@ export const NavLink = styled(Link)`
 	color: #000000;
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 	text-decoration: none;
 	padding: 0 1rem;
 	height: 100%;
@@ -59,6 +60,7 @@ export const NavBtn = styled.nav`
 	display: flex;
 	align-items: center;
 	margin-right: 24px;
+	justify-content: space-around
 	/* Third Nav */
 	/* justify-content: flex-end;
 	width: 100vw; */
