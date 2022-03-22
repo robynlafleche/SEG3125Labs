@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Doughnut,Bar } from 'react-chartjs-2';
+import { Doughnut,Bar ,Pie} from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js'; import { Chart as ChartJS } from 'chart.js/auto'
 import { Chart }            from 'react-chartjs-2'
 // https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale
@@ -11,11 +11,11 @@ import { Chart }            from 'react-chartjs-2'
 
 const Admin = () => {
 	const state = {
-		labels: ['January', 'February', 'March',
-				 'April', 'May'],
+		labels: ['Room 1', 'Room 2', 'Room 3',
+				 'Room 4', 'Room 5','Room 6'],
 		datasets: [
 		  {
-			label: 'Rainfall',
+			label: 'Number of Room Booking for 2022 ',
 			backgroundColor: [
 				'rgba(75, 192, 192, 0.2)',
 				'rgba(54, 162, 235, 0.2)',
@@ -35,8 +35,38 @@ const Admin = () => {
 				'rgb(201, 203, 207)'
 			   
 			  ],
-			borderWidth: 20,
-			data: [65, 59, 80, 81, 56]
+			borderWidth: 5,
+			data: [65, 59, 80, 81, 56,90]
+		  }
+		]
+	  }
+	  const state1 = {
+		labels: ['Room 1', 'Room 2', 'Room 3',
+		'Room 4', 'Room 5','Room 6'],
+		datasets: [
+		  {
+			label: 'Number of Succesful attempts of finishing the room',
+			backgroundColor: [
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 205, 86, 0.2)',
+				'rgba(201, 203, 207, 0.2)'
+			  ],
+			  borderColor: [
+			  'rgb(75, 192, 192)',
+				'rgb(54, 162, 235)',
+				'rgb(153, 102, 255)',
+				'rgb(255, 99, 132)',
+				'rgb(255, 159, 64)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)'
+			   
+			  ],
+			borderWidth: 5,
+			data: [30, 50, 15, 18, 56, 40]
 		  }
 		]
 	  }
@@ -84,16 +114,33 @@ return (
 		</div>
 
 		<div id="pageOfAdminStats" style={{display:'none'}}>
-			<h2>Oh you didn't</h2>
+			<h2>Room Statistics</h2>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
-			<div class="chart-container" style={{position: 'relative', height:'40vh', width:'70vw'}}>
+			<div class="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
         		<Bar
 					data={state}
 					options={{
 						title:{
 						display:true,
 						text:'Average Rainfall per month',
-						fontSize:200
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+      		</div>
+			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw'}}>
+        		<Pie
+					data={state1}
+					options={{
+						title:{
+						display:true,
+						text:'Average Rainfall per month',
+						fontSize:20
 						},
 						legend:{
 						display:true,
