@@ -2,6 +2,10 @@ import './booking.css';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'react-bootstrap';
+import { useModal } from 'react-hooks-use-modal';
+import { useNavigate } from 'react-router-dom';
+
+//table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
 const data = [
   { room: "Space Adventure", time: "1:30 PM", slots: 0, price: "$20"},
@@ -12,9 +16,15 @@ const data = [
 
 
 const Booking = () => {
+
+	let navigate = useNavigate();
+	const pickDateButton = () => {
+		let path = '/bookingb'
+		navigate(path);
+	}
 return (
 	<div className="Booking-container">
-	<Button className="pick-date-button">Pick a date</Button>
+	<Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>Pick a date</Button>
 	<div className = "Booking-table">
       <table>
         <tr>
@@ -33,7 +43,7 @@ return (
               <td>{val.slots}</td>
               <td>{val.price}</td>
               <td><Button id="Info">Info</Button></td>
-              <td><Button id="Book">Book</Button></td>
+              <td><Button id="Book" >Book</Button></td>
             </tr>
           )
         })}

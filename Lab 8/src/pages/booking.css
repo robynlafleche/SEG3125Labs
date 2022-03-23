@@ -41,15 +41,15 @@ body {
 }
 
 .pick-date-button{
-  position:  relative;
-  justify-content:  right;
-  right: -100px;
+  position: relative;
+  bottom: -20px;
+  left: -280px;
 }
 
 .Booking-container{
   position:  relative;
   bottom: 3px;
-  background-color: #E5E5E5;
+  background-color: #242423;
   justify-content: center;
   align-items: center;
   height: 100%;
