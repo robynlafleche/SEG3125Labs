@@ -95,9 +95,11 @@ return (
 	<div
 	style={{
 		display: 'flex',
+		
 		// justifyContent: 'Right',
 		// alignItems: 'Right',
 		// height: '100vh'
+		
 	}}
 
 	>
@@ -116,6 +118,7 @@ return (
 
 		<div id="pageOfAdminStats" style={{display:'none'}}>
 			<h2>Room Statistics</h2>
+			<h4>Number of Room Booking for 2022</h4>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
 			<div class="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
         		<Bar
@@ -135,7 +138,7 @@ return (
         
 		 		  />
       		</div>
-			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw'}}>
+			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px'}}>
 			  <h4>Number of succesful attempts per room</h4>
         		<Pie
 					data={state1}
@@ -153,6 +156,154 @@ return (
         
 		 		  />
       		</div>
+
+			  <div>
+			  <h4>The stats for Virtual Rooms</h4>
+			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
+			  <div>
+			  <table style={{ tableLayout: 'fixed',
+				
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+				<div>
+				<table style={{ tableLayout: 'fixed',
+				width: '100%',
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+			  </div>
+
+			  <div>
+			  <h4>The stats for Outdoor Rooms</h4>
+			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
+			  <div>
+			  <table style={{ tableLayout: 'fixed',
+				
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+				<div>
+				<table style={{ tableLayout: 'fixed',
+				width: '100%',
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+			  </div>
+
+			  <div>
+			  <h4>The stats for Indoor Rooms</h4>
+			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
+			  <div>
+			  <table style={{ tableLayout: 'fixed',
+				
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+				<div>
+				<table style={{ tableLayout: 'fixed',
+				width: '100%',
+				borderCollapse: 'collapse',
+				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
+				<tr>
+					<th style={{borderBottom: '1px solid black'}}>Company</th>
+					<th style={{borderBottom: '1px solid black'}}>Contact</th>
+					<th style={{borderBottom: '1px solid black'}}>Country</th>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr style={{borderBottom: '1px solid black'}}>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				</table>
+				</div>
+			  </div>
+			  
 		</div>
 
 	</div>
