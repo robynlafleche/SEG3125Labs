@@ -105,8 +105,8 @@ const Admin = () => {
 	//code inspired from https://www.w3schools.com/react/react_forms.asp
 	const [username, setusername] = useState(''); // '' is the initial state value
 	const [password, setpassword] = useState(''); // '' is the initial state value
-	const adminUsername = "a";
-	const adminPassword = "a";
+	const adminUsername = "admin";
+	const adminPassword = 1234;
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if(username == adminUsername && password == adminPassword){
@@ -137,13 +137,14 @@ return (
 		<div id="loginPage">
 			<h1>Log into your admin account to view and schedule bookings</h1>
 				<form onSubmit={handleSubmit}>
+				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
 					<div>
     					<label>Username</label>
-    					<input value={username} onInput={e => setusername(e.target.value)}/>
+    					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={username} onInput={e => setusername(e.target.value)}/>
 						<label>Password</label>
-    					<input value={password} onInput={e => setpassword(e.target.value)}/>
+    					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={password} onInput={e => setpassword(e.target.value)}/>
     				</div>  
-				<button type="submit">Login</button>
+				<button style={{ width: '30%',float:'center',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} type="submit">Login</button>
 				</form>
 		</div>
 
