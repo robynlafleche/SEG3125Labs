@@ -36,7 +36,7 @@ const Admin = () => {
 			   
 			  ],
 			borderWidth: 5,
-			data: [65, 59, 80, 81, 56,90]
+			data: [12,20,30,90,180,66]
 		  }
 		]
 	  }
@@ -67,7 +67,38 @@ const Admin = () => {
 			   
 			  ],
 			borderWidth: 5,
-			data: [30, 50, 15, 18, 56, 40]
+			data: [3,10,20,40,90,33]
+		  }
+		]
+	  }
+	  const state2 = {
+		labels: ['Room 1', 'Room 2', 'Room 3',
+		'Room 4', 'Room 5','Room 6'],
+		datasets: [
+		  {
+			  
+			label: 'Sales in $ per room',
+			backgroundColor: [
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 205, 86, 0.2)',
+				'rgba(201, 203, 207, 0.2)'
+			  ],
+			  borderColor: [
+			  'rgb(75, 192, 192)',
+				'rgb(54, 162, 235)',
+				'rgb(153, 102, 255)',
+				'rgb(255, 99, 132)',
+				'rgb(255, 159, 64)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)'
+			   
+			  ],
+			borderWidth: 5,
+			data: [860,1260,700,3000,1200,800]
 		  }
 		]
 	  }
@@ -145,7 +176,7 @@ return (
 					options={{
 						title:{
 						display:true,
-						text:'Average Rainfall per month',
+						text:'',
 						fontSize:20
 						},
 						legend:{
@@ -157,13 +188,13 @@ return (
 		 		  />
       			</div>
 				  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
-			  <h4>Number of succesful attempts per room</h4>
+			  <h4>Sales in $ per room</h4>
         		<Pie
-					data={state1}
+					data={state2}
 					options={{
 						title:{
 						display:true,
-						text:'Average Rainfall per month',
+						text:'',
 						fontSize:20
 						},
 						legend:{
@@ -174,43 +205,47 @@ return (
         
 		 		  />
       			</div>
+					<hr style={{width:'0%', float:'center'}}></hr>
+					<hr></hr>
 
+					<h3></h3>
 			  <div>
-				<h4>The stats for Rooms</h4>
+				{/* <h4>The stats for Rooms</h4> */}
 				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
 				<div>
+		
 				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 1</th>
+						<th style={{borderBottom: '1px solid black'}}>Space Adventure</th>
+						<th style={{borderBottom: '1px solid black'}}>(60 mins)</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
+						<th style={{borderBottom: '1px solid black'}}>teams played</th>
+						<td style={{borderBottom: '1px solid black'}}>12</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
+						<td style={{borderBottom: '1px solid black'}}>3</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>25%</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
+						<td style={{borderBottom: '1px solid black'}}>43:58 mins</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$860</td>
 						
 					</tr>
 					</table>
@@ -221,33 +256,33 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 2</th>
+						<th style={{borderBottom: '1px solid black'}}>Jungle Escape</th>
+						<th style={{borderBottom: '1px solid black'}}>(45 min)</th>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
+						<td style={{borderBottom: '1px solid black'}}>20</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>50%</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
+						<td style={{borderBottom: '1px solid black'}}>25 mins</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$1260</td>
 						
 					</tr>
 					</table>
@@ -265,33 +300,33 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'200px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 3</th>
+						<th style={{borderBottom: '1px solid black'}}>Hunted House</th>
+						<th style={{borderBottom: '1px solid black'}}>(40 mins)</th>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
+						<td style={{borderBottom: '1px solid black'}}>30</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
+						<td style={{borderBottom: '1px solid black'}}>20</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>66%</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
+						<td style={{borderBottom: '1px solid black'}}>10 mins</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$700</td>
 						
 					</tr>
 					</table>
@@ -302,33 +337,33 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 4</th>
+						<th style={{borderBottom: '1px solid black'}}>Sea Adventure</th>
+						<th style={{borderBottom: '1px solid black'}}>(30 mins)</th>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
 						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>40</td>
+						
+					</tr>
+					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>44%</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
+						<td style={{borderBottom: '1px solid black'}}>15 mins</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$3000</td>
 						
 					</tr>
 					</table>
@@ -346,13 +381,13 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'0px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 5</th>
+						<th style={{borderBottom: '1px solid black'}}>Mars</th>
+						<th style={{borderBottom: '1px solid black'}}>(120 mins)</th>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
+						<td style={{borderBottom: '1px solid black'}}>180</td>
 						
 					</tr>
 					<tr>
@@ -362,7 +397,7 @@ return (
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>50%</td>
 						
 					</tr>
 					<tr>
@@ -372,7 +407,7 @@ return (
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$1200</td>
 						
 					</tr>
 					</table>
@@ -383,33 +418,33 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Name</th>
-						<th style={{borderBottom: '1px solid black'}}>Room 6</th>
+						<th style={{borderBottom: '1px solid black'}}>Sky Escape</th>
+						<th style={{borderBottom: '1px solid black'}}>(200 mins)</th>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
+						<td style={{borderBottom: '1px solid black'}}>66</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
+						<td style={{borderBottom: '1px solid black'}}>33</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>60%</td>
+						<td style={{borderBottom: '1px solid black'}}>50%</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
+						<td style={{borderBottom: '1px solid black'}}>150 mins</td>
 						
 					</tr>
 					<tr>
 						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						<td style={{borderBottom: '1px solid black'}}>$800</td>
 						
 					</tr>
 					</table>
