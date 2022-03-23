@@ -36,6 +36,9 @@ const Navbar = () => {
 					<NavLink to='/admin' activeStyle>
 						Admin
 					</NavLink>
+					<NavLink to='/cart' activeStyle>
+						Cart
+					</NavLink>					
 				</NavMenu>
 			</Nav>
 		</>

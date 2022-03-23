@@ -9,6 +9,7 @@ import Rooms from './pages/rooms';
 import TeamBuilding from './pages/team-building';
 import Contact from './pages/contact';
 import Admin from './pages/admin';
+import Cart from './pages/cart';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path='/team-building' element={<TeamBuilding/>} />
         <Route path='/admin' element={<Admin/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path='/cart' element={<Cart/>} />
+
       </Routes>
     </Router>
   );
