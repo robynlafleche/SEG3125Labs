@@ -40,8 +40,11 @@ background-img {
 Button {
     font-family: Arial;
     font-style: bold;
-    background-color: #424040 !important;
+    border-color: #FFDA79 !important;
+    background-color: #FFDA79 !important;
     position:  relative;
     left:  30px;
     color:  black;
+    border-radius: 5px;
+    margin: 10px 0px;
 }

@@ -15,7 +15,7 @@ return (
 	<h1>CONQUER </h1>
 	<h1>ESCAPE</h1>
 	<h2> Book an escape room today </h2>
-	<Button onClick={bookNowButton}>Book Now</Button>;
+	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>;
 	</div>
 	);
 };
