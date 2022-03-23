@@ -138,7 +138,7 @@ return (
         
 		 		  />
       		</div>
-			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px'}}>
+			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
 			  <h4>Number of succesful attempts per room</h4>
         		<Pie
 					data={state1}
@@ -155,7 +155,25 @@ return (
 					}}
         
 		 		  />
-      		</div>
+      			</div>
+				  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
+			  <h4>Number of succesful attempts per room</h4>
+        		<Pie
+					data={state1}
+					options={{
+						title:{
+						display:true,
+						text:'Average Rainfall per month',
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+      			</div>
 
 			  <div>
 				<h4>The stats for Rooms</h4>
@@ -164,66 +182,74 @@ return (
 				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 1</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 					</div>
 				<div>
-					<table style={{ tableLayout: 'fixed',
+				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 2</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 				</div>
 				
@@ -237,66 +263,74 @@ return (
 				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'200px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 3</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 					</div>
 				<div>
-					<table style={{ tableLayout: 'fixed',
+				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 4</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 				</div>
 				
@@ -310,66 +344,74 @@ return (
 				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'0px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 5</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 					</div>
 				<div>
-					<table style={{ tableLayout: 'fixed',
+				<table style={{ tableLayout: 'fixed',
 					
 					borderCollapse: 'collapse',
-					border: '3px solid purple',marginBottom:'70px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Name</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 6</th>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
+						<td style={{borderBottom: '1px solid black'}}>10</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
+						<td style={{borderBottom: '1px solid black'}}>90</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
+						<td style={{borderBottom: '1px solid black'}}>60%</td>
 						
 					</tr>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Company</th>
-						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
+						<td style={{borderBottom: '1px solid black'}}>90 mins</td>
 						
 					</tr>
-					
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
+						<td style={{borderBottom: '1px solid black'}}>$999</td>
+						
+					</tr>
 					</table>
 				</div>
 				
