@@ -158,151 +158,230 @@ return (
       		</div>
 
 			  <div>
-			  <h4>The stats for Virtual Rooms</h4>
-			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-			  <div>
-			  <table style={{ tableLayout: 'fixed',
-				
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
-				</div>
+				<h4>The stats for Rooms</h4>
+				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
 				<div>
 				<table style={{ tableLayout: 'fixed',
-				width: '100%',
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
+					</div>
+				<div>
+					<table style={{ tableLayout: 'fixed',
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
 				</div>
-			  </div>
+				
+			</div>	 
 
-			  <div>
-			  <h4>The stats for Outdoor Rooms</h4>
-			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-			  <div>
-			  <table style={{ tableLayout: 'fixed',
+			<div>
 				
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
-				</div>
+				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
 				<div>
+			
 				<table style={{ tableLayout: 'fixed',
-				width: '100%',
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
+					</div>
+				<div>
+					<table style={{ tableLayout: 'fixed',
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
 				</div>
-			  </div>
+				
+			</div>	 
 
-			  <div>
-			  <h4>The stats for Indoor Rooms</h4>
-			  {/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-			  <div>
-			  <table style={{ tableLayout: 'fixed',
+			<div>
 				
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
-				</div>
+				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
 				<div>
+			
 				<table style={{ tableLayout: 'fixed',
-				width: '100%',
-				borderCollapse: 'collapse',
-				border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'rirght', marginLeft:'100px'}}>
-				<tr>
-					<th style={{borderBottom: '1px solid black'}}>Company</th>
-					<th style={{borderBottom: '1px solid black'}}>Contact</th>
-					<th style={{borderBottom: '1px solid black'}}>Country</th>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr>
-				<tr style={{borderBottom: '1px solid black'}}>
-					<td>Centro comercial Moctezuma</td>
-					<td>Francisco Chang</td>
-					<td>Mexico</td>
-				</tr>
-				</table>
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
+					</div>
+				<div>
+					<table style={{ tableLayout: 'fixed',
+					
+					borderCollapse: 'collapse',
+					border: '3px solid purple',marginBottom:'70px',width:'400px' ,float:'left', marginRight:'50px'}}>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					<tr>
+						<th style={{borderBottom: '1px solid black'}}>Company</th>
+						<th style={{borderBottom: '1px solid black'}}>Contact</th>
+						
+					</tr>
+					
+					</table>
 				</div>
-			  </div>
+				
+			</div>	 
+					
+					
+				
+			</div>
+			
+			  <div>
+			 
+			 
 			  
 		</div>
 
