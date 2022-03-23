@@ -418,8 +418,9 @@ return (
 				</div>
 				
 			</div>	 
-					
+			<hr style={{width:'0%', float:'center'}}></hr>
 					  <div class="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
+					  <hr style={{width:'0%', float:'center', position:'fixed'}}></hr>
 			  <h4>Number of succesful attempts per room</h4>
         		<Pie
 					data={state1}
