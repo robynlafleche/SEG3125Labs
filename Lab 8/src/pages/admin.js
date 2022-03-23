@@ -135,22 +135,23 @@ return (
 
 	>
 		<div id="loginPage">
-			<h1>Log into your admin account to view and schedule bookings</h1>
+			<h2>Log into your admin account to view and schedule bookings</h2>
 				<form onSubmit={handleSubmit}>
 				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
-					<div>
-    					<label>Username</label>
+					<div style={{position:'absolute',padding:'30px'}}>
+    					<label style={{color:'white'}}>Username</label>
     					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={username} onInput={e => setusername(e.target.value)}/>
-						<label>Password</label>
+						<label style={{color:'white'}}>Password</label>
     					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={password} onInput={e => setpassword(e.target.value)}/>
-    				</div>  
-				<button style={{ width: '30%',float:'center',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} type="submit">Login</button>
+						<button style={{position: 'initial',marginLeft:'100px',marginTop: '70px',width: '30%',float:'center',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} type="submit">Login</button>
+				
+					</div>  
 				</form>
 		</div>
 
-		<div id="pageOfAdminStats" style={{display:'none'}}>
-			<h2>Room Statistics</h2>
-			<h4>Number of Room Booking for 2022</h4>
+		<div id="pageOfAdminStats" style={{display:'none',backgroundColor:'black'}}>
+			<h2 style={{color:'white',position:'center'}}>Room Statistics</h2>
+			<h4 style={{color:'white'}}>Number of Room Booking for 2022</h4>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
 			<div class="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
         		<Bar
@@ -171,9 +172,8 @@ return (
 		 		  />
       		</div>
 			
-					<hr style={{width:'0%', float:'center'}}></hr>
-					<hr></hr>
-					<h3>Detailed statistics about each room</h3>
+				
+					
 
 					
 			  <div>
@@ -418,10 +418,12 @@ return (
 				</div>
 				
 			</div>	 
-			<hr style={{width:'0%', float:'center'}}></hr>
+			<hr style={{width:'0%', float:'center',color:'white'}}></hr>
 					  <div class="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
 					  <hr style={{width:'0%', float:'center', position:'fixed'}}></hr>
-			  <h4>Number of succesful attempts per room</h4>
+					 
+			  <h4 style={{color:'white'}}>Number of succesful attempts per room</h4>
+		
         		<Pie
 					data={state1}
 					options={{
@@ -439,7 +441,7 @@ return (
 		 		  />
       			</div>
 				  <div class="chart-container" style={{height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
-			  <h4>Sales in $ per room</h4>
+			  <h4 style={{color:'white'}}>Sales in $ per room</h4>
         		<Pie
 					data={state2}
 					options={{

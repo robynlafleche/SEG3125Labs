@@ -1,0 +1,32 @@
+label {
+  color: white;
+  position: relative;
+}
+/* #pageOfAdminStats {
+  left: 30px;
+  position: absolute;
+  display: none;
+  background-color: white;
+  padding-right: 30px;
+  padding-left: 30px;
+ 
+} */
+th,
+td {
+  border-bottom: 1px solid black;
+}
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid #ffda79;
+  margin-bottom: 30px;
+  width: 400px;
+  float: right;
+  margin-right: 20px;
+}
+.chart-container {
+  height: 30vh;
+  width: 30vw;
+  margin-bottom: 300px;
+  width: 400px;
+}
