@@ -10,6 +10,8 @@ import TeamBuilding from './pages/team-building';
 import Contact from './pages/contact';
 import Admin from './pages/admin';
 
+import './TransportMachine/TheTransportMachine'
+
 function App() {
   return (
     <Router>
