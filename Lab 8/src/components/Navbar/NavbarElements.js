@@ -18,6 +18,8 @@ export const NavLink = styled(Link)`
 	color: #000000;
 	display: flex;
 	align-items: center;
+	font-family: 'Work Sans', sans-serif;
+	fontWeight: 'bold';
 	justify-content: space-around;
 	text-decoration: none;
 	padding: 0 1rem;
@@ -38,6 +40,7 @@ export const Bars = styled(FaBars)`
 		right: 0;
 		transform: translate(-100%, 75%);
 		font-size: 1.8rem;
+		font-family: 'Work Sans', sans-serif;
 		cursor: pointer;
 	}
 `;
@@ -73,6 +76,7 @@ export const NavBtnLink = styled(Link)`
 	border-radius: 4px;
 	background: #808080;
 	padding: 10px 22px;
+	font-family: 'Work Sans', sans-serif;
 	color: #000000;
 	outline: none;
 	border: none;
@@ -87,3 +91,4 @@ export const NavBtnLink = styled(Link)`
 		color: #000000;
 	}
 `;
+

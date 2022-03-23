@@ -27,9 +27,6 @@ const Navbar = () => {
 					<NavLink to='/rooms' activeStyle>
 						Rooms
 					</NavLink>
-					<NavLink to='/team-building' activeStyle>
-						Team Building
-					</NavLink>
 					<NavLink to='/contact' activeStyle>
 						Contact
 					</NavLink>

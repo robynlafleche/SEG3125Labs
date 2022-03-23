@@ -6,7 +6,7 @@ body {
 
 h1 {
     color:  white;
-    font-family:  Arial;
+    font-family: 'Work Sans', sans-serif;
     font-style:  bold;
     font-size:  40px;
     position:  relative;
@@ -15,7 +15,7 @@ h1 {
 
 h2 {
     color:  white;
-    font-family:  Arial;
+    font-family: 'Work Sans', sans-serif;
     font-style:  cursive;
     font-size:  20px;
     position:  relative;
@@ -38,8 +38,9 @@ background-img {
 }
 
 Button {
-    font-family: Arial;
+    font-family: 'Work Sans', sans-serif;
     font-style: bold;
+    font-weight: 100px;
     border-color: #FFDA79 !important;
     background-color: #FFDA79 !important;
     position:  relative;
