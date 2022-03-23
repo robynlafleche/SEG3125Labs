@@ -169,46 +169,12 @@ return (
         
 		 		  />
       		</div>
-			  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
-			  <h4>Number of succesful attempts per room</h4>
-        		<Pie
-					data={state1}
-					options={{
-						title:{
-						display:true,
-						text:'',
-						fontSize:20
-						},
-						legend:{
-						display:true,
-						position:'right'
-						}
-					}}
-        
-		 		  />
-      			</div>
-				  <div class="chart-container" style={{position: 'relative', height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
-			  <h4>Sales in $ per room</h4>
-        		<Pie
-					data={state2}
-					options={{
-						title:{
-						display:true,
-						text:'',
-						fontSize:20
-						},
-						legend:{
-						display:true,
-						position:'right'
-						}
-					}}
-        
-		 		  />
-      			</div>
+			
 					<hr style={{width:'0%', float:'center'}}></hr>
 					<hr></hr>
+					<h3>Detailed statistics about each room</h3>
 
-					<h3></h3>
+					
 			  <div>
 				{/* <h4>The stats for Rooms</h4> */}
 				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
@@ -219,7 +185,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Space Adventure</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 1: Space Adventure</th>
 						<th style={{borderBottom: '1px solid black'}}>(60 mins)</th>
 						
 					</tr>
@@ -256,7 +222,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Jungle Escape</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 2: Jungle Escape</th>
 						<th style={{borderBottom: '1px solid black'}}>(45 min)</th>
 						
 					</tr>
@@ -300,7 +266,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'200px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Hunted House</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 3: Hunted House</th>
 						<th style={{borderBottom: '1px solid black'}}>(40 mins)</th>
 						
 					</tr>
@@ -337,7 +303,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Sea Adventure</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 4: Sea Adventure</th>
 						<th style={{borderBottom: '1px solid black'}}>(30 mins)</th>
 						
 					</tr>
@@ -381,7 +347,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'0px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Mars</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 5: Mars</th>
 						<th style={{borderBottom: '1px solid black'}}>(120 mins)</th>
 						
 					</tr>
@@ -418,7 +384,7 @@ return (
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
 					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Sky Escape</th>
+						<th style={{borderBottom: '1px solid black'}}>Room 6: Sky Escape</th>
 						<th style={{borderBottom: '1px solid black'}}>(200 mins)</th>
 						
 					</tr>
@@ -452,6 +418,42 @@ return (
 				
 			</div>	 
 					
+					  <div class="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
+			  <h4>Number of succesful attempts per room</h4>
+        		<Pie
+					data={state1}
+					options={{
+						title:{
+						display:true,
+						text:'',
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+      			</div>
+				  <div class="chart-container" style={{height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
+			  <h4>Sales in $ per room</h4>
+        		<Pie
+					data={state2}
+					options={{
+						title:{
+						display:true,
+						text:'',
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+      			</div>
 					
 				
 			</div>
