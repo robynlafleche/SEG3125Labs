@@ -22,7 +22,7 @@ const Contact = () => {
 	}
 return (
 	<Container>
-	<h1>Get in touch with us</h1>
+	<h2 style={{color:'black'}}>Get in touch with us</h2>
 	<Row>
 		<Col>
 			<form onSubmit={handleSubmit}>

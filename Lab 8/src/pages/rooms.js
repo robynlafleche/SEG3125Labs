@@ -21,7 +21,7 @@ const Rooms = () => {
 
 return (
 	<Container>
-		<h1>Select your escape room</h1>
+		<h2 style={{color:'black'}}>Select your escape room</h2>
 		{rooms.map((room) => (
 			<Row key={room.id}>
 				<Col>
@@ -36,7 +36,6 @@ return (
 				</Col>
 
 				<Col>
-				console.log({room.imageSrc})
 					<Image src={require('./space.png')} alt="Room Image" fluid/>
 				</Col>
 				
