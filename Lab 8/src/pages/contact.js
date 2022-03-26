@@ -18,7 +18,7 @@ const Contact = () => {
   
 	const handleSubmit = (event) => {
 	  event.preventDefault();
-	  alert(inputs);
+	  alert("Your message has been received, Thank you for reaching out to our team. You should receive feedback withing 2-3 buisness days if a response from our team is necessary");
 	}
 return (
 	<Container>

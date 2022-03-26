@@ -153,7 +153,7 @@ return (
 			<h2 style={{color:'white',position:'center'}}>Room Statistics</h2>
 			<h4 style={{color:'white'}}>Number of Room Booking for 2022</h4>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
-			<div class="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
+			<div className="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
         		<Bar
 					data={state}
 					options={{
@@ -182,7 +182,6 @@ return (
 				<div>
 		
 				<table style={{ tableLayout: 'fixed',
-					
 					borderCollapse: 'collapse',
 					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
 					<tr>
@@ -419,7 +418,7 @@ return (
 				
 			</div>	 
 			<hr style={{width:'0%', float:'center',color:'white'}}></hr>
-					  <div class="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
+					  <div className="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
 					  <hr style={{width:'0%', float:'center', position:'fixed'}}></hr>
 					 
 			  <h4 style={{color:'white'}}>Number of succesful attempts per room</h4>
@@ -440,7 +439,7 @@ return (
         
 		 		  />
       			</div>
-				  <div class="chart-container" style={{height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
+				  <div className="chart-container" style={{height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
 			  <h4 style={{color:'white'}}>Sales in $ per room</h4>
         		<Pie
 					data={state2}

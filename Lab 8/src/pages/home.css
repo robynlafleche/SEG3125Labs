@@ -9,8 +9,6 @@ h1 {
     font-family: 'Work Sans', sans-serif;
     font-style:  bold;
     font-size:  40px;
-    position:  relative;
-    left:  -320px;
 }
 
 h2 {
@@ -18,18 +16,16 @@ h2 {
     font-family: 'Work Sans', sans-serif;
     font-style:  cursive;
     font-size:  20px;
-    position:  relative;
-    left:  30px;
 }
 /*
     image was taken from 
 */
 background-img {
     color: white;
-    backgroundImage: url("/public/background.jpg");
+    background-image: url("/public/background.jpg");
     display: fit;
-    justifyContent: center;
-    alignItems: center;
+    justify-content:center;
+    align-items: center;
     height: 130vh;
     position: absolute;
     bottom: -100;
@@ -44,7 +40,6 @@ Button {
     border-color: #FFDA79 !important;
     background-color: #FFDA79 !important;
     position:  relative;
-    left:  30px;
     color:  black;
     border-radius: 5px;
     margin: 10px 0px;
