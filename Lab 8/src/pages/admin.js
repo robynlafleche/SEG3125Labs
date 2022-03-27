@@ -4,7 +4,9 @@ import { Doughnut,Bar ,Pie} from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js'; import { Chart as ChartJS } from 'chart.js/auto'
 import { Chart }            from 'react-chartjs-2'
 // https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { Container, Row, Col, Image } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
 
 //how to import chartjs https://github.com/reactchartjs/react-chartjs-2
@@ -123,7 +125,7 @@ const Admin = () => {
 	
 	  }
 return (
-	<div
+	<Container
 	style={{
 		display: 'flex',
 		
@@ -134,26 +136,30 @@ return (
 	}}
 
 	>
-		<div id="loginPage">
+		<Container id="loginPage" style={{}}>
+			<h1>Admin Login Page</h1>
 			<h2>Log into your admin account to view and schedule bookings</h2>
 				<form onSubmit={handleSubmit}>
 				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
-					<div style={{position:'absolute',padding:'30px'}}>
+					{/* <div style={{position:'absolute',padding:'30px'}}> */}
+					<Row>
     					<label style={{color:'white'}}>Username</label>
     					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={username} onInput={e => setusername(e.target.value)}/>
 						<label style={{color:'white'}}>Password</label>
     					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={password} onInput={e => setpassword(e.target.value)}/>
 						<button style={{position: 'initial',marginLeft:'100px',marginTop: '70px',width: '30%',float:'center',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} type="submit">Login</button>
 				
-					</div>  
+					{/* </div>   */}
+					</Row>
 				</form>
-		</div>
+		</Container>
 
-		<div id="pageOfAdminStats" style={{display:'none',backgroundColor:'black'}}>
-			<h2 style={{color:'white',position:'center'}}>Room Statistics</h2>
-			<h4 style={{color:'white'}}>Number of Room Booking for 2022</h4>
+		<Container id="pageOfAdminStats" style={{display:'none'}}>
+			<h1 style={{color:'white',position:'center'}}>Room Statistics</h1>
+			<hr></hr>
+			<h3 style={{color:'white'}}>Number of Room Booking for 2022</h3>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
-			<div className="chart-container" style={{position: 'relative', height:'40vh', width:'70vw', marginBottom:'300px'}}>
+			<Row className="chart-container">
         		<Bar
 					data={state}
 					options={{
@@ -170,304 +176,10 @@ return (
 					}}
         
 		 		  />
-      		</div>
-			
-				
-					
+      		</Row>
+		</Container>
 
-					
-			  <div>
-				{/* <h4>The stats for Rooms</h4> */}
-				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-				<div>
-		
-				<table style={{ tableLayout: 'fixed',
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'50px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 1: Space Adventure</th>
-						<th style={{borderBottom: '1px solid black'}}>(60 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played</th>
-						<td style={{borderBottom: '1px solid black'}}>12</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>3</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>25%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>43 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$860</td>
-						
-					</tr>
-					</table>
-					</div>
-				<div>
-				<table style={{ tableLayout: 'fixed',
-					
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 2: The Castle</th>
-						<th style={{borderBottom: '1px solid black'}}>(60 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>20</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>10</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>50%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>25 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$1260</td>
-						
-					</tr>
-					</table>
-				</div>
-				
-			</div>	 
-
-			<div>
-				
-				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-				<div>
-			
-				<table style={{ tableLayout: 'fixed',
-					
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'200px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 3: Jungle Escape</th>
-						<th style={{borderBottom: '1px solid black'}}>(40 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>30</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>20</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>66%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>10 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$700</td>
-						
-					</tr>
-					</table>
-					</div>
-				<div>
-				<table style={{ tableLayout: 'fixed',
-					
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 4: Code Red</th>
-						<th style={{borderBottom: '1px solid black'}}>(45 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>40</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>44%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>15 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$3000</td>
-						
-					</tr>
-					</table>
-				</div>
-				
-			</div>	 
-
-			<div>
-				
-				{/* table style from https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */}
-				<div>
-			
-				<table style={{ tableLayout: 'fixed',
-					
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'left', marginRight:'0px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 5: Undermined</th>
-						<th style={{borderBottom: '1px solid black'}}>(30 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>180</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>90</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>50%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>20 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$1200</td>
-						
-					</tr>
-					</table>
-					</div>
-				<div>
-				<table style={{ tableLayout: 'fixed',
-					
-					borderCollapse: 'collapse',
-					border: '3px solid #FFDA79',marginBottom:'30px',width:'400px' ,float:'right', marginRight:'20px'}}>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Room 6: Warlocked</th>
-						<th style={{borderBottom: '1px solid black'}}>(45 mins)</th>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>teams played:</th>
-						<td style={{borderBottom: '1px solid black'}}>66</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>succesful escapes</th>
-						<td style={{borderBottom: '1px solid black'}}>33</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Escape rates</th>
-						<td style={{borderBottom: '1px solid black'}}>50%</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Fastest Escape time</th>
-						<td style={{borderBottom: '1px solid black'}}>15 mins</td>
-						
-					</tr>
-					<tr>
-						<th style={{borderBottom: '1px solid black'}}>Total sales</th>
-						<td style={{borderBottom: '1px solid black'}}>$800</td>
-						
-					</tr>
-					</table>
-				</div>
-				
-			</div>	 
-			<hr style={{width:'0%', float:'center',color:'white'}}></hr>
-					  <div className="chart-container" style={{ height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'left'}}>
-					  <hr style={{width:'0%', float:'center', position:'fixed'}}></hr>
-					 
-			  <h4 style={{color:'white'}}>Number of succesful attempts per room</h4>
-		
-        		<Pie
-					data={state1}
-					options={{
-						title:{
-						display:true,
-						text:'',
-						fontSize:20
-						},
-						legend:{
-						display:true,
-						position:'right'
-						}
-					}}
-        
-		 		  />
-      			</div>
-				  <div className="chart-container" style={{height:'30vh', width:'30vw', marginBottom:'300px',width:'400px' ,float:'right'}}>
-			  <h4 style={{color:'white'}}>Sales in $ per room</h4>
-        		<Pie
-					data={state2}
-					options={{
-						title:{
-						display:true,
-						text:'',
-						fontSize:20
-						},
-						legend:{
-						display:true,
-						position:'right'
-						}
-					}}
-        
-		 		  />
-      			</div>
-					
-				
-			</div>
-			
-			  <div>
-			 
-			 
-			  
-		</div>
-
-	</div>
+	</Container>
 	);
 };
 
