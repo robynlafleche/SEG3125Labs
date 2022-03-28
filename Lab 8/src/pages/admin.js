@@ -160,8 +160,8 @@ return (
 			<hr></hr>
 			<h3>Number of Room Booking for 2022</h3>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
-			<Row className="chart-container">
-        		<Bar
+			<Row>
+			<Bar
 					data={state}
 					options={{
 						title:{
@@ -177,10 +177,58 @@ return (
 					}}
         
 		 		  />
+			</Row>
+			
+			<Row>
+			<hr></hr>
+    <Col><h3>Number of succesful attempts per room</h3></Col>
+    <Col><h3>Sales in $ per room</h3></Col>
+  </Row>
+		<Row>
+			<Col className="chart-container">
+			<Pie
+					data={state1}
+					options={{
+						title:{
+						display:true,
+						text:'',
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+			</Col>
+			<Col className="chart-container">
+				<Pie
+					data={state2}
+					options={{
+						title:{
+						display:true,
+						text:'',
+						fontSize:20
+						},
+						legend:{
+						display:true,
+						position:'right'
+						}
+					}}
+        
+		 		  />
+			</Col>
+   
+        		
       		</Row>
 
+		
 
 		</Container>
+
+
+		{/* the tables */}
 
 	</Container>
 	);
