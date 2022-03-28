@@ -15,22 +15,21 @@ h2 {
     font-family: 'Work Sans', sans-serif;
     font-style:  cursive;
     font-size:  20px;
+    right: 10px;
 }
 /*
     image was taken from 
-*/
-/*background-img {
-    color: white;
-    background-image: url("/public/background.jpg");
-    display: fit;
-    justify-content:center;
-    align-items: center;
-    height: 130vh;
-    position: absolute;
-    bottom: -100;
-    transform:  scale(0.5);
 
-}*/
+*/
+.backgroundImg {
+    color: white;
+    background-image: url("./background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
 
 Button {
     font-family: 'Work Sans', sans-serif;

@@ -21,6 +21,11 @@ body {
   left: -280px;
 }
 
+.BackgroundImage {
+    backgroundImage: 'url("/public/background.jpg")';
+    backgroundRepeat: 'no-repeat';
+}
+
 .Booking-container{
   position:  relative;
   bottom: 3px;

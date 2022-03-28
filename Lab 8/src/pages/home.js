@@ -11,21 +11,15 @@ const Home = () => {
 		navigate(path);
 	}
 return (
-	<script>
-	<Container>
+
+	<div className = 'backgroundImg'>
 	<h1>DIVIDE </h1>
 	<h1>CONQUER </h1>
 	<h1>ESCAPE</h1>
 	<h2> Book an escape room today </h2>
-	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>;
-	</Container>
-	<div style={{
-		backgroundImage:'url("/public/background.jpg")',
-		backgroundRepeat: 'no-repeat'
-	}}>
+	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>
 	</div>
-	</script>
 	);
-};
+}
 
 export default Home;
