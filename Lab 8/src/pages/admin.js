@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Doughnut,Bar ,Pie} from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js'; import { Chart as ChartJS } from 'chart.js/auto'
 import { Chart }            from 'react-chartjs-2'
+import './admin.css'
 // https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -143,11 +144,11 @@ return (
 				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
 					{/* <div style={{position:'absolute',padding:'30px'}}> */}
 					<Row>
-    					<label style={{color:'white'}}>Username</label>
-    					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={username} onInput={e => setusername(e.target.value)}/>
-						<label style={{color:'white'}}>Password</label>
-    					<input style={{ width: '100%',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} value={password} onInput={e => setpassword(e.target.value)}/>
-						<button style={{position: 'initial',marginLeft:'100px',marginTop: '70px',width: '30%',float:'center',padding: '12px 20px',margin: '8px 0',boxSizing: 'border-box'}} type="submit">Login</button>
+    					<label >Username</label>
+    					<input  value={username} onInput={e => setusername(e.target.value)}/>
+						<label >Password</label>
+    					<input value={password} onInput={e => setpassword(e.target.value)}/>
+						<button id="LoginButton" type="submit">Login</button>
 				
 					{/* </div>   */}
 					</Row>
@@ -155,9 +156,9 @@ return (
 		</Container>
 
 		<Container id="pageOfAdminStats" style={{display:'none'}}>
-			<h1 style={{color:'white',position:'center'}}>Room Statistics</h1>
+			<h1 >Room Statistics</h1>
 			<hr></hr>
-			<h3 style={{color:'white'}}>Number of Room Booking for 2022</h3>
+			<h3>Number of Room Booking for 2022</h3>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
 			<Row className="chart-container">
         		<Bar
@@ -177,6 +178,8 @@ return (
         
 		 		  />
       		</Row>
+
+
 		</Container>
 
 	</Container>

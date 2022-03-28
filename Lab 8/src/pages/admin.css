@@ -1,6 +1,21 @@
 label {
   color: white;
-  position: relative;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+#LoginButton {
+  position: initial;
+  margin-left: 100px;
+  margin-top: 70px;
+  width: 30%;
+  float: center;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* boxsizing: border-box; */
 }
 /* #pageOfAdminStats {
   left: 30px;
