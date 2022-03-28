@@ -1,6 +1,5 @@
 body {
-    background-color: white;
-    background-image: url("/public/background.jpg");
+    background-color: black;
 
 }
 
@@ -20,7 +19,7 @@ h2 {
 /*
     image was taken from 
 */
-background-img {
+/*background-img {
     color: white;
     background-image: url("/public/background.jpg");
     display: fit;
@@ -31,7 +30,7 @@ background-img {
     bottom: -100;
     transform:  scale(0.5);
 
-}
+}*/
 
 Button {
     font-family: 'Work Sans', sans-serif;

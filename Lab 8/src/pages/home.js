@@ -11,13 +11,20 @@ const Home = () => {
 		navigate(path);
 	}
 return (
-	<Container className="background-img">
+	<script>
+	<Container>
 	<h1>DIVIDE </h1>
 	<h1>CONQUER </h1>
 	<h1>ESCAPE</h1>
 	<h2> Book an escape room today </h2>
 	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>;
 	</Container>
+	<div style={{
+		backgroundImage:'url("/public/background.jpg")',
+		backgroundRepeat: 'no-repeat'
+	}}>
+	</div>
+	</script>
 	);
 };
 
