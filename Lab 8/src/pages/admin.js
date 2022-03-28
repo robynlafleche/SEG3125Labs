@@ -7,7 +7,7 @@ import './admin.css'
 // https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image,Table } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
 
 //how to import chartjs https://github.com/reactchartjs/react-chartjs-2
@@ -128,12 +128,7 @@ const Admin = () => {
 return (
 	<Container
 	style={{
-		display: 'flex',
-		
-		// justifyContent: 'Right',
-		// alignItems: 'Right',
-		// height: '100vh'
-		
+		display: 'flex'
 	}}
 
 	>
@@ -223,12 +218,234 @@ return (
         		
       		</Row>
 
-		
+				{/* the tables */}
+			
+			<Row style={{paddingTop: "200px"}}>
+			<h3>Statistics per room</h3>
+				<Col>
+				<Table >
+						<tr>
+							<th >Room 1: Space Adventure</th>
+							<th >(60 mins)</th>
+							
+						</tr>
+						<tr>
+							<th >teams played</th>
+							<td >12</td>
+							
+						</tr>
+						<tr>
+							<th >succesful escapes</th>
+							<td >3</td>
+							
+						</tr>
+						<tr>
+							<th >Escape rates</th>
+							<td >25%</td>
+							
+						</tr>
+						<tr>
+							<th >Fastest Escape time</th>
+							<td >43 mins</td>
+							
+						</tr>
+						<tr>
+							<th >Total sales</th>
+							<td >$860</td>
+							
+						</tr>
+						</Table>
+				</Col>
+			<Col>
+			<Table >
+					<tr>
+						<th >Room 2: The Castle</th>
+						<th >(60 mins)</th>
+						
+					</tr>
+					<tr>
+						<th >teams played:</th>
+						<td >20</td>
+						
+					</tr>
+					<tr>
+						<th >succesful escapes</th>
+						<td >10</td>
+						
+					</tr>
+					<tr>
+						<th >Escape rates</th>
+						<td >50%</td>
+						
+					</tr>
+					<tr>
+						<th >Fastest Escape time</th>
+						<td >25 mins</td>
+						
+					</tr>
+					<tr>
+						<th >Total sales</th>
+						<td >$1260</td>
+						
+					</tr>
+					</Table>
+			</Col>
+  
+  </Row>
 
+  {/* table 3 & 4 */}
+  <Row >
+		
+				<Col>
+				<Table >
+		
+					<tr>
+						<th >Room 3: Jungle Escape</th>
+						<th >(40 mins)</th>
+						
+					</tr>
+					<tr>
+						<th >teams played:</th>
+						<td >30</td>
+						
+					</tr>
+					<tr>
+						<th >succesful escapes</th>
+						<td >20</td>
+						
+					</tr>
+					<tr>
+						<th >Escape rates</th>
+						<td >66%</td>
+						
+					</tr>
+					<tr>
+						<th >Fastest Escape time</th>
+						<td >10 mins</td>
+						
+					</tr>
+					<tr>
+						<th >Total sales</th>
+						<td >$700</td>
+						
+					</tr>
+		
+						</Table>
+				</Col>
+			<Col>
+			<Table >
+			<tr>
+						<th >Room 4: Code Red</th>
+						<th >(45 mins)</th>
+						
+					</tr>
+					<tr>
+						<th >teams played:</th>
+						<td >90</td>
+						
+					</tr>
+					<tr>
+						<th >succesful escapes</th>
+						<td >40</td>
+						
+					</tr>
+					<tr>
+						<th >Escape rates</th>
+						<td >44%</td>
+						
+					</tr>
+					<tr>
+						<th >Fastest Escape time</th>
+						<td >15 mins</td>
+						
+					</tr>
+					<tr>
+						<th >Total sales</th>
+						<td >$3000</td>
+						
+					</tr>
+					</Table>
+			</Col>
+  
+  </Row>
+
+  {/* table 5 & 6 */}
+  <Row >
+		
+				<Col>
+				<Table >
+				<tr>
+						<th >Room 5: Undermined</th>
+						<th >(30 mins)</th>
+						
+					</tr>
+					<tr>
+						<th >teams played:</th>
+						<td >180</td>
+						
+					</tr>
+					<tr>
+						<th >succesful escapes</th>
+						<td >90</td>
+						
+					</tr>
+					<tr>
+						<th >Escape rates</th>
+						<td >50%</td>
+						
+					</tr>
+					<tr>
+						<th >Fastest Escape time</th>
+						<td >20 mins</td>
+						
+					</tr>
+					<tr>
+						<th >Total sales</th>
+						<td >$1200</td>
+						
+					</tr>
+						</Table>
+				</Col>
+			<Col>
+			<Table >
+			<tr>
+						<th >Room 6: Warlocked</th>
+						<th >(45 mins)</th>
+						
+					</tr>
+					<tr>
+						<th >teams played:</th>
+						<td >66</td>
+						
+					</tr>
+					<tr>
+						<th >succesful escapes</th>
+						<td >33</td>
+						
+					</tr>
+					<tr>
+						<th >Escape rates</th>
+						<td >50%</td>
+						
+					</tr>
+					<tr>
+						<th >Fastest Escape time</th>
+						<td >15 mins</td>
+						
+					</tr>
+					<tr>
+						<th >Total sales</th>
+						<td >$800</td>
+						
+					</tr>
+					</Table>
+			</Col>
+  
+  </Row>
 		</Container>
 
 
-		{/* the tables */}
+
 
 	</Container>
 	);
