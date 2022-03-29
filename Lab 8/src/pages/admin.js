@@ -17,6 +17,9 @@ import{ init } from '@emailjs/browser';
 //import { FaTemperatureLow } from 'react-icons/fa';
 init("xbzBATNrf9EPN6EPR");
 
+import SendEmailToClient from '../EmailManager/CustomerEmailLibrary';
+
+
 const sendEmail = () => {
     
 	//e.preventDefault();
@@ -138,6 +141,9 @@ const Admin = () => {
 	const adminPassword = 1234;
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		SendEmailToClient("Karim165", "kdahe094@hotmail.com");
+
 		if(username == adminUsername && password == adminPassword){
 			//alert("yeah")
 			console.log("success");
@@ -146,7 +152,7 @@ const Admin = () => {
 			document.getElementById("loginPage").style.display = "none"
 			document.getElementById("pageOfAdminStats").style.display = "block"
 
-			sendEmail();
+			//sendEmail();
 			/*emailjs.sendForm('gmail', 'template_dvnk0rb', 'escape6W22@gmail.com', 'xbzBATNrf9EPN6EPR').then((result) => {
 
 				alert("Message Sent, We will get back to you shortly", result.text);

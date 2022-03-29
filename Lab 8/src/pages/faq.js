@@ -28,13 +28,13 @@ conn.connect(function(error){
 });*/
 
 
-const express = require('express');
-const bodyParser = require('body-parser');
-var connection  = require('express-myconnection'); 
-var mysql = require('mysql');
+//const express = require('express');
+//const bodyParser = require('body-parser');
+//var connection  = require('express-myconnection'); 
+//var mysql = require('mysql');
 
-const app = express(); 
-app.use(bodyParser.json());
+//const app = express(); 
+//app.use(bodyParser.json());
 
 
 const FAQ = () => {
