@@ -234,9 +234,10 @@ function addSurveyResultsToDatabaseJSON(jsonSurveyResults)
 
 // create a connection to the database
 var conn = mysql.createConnection({
-	host: "127.0.0.1",
-	user: "root",
-	password: "group6"
+	host: "209.209.40.92",
+    port: "17921",
+	user: "admin",
+	password: "CoyKBkrM"
 });
 
 conn.connect(function(error){

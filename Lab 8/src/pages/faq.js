@@ -6,9 +6,40 @@ import './faq.css';
 import { Container} from 'react-bootstrap';
 import Faqdisplay from './faqdisplay';
 
+// required packages
+//var bodyParser = require('body-parser');
+//var urlencodedParser = bodyParser.urlencoded({extended: false});
+
+// import mysql
+//var mysql = require("mysql");
+
+/*var conn = mysql.createConnection({
+	host: "127.0.0.1",
+	user: "root",
+	password: "group6"
+});
+
+conn.connect(function(error){
+	if (error)
+		throw error;	
+	else{
+		console.log("Connected to database");
+	}
+});*/
+
+
+const express = require('express');
+const bodyParser = require('body-parser');
+var connection  = require('express-myconnection'); 
+var mysql = require('mysql');
+
+const app = express(); 
+app.use(bodyParser.json());
 
 
 const FAQ = () => {
+	
+	
 
 	const [faq, setFaq] = useState([
 		{ 	question: 'Do you offer parking?', 
