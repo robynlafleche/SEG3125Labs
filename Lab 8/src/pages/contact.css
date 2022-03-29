@@ -1,3 +1,20 @@
 .container {
     display: 'grid'
 }
+
+.contact {
+    color: white;
+}
+
+Button {
+    font-family: 'Work Sans', sans-serif;
+    font-style: bold;
+    font-weight: 100px;
+    border-color: #FFDA79 !important;
+    background-color: #FFDA79 !important;
+    position:  relative;
+    color:  black;
+    left: 20px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}

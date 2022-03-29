@@ -21,7 +21,8 @@ const Rooms = () => {
 	
 return (
 	<Container>
-		<h2 style={{color:'black'}}>Select your escape room</h2>
+		<h1 style={{color:'white'}}>Select your escape room</h1>
+		<div className='rooms'>
 		{rooms.map((room) => (
 			<Row key={room.id}>
 				<Col>
@@ -41,6 +42,7 @@ return (
 				
 			</Row>
 		))}
+		</div>
 	</Container>
 	);
 };

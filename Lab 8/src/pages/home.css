@@ -6,8 +6,9 @@ body {
 h1 {
     color:  white;
     font-family: 'Work Sans', sans-serif;
-    font-style:  bold;
     font-size:  40px;
+    position: relative;
+    left: 40px;
 }
 
 h2 {
@@ -15,7 +16,8 @@ h2 {
     font-family: 'Work Sans', sans-serif;
     font-style:  cursive;
     font-size:  20px;
-    right: 10px;
+    left: 20px;
+    position: relative;
 }
 /*
     image was taken from 
@@ -31,6 +33,11 @@ h2 {
 
 }
 
+.home {
+    position: relative;
+    left: -2px;
+}
+
 Button {
     font-family: 'Work Sans', sans-serif;
     font-style: bold;
@@ -39,6 +46,7 @@ Button {
     background-color: #FFDA79 !important;
     position:  relative;
     color:  black;
+    left: 20px;
     border-radius: 5px;
     margin: 10px 0px;
 }

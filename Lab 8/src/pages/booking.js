@@ -18,7 +18,7 @@ const Booking = () => {
     { room: "Jungle Escape", time: "3:00 PM", slots: 10, price: "$20"}
   ])
   
-  const title = "Here are the rooms available based off of your selections."
+  const title = "Here are the rooms available based off of your selections"
 
 	let navigate = useNavigate();
 	const pickDateButton = () => {
@@ -40,7 +40,7 @@ return (
       </header>
     </Row>
     <Row>
-      <Table bordered hover id="cartTable">
+      <Table bordered hover variant="dark" id="cartTable">
           <thead>
             <tr>
             <th>Escape Room</th>

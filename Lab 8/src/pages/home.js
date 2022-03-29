@@ -13,9 +13,11 @@ const Home = () => {
 return (
 
 	<div className = 'backgroundImg'>
+	<div className = 'home'>
 	<h1>DIVIDE </h1>
 	<h1>CONQUER </h1>
 	<h1>ESCAPE</h1>
+	</div>
 	<h2> Book an escape room today </h2>
 	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>
 	</div>

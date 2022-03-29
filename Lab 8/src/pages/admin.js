@@ -139,10 +139,14 @@ return (
 				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
 					{/* <div style={{position:'absolute',padding:'30px'}}> */}
 					<Row>
-    					<label >Username</label>
+    					<label>Username</label>
+    					<div class="col-xs-2">
     					<input  value={username} onInput={e => setusername(e.target.value)}/>
-						<label >Password</label>
+    					</div>
+						<label>Password</label>
+						<div class="col-xs-2">
     					<input value={password} onInput={e => setpassword(e.target.value)}/>
+    					</div>
 						<button id="LoginButton" type="submit">Login</button>
 				
 					{/* </div>   */}

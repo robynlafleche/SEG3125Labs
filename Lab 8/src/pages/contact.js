@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 import './contact.css';
 
@@ -22,7 +22,7 @@ const Contact = () => {
 	}
 return (
 	<Container>
-	<h2 style={{color:'black'}}>Get in touch with us</h2>
+	<h1>Get in touch with us</h1>
 	<Row>
 		<Col>
 			<form onSubmit={handleSubmit}>
@@ -53,15 +53,18 @@ return (
 				/>
 				</label>
 				<br></br>
-				<input type="submit" />
+				<Button variant="outline" onClick={handleSubmit}>Submit</Button>
 			</form>
 		</Col>
 
 		<Col>
+		<div className="contact">
 			<p>613-938-0393</p>
-			<p>Monday-Friday 1pm - 9pm and Saturday-Sunday 1pm - 11pm</p>
+			<p>Monday-Friday 1pm - 9pm</p>
+			<p>Saturday-Sunday 1pm - 11pm</p>
 			<p>escape6@gmail.com</p>
 			<p>72 Laurier Ave. E, Ottawa, ON K1N 6N6, Ottawa, ON</p>
+		</div>
 		</Col>		
 	</Row>
 	

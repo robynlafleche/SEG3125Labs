@@ -16,7 +16,7 @@ class Index extends Component {
 				<div>
 					<Navbar bg="light" expand="lg">
 						<Container>
-							<Navbar.Brand href="#home">
+							<Navbar.Brand href="/home">
 								<img
 								alt=""
 								src={require('./logo.png')}
@@ -24,11 +24,11 @@ class Index extends Component {
 								height="75"
 								transform= "scale(1.5)"
 								className="d-inline-block align-top"
-								/>{' '}
+								/>
 							</Navbar.Brand>
 							<Navbar.Toggle aria-controls="basic-navbar-nav" />
 							<Navbar.Collapse id="basic-navbar-nav">
-							<Nav className="me-auto">
+							<Nav className="navbar-nav nav-fill w-100">
 								<Nav.Link as={Link} to={'/home'} >Home</Nav.Link>
 								<Nav.Link as={Link} to={'/booking'} >Booking</Nav.Link>
 								<Nav.Link as={Link} to={'/faq'} >FAQ</Nav.Link>

@@ -1,20 +1,30 @@
 label {
   color: white;
+  position: relative;
+  left: 20px;
 }
 input {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  position: relative;
+  left: 20px;
+}
+
+h1 {
+  position: relative;
+  left: 20px;
 }
 #LoginButton {
-  position: initial;
+  position: relative;
   margin-left: 100px;
   margin-top: 70px;
-  width: 30%;
-  float: center;
+  width: 15%;
+  left: 100px;
+  top: -60px;
   padding: 12px 20px;
-  margin: 8px 0;
+  /* margin: 8px 0; */
   /* boxsizing: border-box; */
 }
 /* #pageOfAdminStats {

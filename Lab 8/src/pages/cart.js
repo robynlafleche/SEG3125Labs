@@ -20,10 +20,12 @@ const Cart = () => {
 		<Container>
 
 			<header>
+			<div className = 'title'>
 			<h1>{title}</h1>
+			</div>
 			</header>
 
-			<Table bordered hover id="cartTable">
+			<Table bordered hover variant="dark" id="cartTable">
 				<thead>
 					<tr>
 					<th>Description</th>
