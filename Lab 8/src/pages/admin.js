@@ -10,6 +10,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Image,Table } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
 
+
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser'
+import{ init } from '@emailjs/browser';
+//import { FaTemperatureLow } from 'react-icons/fa';
+init("xbzBATNrf9EPN6EPR");
+
+const sendEmail = () => {
+    
+	//e.preventDefault();
+	var templateParams = {
+		to_name: 'xyz',
+		from_name: 'abc',
+		message: 'Please Find out the attached file'
+	  };
+	
+
+    emailjs.send('service_6ktqc7j', 'template_dvnk0rb', templateParams, 'xbzBATNrf9EPN6EPR')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
 //how to import chartjs https://github.com/reactchartjs/react-chartjs-2
 
 const Admin = () => {
@@ -119,6 +145,16 @@ const Admin = () => {
 			// code inspired from https://sebhastian.com/javascript-show-hide-div-onclick-toggle/
 			document.getElementById("loginPage").style.display = "none"
 			document.getElementById("pageOfAdminStats").style.display = "block"
+
+			sendEmail();
+			/*emailjs.sendForm('gmail', 'template_dvnk0rb', 'escape6W22@gmail.com', 'xbzBATNrf9EPN6EPR').then((result) => {
+
+				alert("Message Sent, We will get back to you shortly", result.text);
+				},
+				(error) => {
+				//alert("An error occurred, Please try again", error.text);
+				});*/
+
 		}
 		else {
 			alert("The username and/or password you have entered are incorrect. Please try again")
