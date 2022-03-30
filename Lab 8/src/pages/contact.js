@@ -24,7 +24,7 @@ return (
 	<Container>
 	<h1>Get in touch with us</h1>
 	<Row>
-		<Col>
+		<Col xs={8}>
 			<form onSubmit={handleSubmit}>
 			<label>Enter your name:
 			<input 

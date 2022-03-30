@@ -27,13 +27,12 @@ return (
 			<Row key={room.id}>
 				<Col>
 					<h3>{room.name}</h3>
-					<p>{room.description}</p>
-					<p>{room.price}</p>
-					<p>{room.difficulty}</p>
-					<p>{room.type}</p>
-					<p>{room.minPlayers}</p>
-					<p>{room.duration}</p>
-					<p>{room.price}</p>
+					<p>Description: {room.description}</p>
+					<p>Price per player: {room.price}</p>
+					<p>Room difficulty: {room.difficulty}</p>
+					<p>Room type: {room.type}</p>
+					<p>Minimum number of players required: {room.minPlayers}</p>
+					<p>Duration: {room.duration}</p>
 				</Col>
 
 				<Col>
