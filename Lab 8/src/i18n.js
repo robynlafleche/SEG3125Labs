@@ -72,7 +72,29 @@ i18n
               question9: 'How do I add a new player to an existing reservation?', 
               answer9: 'If you booked your game with the Allow others to join option, you can add a new player by having them join the existing booking. Alternatively, you can show up to your game with extra players and we will add them on the spot, provided you do not exceed the maximum number of participants for the game.', 
 
+              //Cart page
+                cartContent:'Here are the contents of your cart:',
+                cartDesc:'Description',
+                cartPriceperPlayer:'Price per player',
+                cartNumPlayer:'Number of Players',
+                cartPrice:'Price',
+                cartTotal:'cart total',
+                cartPayInfo:'Payment information',
+                cartName:'Name on Card',
+                cartNum:'Card Number',
+                cartExpDate:'Expiry Date',
+                cartButton:'Add payment information',
 
+
+
+                //admin page
+                adminWel:'Admin Login Page',
+                adminMes:'Log into your admin account to view and schedule bookings',
+                adminIn:'Room Statistics',
+                adminIn1:'Number of Room Booking for 2022',
+                adminIn2:'Number of succesful attempts per room',
+                adminIn3:'Sales in $ per room',
+                adminIn4:'Statistics per room',
 
               end: "End"
             }
@@ -133,6 +155,29 @@ i18n
               question9: 'Comment ajouter un nouveau joueur à une réservation existante?', 
               answer9: 'Si vous avez réservé votre jeu avec loption Autoriser les autres à se joindre, vous pouvez ajouter un nouveau joueur en le faisant rejoindre la réservation existante. Alternativement, vous pouvez vous présenter à votre jeu avec des joueurs supplémentaires et nous les ajouterons sur place, à condition que vous ne dépassiez pas le nombre maximum de participants pour le jeu.', 
 
+                //Cart page
+                  cartContent:'Voici le contenu de votre panier:',
+                  cartDesc:'la description',
+                  cartPriceperPlayer:'Prix par joueur',
+                  cartNumPlayer:'Nombre de joueurs',
+                  cartPrice:'Prix',
+                  cartTotal:'total du panier',
+                  cartPayInfo:'Informations de paiement',
+                  cartName:'Nom sur la carte',
+                  cartNum:'Numéro de carte',
+                  cartExpDate:"Date d'expiration",
+                  cartButton:'Ajouter des informations de paiement',
+
+
+
+                  //admin page
+                  adminWel:'Page de connexion administrateur',
+                  adminMes:'Connectez-vous à votre compte administrateur pour afficher et planifier les réservations',
+                  adminIn:'Statistiques de la chambre',
+                  adminIn1:'Nombre de réservations de chambres pour 2022',
+                  adminIn2:'Nombre de tentatives réussies par chambre',
+                  adminIn3:'Ventes en $ par chambre',
+                  adminIn4:'Statistiques par chambre',
 
               end: "Fin"
             }
