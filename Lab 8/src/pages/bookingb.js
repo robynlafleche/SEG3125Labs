@@ -16,7 +16,7 @@ $(function () {
 const BookingB = () => {
   return (
   <body>
-  <form>
+  <form autocomplete="on">
   <form class="row g-3">
     <div class="col-md-4">
       <label for="inputFirstName">First Name</label>
@@ -34,16 +34,7 @@ const BookingB = () => {
     </div>
     <div class="col-md-4">
       <label for="inputTime">Time</label>
-      <select id="inputTime" class="form-control">
-        <option selected>Choose...</option>
-        <option>"11:00AM"</option>
-        <option>"12:00PM"</option>
-        <option>"1:30PM"</option>
-        <option>"2:00PM"</option>
-        <option>"3:30PM"</option>
-        <option>"5:00PM"</option>
-        <option>"7:00PM"</option>
-        </select>
+      <input type="time" class="form-control" id="inputTime" placeholder="16:00"></input>
     </div>
     <div class="col-md-2">
       <label for="inputDate">Date</label>
@@ -53,8 +44,12 @@ const BookingB = () => {
 
     <form class="row g-3">
     <div class="col-md-4">
-      <label for="inputGroupSize">Team Name</label>
-      <input type="text" class="form-control" id="inputPostalCode"></input>
+      <label for="inputTeamName">Team Name</label>
+      <input type="text" class="form-control" id="inputTeamName"></input>
+    </div>
+    <div class="col-md-4">
+      <label for="inputRoom">Escape Room</label>
+      <input type="text" class="form-control" id="inputRoom"></input>
     </div>
     <div class="col-md-2">
       <label for="inputGroupSize">Number of members</label>

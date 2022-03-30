@@ -21,7 +21,7 @@ const Booking = () => {
   const title = "Here are the rooms available based off of your selections"
 
 	let navigate = useNavigate();
-	const pickDateButton = () => {
+	const book = () => {
 		let path = '/bookingb'
 		navigate(path);
 	}
@@ -37,6 +37,15 @@ const Booking = () => {
     let path = '/rooms'
     navigate(path);
   }
+
+  function bookFunction() {
+    document.getElementById('title_en').value="Good Morning";
+    document.getElementById('title_fr').value="Bonjour";
+    document.getElementById('description_en').value="Bonjour";
+    document.getElementById('description_fr').value="Bonjour";
+    document.getElementById('program_id').value="6";
+}
+
 
   const { t, i18n } = useTranslation();
 
@@ -69,16 +78,6 @@ return (
         </Dropdown>
       </Col>
       <Col>
-      <Dropdown>
-          <Dropdown.Toggle variant="success" style={{position: 'relative', float: 'left'}} className='pick-availibility-button'>
-          {t('description.availability')}
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">{t('description.fullyAvailable')}</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">{t('description.partiallyAvailable')}</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
       </Col>
     </Row>
     <Row>
@@ -112,6 +111,8 @@ return (
               <td>${currentElem.PricePerPlayer}.00</td>
               <td><Button onClick={pickRoomType} id="Info">{t('description.info')}</Button></td>
               <td><Button onClick={bookButton} id="Book" >{t('description.book')}</Button></td>
+              <td><a href="/rooms" class="btn btn-info" role="button">Info</a></td>
+              <td><a href="/bookingb" class="btn btn-info" role="button">Book</a></td>
               </tr>
             </tbody>
           ))}	
