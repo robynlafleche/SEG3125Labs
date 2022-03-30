@@ -73,19 +73,13 @@ const Booking = () => {
       });
 */      
 
-   /* try {
-      var myObj = {name: "John Doe", age:"30"};
-      axios.put("http://localhost:3001/getAllRoomsInfo", myObj).then(response => {console.log(response.data)}).catch(e => {console.log(e)});
-
-    } catch (error) {
-      console.log("error : " + error);
-    }*/
+ 
   }
 
 return (
 	<Container>
 	  <Row>
-      <Col><Button className="pick-date-button" onClick={postName} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
+      <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
       <Col><Button className="pick-time-button"  style={{position: 'relative', float: 'left'}}>{t('description.pickATime')}</Button></Col>
       <Col>
         <Dropdown>

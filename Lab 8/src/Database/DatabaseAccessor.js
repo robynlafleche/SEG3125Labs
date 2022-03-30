@@ -25,7 +25,6 @@ function getAllRoomsInfo()
 }
 
 
-//getAllRoomsInfo();
 
 
 // This is the controler per se, with the get/post
@@ -80,11 +79,17 @@ module.exports = function(app){
         //res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     })    
 
-    /*app.get('/dbServer', function(req, res){
-        res.json({ message: "DB Server up and running" });
-    });*/
-    
 
+
+
+
+
+
+
+
+
+
+    
 
     // when a user goes to localhost:3000/homepage
     // this just gets us the homepage on which the user can navigate to the survey page.
