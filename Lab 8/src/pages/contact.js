@@ -6,9 +6,13 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 
 import './contact.css';
 
+import { useTranslation} from 'react-i18next';
+
 const Contact = () => {
 
 	const [inputs, setInputs] = useState({});
+
+	const { t, i18n } = useTranslation();
 
 	const handleChange = (event) => {
 	  const name = event.target.name;
@@ -22,24 +26,24 @@ const Contact = () => {
 	}
 return (
 	<Container>
-	<h1>Get in touch with us</h1>
+	<h1>{t('description.getInTouch')}</h1>
 	<Row>
 		<Col xs={6}>
 			<Form>
 				<Form.Group controlId="form.Name">
-					<Form.Label>Name</Form.Label>
-					<Form.Control type="text" placeholder="Enter name" required />
+					<Form.Label>{t('description.name')}</Form.Label>
+					<Form.Control type="text" placeholder={t('description.enterName')} required />
 				</Form.Group>
 				<Form.Group controlId="form.Email">
-					<Form.Label>Email address</Form.Label>
+					<Form.Label>{t('description.EmailAddress')}</Form.Label>
 					<Form.Control type="email" placeholder="name@example.com" required/>
 				</Form.Group>
 				<Form.Group controlId="form.Textarea">
-					<Form.Label>Comment</Form.Label>
+					<Form.Label>{t('description.comment')}</Form.Label>
 					<Form.Control as="textarea" rows={3} required/>
 				</Form.Group>
 				<Button variant="primary" type="submit">
-						Submit form
+					{t('description.submitForm')}
 				</Button>
 			</Form>
 		</Col>
@@ -47,9 +51,9 @@ return (
 		<Col xs={4}>
 		<div className="contact">
 			<p>613-938-0393</p>
-			<p>Monday-Friday 1pm - 9pm</p>
-			<p>Saturday-Sunday 1pm - 11pm</p>
-			<p>escape6@gmail.com</p>
+			<p>{t('description.monFri')}</p>
+			<p>{t('description.satSun')}</p>
+			<p>escape6w22@gmail.com</p>
 			<p>72 Laurier Ave. E, Ottawa, ON K1N 6N6, Ottawa, ON</p>
 		</div>
 		</Col>		
