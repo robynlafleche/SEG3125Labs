@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Index from './components/Navbar';
 
+
 // import i18n (needs to be bundled ;))
 import './i18n';
 

@@ -64,7 +64,7 @@ const Cart = () => {
 
 					<Form.Group className="mb-3" controlId="formBasicNumber">
 						<Form.Label>Card Number</Form.Label>
-						<Form.Control type="number" placeholder="0000 0000 0000 0000" required/>
+						<Form.Control type="name" placeholder="0000 0000 0000 0000" required/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicDate">

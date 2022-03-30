@@ -6,7 +6,7 @@ import './faq.css';
 import { Container} from 'react-bootstrap';
 import Faqdisplay from './faqdisplay';
 
-
+import { useTranslation} from 'react-i18next';
 
 const FAQ = () => {
 
@@ -43,12 +43,14 @@ const FAQ = () => {
 			open: false },
 	  ])
 
+	  const { t, i18n } = useTranslation();
+
 	
 
 	return (
 		<Container>
 			<header>
-			<h1>FAQ Page</h1>
+			<h1>{t('description.FAQTitle')}</h1>
 			</header>
 
 			<div className="faqs">

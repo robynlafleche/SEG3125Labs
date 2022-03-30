@@ -16,7 +16,7 @@ $(function () {
 const BookingB = () => {
   return (
   <body>
-  <form>
+  <form autocomplete="on">
   <form class="row g-3">
     <div class="col-md-4">
       <label for="inputFirstName">First Name</label>
@@ -32,33 +32,20 @@ const BookingB = () => {
       <label for="inputEmail">Email</label>
       <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com"></input>
     </div>
-    <div class="col-md-4">
-      <label for="inputTime">Time</label>
-      <select id="inputTime" class="form-control">
-        <option selected>Choose...</option>
-        <option>"11:00AM"</option>
-        <option>"12:00PM"</option>
-        <option>"1:30PM"</option>
-        <option>"2:00PM"</option>
-        <option>"3:30PM"</option>
-        <option>"5:00PM"</option>
-        <option>"7:00PM"</option>
-        </select>
-    </div>
     <div class="col-md-2">
       <label for="inputDate">Date</label>
       <input type="date" class="form-control" data-date-format="mm/dd/yyyy" id="inputDate" placeholder="MM/DD/YYYY"></input>
+    </div>
+        <div class="col-md-2">
+      <label for="inputGroupSize">Number of members</label>
+      <input type="text" class="form-control" id="inputGroupSize"></input>
     </div>
     </form>
 
     <form class="row g-3">
     <div class="col-md-4">
-      <label for="inputGroupSize">Team Name</label>
-      <input type="text" class="form-control" id="inputPostalCode"></input>
-    </div>
-    <div class="col-md-2">
-      <label for="inputGroupSize">Number of members</label>
-      <input type="text" class="form-control" id="inputGroupSize"></input>
+      <label for="inputTeamName">Team Name</label>
+      <input type="text" class="form-control" id="inputTeamName"></input>
     </div>
   </form>
   <button type="submit" class="btn btn-primary">Submit</button>
