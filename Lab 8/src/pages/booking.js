@@ -5,12 +5,23 @@ import { Button, Col, Container, Row, Dropdown } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { useNavigate } from 'react-router-dom';
 
+
+import { useTranslation} from 'react-i18next';
+
+import queryString from 'query-string';
+
 import axios from "axios";
+axios.create({
+  baseURL: "http://localhost:3001",
+  headers: {
+    "Content-type": "application/json"
+  }
+});
 
 
 //table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
-import { useTranslation} from 'react-i18next';
+
 
 
 
@@ -39,17 +50,33 @@ const Booking = () => {
 
     console.log("posting Name");
 
+    var myObj = {name: "XYZ", age:30};
+
     //var allRoomsInfo = axios.get("http://localhost:3001/getAllRoomsInfo");
     //console.log(allRoomsInfo);
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
+      body : queryString.stringify(myObj)
+    };
 
-    fetch("http://localhost:3001/getAllRoomsInfo")
+   fetch("http://localhost:3001/getAllRoomsInfo", requestOptions)
       .then( res => res.json())
       .then((res) => {
         console.log(res[0].RoomID);
       });
 
-    /*try {
-      await axios.post("http://localhost:3001/getAllRoomsInfo", {name})
+   /* fetch("http://localhost:3001/getAllRoomsInfo")
+      .then( res => res.json())
+      .then((res) => {
+        console.log(res[0].RoomID);
+      });
+*/      
+
+   /* try {
+      var myObj = {name: "John Doe", age:"30"};
+      axios.put("http://localhost:3001/getAllRoomsInfo", myObj).then(response => {console.log(response.data)}).catch(e => {console.log(e)});
+
     } catch (error) {
       console.log("error : " + error);
     }*/

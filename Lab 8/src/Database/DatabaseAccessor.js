@@ -1,5 +1,9 @@
 const Mysql = require('sync-mysql'); 
 
+// required packages
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+
 
 const connection = new Mysql({ 
 	host: "209.209.40.92",
@@ -24,7 +28,6 @@ function getAllRoomsInfo()
 //getAllRoomsInfo();
 
 
-
 // This is the controler per se, with the get/post
 module.exports = function(app){
 
@@ -37,7 +40,7 @@ module.exports = function(app){
         //res = getAllRoomsInfo();
         var allRoomsInfo = getAllRoomsInfo();
         console.log("type of :")
-        console.log(allRoomsInfo)
+        //console.log(allRoomsInfo)
         console.log(typeof allRoomsInfo);
         console.log("type of end")
 
@@ -57,10 +60,13 @@ module.exports = function(app){
         //res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     });
 
-    app.post('/getAllRoomsInfo', async (req, res) => {
+    app.post('/getAllRoomsInfo', urlencodedParser,  function(req, res){
 
-        console.log(req);
-        console.log("POST Received");
+        console.log("PUT Received 1");
+        //let {name} = req.body;
+        var jsonRequest = JSON.parse(JSON.stringify(req.body));
+        console.log(jsonRequest);
+        console.log("PUT Received 2");
         // Obtain all the survey results from our JSON database into a JSON object.
         //var currentCummulativeResultsJSON = readData(DATABASE_FILENAME_PATH_SUMMARY);
         //console.log("currentCummulativeResultsJSON :");
