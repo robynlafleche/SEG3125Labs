@@ -7,6 +7,7 @@ import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 
 import './rooms.css';
 
+
 const Rooms = () => {
 
 	const [rooms,setRooms] = useState([

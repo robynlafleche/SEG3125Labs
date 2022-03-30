@@ -11,8 +11,14 @@ import { Container, Row, Col, Image,Table } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
 
 //how to import chartjs https://github.com/reactchartjs/react-chartjs-2
+import { useTranslation} from 'react-i18next';
 
+const lngs = {
+	en: { nativeName: 'English' },
+	fr: { nativeName: 'Francais' }
+  };
 const Admin = () => {
+	const { t, i18n } = useTranslation();
 	const state = {
 		labels: ['Room 1', 'Room 2', 'Room 3',
 				 'Room 4', 'Room 5','Room 6'],
@@ -135,8 +141,8 @@ return (
 
 	>
 		<Container id="loginPage" style={{}}>
-			<h1>Admin Login Page</h1>
-			<h2>Log into your admin account to view and schedule bookings</h2>
+			<h1>{t('description.adminWel')}</h1>
+			<h2>{t('description.adminMes')}</h2>
 				<form onSubmit={handleSubmit}>
 				{/* style for input fields inspired from https://www.w3schools.com/css/css_form.asp */}
 					{/* <div style={{position:'absolute',padding:'30px'}}> */}
@@ -159,9 +165,9 @@ return (
 		
 
 		<Container id="pageOfAdminStats" style={{display:'none'}}>
-			<h1 >Room Statistics</h1>
+			<h1 >{t('description.adminIn')}</h1>
 			<hr></hr>
-			<h3 style={{color:'white'}}>Number of Room Booking for 2022</h3>
+			<h3 style={{color:'white'}}>{t('description.adminIn1')}</h3>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
 			<Row>
 			<Bar
@@ -184,8 +190,8 @@ return (
 			
 			<Row>
 			<hr></hr>
-    <Col ><h3 style={{color:'white'}}>Number of succesful attempts per room</h3></Col>
-    <Col><h3 style={{color:'white'}}>Sales in $ per room</h3></Col>
+    <Col ><h3 style={{color:'white'}}>{t('description.adminIn2')}</h3></Col>
+    <Col><h3 style={{color:'white'}}>{t('description.adminIn3')}</h3></Col>
   </Row>
 		<Row>
 			<Col className="chart-container">
@@ -229,7 +235,7 @@ return (
 				{/* the tables */}
 			
 			<Row style={{paddingTop: "200px"}}>
-			<h3 style={{color:'white'}}>Statistics per room</h3>
+			<h3 style={{color:'white'}}>{t('description.adminIn4')}</h3>
 				<Col>
 				<Table style={{color:'white'}} >
 						<tr>
