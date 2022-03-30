@@ -93,8 +93,8 @@ return (
             <th>{t('description.escapeRoom')}</th>
             <th>{t('description.time')}</th>
             <th>{t('description.minParticipants')}</th>
-            <th>Room Type</th>
-            <th>Difficulty Level</th>
+            <th>{t('description.roomType')}</th>
+            <th>{t('description.diff')}</th>
             <th>{t('description.price')}</th>
             <th>{t('description.info')}</th>
             <th>{t('description.book')}</th>
