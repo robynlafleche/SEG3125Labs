@@ -9,6 +9,10 @@ import $ from 'jquery';
 
 /* form inspired from https://getbootstrap.com/docs/4.0/components/forms/ */
 
+$(function () {
+  $('#inputDate').datetimepicker();
+});
+
 const BookingB = () => {
   return (
   <body>
@@ -28,48 +32,28 @@ const BookingB = () => {
       <label for="inputEmail">Email</label>
       <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com"></input>
     </div>
-        <div class="col-md-4">
+    <div class="col-md-4">
       <label for="inputTime">Time</label>
-      <input type="time" class="form-control" id="inputTime" placeholder="16:00"></input>
+      <select id="inputTime" class="form-control">
+        <option selected>Choose...</option>
+        <option>"11:00AM"</option>
+        <option>"12:00PM"</option>
+        <option>"1:30PM"</option>
+        <option>"2:00PM"</option>
+        <option>"3:30PM"</option>
+        <option>"5:00PM"</option>
+        <option>"7:00PM"</option>
+        </select>
     </div>
     <div class="col-md-2">
       <label for="inputDate">Date</label>
       <input type="date" class="form-control" data-date-format="mm/dd/yyyy" id="inputDate" placeholder="MM/DD/YYYY"></input>
-
-    </div>
-  </form>
-  <form class="row g-3">
-    <div class="col-md-4">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></input>
-   </div>
-    <div class="col-md-2">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity"></input>
-    </div>
-    <div class="col-md-2">
-      <label for="inputProvince">Province</label>
-      <select id="inputProvince" class="form-control">
-        <option selected>Choose...</option>
-        <option>ON</option>
-        <option>QC</option>
-        <option>MB</option>
-        <option>SK</option>
-        <option>AB</option>
-        <option>BC</option>
-        <option>YT</option>
-        <option>NT</option>
-        <option>NU</option>
-        <option>NL</option>
-        <option>PE</option>
-        <option>NS</option>
-        <option>NB</option>
-      </select>
     </div>
     </form>
+
     <form class="row g-3">
     <div class="col-md-2">
-      <label for="inputPostalCode">Postal Code</label>
+      <label for="inputGroupSize">Number of members</label>
       <input type="text" class="form-control" id="inputPostalCode"></input>
     </div>
   </form>

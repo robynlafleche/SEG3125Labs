@@ -51,7 +51,6 @@ const Booking = () => {
 return (
 	<Container>
 	  <Row>
-      <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
       <Col>
         <Dropdown>
           <Dropdown.Toggle variant="success" style={{position: 'relative', float: 'left'}} className='pick-type-button'>
@@ -77,7 +76,6 @@ return (
           </Dropdown.Menu>
         </Dropdown>
       </Col>
-      <Col><Button className="pick-time-button"  onClick = {pickTimeButton} style={{position: 'relative', float: 'left'}}>{t('description.pickATime')}</Button></Col>
       <Col><Button className="pick-type-button" onClick={pickRoomType} style={{position: 'relative', float: 'left'}}>{t('description.roomType')}</Button></Col>
       <Col><Button className="pick-cancel-button"  style={{position: 'relative', float: 'left'}}>Cancel a Booking</Button></Col>
     </Row>
