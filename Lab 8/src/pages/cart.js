@@ -59,22 +59,22 @@ const Cart = () => {
 				<Form>
 					<Form.Group className="mb-3" controlId="formBasicEmail">
 						<Form.Label>Name on Card</Form.Label>
-						<Form.Control type="name" placeholder="John Doe" />
+						<Form.Control type="name" placeholder="John Doe" required/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicNumber">
 						<Form.Label>Card Number</Form.Label>
-						<Form.Control type="number" placeholder="0000 0000 0000 0000" />
+						<Form.Control type="number" placeholder="0000 0000 0000 0000" required/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicDate">
 						<Form.Label>Expiry Date</Form.Label>
-						<Form.Control type="text" placeholder="MM/YY" />
+						<Form.Control type="text" placeholder="MM/YY" required/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicCVV">
 						<Form.Label>CVV</Form.Label>
-						<Form.Control type="text" placeholder="***" />
+						<Form.Control type="text" placeholder="***" required/>
 					</Form.Group>
 
 					<Button variant="primary" type="submit">
