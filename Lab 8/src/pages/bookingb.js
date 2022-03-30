@@ -32,13 +32,13 @@ const BookingB = () => {
       <label for="inputEmail">Email</label>
       <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com"></input>
     </div>
-    <div class="col-md-4">
-      <label for="inputTime">Time</label>
-      <input type="time" class="form-control" id="inputTime" placeholder="16:00"></input>
-    </div>
     <div class="col-md-2">
       <label for="inputDate">Date</label>
       <input type="date" class="form-control" data-date-format="mm/dd/yyyy" id="inputDate" placeholder="MM/DD/YYYY"></input>
+    </div>
+        <div class="col-md-2">
+      <label for="inputGroupSize">Number of members</label>
+      <input type="text" class="form-control" id="inputGroupSize"></input>
     </div>
     </form>
 
@@ -46,14 +46,6 @@ const BookingB = () => {
     <div class="col-md-4">
       <label for="inputTeamName">Team Name</label>
       <input type="text" class="form-control" id="inputTeamName"></input>
-    </div>
-    <div class="col-md-4">
-      <label for="inputRoom">Escape Room</label>
-      <input type="text" class="form-control" id="inputRoom"></input>
-    </div>
-    <div class="col-md-2">
-      <label for="inputGroupSize">Number of members</label>
-      <input type="text" class="form-control" id="inputGroupSize"></input>
     </div>
   </form>
   <button type="submit" class="btn btn-primary">Submit</button>
