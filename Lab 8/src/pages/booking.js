@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker';
 
 //table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
+import { useTranslation} from 'react-i18next';
 
 
 const Booking = () => {
@@ -35,38 +36,40 @@ const Booking = () => {
     navigate(path);
   }
 
+  const { t, i18n } = useTranslation();
+
 
 return (
 	<Container>
 	  <Row>
-      <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>Pick a date</Button></Col>
+      <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
       <Col>
         <Dropdown>
           <Dropdown.Toggle variant="success" style={{position: 'relative', float: 'left'}} className='pick-type-button'>
-          Room Type
+          {t('description.roomType')}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Indoor Rooms</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Outdoor Rooms</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Virtual Rooms</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">{t('description.indoorRoom')}</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">{t('description.outdoorRoom')}</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">{t('description.virtualRoom')}</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Col>
       <Col>
       <Dropdown>
           <Dropdown.Toggle variant="success" style={{position: 'relative', float: 'left'}} className='pick-availibility-button'>
-          Availibility
+          {t('description.availability')}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Fully Available</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Partially Available</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">{t('description.fullyAvailable')}</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">{t('description.partiallyAvailable')}</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Col>
-      <Col><Button className="pick-time-button"  onClick = {pickTimeButton} style={{position: 'relative', float: 'left'}}>Pick a Time</Button></Col>
-      <Col><Button className="pick-type-button" onClick={pickRoomType} style={{position: 'relative', float: 'left'}}>Room Type</Button></Col>
+      <Col><Button className="pick-time-button"  onClick = {pickTimeButton} style={{position: 'relative', float: 'left'}}>{t('description.pickATime')}</Button></Col>
+      <Col><Button className="pick-type-button" onClick={pickRoomType} style={{position: 'relative', float: 'left'}}>{t('description.roomType')}</Button></Col>
       <Col><Button className="pick-cancel-button"  style={{position: 'relative', float: 'left'}}>Cancel a Booking</Button></Col>
     </Row>
     <Row>
@@ -78,13 +81,13 @@ return (
       <Table bordered hover variant="dark" id="cartTable">
           <thead>
             <tr>
-            <th>Escape Room</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Number of slots available</th>
-            <th>Price</th>
-            <th>Info</th>
-            <th>Book</th>
+            <th>{t('description.escapeRoom')}</th>
+            <th>{t('description.date')}</th>
+            <th>{t('description.time')}</th>
+            <th>{t('description.numSlots')}</th>
+            <th>{t('description.price')}</th>
+            <th>{t('description.info')}</th>
+            <th>{t('description.book')}</th>
             </tr>
           </thead>
           {roomsAvailable.map((currentElem, id) => (
@@ -95,8 +98,8 @@ return (
               <td>{currentElem.time}</td>
               <td>{currentElem.slots}</td>
               <td>{currentElem.price}</td>
-              <td><Button id="Info">Info</Button></td>
-              <td><Button id="Book" >Book</Button></td>
+              <td><Button id="Info">{t('description.info')}</Button></td>
+              <td><Button id="Book" >{t('description.book')}</Button></td>
               </tr>
             </tbody>
           ))}	
