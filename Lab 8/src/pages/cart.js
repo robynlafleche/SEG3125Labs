@@ -12,7 +12,7 @@ const Cart = () => {
 
 	const [cartElements, setCartElements] = useState([
 		{ description: 'Jungle Escape', pricePerPlayer: '$20', numberOfPlayers: 4, price:'$80', id: 1 },
-		{ description: 'Code Red', pricePerPlayer: '$20', numberOfPlayers: 8, price:'$160', id: 2 }
+		
 	  ])
 
 	const title = "Here are the contents of your cart :";
@@ -48,7 +48,7 @@ const Cart = () => {
 							<tr>
 								<td colSpan={2}></td>
 								<td>Cart Total</td>
-								<td>$240</td>
+								<td>$80</td>
 							</tr>
 						</tbody>
 					</Table>`

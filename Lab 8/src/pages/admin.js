@@ -108,6 +108,8 @@ const Admin = () => {
 	//code inspired from https://www.w3schools.com/react/react_forms.asp
 	const [username, setusername] = useState(''); // '' is the initial state value
 	const [password, setpassword] = useState(''); // '' is the initial state value
+
+	  
 	const adminUsername = "admin";
 	const adminPassword = 1234;
 	const handleSubmit = (event) => {
@@ -145,7 +147,8 @@ return (
     					</div>
 						<label>Password</label>
 						<div class="col-xs-2">
-    					<input value={password} onInput={e => setpassword(e.target.value)}/>
+							{/* code inspired from https://www.w3schools.com/howto/howto_js_toggle_password.asp */}
+    					<input type="password"  id="myInput" value={password} onInput={e => setpassword(e.target.value)}/>
     					</div>
 						<button id="LoginButton" type="submit">Login</button>
 				
@@ -153,11 +156,12 @@ return (
 					</Row>
 				</form>
 		</Container>
+		
 
 		<Container id="pageOfAdminStats" style={{display:'none'}}>
 			<h1 >Room Statistics</h1>
 			<hr></hr>
-			<h3>Number of Room Booking for 2022</h3>
+			<h3 style={{color:'white'}}>Number of Room Booking for 2022</h3>
 			{/* code inspired from https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react and https://stackoverflow.com/a/59325530 */}
 			<Row>
 			<Bar
@@ -180,8 +184,8 @@ return (
 			
 			<Row>
 			<hr></hr>
-    <Col><h3>Number of succesful attempts per room</h3></Col>
-    <Col><h3>Sales in $ per room</h3></Col>
+    <Col ><h3 style={{color:'white'}}>Number of succesful attempts per room</h3></Col>
+    <Col><h3 style={{color:'white'}}>Sales in $ per room</h3></Col>
   </Row>
 		<Row>
 			<Col className="chart-container">
@@ -225,9 +229,9 @@ return (
 				{/* the tables */}
 			
 			<Row style={{paddingTop: "200px"}}>
-			<h3>Statistics per room</h3>
+			<h3 style={{color:'white'}}>Statistics per room</h3>
 				<Col>
-				<Table >
+				<Table style={{color:'white'}} >
 						<tr>
 							<th >Room 1: Space Adventure</th>
 							<th >(60 mins)</th>
@@ -261,7 +265,7 @@ return (
 						</Table>
 				</Col>
 			<Col>
-			<Table >
+			<Table style={{color:'white'}}>
 					<tr>
 						<th >Room 2: The Castle</th>
 						<th >(60 mins)</th>
@@ -301,7 +305,7 @@ return (
   <Row >
 		
 				<Col>
-				<Table >
+				<Table style={{color:'white'}}>
 		
 					<tr>
 						<th >Room 3: Jungle Escape</th>
@@ -337,7 +341,7 @@ return (
 						</Table>
 				</Col>
 			<Col>
-			<Table >
+			<Table style={{color:'white'}}>
 			<tr>
 						<th >Room 4: Code Red</th>
 						<th >(45 mins)</th>
@@ -377,7 +381,7 @@ return (
   <Row >
 		
 				<Col>
-				<Table >
+				<Table style={{color:'white'}}>
 				<tr>
 						<th >Room 5: Undermined</th>
 						<th >(30 mins)</th>
@@ -411,7 +415,7 @@ return (
 						</Table>
 				</Col>
 			<Col>
-			<Table >
+			<Table style={{color:'white'}}>
 			<tr>
 						<th >Room 6: Warlocked</th>
 						<th >(45 mins)</th>
