@@ -21,24 +21,73 @@ i18n
         en: {
           translation: {
             description: {
+              // Home page
               devisePart1: 'DIVIDE',
               devisePart2: 'CONQUER',
               devisePart3: 'ESCAPE',
               bookNow: 'Book Now',
               bookEscapeRoomText: 'Book an escape room today',
-              roomsAvailableTitle: "Here are the rooms available based off of your selections:"
+
+              // Booking page
+              roomsAvailableTitle: "Here are the rooms available based off of your selections:",
+              pickADate: "Pick a date",
+              pickATime: "Pick a time",
+              roomType: "Room Type",
+              availability: "Availability",
+              cancelABooking: "Cancel a Booking",
+              indoorRoom: "Indoor Rooms", 
+              outdoorRoom: "Outdoor Rooms",
+              virtualRoom: "Virtual Rooms",
+              fullyAvailable: "Fully Available",
+              partiallyAvailable: "partially Available",
+              escapeRoom: "Escape Room",
+              date: "Date",
+              time: "Time",
+              numSlots: "Number of slots available",
+              price: "Price per person",
+              info: "Info",
+              book: "Book",
+
+
+
+
+              end: "End"
             }
           }
         },
         fr: {
           translation: {
             description: {
+              // Home page
               devisePart1: 'DIVISER',
               devisePart2: 'CONQUERIR',
               devisePart3: 'ÉCHAPER',
               bookNow: 'Réservation Maintenant',   
               bookEscapeRoomText: 'Réservez une salle d\'évasion aujourd\'hui',           
-              roomsAvailableTitle: "Voici les chambres disponibles selon vos selections:"
+
+
+              // Booking page
+              roomsAvailableTitle: "Voici les chambres disponibles selon vos selections:",
+              pickADate: "Choisir une date",
+              pickATime: "Choisir une heure",
+              roomType: "Type de salle",
+              availability: "Disponibilité",
+              cancelABooking: "Annulez une réservation",
+              indoorRoom: "Salles à l'intérieur", 
+              outdoorRoom: "Salles à l'extérieur",
+              virtualRoom: "Salles virtuelles", 
+              fullyAvailable: "Pleinement Disponible",
+              partiallyAvailable: "Partiellement Disponible",                         
+              escapeRoom: "Salle d'évasion",
+              date: "Date",
+              time: "Heure",
+              numSlots: "Nombre de places disponibles",
+              price: "Prix par personne",
+              info: "Info",
+              book: "Réservez",
+
+
+              end: "Fin"
             }
           }
         }
