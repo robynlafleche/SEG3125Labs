@@ -13,8 +13,16 @@ const lngs = {
   };
 
 function App() {
+
+  const {i18n } = useTranslation();
+
   return (
     <div className='App'>
+    {Object.keys(lngs).map((lng) => (
+              <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+                {lngs[lng].nativeName}
+              </button>					
+    ))}      
       <Index defaultActiveKey="/home"/>
     </div> 
   );
