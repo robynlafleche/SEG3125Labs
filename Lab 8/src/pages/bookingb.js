@@ -52,9 +52,13 @@ const BookingB = () => {
     </form>
 
     <form class="row g-3">
+    <div class="col-md-4">
+      <label for="inputGroupSize">Team Name</label>
+      <input type="text" class="form-control" id="inputPostalCode"></input>
+    </div>
     <div class="col-md-2">
       <label for="inputGroupSize">Number of members</label>
-      <input type="text" class="form-control" id="inputPostalCode"></input>
+      <input type="text" class="form-control" id="inputGroupSize"></input>
     </div>
   </form>
   <button type="submit" class="btn btn-primary">Submit</button>
