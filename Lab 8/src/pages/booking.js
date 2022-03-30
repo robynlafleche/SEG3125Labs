@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Col, Container, Row, Dropdown } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { useNavigate } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
 
 //table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
@@ -25,6 +26,16 @@ const Booking = () => {
 		let path = '/bookingb'
 		navigate(path);
 	}
+  const pickTimeButton = () => {
+    let path = '/bookingb'
+    navigate(path);
+  }
+  const pickRoomType = () => {
+    let path = '/rooms'
+    navigate(path);
+  }
+
+
 return (
 	<Container>
 	  <Row>
@@ -55,6 +66,8 @@ return (
           </Dropdown.Menu>
         </Dropdown>
       </Col>
+      <Col><Button className="pick-time-button"  onClick = {pickTimeButton} style={{position: 'relative', float: 'left'}}>Pick a Time</Button></Col>
+      <Col><Button className="pick-type-button" onClick={pickRoomType} style={{position: 'relative', float: 'left'}}>Room Type</Button></Col>
       <Col><Button className="pick-cancel-button"  style={{position: 'relative', float: 'left'}}>Cancel a Booking</Button></Col>
     </Row>
     <Row>

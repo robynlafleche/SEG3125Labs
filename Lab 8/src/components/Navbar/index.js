@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Navbar, Nav, Container} from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Booking from "../../pages/booking";
+import BookingB from "../../pages/bookingb";
 import FAQ from "../../pages/faq";
 import Home from "../../pages/home";
 import Rooms from "../../pages/rooms";
@@ -46,6 +47,7 @@ class Index extends Component {
 					<Route path='/' element={<Home/>} />
 					<Route path='/home' element={<Home/>} />
 					<Route path='/booking' element={<Booking/>} />
+					<Route path='/bookingb' element={<BookingB/>} />
 					<Route path='/faq' element={<FAQ/>} />
 					<Route path='/rooms' element={<Rooms/>} />
 					<Route path='/admin' element={<Admin/>} />
