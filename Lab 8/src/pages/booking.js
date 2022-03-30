@@ -80,9 +80,6 @@ return (
           </Dropdown.Menu>
         </Dropdown>
       </Col>
-      <Col><Button className="pick-time-button"  onClick = {pickTimeButton} style={{position: 'relative', float: 'left'}}>{t('description.pickATime')}</Button></Col>
-      <Col><Button className="pick-type-button" onClick={pickRoomType} style={{position: 'relative', float: 'left'}}>{t('description.roomType')}</Button></Col>
-      <Col><Button className="pick-cancel-button"  style={{position: 'relative', float: 'left'}}>Cancel a Booking</Button></Col>
     </Row>
     <Row>
       <header>
