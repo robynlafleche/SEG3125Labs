@@ -33,12 +33,12 @@ return (
 	<Button variant="outline" onClick={bookNowButton}>{t('description.bookNow')}</Button>
 	
 	
-	<div style={{ position: 'absolute' , right: '50px', top: '5px' }}>
+	<div>
 	{Object.keys(lngs).map((lng) => (
-            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' , marginBottom: '2.5px' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
-            </button>
-          ))}
+            </button>					
+	))}
 	</div>
 
 	</div>
