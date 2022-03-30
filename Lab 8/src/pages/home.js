@@ -26,11 +26,11 @@ return (
 	<div className = 'backgroundImg'>
 	<div className = 'home'>
 	<h1>{t('description.devisePart1')}</h1>
-	<h1>CONQUER </h1>
-	<h1>ESCAPE</h1>
+	<h1>{t('description.devisePart2')}</h1>
+	<h1>{t('description.devisePart3')}</h1>
 	</div>
-	<h2> Book an escape room today </h2>
-	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>
+	<h2> {t('description.bookEscapeRoomText')} </h2>
+	<Button variant="outline" onClick={bookNowButton}>{t('description.bookNow')}</Button>
 	
 	
 	<div>

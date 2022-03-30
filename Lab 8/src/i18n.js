@@ -22,6 +22,10 @@ i18n
           translation: {
             description: {
               devisePart1: 'DIVIDE',
+              devisePart2: 'CONQUER',
+              devisePart3: 'ESCAPE',
+              bookNow: 'Book Now',
+              bookEscapeRoomText: 'Book an escape room today',
               roomsAvailableTitle: "Here are the rooms available based off of your selections:"
             }
           }
@@ -30,6 +34,10 @@ i18n
           translation: {
             description: {
               devisePart1: 'DIVISER',
+              devisePart2: 'CONQUERIR',
+              devisePart3: 'ÉCHAPER',
+              bookNow: 'Réservation Maintenant',   
+              bookEscapeRoomText: 'Réservez une salle d\'évasion aujourd\'hui',           
               roomsAvailableTitle: "Voici les chambres disponibles selon vos selections:"
             }
           }
