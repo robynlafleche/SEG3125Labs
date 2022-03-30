@@ -40,7 +40,6 @@ return (
 	<Container>
 	  <Row>
       <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>Pick a date</Button></Col>
-      <Col><Button className="pick-time-button"  style={{position: 'relative', float: 'left'}}>Pick a Time</Button></Col>
       <Col>
         <Dropdown>
           <Dropdown.Toggle variant="success" style={{position: 'relative', float: 'left'}} className='pick-type-button'>

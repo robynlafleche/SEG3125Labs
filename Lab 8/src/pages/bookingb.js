@@ -4,12 +4,14 @@ import ReactDOM from 'react-dom';
 import { Button, Forms } from 'react-bootstrap';
 import { useModal } from 'react-hooks-use-modal';
 import DatePicker from 'react-datepicker';
+import $ from 'jquery';
 
 
 /* form inspired from https://getbootstrap.com/docs/4.0/components/forms/ */
 
 const BookingB = () => {
   return (
+  <body>
   <form>
   <form class="row g-3">
     <div class="col-md-4">
@@ -26,9 +28,14 @@ const BookingB = () => {
       <label for="inputEmail">Email</label>
       <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com"></input>
     </div>
-    <div class="col-md-4">
+        <div class="col-md-4">
+      <label for="inputTime">Time</label>
+      <input type="time" class="form-control" id="inputTime" placeholder="16:00"></input>
+    </div>
+    <div class="col-md-2">
       <label for="inputDate">Date</label>
-      <input type="text" class="form-control" data-date-format="mm/dd/yyyy" id="inputDate" placeholder="MM/DD/YYYY"></input>
+      <input type="date" class="form-control" data-date-format="mm/dd/yyyy" id="inputDate" placeholder="MM/DD/YYYY"></input>
+
     </div>
   </form>
   <form class="row g-3">
@@ -68,6 +75,8 @@ const BookingB = () => {
   </form>
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
   );
 }
 export default BookingB;
