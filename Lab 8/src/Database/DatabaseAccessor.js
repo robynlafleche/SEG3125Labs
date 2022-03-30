@@ -17,7 +17,7 @@ const connection = new Mysql({
 
 function getAllRoomsInfo()
 {
-    var sql = "SELECT * FROM EscapeRoom";
+    var sql = "SELECT * FROM EscapeRoom NATURAL JOIN RoomAvailability NATURAL JOIN Timeslot";
     var queryResult = connection.query(sql);
     //console.log(queryResult);
 
@@ -38,12 +38,12 @@ module.exports = function(app){
         console.log("Received");
         //res = getAllRoomsInfo();
         var allRoomsInfo = getAllRoomsInfo();
-        console.log("type of :")
-        //console.log(allRoomsInfo)
-        console.log(typeof allRoomsInfo);
-        console.log("type of end")
+        //console.log("type of :")
+        console.log(allRoomsInfo)
+        //console.log(typeof allRoomsInfo);
+        //console.log("type of end")
 
-        myObj = {"name":"John", "age":30, "car":null};
+        //myObj = {"name":"John", "age":30, "car":null};
         res.send(allRoomsInfo);
 
         // Obtain all the survey results from our JSON database into a JSON object.

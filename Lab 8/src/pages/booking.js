@@ -1,6 +1,6 @@
 // import './booking.css';
 import React, { Component } from 'react';
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import { Button, Col, Container, Row, Dropdown } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { useNavigate } from 'react-router-dom';
@@ -14,12 +14,10 @@ import { useTranslation} from 'react-i18next';
 const Booking = () => {
 
   const [roomsAvailable, setRoomsAvailable] = useState([
-    { room: "Space Adventure", date: "Mar 30th 2022", time: "1:30 PM", slots: 0, price: "$20"},
-    { room: "Jungle Escape", date: "Mar 30th 2022", time: "2:00 PM", slots: 20, price: "$20"},
-    { room: "Space Adventure", date: "Mar 30th 2022", time: "2:30 PM", slots: 15, price: "$20"},
-    { room: "Jungle Escape", date: "Mar 30th 2022", time: "3:00 PM", slots: 10, price: "$20"}
+    {RoomID: 1, RoomName: 'Space Adventure', PricePerPlayer: 30, RoomType: 'Indoor', DifficultyLevel: 4, MinimumNumberOfParticipants: 4}
   ])
   
+
   const title = "Here are the rooms available based off of your selections"
 
 	let navigate = useNavigate();
@@ -38,6 +36,17 @@ const Booking = () => {
 
   const { t, i18n } = useTranslation();
 
+  useEffect(() => {
+    // Get all the rooms from the Database and display them:
+
+    fetch("http://localhost:3001/getAllRoomsInfo")
+      .then( res => res.json())
+      .then((res) => {
+        setRoomsAvailable(res)
+        console.log(res);
+      });
+
+  }, []);
 
 return (
 	<Container>
@@ -76,28 +85,31 @@ return (
       <header>
         <h1>{title}</h1>
       </header>
-    </Row>
+    </Row>     
+
     <Row>
       <Table bordered hover variant="dark" id="cartTable">
           <thead>
             <tr>
             <th>{t('description.escapeRoom')}</th>
-            <th>{t('description.date')}</th>
             <th>{t('description.time')}</th>
-            <th>{t('description.numSlots')}</th>
+            <th>{t('description.minParticipants')}</th>
+            <th>Room Type</th>
+            <th>Difficulty Level</th>
             <th>{t('description.price')}</th>
             <th>{t('description.info')}</th>
             <th>{t('description.book')}</th>
             </tr>
-          </thead>
+          </thead>   
           {roomsAvailable.map((currentElem, id) => (
             <tbody key={id}>
               <tr>
-              <td>{currentElem.room}</td>
-              <td>{currentElem.date}</td>
-              <td>{currentElem.time}</td>
-              <td>{currentElem.slots}</td>
-              <td>{currentElem.price}</td>
+              <td>{currentElem.RoomName}</td>
+              <td>{currentElem.TimeslotDescription}</td>
+              <td>{currentElem.MinimumNumberOfParticipants}</td>
+              <td>{currentElem.RoomType}</td>
+              <td>{currentElem.DifficultyLevel}/5</td>
+              <td>${currentElem.PricePerPlayer}.00</td>
               <td><Button id="Info">{t('description.info')}</Button></td>
               <td><Button id="Book" >{t('description.book')}</Button></td>
               </tr>
