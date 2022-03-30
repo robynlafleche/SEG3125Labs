@@ -5,9 +5,13 @@ import { Button, Col, Container, Row, Dropdown } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { useNavigate } from 'react-router-dom';
 
+import axios from "axios";
+
+
 //table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
 import { useTranslation} from 'react-i18next';
+
 
 
 const Booking = () => {
@@ -29,10 +33,32 @@ const Booking = () => {
 
   const { t, i18n } = useTranslation();
 
+  const name = "Hello World";
+
+  function postName() {
+
+    console.log("posting Name");
+
+    //var allRoomsInfo = axios.get("http://localhost:3001/getAllRoomsInfo");
+    //console.log(allRoomsInfo);
+
+    fetch("http://localhost:3001/getAllRoomsInfo")
+      .then( res => res.json())
+      .then((res) => {
+        console.log(res[0].RoomID);
+      });
+
+    /*try {
+      await axios.post("http://localhost:3001/getAllRoomsInfo", {name})
+    } catch (error) {
+      console.log("error : " + error);
+    }*/
+  }
+
 return (
 	<Container>
 	  <Row>
-      <Col><Button className="pick-date-button" onClick={pickDateButton} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
+      <Col><Button className="pick-date-button" onClick={postName} style={{position: 'relative', float: 'left'}}>{t('description.pickADate')}</Button></Col>
       <Col><Button className="pick-time-button"  style={{position: 'relative', float: 'left'}}>{t('description.pickATime')}</Button></Col>
       <Col>
         <Dropdown>
