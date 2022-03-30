@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 
 import './contact.css';
 
@@ -24,40 +24,27 @@ return (
 	<Container>
 	<h1>Get in touch with us</h1>
 	<Row>
-		<Col xs={8}>
-			<form onSubmit={handleSubmit}>
-			<label>Enter your name:
-			<input 
-				type="text" 
-				name="username" 
-				value={inputs.username || ""} 
-				onChange={handleChange}
-			/><br></br>
-			</label>
-			<label>Enter your email:
-				<input 
-				type="text" 
-				name="email" 
-				value={inputs.email || ""} 
-				onChange={handleChange}
-				/>
-				</label>
-				<br></br>
-
-				<label>Enter your message:
-				<textarea 
-				type="text" 
-				name="message" 
-				value={inputs.message || ""} 
-				onChange={handleChange}
-				/>
-				</label>
-				<br></br>
-				<Button variant="outline" onClick={handleSubmit}>Submit</Button>
-			</form>
+		<Col xs={6}>
+			<Form>
+				<Form.Group controlId="form.Name">
+					<Form.Label>Name</Form.Label>
+					<Form.Control type="text" placeholder="Enter name" />
+				</Form.Group>
+				<Form.Group controlId="form.Email">
+					<Form.Label>Email address</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				</Form.Group>
+				<Form.Group controlId="form.Textarea">
+					<Form.Label>Comment</Form.Label>
+					<Form.Control as="textarea" rows={3} />
+				</Form.Group>
+				<Button variant="primary" type="submit">
+						Submit form
+				</Button>
+			</Form>
 		</Col>
-
-		<Col>
+		<Col xs={2}></Col>
+		<Col xs={4}>
 		<div className="contact">
 			<p>613-938-0393</p>
 			<p>Monday-Friday 1pm - 9pm</p>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 
 import './rooms.css';
 
@@ -18,6 +19,11 @@ const Rooms = () => {
 
 	])
 
+	let navigate = useNavigate();
+  const bookButton = () => {
+		let path = '/bookingb'
+		navigate(path);
+	}
 	
 return (
 	<Container>
@@ -33,6 +39,7 @@ return (
 					<p>Room type: {room.type}</p>
 					<p>Minimum number of players required: {room.minPlayers}</p>
 					<p>Duration: {room.duration}</p>
+					<Button onClick={bookButton} id="Book" >Book</Button>
 				</Col>
 
 				<Col>
