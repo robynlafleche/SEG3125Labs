@@ -13,11 +13,7 @@
 	top: 0px;
 }
 
-#inputTime.form-control {
-	position: relative;
-	right:  -20px;
-	top:  7px;
-}
+
 button.btn.btn-primary {
 	color: black;
 	position: relative;
