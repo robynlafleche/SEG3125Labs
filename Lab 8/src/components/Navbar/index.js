@@ -9,8 +9,12 @@ import Contact from "../../pages/contact";
 import Admin from "../../pages/admin";
 import Cart from "../../pages/cart";
 
+
+
+
 class Index extends Component {
 	render() {
+				
 		return (
 			<Router>
 				<div>
@@ -38,6 +42,7 @@ class Index extends Component {
 								<Nav.Link as={Link} to={'/cart'} >Cart</Nav.Link>
 							</Nav>
 							</Navbar.Collapse>
+							
 						</Container>
 					</Navbar>
 				</div>
