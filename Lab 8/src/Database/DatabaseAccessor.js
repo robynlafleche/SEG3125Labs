@@ -24,6 +24,25 @@ function getAllRoomsInfo()
     return queryResult
 }
 
+function getAllTimeSlots()
+{
+    var sql = "SELECT TimeSlotDescription FROM Timeslot";
+    var queryResult = connection.query(sql);
+    //console.log(queryResult);
+
+    return queryResult
+}
+
+
+function getAllRoomNames()
+{
+    var sql = "SELECT RoomName FROM EscapeRoom";
+    var queryResult = connection.query(sql);
+    //console.log(queryResult);
+
+    return queryResult
+}
+
 
 
 
@@ -58,6 +77,27 @@ module.exports = function(app){
         // This is no longer being used, the SQL database is used now instead of the JSON database.
         //res.render('surveyResultsPage', {allSurveyResults: currentCummulativeResultsJSON});
     });
+
+    app.get('/getAllTimeSlots', function(req, res){
+
+        console.log("Received getAllTimeSlots");
+        //res = ();
+        var timeslots = getAllTimeSlots();
+        res.send(timeslots);
+
+    });
+
+    app.get('/getAllRoomNames', function(req, res){
+
+        console.log("Received getAllRoomNames");
+        //res = ();
+        var roomNames = getAllRoomNames();
+        res.send(roomNames);
+
+    });
+
+    
+
 
     app.post('/getAllRoomsInfo', urlencodedParser,  function(req, res){
 
