@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 //table inspired by https://www.geeksforgeeks.org/how-to-create-a-table-in-reactjs
 
+import { useTranslation} from 'react-i18next';
 
 
 const Booking = () => {
@@ -18,13 +19,16 @@ const Booking = () => {
     { room: "Jungle Escape", date: "Mar 30th 2022", time: "3:00 PM", slots: 10, price: "$20"}
   ])
   
-  const title = "Here are the rooms available based off of your selections"
+  //const title = "Here are the rooms available based off of your selections"
 
 	let navigate = useNavigate();
 	const pickDateButton = () => {
 		let path = '/bookingb'
 		navigate(path);
 	}
+
+  const { t, i18n } = useTranslation();
+
 return (
 	<Container>
 	  <Row>
@@ -59,7 +63,7 @@ return (
     </Row>
     <Row>
       <header>
-        <h1>{title}</h1>
+        <h1>{t('description.roomsAvailableTitle')}</h1>
       </header>
     </Row>
     <Row>

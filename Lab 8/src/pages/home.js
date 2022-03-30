@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 
-// import i18n (needs to be bundled ;))
-import '../i18n';
-
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation} from 'react-i18next';
 
 const lngs = {
 	en: { nativeName: 'English' },
@@ -34,14 +31,19 @@ return (
 	</div>
 	<h2> Book an escape room today </h2>
 	<Button variant="outline" onClick={bookNowButton}>Book Now</Button>
-
+	
+	
+	<div>
 	{Object.keys(lngs).map((lng) => (
             <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
-            </button>
+            </button>					
 	))}
+	</div>
 
 	</div>
+
+	
 	);
 }
 

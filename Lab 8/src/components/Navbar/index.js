@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Navbar, Nav, Container} from 'react-bootstrap'
+import {Navbar, Nav, Container, Button} from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Booking from "../../pages/booking";
 import FAQ from "../../pages/faq";
@@ -9,12 +9,21 @@ import Contact from "../../pages/contact";
 import Admin from "../../pages/admin";
 import Cart from "../../pages/cart";
 
+// import i18n (needs to be bundled ;))
+/*import '../../i18n';
 
+import { useTranslation, Trans } from 'react-i18next';
 
+const lngs = {
+	en: { nativeName: 'English' },
+	fr: { nativeName: 'Francais' }
+  };
+*/
 
 class Index extends Component {
 	render() {
-				
+		
+
 		return (
 			<Router>
 				<div>
@@ -62,4 +71,5 @@ class Index extends Component {
 					)
 	}
 }
+
 export default Index;

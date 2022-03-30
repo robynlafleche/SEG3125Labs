@@ -21,18 +21,16 @@ i18n
         en: {
           translation: {
             description: {
-              part1: 'Edit <1>src/App.js</1> and save to reload.',
-              part2: 'Learn React',
-              devisePart1: 'DIVIDE'
+              devisePart1: 'DIVIDE',
+              roomsAvailableTitle: "Here are the rooms available based off of your selections:"
             }
           }
         },
         fr: {
           translation: {
             description: {
-              part1: 'Ändere <1>src/App.js</1> und speichere um neu zu laden.',
-              part2: 'Lerne React',
-              devisePart1: 'DIVISER'
+              devisePart1: 'DIVISER',
+              roomsAvailableTitle: "Voici les chambres disponibles selon vos selections:"
             }
           }
         }
