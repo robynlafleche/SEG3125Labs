@@ -48,6 +48,20 @@ i18n
               price: "Price per person",
               info: "Info",
               book: "Book",
+              diff : "Difficulty Level",
+  
+
+
+
+              // Contact Us
+              getInTouch: "Get in touch with us",
+              name : "Name",
+              EmailAddress : "Email address",
+              comment: "Comment",
+              submitForm: "Submit form",
+              monFri: "Monday-Friday 1pm - 9pm",
+              satSun: "Saturday-Sunday 1pm - 11pm",
+              enterName: "Enter name",
 
 
 
@@ -87,6 +101,18 @@ i18n
               price: "Prix par personne",
               info: "Info",
               book: "Réservez",
+              diff : "Niveau de Difficulté",
+
+
+              // Contact Us
+              getInTouch: "Contactez-nous",
+              name : "Nom",
+              EmailAddress : "Adresse courriel",
+              comment: "Commentaire",
+              submitForm: "Soumettre le Formulaire",
+              monFri: "Lundi-Vendredi 9am - 9pm",
+              satSun: "Samedi-Dimance 9amm - 11pm", 
+              enterName: "Entrez votre nom",             
 
 
               end: "Fin"
