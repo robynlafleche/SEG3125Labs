@@ -111,8 +111,6 @@ return (
               <td>${currentElem.PricePerPlayer}.00</td>
               <td><Button onClick={pickRoomType} id="Info">{t('description.info')}</Button></td>
               <td><Button onClick={bookButton} id="Book" >{t('description.book')}</Button></td>
-              <td><a href="/rooms" class="btn btn-info" role="button">Info</a></td>
-              <td><a href="/bookingb" class="btn btn-info" role="button">Book</a></td>
               </tr>
             </tbody>
           ))}	
