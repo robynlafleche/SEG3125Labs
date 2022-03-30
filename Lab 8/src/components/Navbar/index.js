@@ -8,7 +8,6 @@ import Rooms from "../../pages/rooms";
 import Contact from "../../pages/contact";
 import Admin from "../../pages/admin";
 import Cart from "../../pages/cart";
-import { LanguageSelector } from "../../pages/language";
 
 // import i18n (needs to be bundled ;))
 /*import '../../i18n';
@@ -24,6 +23,7 @@ const lngs = {
 class Index extends Component {
 	render() {
 		
+
 		return (
 			<Router>
 				<div>
