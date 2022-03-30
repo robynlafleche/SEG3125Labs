@@ -28,15 +28,15 @@ return (
 			<Form>
 				<Form.Group controlId="form.Name">
 					<Form.Label>Name</Form.Label>
-					<Form.Control type="text" placeholder="Enter name" />
+					<Form.Control type="text" placeholder="Enter name" required />
 				</Form.Group>
 				<Form.Group controlId="form.Email">
 					<Form.Label>Email address</Form.Label>
-					<Form.Control type="email" placeholder="name@example.com" />
+					<Form.Control type="email" placeholder="name@example.com" required/>
 				</Form.Group>
 				<Form.Group controlId="form.Textarea">
 					<Form.Label>Comment</Form.Label>
-					<Form.Control as="textarea" rows={3} />
+					<Form.Control as="textarea" rows={3} required/>
 				</Form.Group>
 				<Button variant="primary" type="submit">
 						Submit form
