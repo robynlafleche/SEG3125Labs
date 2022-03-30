@@ -134,6 +134,7 @@ var r = connection.query(sql);
 console.log("Timeslot table created");
 
 
+// Room to timeslots
 
 var RoomID = 1;  // Space Adventure
 for (var TimeslotID = 1; TimeslotID < 9; TimeslotID++)
@@ -184,78 +185,85 @@ for (var TimeslotID = 1; TimeslotID < 9; TimeslotID++)
 	connection.query(sql);
 }
 
-
-
-
-
 console.log("RoomAvailability table created");
 
+// Customers
 
-/*
-sql = "CREATE TABLE IF NOT EXISTS escape6db.Booking(\
-	ConfirmationNumber INTEGER, \
-	DayOfTheWeek VARCHAR(255) NOT NULL,\
-	AllowOtherToJoin BOOLEAN NOT NULL,\
-	Timeslot VARCHAR(255) NOT NULL,\
-	RoomID INTEGER NOT NULL, \
-	CHECK (DayOfTheWeek IN ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')),	\
-	PRIMARY KEY (ConfirmationNumber),\
-	FOREIGN KEY (RoomID) REFERENCES EscapeRoom (RoomID) ON DELETE CASCADE ON UPDATE CASCADE\
-	);";
-
+var EmailAddress = "kdahe094@uottawa.ca";
+var PhoneNumber = "613-598-6585";
+var FirstName = "Karim";
+var LastName = "Dahel";
+sql = "INSERT INTO Customer (EmailAddress, PhoneNumber, FirstName, LastName) \
+VALUES ('"+EmailAddress+"', '"+PhoneNumber+"', '"+FirstName+"', '"+LastName+"')";
 connection.query(sql);
-console.log("Booking table created");
 
-
-sql = "CREATE TABLE IF NOT EXISTS escape6db.Customer(\
-	EmailAddress VARCHAR(255),\
-	PhoneNumber VARCHAR(255),\
-	FirstName VARCHAR(255),\
-	LastName VARCHAR(255),	\
-	PRIMARY KEY (EmailAddress)\
-);";
-
+EmailAddress = "rlafl057@uottawa.ca";
+PhoneNumber = "514-923-0641";
+FirstName = "Robyn";
+LastName = "Lafleche";
+sql = "INSERT INTO Customer (EmailAddress, PhoneNumber, FirstName, LastName) \
+VALUES ('"+EmailAddress+"', '"+PhoneNumber+"', '"+FirstName+"', '"+LastName+"')";
 connection.query(sql);
+
+EmailAddress = "mclar063@uottawa.ca";  
+PhoneNumber = "613-668-7458";
+FirstName = "Meaghan";
+LastName = "Clarkin";
+sql = "INSERT INTO Customer (EmailAddress, PhoneNumber, FirstName, LastName) \
+VALUES ('"+EmailAddress+"', '"+PhoneNumber+"', '"+FirstName+"', '"+LastName+"')";
+connection.query(sql);
+
+EmailAddress = "gsade077@uottawa.ca";
+PhoneNumber = "613-831-0843";
+FirstName = "Ghazal";
+LastName = "Sadeghpour";
+sql = "INSERT INTO Customer (EmailAddress, PhoneNumber, FirstName, LastName) \
+VALUES ('"+EmailAddress+"', '"+PhoneNumber+"', '"+FirstName+"', '"+LastName+"')";
+connection.query(sql);
+
 console.log("Customer table created");
 
 
+// Bookings 
 
-sql = "CREATE TABLE IF NOT EXISTS escape6db.Timeslot(\
-	TimeslotID INTEGER, \
-	TimeslotDescription VARCHAR(255) NOT NULL,\
-	PRIMARY KEY (TimeslotID)\
-	);";
-
+var BookingDate = "2022-04-17";
+var AllowOtherToJoin = 1;
+var TimeslotID = 3;
+var RoomID = 1;
+sql = "INSERT INTO Booking (BookingDate, AllowOtherToJoin, TimeslotID, RoomID) \
+VALUES ('"+BookingDate+"', '"+AllowOtherToJoin+"', '"+TimeslotID+"', '"+RoomID+"')";
 connection.query(sql);
-console.log("Timeslot table created");
 
 
-sql = "CREATE TABLE IF NOT EXISTS escape6db.RoomAvailability(\
-	RoomAvailabilityID INTEGER, \
-	RoomID INTEGER NOT NULL, \
-	TimeslotID INTEGER NOT NULL,\
-	PRIMARY KEY (RoomAvailabilityID),\
-	FOREIGN KEY (RoomID) REFERENCES EscapeRoom (RoomID) ON DELETE CASCADE ON UPDATE CASCADE,\
-	FOREIGN KEY (TimeslotID) REFERENCES Timeslot (TimeslotID) ON DELETE CASCADE ON UPDATE CASCADE\
-	);";
+console.log("Booking table created");
 
+
+// CustomerBooking
+
+var ConfirmationNumber = 1053;
+var EmailAddress = "kdahe094@uottawa.ca";
+sql = "INSERT INTO CustomerBooking (ConfirmationNumber, EmailAddress) \
+VALUES ('"+ConfirmationNumber+"', '"+EmailAddress+"')";
 connection.query(sql);
-console.log("RoomAvailability table created");
 
-
-sql = "CREATE TABLE IF NOT EXISTS escape6db.CustomerBooking(\
-	RoomAvailabilityID INTEGER, \
-	RoomID INTEGER NOT NULL, \
-	TimeslotID INTEGER NOT NULL,\
-	PRIMARY KEY (RoomAvailabilityID),\
-	FOREIGN KEY (RoomID) REFERENCES EscapeRoom (RoomID) ON DELETE CASCADE ON UPDATE CASCADE,\
-	FOREIGN KEY (TimeslotID) REFERENCES Timeslot (TimeslotID) ON DELETE CASCADE ON UPDATE CASCADE\
-	);";
-
+ConfirmationNumber = 1053;
+EmailAddress = "rlafl057@uottawa.ca";
+sql = "INSERT INTO CustomerBooking (ConfirmationNumber, EmailAddress) \
+VALUES ('"+ConfirmationNumber+"', '"+EmailAddress+"')";
 connection.query(sql);
+
+ConfirmationNumber = 1053;
+EmailAddress = "mclar063@uottawa.ca"; 
+sql = "INSERT INTO CustomerBooking (ConfirmationNumber, EmailAddress) \
+VALUES ('"+ConfirmationNumber+"', '"+EmailAddress+"')";
+connection.query(sql);
+
+ConfirmationNumber = 1053;
+EmailAddress = "gsade077@uottawa.ca";
+sql = "INSERT INTO CustomerBooking (ConfirmationNumber, EmailAddress) \
+VALUES ('"+ConfirmationNumber+"', '"+EmailAddress+"')";
+connection.query(sql);
+
 console.log("CustomerBooking table created");
-
-*/
-
 
 

@@ -44,11 +44,10 @@ console.log("Timeslot table created");
 
 sql = "CREATE TABLE IF NOT EXISTS escape6db.Booking(\
 	ConfirmationNumber INTEGER AUTO_INCREMENT, \
-	DayOfTheWeek VARCHAR(255) NOT NULL,\
+	BookingDate DATE NOT NULL,\
 	AllowOtherToJoin BOOLEAN NOT NULL,\
 	TimeslotID INTEGER, \
 	RoomID INTEGER NOT NULL, \
-	CHECK (DayOfTheWeek IN ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')),	\
 	PRIMARY KEY (ConfirmationNumber),\
 	FOREIGN KEY (RoomID) REFERENCES EscapeRoom (RoomID) ON DELETE CASCADE ON UPDATE CASCADE,\
 	FOREIGN KEY (TimeslotID) REFERENCES Timeslot (TimeslotID) ON DELETE CASCADE ON UPDATE CASCADE\
