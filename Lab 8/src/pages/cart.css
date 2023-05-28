@@ -1,0 +1,25 @@
+
+
+#cartTable {
+    color:  white;
+    font-family:  Arial;
+    width: 100%;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid white;
+  text-align: center;
+  padding: 1px 1px;
+  width: 33%;
+}
+
+
+
+#removeColumnPlaceholder {
+    color:  transparent;
+}
+
+

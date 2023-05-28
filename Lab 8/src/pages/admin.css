@@ -1,0 +1,57 @@
+label {
+  color: white;
+  position: relative;
+  left: 20px;
+}
+input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  position: relative;
+  left: 20px;
+}
+
+h1 {
+  
+}
+
+#LoginButton {
+  position: relative;
+  margin-left: 100px;
+  margin-top: 70px;
+  width: 15%;
+  left: 100px;
+  top: -60px;
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  /* boxsizing: border-box; */
+}
+/* #pageOfAdminStats {
+  left: 30px;
+  position: absolute;
+  display: none;
+  background-color: white;
+  padding-right: 30px;
+  padding-left: 30px;
+ 
+} */
+th,
+td {
+  border-bottom: 1px solid black;
+}
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid #ffda79;
+  margin-bottom: 30px;
+  width: 400px;
+  float: right;
+  margin-right: 20px;
+}
+.chart-container {
+  height: 30vh;
+  width: 30vw;
+  margin-bottom: 300px;
+  width: 400px;
+}

@@ -1,0 +1,156 @@
+body {
+  font-family: "Gudea", sans-serif;
+  font-weight: 400;
+  color: #ff66c4 !important;
+  background-color: #ffe6e6 !important;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gudea", sans-serif;
+  font-weight: 700;
+  color: #ff66c4;
+}
+
+.nav-link {
+  color: black;
+  font-family: "Gudea", sans-serif;
+  position: relative;
+  top: -9px;
+}
+
+.button {
+  font-family: "Gudea", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #fda5a4;
+  /* style from https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link */
+  appearance: button;
+  text-decoration: none;
+  color: #ffe6e6;
+}
+
+section {
+  padding: 100px 50px;
+  font-family: "Gudea", sans-serif;
+}
+
+.photoForServices {
+  height: 200px;
+  width: 200px;
+}
+
+.col-sm {
+  width: 33%;
+}
+
+#dropdownMenuButtonForServices {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+#dropdownMenuButtonForStylists {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.button {
+  margin-top: 10px;
+  color: #ffe6f4;
+}
+
+.footer {
+  font-family: "Gudea", sans-serif;
+}
+
+#hairStylePhotos {
+  margin-left: 130px;
+}
+
+#imagesForBeginingLeft {
+  width: 400px;
+  height: 350px;
+}
+
+#imagesForBeginingRight {
+  width: 400px;
+  height: 350px;
+}
+
+
+/* .reviewCustomerName {
+  color: #ff66c4;
+  font-family: "Gudea", sans-serif;
+  font-size: 18px;
+} */
+
+#customerReviewsCarousel {
+  background-color: #ffe6e6;
+}
+
+/* Reduced arrow width solution obtained from https://stackoverflow.com/questions/45220592/bootstrap-carousel-arrow-positioning */
+.carousel-control {
+  margin-left: -50px;
+  margin-right: -50px;
+  /*margin-top: 150px;/*put your desired top margin*/
+}
+
+/* Transparent background solution obtained from https://stackoverflow.com/questions/38048439/remove-bootstrap-carousel-gradient/38048544 */
+.carousel-control.left,
+.carousel-control.right {
+  background: #ffe6e6 !important;
+}
+
+.glyphicon.glyphicon-chevron-left,
+.glyphicon.glyphicon-chevron-right {
+  color: #ff66c4;
+}
+
+/* Wrap property obtained from https://www.w3schools.com/cssref/css3_pr_word-wrap.asp */
+/* .customerReviewTextContent {
+  
+} */
+
+.customerReviewInstance {
+  border: 1px #ffe6e6;
+  position: absolute;
+  object-fit:cover;
+  top: 0;
+  left: 0;
+  height: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+}
+
+/* Positioning solution obtained from https://stackoverflow.com/questions/48311855/how-to-position-carousel-indicators-in-bootstrap-4 */
+.carousel-indicators {
+  margin-bottom: -40px;
+}
+
+/* Circle color solution obtained from https://stackoverflow.com/questions/62250065/how-do-you-style-bootstrap-4-carousel-indicators-to-have-no-fill-and-only-circul */
+.carousel .carousel-indicators li {
+  box-shadow: 0 0 0 0.1rem #ff66c4 !important;
+}
+
+/* Changing active color obtained from https://www.reddit.com/r/bootstrap/comments/g6sgwa/help_changing_the_color_of_indicators_on_carousel/ */
+.carousel .carousel-indicators .active {
+  background-color: #ff66c4 !important;
+}
+
+.contactUsPageInfo {
+  margin-top: 20px;
+}

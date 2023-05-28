@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Lab 1 - Designing A Questionnaire</title>
+  </head>
+  <body>
+	  <div class="top que">
+  <a class="header__link"  target="_blank">
+            <div class="">
+                <div class="overlay">
+                    <h1 class="header que"> Reviewing the User Interface of Airbnb</h1>
+                </div>
+            </div>
+        </a>
+	<h1 class="que">Survey</h1>
+	<form id="myform" action="index.php">
+	<br>
+	<div >
+	<h2 class="que ques" >We would like know your opinion of the user interface for <a href="http://www.airbnb.ca" target="_blank">Airbnb's</a> website?</h2>
+	</form>
+	</body>
+	<br>
+	<br>
+</div>
+	<div class="airbnbImageGallery images">
+		<figure class="airbnbImageGallery_Image_1">
+			<a href="https://www.airbnb.ca/" target="_blank"> <img src="images/Airbnb_Home_Page.png" alt="Airbnb home page" title="Airbnb home page"> </a>
+		</figure>
+		<figure class="airbnbImageGallery_Image_2">
+			<a href="https://www.airbnb.ca/host/homes" target="_blank"> <img src="images/Airbnb_Become_Host.png" alt="Airbnb become a host" title="Airbnb become a host"> </a>
+		</figure>
+		<figure class="airbnbImageGallery_Image_3">
+			<a href="https://www.airbnb.ca/s/experiences?refinement_paths%5B%5D=%2Fexperiences%2Fsection%2FEXPERIENCES_TOP_BOOKED_ONLINE_GROUPING%3ATOP_BOOKED&search_type=section_navigation" 
+			target="_blank"> <img src="images/Airbnb_Most _Popular.png" alt="Most popular around the world" title="Most popular around the world"> </a>
+		</figure>
+		<figure class="airbnbImageGallery_Image_4">
+			<a href="https://www.airbnb.ca/s/all?refinement_paths%5B%5D=%2Fplaylists%2F51161&search_type=section_navigation"
+			target="_blank"> <img src="images/Airbnb_Plan_Trip_Local.png" alt="Plan a trip with tips from a local" title="Plan a trip with tips from a local"> </a>
+		</figure>
+		<figure class="airbnbImageGallery_Image_5">
+			<a href="https://www.airbnb.ca/s/experiences?location_search=NEARBY"
+			target="_blank"> <img src="images/Airbnb_Experiences_Near_You.png" alt="Experiences near you" title="Experiences near you"> </a>
+		</figure>
+		<figure class="airbnbImageGallery_Image_6">
+			<a href="https://www.airbnb.ca/s/Miami--FL--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_dates%5B%5D=february&flexible_trip_dates%5B%5D=march&flexible_trip_lengths%5B%5D=weekend_trip&date_picker_type=calendar&query=Miami%2C%20FL%2C%20United%20States&place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&checkin=2022-02-06&checkout=2022-02-08&adults=2&source=structured_search_input_header&search_type=autocomplete_click"
+				target="_blank"> <img src="images/Airbnb_Search_Results_Miami.png" alt="Searching for a stay" title="Searching for a stay"> </a>
+		</figure>
+	</div>
+</div>	
+	<div >
+	
+		<h2> Please answer the questions below related to the Airbnb website: </h2>
+		
+		<div class = "questionWithOptions">
+		<h3> Which budget range did the website advertise the most? </h3>
+		<select id="budget">         
+            		<option value="50-60$ / night" selected="selected">50-60$/night</option>
+            		<option value="60-70$ / night" selected="selected">60-70$/night</option>
+            		<option value="70-80$ / night" selected="selected">70-80$/night</option>
+            		<option value="80-90$ / night" selected="selected">80-90$/night</option>
+            		<option value="100-110$ / night" selected="selected">100-110$/night</option>
+            		<option value="110-120$ / night" selected="selected">110-120$/night</option>
+		</select>
+	   </div>
+	   <div class="question">
+		<h3> What was your favourite feature of the website? </h3>
+		<small>(Check all that apply)</small><br>
+		<div class="radio">
+            	<label for="inp-1">
+                	<input type="checkbox"
+                       	name="inp">User friendly search box</input></label><br>
+            	<label for="inp-2">
+                	<input type="checkbox"
+                       	name="inp">Ability to search by moving an interactive map</input></label><br>
+            	<label for="inp-3">
+                	<input type="checkbox"
+                       	name="inp">Presentation of the search results</input></label><br>
+            	<label for="inp-4">
+                	<input type="checkbox"
+                       	name="inp">Clear presentation of information</input></label><br>
+            	<label for="inp-5">
+                	<input type="checkbox"
+                       	name="inp">Price bar chart</input></label><br>
+            	<label for="inp-6">
+                	<input type="checkbox"
+                       	name="inp">Neighbourhood guides</input></label><br>
+            	<label for="inp-7">
+                	<input type="checkbox"
+                       	name="inp">React</input></label><br>
+            	<label for="inp-8">
+                	<input type="checkbox"
+                       	name="inp">Real time alerts and booking notifications</input></label><br>
+            	<label for="inp-9">
+                	<input type="checkbox"
+                       	name="inp">Ratings and reviews</input></label><br>
+            	<label for="inp-10">
+                	<input type="checkbox"
+                       	name="inp">Spring</input></label><br>
+
+			</div>
+		</div>
+		<div class="question">
+		<h3> Which location did Airbnb highlight the most? </h3>
+		<label for="location" id="label-location">
+		</label>
+            	<input type="text" class="box"
+                   	id="location"
+                   	placeholder="Enter the name of the location" />
+		</div>
+
+		<div class="questionWithOptions">
+		<h3> How likely are you to recommend Airbnb to a friend or colleague? </h3>
+		<select id="recommendation">         
+            		<option value="Very Likely" selected="selected">Very Likely</option>
+            		<option value="Somewhat Likely" selected="selected">Somewhat Likely</option>
+            		<option value="Neutral" selected="selected">Neutral</option>
+            		<option value="Somewhat Unlikely" selected="selected">Somewhat Unlikely</option>
+            		<option value="Very Unlikely" selected="selected">Very Unlikely</option>            
+		</select>
+	</div>
+	<div class="question">
+		<h3> How would you rate the overall appearance of the website? </h3>
+		<div class = "radio">
+		<label for="rating-1">
+               		<input type="radio"
+                       	id="rating-1"
+                       	name="rating">5 - Outstanding</input>
+            	</label><br>
+            	<label for="rating-2">
+                	<input type="radio"
+                       	id="rating-2"
+                       	name="rating">4 - Very Satisfactory</input>
+            	</label><br>
+            	<label for="rating-3">
+                	<input type="radio"
+                       	id="rating-3"
+                       	name="rating">3 - Satisfactory</input>
+               	</label><br>         
+        	<label for="rating-4">
+                	<input type="radio"
+                       	id="rating-4"
+                       	name="rating">2 - Unsatisfactory</input>
+            	</label><br>
+            	<label for="rating-5">
+                	<input type="radio"
+                       	id="rating-5"
+                       	name="rating">1 - Poor</input>
+            	</label><br>
+			</div>
+			</div>
+
+			<div class="questionWithOptions">
+		<h3> How easy was it for you to find a place to stay in your destination of choice? </h3>
+		<select id="easyfind">         
+            		<option value="Very Easy" selected="selected">Very Easy</option>
+            		<option value="Easy" selected="selected">Easy</option>
+            		<option value="Moderate" selected="selected">Moderate</option>
+            		<option value="Difficult" selected="selected">Difficult</option>
+            		<option value="Very Difficult" selected="selected">Very Difficult</option>            
+		</select>
+	</div>
+
+
+
+	<div class="question">
+		<h3> How readable are the characters displayed on the website? </h3>
+		<div class="radio">
+			<label for="readibility-1">
+               			<input type="radio"
+                       		id="readibility-1"
+                       		name="readibility">Highly Readable</input>
+            		</label><br>
+            		<label for="readibility-2">
+                		<input type="radio"
+                      		id="readibility-2"
+                       		name="readibility">Readable</input>
+            		</label><br>
+            		<label for="readibility-3">
+                		<input type="radio"
+                       		id="readibility-3"
+                       		name="readibility">Slightly Readable</input>
+               		</label><br>         
+        		<label for="readibility-4">
+                		<input type="radio"
+                       		id="readibility-4"
+                       		name="readibility">Unredable</input>
+            		</label><br>
+				</div>
+			</div>
+
+
+				<div class="questionWithOptions">
+		<h3> How would you rank the difficulty of signing up for an account on Airbnb? </h3>
+		<select id="easyfind">         
+            		<option value="Very Easy" selected="selected">Very Easy</option>
+            		<option value="Easy" selected="selected">Easy</option>
+            		<option value="Moderate" selected="selected">Moderate</option>
+            		<option value="Difficult" selected="selected">Difficult</option>
+            		<option value="Very Difficult" selected="selected">Very Difficult</option>            
+		</select>
+	</div>
+	</div>
+	
+
+	<div class="suggestions question">
+	<b class="q">Suggestions about the user interface experience:<br></b>
+	<br>
+	<textarea rows="5" cols="170" width="90%" resize: none;></textarea><br>
+    </div>	
+	<div class=buttons>
+	<button type="submit" value="submit">
+            Submit
+    </button>
+	</div>	
+	<div class = "signature">
+	<p id="signature"> Website designed by Group 6</p>	
+    </div>	
+	
+	</form>
+  	</body>
+	  
+ </html>
